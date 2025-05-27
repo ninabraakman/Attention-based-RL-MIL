@@ -1,38 +1,33 @@
 #!/bin/bash
 
-cd ..
-source venv/bin/activate
+# module purge
+# module load 2023
+# source ../venv/bin/activate
+if [[ -f venv/Scripts/activate ]]; then
+  source venv/Scripts/activate
+elif [[ -f venv/bin/activate ]]; then
+  source venv/bin/activate
+else
+  echo "ERROR: Cannot find venv activate script" >&2
+  exit 1
+fi
+# Navigate to project root
+# cd /projects/prjs1491/MasterThesisNinaBraakman
+# cd ~/Documents/UVA/Thesis/Data\ en\ code/Attention-based-RL-MIL || exit
+cd "$HOME/Documents/UVA/Thesis/Data en code/Attention-based-RL-MIL"
 
 baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
+target_labels=("label")
+gpus=(0)
+wandb_entity="ninabraakman-university-of-amsterdam"
+wandb_project="MasterThesis"
 
-# For facebook dataset: ("care" "purity" "loyalty" "authority" "fairness")
-# For political_data_with_age dataset: ("age" "gender" "party")
-# For jigsaw datasets: ("hate")
-target_labels=("care" "purity" "loyalty" "authority" "fairness")
-
-gpus=(0 1 2 3 4 5 6 7)
-
-# wandb config
-wandb_entity="YOUR_WANDB_ENTITY"
-wandb_project="YOUR_WANDB_PROJECT_NAME"
-
-# Dataset is either: `political_data_with_age,` `facebook,` `jigsaw_5,` or `jigsaw_10`
-dataset="facebook"
-
-# For `facebook` and `political_data_with_age` datasets: "text"
-# For `jigsaw` datasets: "comment_text"
-data_embedded_column_name="text"
-
-# ---- Constants ----
+dataset="oulad_aggregated_subset"
+data_embedded_column_name="instances"
 task_type="classification"
-
-# autoencoder_layer_sizes should be a string of comma-separated integers. We used "768,256,768" in all experiments.
-autoencoder_layer_sizes="768,256,768"
-
-# The size of b_i in the paper. We used 20 in all experiments.
+autoencoder_layer_sizes="22,16,22"
 bag_sizes=(20)
-
-embedding_models=("roberta-base")
+embedding_models=("tabular")
 
 # Get the total number of runs
 total_runs=$((${#baseline_types[@]} * ${#target_labels[@]} * ${#bag_sizes[@]} * ${#embedding_models[@]}))
@@ -55,10 +50,7 @@ for target_label_index in "${!target_labels[@]}"; do
         gpu=${gpus[$target_label_index]}
         echo "$baseline_type, $dataset $target_label, bag_size_$bag_size, $embedding_model, gpu_$gpu ($current_run/$total_runs)"
 
-        SESSION_NAME="${dataset}_${target_label}_${baseline_type}"
-
-        screen -dmS "$SESSION_NAME" bash -c "
-        CUDA_VISIBLE_DEVICES=$gpu python3 run_mil.py \
+        CUDA_VISIBLE_DEVICES=$gpu python run_mil.py \
                                       --baseline "$baseline_type" \
                                       --label "$target_label" \
                                       --bag_size "$bag_size" \
@@ -71,7 +63,7 @@ for target_label_index in "${!target_labels[@]}"; do
                                       --data_embedded_column_name $data_embedded_column_name \
                                       --task_type $task_type \
                                       --random_seed 0 ;
-        exit"
+        exit
         
         ((current_run++))
       done

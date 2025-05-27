@@ -18,36 +18,7 @@ def parse_args():
         "--label",
         type=str,
         required=True,
-        choices=[
-            "care",
-            "purity",
-            "sex",
-            "religion",
-            "customized_political_opinion",
-            "party",
-            "gender",
-            "equality",
-            "proportionality",
-            "loyalty",
-            "authority",
-            "fairness",
-            "face",
-            "honor",
-            "dignity",
-            "age",
-            "education",
-            "political_orientation",
-            "ladder",
-            "ethnicity",
-            "age",
-            "old_age",
-            "hate",
-            "extraversion",
-            "neuroticism",
-            "agreeableness",
-            "conscientiousness",
-            "openness",
-        ],
+        choices=["label"],
     )
     parser.add_argument(
         "--bag_size", type=int, required=True, help="Bag size is required."
@@ -276,6 +247,31 @@ def parse_args():
         type=str,
         choices=["static", "with_replacement", "without_replacement"],
         required=False,
+    )
+
+    # Attention flags
+    parser.add_argument(
+        "--temperature",
+        type=float,
+        default=1.0,
+        help="Softmax temperature for attention sampler",
+    )
+    parser.add_argument(
+        "--is_linear_attention",
+        action="store_true",
+        help="Use a single linear layer for attention (else a 2‐layer MLP)",
+    )
+    parser.add_argument(
+        "--attention_size",
+        type=int,
+        default=64,
+        help="Hidden dimensionality for the non-linear attention network",
+    )
+    parser.add_argument(
+        "--attention_dropout_p",
+        type=float,
+        default=0.5,
+        help="Dropout probability in the attention MLP",
     )
     args = parser.parse_args()
 
