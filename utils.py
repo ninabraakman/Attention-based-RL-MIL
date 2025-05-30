@@ -260,6 +260,93 @@ def create_bag_masks(df, bag_size, bag_embedded_column_name):
     bag_masks[:, :bag_size] = 1
     return bag_masks
 
+def create_bag_masks_randomized(df: pd.DataFrame, 
+                                    bag_size: int, 
+                                    bag_embedded_column_name: str) -> torch.Tensor:
+    """
+    Creates boolean masks for selecting a fixed number of instances by shuffling
+    the indices of the already padded bag.
+
+    For each sample, it will select exactly 'bag_size' instances from the
+    PADDED_DIM slots. Some of these may be padding if bag_size is large
+    or due to the shuffle.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing the data. Must have the
+                           column specified by bag_embedded_column_name.
+        bag_size (int): The exact number of instances to select for the mask.
+        bag_embedded_column_name (str): Name of the column with padded bag embeddings.
+                                         Used to determine PADDED_DIM.
+
+    Returns:
+        torch.Tensor: A boolean tensor of shape (num_samples, PADDED_DIM)
+                      where each row has exactly 'bag_size' True values.
+    """
+    num_samples = df.shape[0]
+    if num_samples == 0:
+        raise ValueError("DataFrame is empty, cannot determine PADDED_DIM.")
+        
+    padded_dim = df[bag_embedded_column_name].iloc[0].shape[0]
+
+    if bag_size > padded_dim:
+        raise ValueError(
+            f"bag_size ({bag_size}) cannot be greater than the padded dimension of the bags ({padded_dim})."
+        )
+
+    final_selection_masks = torch.zeros((num_samples, padded_dim), dtype=torch.bool)
+    for i in range(num_samples):
+        indices_in_padded_bag = np.arange(padded_dim)
+        np.random.shuffle(indices_in_padded_bag)
+        selected_indices = indices_in_padded_bag[:bag_size]
+    
+        final_selection_masks[i, selected_indices] = True
+            
+    return final_selection_masks
+# def create_bag_masks_randomized(df: pd.DataFrame, bag_size: int, bag_embedded_column_name: str, true_mask_column_name: str = "bag_mask"):
+#     """
+#     Creates boolean masks for selecting instances.
+#     For each bag, it randomly selects up to 'bag_size' actual instances.
+
+#     Args:
+#         df (pd.DataFrame): DataFrame containing the data. Must have 'bag_mask' (the original padding mask)
+#                            and 'bag_embeddings' (or bag_embedded_column_name).
+#         bag_size (int): The number of instances to select.
+#         bag_embedded_column_name (str): Name of the column with padded bag embeddings.
+#         true_mask_column_name (str): Name of the column with the original float padding mask (1.0 for real, 0.0 for pad).
+
+#     Returns:
+#         torch.Tensor: A boolean tensor of shape (num_samples, PADDED_DIM) indicating selected instances.
+#     """
+#     num_samples = df.shape[0]
+#     # PADDED_DIM is the total length of the padded bags (e.g., from bag_embeddings.shape[1] or bag_mask.shape[0])
+#     # Assuming all bags in df[bag_embedded_column_name] have the same padded dimension
+#     padded_dim = df[bag_embedded_column_name].iloc[0].shape[0]
+    
+#     final_selection_masks = torch.zeros((num_samples, padded_dim), dtype=torch.bool)
+
+#     for i in range(num_samples):
+#         # Get the original padding mask (float: 1.0 for real, 0.0 for pad)
+#         original_padding_mask = df[true_mask_column_name].iloc[i] # This is a NumPy array
+        
+#         # Find indices of actual (non-padded) instances within the PADDED_DIM
+#         real_instance_indices_in_padded_dim = np.where(original_padding_mask == 1.0)[0]
+        
+#         num_real_instances = len(real_instance_indices_in_padded_dim)
+        
+#         num_to_select = min(num_real_instances, bag_size)
+        
+#         if num_to_select > 0:
+#             # Randomly choose 'num_to_select' from the real_instance_indices_in_padded_dim
+#             selected_real_indices = np.random.choice(
+#                 real_instance_indices_in_padded_dim, 
+#                 size=num_to_select, 
+#                 replace=False # Ensure unique instances are chosen
+#             )
+#             # Mark these selected instances as True in our final mask for this sample
+#             final_selection_masks[i, selected_real_indices] = True
+            
+#     return final_selection_masks
+
 
 def preprocess_dataframe(
         df: pd.DataFrame,
@@ -350,7 +437,7 @@ class EarlyStopping:
         self.counter = 0
         self.best_score = None
         self.early_stop = False
-        self.val_loss_min = np.Inf
+        self.val_loss_min = np.inf
         self.delta = delta
         self.models_dir = models_dir
         self.trace_func = trace_func

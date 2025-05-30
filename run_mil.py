@@ -17,7 +17,7 @@ from utils import (
     get_data_directory,
     get_model_save_directory,
     get_model_name,
-    create_bag_masks,
+    create_bag_masks_randomized,
     read_data_split,
     create_preprocessed_dataframes,
     get_balanced_weights,
@@ -486,7 +486,7 @@ if __name__ == "__main__":
         raise ValueError("Data directory does not exist.")
 
     MODEL_NAME = get_model_name(args.baseline, args.autoencoder_layer_sizes)
-
+    
     train_dataframe = read_data_split(DATA_DIR, args.embedding_model, "train")
     val_dataframe = read_data_split(DATA_DIR, args.embedding_model, "val")
     test_dataframe = read_data_split(DATA_DIR, args.embedding_model, "test")
@@ -534,10 +534,25 @@ if __name__ == "__main__":
     logger.info(f"{args.label} label distribution in test set after label encoding:")
     logger.info(f"{test_dataframe['labels'].value_counts()}")
 
-    train_bag_masks = create_bag_masks(train_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
-    val_bag_masks = create_bag_masks(val_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
-    test_bag_masks = create_bag_masks(test_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
-
+    logger.info("Using randomized (from padded) bag mask creation for standard MIL.") # Optional
+    # train_bag_masks = create_bag_masks(train_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
+    # val_bag_masks = create_bag_masks(val_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
+    # test_bag_masks = create_bag_masks(test_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
+    train_bag_masks = create_bag_masks_randomized(
+        df=train_dataframe,
+        bag_size=args.bag_size,
+        bag_embedded_column_name=BAG_EMBEDDED_COLUMN_NAME
+    )
+    val_bag_masks = create_bag_masks_randomized(
+        df=val_dataframe,
+        bag_size=args.bag_size,
+        bag_embedded_column_name=BAG_EMBEDDED_COLUMN_NAME
+    )
+    test_bag_masks = create_bag_masks_randomized(
+        df=test_dataframe,
+        bag_size=args.bag_size,
+        bag_embedded_column_name=BAG_EMBEDDED_COLUMN_NAME
+    )
     train_dataset = RLMILDataset(
         df=train_dataframe,
         bag_masks=train_bag_masks,

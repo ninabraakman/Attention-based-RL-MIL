@@ -1,0 +1,618 @@
+wandb: Agent Starting Run: anlcjo13 with config:
+wandb: 	actor_learning_rate: 0.00010183180203943338
+wandb: 	attention_dropout_p: 0.0032742851952421437
+wandb: 	attention_size: 16
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 110
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.009539778508910746
+wandb: 	temperature: 6.640065046169349
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_201806-anlcjo13
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fallen-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/wkyn6kit
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/anlcjo13
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 🚀 View run fallen-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/anlcjo13
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_201806-anlcjo13/logs
+wandb: ERROR Run anlcjo13 errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: Agent Starting Run: yp58l4zv with config:
+wandb: 	actor_learning_rate: 0.0002420332056065472
+wandb: 	attention_dropout_p: 0.09558621438705966
+wandb: 	attention_size: 32
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 107
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5102255435347427
+wandb: 	temperature: 2.040454259383279
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_201812-yp58l4zv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run curious-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/wkyn6kit
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/yp58l4zv
+wandb: uploading summary
+wandb:                                                                                
+wandb: 🚀 View run curious-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/yp58l4zv
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_201812-yp58l4zv/logs
+wandb: ERROR Run yp58l4zv errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: o30hbllh with config:
+wandb: 	actor_learning_rate: 3.218787266943885e-05
+wandb: 	attention_dropout_p: 0.06312745705446521
+wandb: 	attention_size: 64
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 53
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.7096300595857774
+wandb: 	temperature: 6.9186295589704505
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_201854-o30hbllh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stilted-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/wkyn6kit
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/o30hbllh
+wandb:                                                                                
+wandb: 🚀 View run stilted-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/o30hbllh
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_201854-o30hbllh/logs
+wandb: ERROR Run o30hbllh errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: ERROR Detected 3 failed runs in the first 60 seconds, killing sweep.
+wandb: To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+wandb: Agent Starting Run: tel152di with config:
+wandb: 	actor_learning_rate: 1.929751489941085e-06
+wandb: 	attention_dropout_p: 0.16264826521913178
+wandb: 	attention_size: 32
+wandb: 	batch_size: 64
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 179
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.8281352782257277
+wandb: 	temperature: 1.8257707723857663
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_201924-tel152di
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vague-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h54sfwyx
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/tel152di
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 🚀 View run vague-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/tel152di
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_201924-tel152di/logs
+wandb: ERROR Run tel152di errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: Agent Starting Run: wot97d80 with config:
+wandb: 	actor_learning_rate: 0.000671599909883946
+wandb: 	attention_dropout_p: 0.019840943665883237
+wandb: 	attention_size: 64
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 79
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.04082210232695061
+wandb: 	temperature: 7.039595236546091
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_201930-wot97d80
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run twilight-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h54sfwyx
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/wot97d80
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 🚀 View run twilight-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/wot97d80
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_201930-wot97d80/logs
+wandb: ERROR Run wot97d80 errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: Agent Starting Run: da9tsla3 with config:
+wandb: 	actor_learning_rate: 2.7160059776498495e-06
+wandb: 	attention_dropout_p: 0.38596795849261184
+wandb: 	attention_size: 16
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 85
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.6458303584564337
+wandb: 	temperature: 7.530504891982747
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_201935-da9tsla3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run robust-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h54sfwyx
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/da9tsla3
+wandb:                                                                                
+wandb: 🚀 View run robust-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/da9tsla3
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_201935-da9tsla3/logs
+wandb: ERROR Run da9tsla3 errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: ERROR Detected 3 failed runs in the first 60 seconds, killing sweep.
+wandb: To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+wandb: Agent Starting Run: 4xvqmcvb with config:
+wandb: 	actor_learning_rate: 1.6562327339548846e-06
+wandb: 	attention_dropout_p: 0.3118671111618857
+wandb: 	attention_size: 32
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 78
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5350895550706293
+wandb: 	temperature: 7.407923881315974
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_201944-4xvqmcvb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dulcet-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/ejdqqgym
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4xvqmcvb
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 🚀 View run dulcet-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4xvqmcvb
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_201944-4xvqmcvb/logs
+wandb: ERROR Run 4xvqmcvb errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: f8v01z9i with config:
+wandb: 	actor_learning_rate: 8.929477343455889e-06
+wandb: 	attention_dropout_p: 0.34225846999821774
+wandb: 	attention_size: 32
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 89
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.8445665431377544
+wandb: 	temperature: 4.459779660771025
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202011-f8v01z9i
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run honest-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/ejdqqgym
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/f8v01z9i
+wandb:                                                                                
+wandb: 🚀 View run honest-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/f8v01z9i
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202011-f8v01z9i/logs
+wandb: ERROR Run f8v01z9i errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: Agent Starting Run: in8dcj1q with config:
+wandb: 	actor_learning_rate: 3.2792657569707675e-06
+wandb: 	attention_dropout_p: 0.1792674849850508
+wandb: 	attention_size: 32
+wandb: 	batch_size: 64
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 76
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.8619521356365204
+wandb: 	temperature: 5.810188525422615
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202016-in8dcj1q
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run confused-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/ejdqqgym
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/in8dcj1q
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 🚀 View run confused-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/in8dcj1q
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202016-in8dcj1q/logs
+wandb: ERROR Run in8dcj1q errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: ERROR Detected 3 failed runs in the first 60 seconds, killing sweep.
+wandb: To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+wandb: Agent Starting Run: ornjqwzg with config:
+wandb: 	actor_learning_rate: 4.554529730627325e-05
+wandb: 	attention_dropout_p: 0.1830849297288778
+wandb: 	attention_size: 32
+wandb: 	batch_size: 64
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 152
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.19144803841245503
+wandb: 	temperature: 6.275495819837075
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202057-ornjqwzg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run crisp-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/gbnnvzrc
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ornjqwzg
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 🚀 View run crisp-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ornjqwzg
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202057-ornjqwzg/logs
+wandb: ERROR Run ornjqwzg errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: Agent Starting Run: rxwn1yqr with config:
+wandb: 	actor_learning_rate: 3.064462491255639e-05
+wandb: 	attention_dropout_p: 0.1192454186112364
+wandb: 	attention_size: 64
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 55
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.8145230244666328
+wandb: 	temperature: 9.19450918861912
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202102-rxwn1yqr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run worthy-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/gbnnvzrc
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/rxwn1yqr
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 🚀 View run worthy-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/rxwn1yqr
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202102-rxwn1yqr/logs
+wandb: ERROR Run rxwn1yqr errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: fwg4jwgw with config:
+wandb: 	actor_learning_rate: 1.7823367158365026e-06
+wandb: 	attention_dropout_p: 0.05393657655152784
+wandb: 	attention_size: 128
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 60
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.13131470207578344
+wandb: 	temperature: 3.432188729622969
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202124-fwg4jwgw
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run bright-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/gbnnvzrc
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/fwg4jwgw
+wandb:                                                                                
+wandb: 🚀 View run bright-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/fwg4jwgw
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202124-fwg4jwgw/logs
+wandb: ERROR Run fwg4jwgw errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 562, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 358, in train
+wandb: ERROR     log_dict = get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505.py", line 310, in get_first_batch_info
+wandb: ERROR     action_probs, _, _ = policy_network(batch_x)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_0505.py", line 822, in forward
+wandb: ERROR     attention_scores = self.selector(x, None)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+wandb: ERROR     return self._call_impl(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+wandb: ERROR     return forward_call(*args, **kwargs)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention0505_module.py", line 26, in forward
+wandb: ERROR     batch_size, num_instances, _ = bag_tensor.size()
+wandb: ERROR ValueError: not enough values to unpack (expected 3, got 2)
+wandb: ERROR 
+wandb: ERROR Detected 3 failed runs in the first 60 seconds, killing sweep.
+wandb: To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true

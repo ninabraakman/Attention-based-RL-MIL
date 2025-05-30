@@ -1,0 +1,26 @@
+MeanMLP, oulad_full label, bag_size_20, tabular, gpu_0 (1/4)
+Create sweep with ID: wfrkca8h
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/wfrkca8h
+MaxMLP, oulad_full label, bag_size_20, tabular, gpu_0 (2/4)
+Create sweep with ID: qkj4wkuz
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/qkj4wkuz
+AttentionMLP, oulad_full label, bag_size_20, tabular, gpu_0 (3/4)
+Create sweep with ID: vzggi4pl
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/vzggi4pl
+repset, oulad_full label, bag_size_20, tabular, gpu_0 (4/4)
+Create sweep with ID: qywwy4bu
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/qywwy4bu
+
+JOB STATISTICS
+==============
+Job ID: 12080194
+Cluster: snellius
+User/Group: nbraakman/nbraakman
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:26:19
+CPU Efficiency: 10.92% of 04:01:04 core-walltime
+Job Wall-clock time: 00:15:04
+Memory Utilized: 4.17 GB
+Memory Efficiency: 26.07% of 16.00 GB (16.00 GB/node)

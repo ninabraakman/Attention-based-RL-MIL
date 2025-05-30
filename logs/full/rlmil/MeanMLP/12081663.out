@@ -1,0 +1,17 @@
+MeanMLP, oulad_full label, bag_size_20, tabular, gpu_0 (1/1)
+Create sweep with ID: y9nx1nq8
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/y9nx1nq8
+
+JOB STATISTICS
+==============
+Job ID: 12081663
+Cluster: snellius
+User/Group: nbraakman/nbraakman
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 64
+CPU Utilized: 00:00:10
+CPU Efficiency: 0.46% of 00:36:16 core-walltime
+Job Wall-clock time: 00:00:34
+Memory Utilized: 1.75 MB
+Memory Efficiency: 0.01% of 32.00 GB (32.00 GB/node)

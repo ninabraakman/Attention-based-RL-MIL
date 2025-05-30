@@ -620,6 +620,10 @@ class PolicyNetwork(nn.Module):
         self.rewards = []
 
     def forward(self, batch_x):
+        # ---- START DEBUG BLOCK ----
+        print(f"--- DEBUG: run_rlmil.py -> PolicyNetwork.forward ---")
+        print(f"    batch_x.shape (input to base_network): {batch_x.shape}")
+        # ---- END DEBUG BLOCK ----
         if self.no_autoencoder:
             batch_rep = batch_x
         else:
@@ -627,10 +631,20 @@ class PolicyNetwork(nn.Module):
         
         # batch_size, bag_size, embedding_size = batch_rep.shape
         # batch_rep = batch_rep.view(batch_size * bag_size, embedding_size)
-
+        # ---- START DEBUG BLOCK ----
+        print(f"    batch_rep.shape (after base_network, input to actor/critic): {batch_rep.shape}")
+        # ---- END DEBUG BLOCK ----
         exp_reward = self.critic(batch_rep)
         action_probs = self.actor(batch_rep)
+        # ---- START DEBUG BLOCK ----
+        print(f"    action_probs.shape (output from self.actor): {action_probs.shape}")
+        # ---- END DEBUG BLOCK ----
         action_probs = action_probs.squeeze(-1)
+
+        # ---- START DEBUG BLOCK ----
+        print(f"    action_probs.shape (after squeeze(-1)): {action_probs.shape}") # CRITICAL
+        print(f"    exp_reward.shape (output from self.critic): {exp_reward.shape}")
+        # ---- END DEBUG BLOCK ----
         # action_probs = action_probs.view(batch_size, bag_size)
         # exp_reward = exp_reward.view(batch_size, bag_size)
         # batch_rep = batch_rep.view(batch_size, bag_size, embedding_size)
@@ -640,6 +654,9 @@ class PolicyNetwork(nn.Module):
         # from IPython import embed; embed(); exit()
 
         exp_reward = torch.mean(exp_reward, dim=1)
+        # ---- START DEBUG BLOCK ----
+        print(f"    exp_reward.shape (after torch.mean): {exp_reward.shape}")
+        # ---- END DEBUG BLOCK ----
         return action_probs, batch_rep, exp_reward
 
     def reset_reward_action(self):

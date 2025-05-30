@@ -1,0 +1,489 @@
+wandb: Agent Starting Run: im93co97 with config:
+wandb: 	actor_learning_rate: 0.0008008579910383367
+wandb: 	attention_dropout_p: 0.4559524223368931
+wandb: 	attention_size: 32
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 129
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.012911488198878884
+wandb: 	temperature: 9.510395011527551
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202444-im93co97
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run true-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h507q2oa
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/im93co97
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 🚀 View run true-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/im93co97
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202444-im93co97/logs
+wandb: ERROR Run im93co97 errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: Agent Starting Run: qjf33pbb with config:
+wandb: 	actor_learning_rate: 1.5129833169697897e-05
+wandb: 	attention_dropout_p: 0.097273297180812
+wandb: 	attention_size: 32
+wandb: 	batch_size: 64
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 147
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.2731562014921557
+wandb: 	temperature: 2.4190347145309787
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202448-qjf33pbb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run absurd-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h507q2oa
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/qjf33pbb
+wandb: uploading history steps 0-0, summary
+wandb:                                                                                
+wandb: 🚀 View run absurd-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/qjf33pbb
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202448-qjf33pbb/logs
+wandb: ERROR Run qjf33pbb errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: Agent Starting Run: akshsj5x with config:
+wandb: 	actor_learning_rate: 2.9873721555388365e-06
+wandb: 	attention_dropout_p: 0.4101265002697768
+wandb: 	attention_size: 16
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 50
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5230280286737943
+wandb: 	temperature: 3.479671250922859
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202454-akshsj5x
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run jolly-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h507q2oa
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/akshsj5x
+wandb:                                                                                
+wandb: 🚀 View run jolly-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/akshsj5x
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202454-akshsj5x/logs
+wandb: ERROR Run akshsj5x errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: ERROR Detected 3 failed runs in the first 60 seconds, killing sweep.
+wandb: To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+wandb: Agent Starting Run: 9mvdo2iv with config:
+wandb: 	actor_learning_rate: 0.0005645878885606216
+wandb: 	attention_dropout_p: 0.3767599352690523
+wandb: 	attention_size: 64
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 130
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.3901550582047105
+wandb: 	temperature: 2.0029500669069247
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202503-9mvdo2iv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run twilight-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/qunrfdsf
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/9mvdo2iv
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 🚀 View run twilight-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/9mvdo2iv
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202503-9mvdo2iv/logs
+wandb: ERROR Run 9mvdo2iv errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: Agent Starting Run: r9s6vz23 with config:
+wandb: 	actor_learning_rate: 1.3106003489608458e-06
+wandb: 	attention_dropout_p: 0.45478818321789255
+wandb: 	attention_size: 64
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 98
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.9117219030978472
+wandb: 	temperature: 5.267701866790907
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202508-r9s6vz23
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run radiant-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/qunrfdsf
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/r9s6vz23
+wandb:                                                                                
+wandb: 🚀 View run radiant-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/r9s6vz23
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202508-r9s6vz23/logs
+wandb: ERROR Run r9s6vz23 errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: Agent Starting Run: t8r4v8fc with config:
+wandb: 	actor_learning_rate: 5.668306064395865e-05
+wandb: 	attention_dropout_p: 0.2600478897317424
+wandb: 	attention_size: 128
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 152
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.04667800615707163
+wandb: 	temperature: 6.954961202846475
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202513-t8r4v8fc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stilted-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/qunrfdsf
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/t8r4v8fc
+wandb:                                                                                
+wandb: 🚀 View run stilted-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/t8r4v8fc
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202513-t8r4v8fc/logs
+wandb: ERROR Run t8r4v8fc errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: ERROR Detected 3 failed runs in the first 60 seconds, killing sweep.
+wandb: To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+wandb: Agent Starting Run: 11eq6aaz with config:
+wandb: 	actor_learning_rate: 4.9781036336159874e-05
+wandb: 	attention_dropout_p: 0.17106215845348433
+wandb: 	attention_size: 32
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 175
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.6399814017842097
+wandb: 	temperature: 3.7158472918677186
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202522-11eq6aaz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run decent-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/yrr8i5qs
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/11eq6aaz
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 🚀 View run decent-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/11eq6aaz
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202522-11eq6aaz/logs
+wandb: ERROR Run 11eq6aaz errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: Agent Starting Run: hgrb7lm0 with config:
+wandb: 	actor_learning_rate: 3.602940180742308e-06
+wandb: 	attention_dropout_p: 0.4974026285368535
+wandb: 	attention_size: 64
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 188
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.31610931805244147
+wandb: 	temperature: 2.80512590514589
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202528-hgrb7lm0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run frosty-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/yrr8i5qs
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/hgrb7lm0
+wandb:                                                                                
+wandb: 🚀 View run frosty-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/hgrb7lm0
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202528-hgrb7lm0/logs
+wandb: ERROR Run hgrb7lm0 errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: Agent Starting Run: m1jn6z8t with config:
+wandb: 	actor_learning_rate: 2.38992789283725e-05
+wandb: 	attention_dropout_p: 0.26178538503116044
+wandb: 	attention_size: 128
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 171
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.11880466444713957
+wandb: 	temperature: 6.617265040747208
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202533-m1jn6z8t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run cosmic-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/yrr8i5qs
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/m1jn6z8t
+wandb:                                                                                
+wandb: 🚀 View run cosmic-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/m1jn6z8t
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202533-m1jn6z8t/logs
+wandb: ERROR Run m1jn6z8t errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: ERROR Detected 3 failed runs in the first 60 seconds, killing sweep.
+wandb: To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+wandb: Agent Starting Run: 4o7o5kxv with config:
+wandb: 	actor_learning_rate: 1.1629191523797605e-05
+wandb: 	attention_dropout_p: 0.3157820769932938
+wandb: 	attention_size: 16
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 174
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.0346931707363366
+wandb: 	temperature: 3.1029297209877047
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202542-4o7o5kxv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eternal-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/epb6fkxz
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4o7o5kxv
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 🚀 View run eternal-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4o7o5kxv
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202542-4o7o5kxv/logs
+wandb: ERROR Run 4o7o5kxv errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: Agent Starting Run: mlbr48j0 with config:
+wandb: 	actor_learning_rate: 0.00020233450139092596
+wandb: 	attention_dropout_p: 0.4432814171783146
+wandb: 	attention_size: 128
+wandb: 	batch_size: 256
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 178
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.02491053965035439
+wandb: 	temperature: 2.48126559798402
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202548-mlbr48j0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run playful-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/epb6fkxz
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/mlbr48j0
+wandb:                                                                                
+wandb: 🚀 View run playful-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/mlbr48j0
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202548-mlbr48j0/logs
+wandb: ERROR Run mlbr48j0 errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: Agent Starting Run: 3kavj3ep with config:
+wandb: 	actor_learning_rate: 4.668207550847189e-06
+wandb: 	attention_dropout_p: 0.16378335658399024
+wandb: 	attention_size: 64
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 131
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.9400212445340976
+wandb: 	temperature: 2.861523726201185
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250528_202553-3kavj3ep
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run smooth-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/epb6fkxz
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/3kavj3ep
+wandb:                                                                                
+wandb: 🚀 View run smooth-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/3kavj3ep
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250528_202553-3kavj3ep/logs
+wandb: ERROR Run 3kavj3ep errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 570, in main_sweep
+wandb: ERROR     policy_network = train(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 377, in train
+wandb: ERROR     total_loss, policy_loss, value_loss, mil_loss, reg_loss = episode_function(
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/attention2305.py", line 55, in finish_episode_policy_only
+wandb: ERROR     sel_loss = policy_network.train_minibatch(sel_x, sel_y)
+wandb: ERROR   File "/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/models_2305.py", line 738, in train_minibatch
+wandb: ERROR     self.task_optim.zero_grad()
+wandb: ERROR AttributeError: 'NoneType' object has no attribute 'zero_grad'
+wandb: ERROR 
+wandb: ERROR Detected 3 failed runs in the first 60 seconds, killing sweep.
+wandb: To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true

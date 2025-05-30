@@ -1,0 +1,18 @@
+MeanMLP, oulad_full_subset label, bag_size_20, tabular, gpu_0 (1/4)
+MaxMLP, oulad_full_subset label, bag_size_20, tabular, gpu_0 (2/4)
+AttentionMLP, oulad_full_subset label, bag_size_20, tabular, gpu_0 (3/4)
+repset, oulad_full_subset label, bag_size_20, tabular, gpu_0 (4/4)
+
+JOB STATISTICS
+==============
+Job ID: 12082131
+Cluster: snellius
+User/Group: nbraakman/nbraakman
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:18
+CPU Efficiency: 4.33% of 00:06:56 core-walltime
+Job Wall-clock time: 00:00:26
+Memory Utilized: 1.63 MB
+Memory Efficiency: 0.00% of 32.00 GB (32.00 GB/node)

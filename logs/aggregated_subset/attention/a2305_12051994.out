@@ -1,0 +1,27 @@
+Run 1/4: baseline=MeanMLP, bag_size=20, embed=tabular
+Create sweep with ID: h507q2oa
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h507q2oa
+Run 2/4: baseline=MaxMLP, bag_size=20, embed=tabular
+Create sweep with ID: qunrfdsf
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/qunrfdsf
+Run 3/4: baseline=AttentionMLP, bag_size=20, embed=tabular
+Create sweep with ID: yrr8i5qs
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/yrr8i5qs
+Run 4/4: baseline=repset, bag_size=20, embed=tabular
+Create sweep with ID: epb6fkxz
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/epb6fkxz
+
+JOB STATISTICS
+==============
+Job ID: 12051994
+Cluster: snellius
+User/Group: nbraakman/nbraakman
+State: RUNNING
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:23:28 core-walltime
+Job Wall-clock time: 00:01:28
+Memory Utilized: 0.00 MB
+Memory Efficiency: 0.00% of 16.00 GB (16.00 GB/node)
+WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.

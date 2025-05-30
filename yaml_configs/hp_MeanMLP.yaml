@@ -36,3 +36,47 @@ parameters:
     distribution: constant
     value: 10
 run_cap: 50
+
+
+# # Best configs oulad_aggregated_subset 12052168
+# method: grid # Since all parameters are constant, grid with 1 combination is simplest
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/loss
+# parameters:
+#   batch_size:
+#     value: 16
+#   dropout_p:
+#     value: 0.5
+#   epochs:
+#     value: 119
+#   hidden_dim:
+#     value: 512
+#   learning_rate:
+#     value: 0.002843629336814679
+#   scheduler_patience:
+#     value: 5
+#   early_stopping_patience:
+#     value: 10
+
+# # Best configs oulad_full_subset 12052171
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/loss
+# parameters:
+#   batch_size:
+#       value: 32
+#   dropout_p:
+#       value: 0.5
+#   early_stopping_patience:
+#       value: 10
+#   epochs:
+#       value: 291
+#   hidden_dim:
+#       value: 128
+#   learning_rate:
+#       value: 0.00030378337836443593
+#   scheduler_patience:
+#       value: 5

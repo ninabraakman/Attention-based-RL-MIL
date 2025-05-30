@@ -18,7 +18,7 @@ def load_mil_model(model_path):
     saved_model_path = os.path.join(model_path, 'best_model.pt')
     
     model = create_mil_model_with_dict(config)
-    model.load_state_dict(torch.load(saved_model_path))
+    model.load_state_dict(torch.load(saved_model_path,  map_location=torch.device('cpu')))
 
     return model
 
@@ -37,7 +37,7 @@ def load_rlmil_model(model_path, device):
                                    device=device)
 
     saved_model_path = os.path.join(model_path, 'sweep_best_model.pt')
-    policy_network.load_state_dict(torch.load(saved_model_path))
+    policy_network.load_state_dict(torch.load(saved_model_path,  map_location=torch.device('cpu')))
     policy_network.to(device)
     return policy_network
 
@@ -51,7 +51,7 @@ def agg_all_results(device, data_dir_path, models_dir_path, bag_embedded_column_
     df = pd.concat([mil_results, rlmil_results])
     return df
 
-def agg_rlmil_results(device, data_dir_path, models_dir_path, bag_embedded_column_name,  task_type, config_vars=[], in_seeds=[0, 1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9]):
+def agg_rlmil_results(device, data_dir_path, models_dir_path, bag_embedded_column_name,  task_type, config_vars=[], in_seeds=[1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10]):
 
     pattern = fr"{models_dir_path}/{task_type}/seed_(\d+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/bag_size_(\d+)/([^/]+)/([^/]+)$"
     regex = re.compile(pattern)
@@ -131,7 +131,7 @@ def agg_rlmil_results(device, data_dir_path, models_dir_path, bag_embedded_colum
     df.rename(columns={f"test/avg-{metric_name}": f"test/{metric_name}", f"eval/avg-{metric_name}": f"eval/{metric_name}"}, inplace=True)
     return df
 
-def agg_mil_results(device, data_dir_path, models_dir_path, bag_embedded_column_name,  task_type, config_vars=[], in_seeds=[0, 1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9]):
+def agg_mil_results(device, data_dir_path, models_dir_path, bag_embedded_column_name,  task_type, config_vars=[], in_seeds=[1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10]):
 
     pattern = fr"{models_dir_path}/{task_type}/seed_(\d+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/bag_size_(\d+)/([^/]+)$"
     regex = re.compile(pattern)

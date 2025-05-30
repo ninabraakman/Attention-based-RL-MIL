@@ -524,7 +524,9 @@ def main_sweep():
         ],
     )
     config = wandb.config
-
+    
+    if hasattr(config, 'batch_size'):
+        args.batch_size = config.batch_size
     args.critic_learning_rate = config.critic_learning_rate
     args.actor_learning_rate = config.actor_learning_rate
     args.learning_rate = config.learning_rate
@@ -534,6 +536,21 @@ def main_sweep():
     args.warmup_epochs = config.get("warmup_epochs", 0)
     args.epsilon = config.get("epsilon", 0)
     args.no_wandb = False
+
+    run_dir = get_model_save_directory(dataset=args.dataset,
+                                       data_embedded_column_name=args.data_embedded_column_name,
+                                       embedding_model_name=args.embedding_model,
+                                       target_column_name=args.label, 
+                                       bag_size=args.bag_size,
+                                       baseline=args.baseline,
+                                       autoencoder_layers=args.autoencoder_layer_sizes,
+                                       random_seed=args.random_seed,
+                                       dev=args.dev, 
+                                       task_type=args.task_type, 
+                                       prefix=args.prefix,
+                                       multiple_runs=args.multiple_runs)
+    logger = get_logger(run_dir)
+
     # Model Optimizer Scheduler EarlyStopping
     policy_network = create_rl_model(args, run_dir)
     # from IPython import embed; embed(); exit()
@@ -655,7 +672,22 @@ def main():
 if __name__ == "__main__":
     BEST_REWARD = float("-inf")
     args = parse_args()
-    # Model name and directory
+    if args.run_sweep:
+        args.sweep_config["name"] = f"{args.prefix}_{args.dataset}_{args.label}_rl_{args.baseline}".replace("_", "-")
+        sweep_id = wandb.sweep(args.sweep_config, entity=args.wandb_entity, project=args.wandb_project)
+        wandb.agent(sweep_id, main_sweep)
+    else:
+        args.run_name = f"{args.prefix}_{args.dataset}_{args.label}_rl_{args.baseline}_no_sweep"
+        if (args.balance_dataset) & (args.task_type == "classification"):
+            logger.info(f"Using weighted random sampler to balance the dataset")
+            sample_weights = get_balanced_weights(train_dataset.Y.tolist())
+            w_sampler = WeightedRandomSampler(sample_weights, len(train_dataset.Y.tolist()), replacement=True)
+            train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, num_workers=4, sampler=w_sampler)
+        else:
+            train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4)
+        eval_dataloader = DataLoader(eval_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
+        test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
+        main()
     run_dir = get_model_save_directory(dataset=args.dataset,
                                        data_embedded_column_name=args.data_embedded_column_name,
                                        embedding_model_name=args.embedding_model,
@@ -677,9 +709,8 @@ if __name__ == "__main__":
     model_name = get_model_name(baseline=args.baseline, autoencoder_layers=args.autoencoder_layer_sizes)
     args.model_name = model_name
 
-    # read data
     train_dataset, eval_dataset, test_dataset, number_of_classes = prepare_data(args)
-    
+
     if args.task_type == 'regression':
         args.min_clip, args.max_clip = float(train_dataset.Y.min()), float(train_dataset.Y.max())
     else:

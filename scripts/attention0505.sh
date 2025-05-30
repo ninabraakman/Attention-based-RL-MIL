@@ -1,19 +1,18 @@
-@@ -0,0 +1,72 @@
 #!/bin/bash
 #SBATCH --partition=gpu_h100
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=24:00:00
-#SBATCH --output=../logs/aggregated_subset/attention0505_%j.out
-#SBATCH --error=../logs/aggregated_subset/attention0505_%j.err
+#SBATCH --output=../logs/aggregated_subset/attention/a0505_%j.out
+#SBATCH --error=../logs/aggregated_subset/attention/a0505_%j.err
 
 module purge
 module load 2023
-source ../ve/bin/activate
+source ../venv/bin/activate
 
 # Navigate to project root
-cd /projects/prjs1491/MasterThesisNinaBraakman
+cd /projects/prjs1491/Attention-based-RL-MIL
 
 baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
 target_labels=("label")
@@ -21,16 +20,17 @@ gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
 wandb_project="MasterThesis"
 
-dataset="oulad_subset"
+dataset="oulad_aggregated_subset"
 data_embedded_column_name="instances"
 rl_task_model="vanilla"
-sample_algorithm="without_replacement"
+sample_algorithm="static"
 task_type="classification"
-autoencoder_layer_sizes="23,16,23"
-bag_sizes=(39)
+autoencoder_layer_sizes="22,16,22"
+bag_sizes=(20)
 embedding_models=("tabular")
 
 prefix="loss_attention"
+sample_algorithm="static"
 rl_model="policy_only"
 reg_alg="sum"
 
@@ -41,10 +41,19 @@ for target_label in "${target_labels[@]}"; do
   for bag_size in "${bag_sizes[@]}"; do
     for embedding_model in "${embedding_models[@]}"; do
       for baseline_type in "${baseline_types[@]}"; do
+        # Get current target label
+        target_label=${target_labels[$target_label_index]}
+        # Get current bag_size
+        bag_size=${bag_sizes[$bag_size_index]}
+        # Get current embedding_model
+        embedding_model=${embedding_models[$embedding_model_index]}
+        # Get current baseline_type
+        baseline_type=${baseline_types[$baseline_type_index]}
+        # Get current gpu
+        gpu=${gpus[$target_label_index]}
+        echo "$baseline_type, $dataset $target_label, bag_size_$bag_size, $embedding_model, gpu_$gpu ($current_run/$total_runs)"
 
-        echo "$baseline_type, $dataset $target_label, bag_size_$bag_size, $embedding_model, gpu_0 ($current_run/$total_runs)"
-
-        CUDA_VISIBLE_DEVICES=0 python run_attention_rlmil.py --rl --gpu 0 \
+        CUDA_VISIBLE_DEVICES=0 python attention0505.py --rl --gpu 0 \
           --baseline $baseline_type \
           --autoencoder_layer_sizes $autoencoder_layer_sizes \
           --label $target_label \

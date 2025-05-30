@@ -4,15 +4,15 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=24:00:00
-#SBATCH --output=../logs/attention2_%j.out
-#SBATCH --error=../logs/attention2_%j.err
+#SBATCH --output=../logs/aggregated_subset/attention/a2305_%j.out
+#SBATCH --error=../logs/aggregated_subset/attention/a2305_%j.err
 
 module purge
 module load 2023
-source ../ve/bin/activate
+source ../venv/bin/activate
 
 # Navigate to project root
-cd /projects/prjs1491/MasterThesisNinaBraakman
+cd /projects/prjs1491/Attention-based-RL-MIL
 
 # Which MIL encoders to try
 baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
@@ -27,6 +27,7 @@ bag_sizes=(20)
 embedding_models=("tabular")
 
 # RL settings
+prefix="loss_attention"
 rl_model="policy_only"
 rl_task_model="vanilla"
 sample_algorithm="static"
@@ -47,7 +48,7 @@ for target_label in "${target_labels[@]}"; do
 
         echo "Run $current_run/$total_runs: baseline=$baseline_type, bag_size=$bag_size, embed=$embedding_model"
 
-        CUDA_VISIBLE_DEVICES=0 python run_attention2.py \
+        CUDA_VISIBLE_DEVICES=0 python attention2305.py \
           --rl \
           --gpu 0 \
           --baseline               "$baseline_type" \

@@ -1,20 +1,16 @@
 #!/bin/bash
+#SBATCH --partition=gpu_h100
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --time=4:00:00
+#SBATCH --output=../logs/full/mil/%j.out
+#SBATCH --error=../logs/full/mil/%j.err
 
-# module purge
-# module load 2023
-# source ../venv/bin/activate
-if [[ -f venv/Scripts/activate ]]; then
-  source venv/Scripts/activate
-elif [[ -f venv/bin/activate ]]; then
-  source venv/bin/activate
-else
-  echo "ERROR: Cannot find venv activate script" >&2
-  exit 1
-fi
-# Navigate to project root
-# cd /projects/prjs1491/MasterThesisNinaBraakman
-# cd ~/Documents/UVA/Thesis/Data\ en\ code/Attention-based-RL-MIL || exit
-cd "$HOME/Documents/UVA/Thesis/Data en code/Attention-based-RL-MIL"
+module purge
+module load 2023
+source ../venv/bin/activate
+cd /projects/prjs1491/Attention-based-RL-MIL
 
 baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
 target_labels=("label")
@@ -22,10 +18,10 @@ gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
 wandb_project="MasterThesis"
 
-dataset="oulad_aggregated_subset"
+dataset="oulad_full"
 data_embedded_column_name="instances"
 task_type="classification"
-autoencoder_layer_sizes="22,16,22"
+autoencoder_layer_sizes="20,16,20"
 bag_sizes=(20)
 embedding_models=("tabular")
 
@@ -62,8 +58,7 @@ for target_label_index in "${!target_labels[@]}"; do
                                       --autoencoder_layer_sizes $autoencoder_layer_sizes \
                                       --data_embedded_column_name $data_embedded_column_name \
                                       --task_type $task_type \
-                                      --random_seed 0 ;
-        exit
+                                      --random_seed 10 ;
         
         ((current_run++))
       done

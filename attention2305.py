@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, WeightedRandomSampler
 from configs import parse_args
 from RLMIL_Datasets import RLMILDataset
 from logger import get_logger
-from models import AttentionPolicyNetwork2, sample_action, select_from_action, create_mil_model_with_dict
+from models_2305 import AttentionPolicyNetwork2, sample_action, select_from_action, create_mil_model_with_dict
 from utils import (
     get_data_directory,
     get_model_name,

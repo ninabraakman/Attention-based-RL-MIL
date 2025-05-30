@@ -1,0 +1,241 @@
+wandb: Agent Starting Run: 6t8m4e1a with config:
+wandb: 	batch_size: 32
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 291
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.00030378337836443593
+wandb: 	scheduler_patience: 5
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250529_223415-6t8m4e1a
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run radiant-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/pw67jfdo
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/6t8m4e1a
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▂▂▃▃▅▅▅▆▆███▇██████████████████████████
+wandb:         eval/f1 ▁▁▂▂▂▃▄▅▅▆▇████▇████████████████████████
+wandb:       eval/loss ██▇▇▆▅▄▄▄▃▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▁▂▃▃▃▅▆▆▇██▇████████████████████████████
+wandb:     eval/recall ▂▁▂▂▃▅▆▆▇▇██████████████████████████████
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▁▂▂▃▄▅▆▆▇▇█████▇███████████████████████
+wandb:        train/f1 ▁▁▁▃▂▃▄▅▅▆▆▇██████▇█████████████████████
+wandb:      train/loss █▆▆▆▅▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▂▂▂▃▄▄▄▆▆▇█████████████████████████████
+wandb:    train/recall ▁▁▂▁▃▂▄▅▅▅▇▆▇███████████████████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.80314
+wandb:         eval/f1 0.80139
+wandb:       eval/loss 0.45521
+wandb:  eval/precision 0.80048
+wandb:     eval/recall 0.80328
+wandb:   test/accuracy 0.79985
+wandb:         test/f1 0.79729
+wandb:       test/loss 0.46731
+wandb:  test/precision 0.79609
+wandb:     test/recall 0.79956
+wandb:  train/accuracy 0.80126
+wandb:        train/f1 0.80006
+wandb:      train/loss 0.4702
+wandb: train/precision 0.79949
+wandb:    train/recall 0.80108
+wandb: 
+wandb: 🚀 View run bs=32_e=291_lr=0.00030378337836443593 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/6t8m4e1a
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250529_223415-6t8m4e1a/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Sweep Agent: Exiting.
+wandb: Agent Starting Run: 872uys4q with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 100
+wandb: 	hidden_dim: 64
+wandb: 	learning_rate: 0.000853927268082825
+wandb: 	scheduler_patience: 5
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250529_223831-872uys4q
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run comic-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/leevw1l2
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/872uys4q
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▆█▇▇█▇▇█▇███▇▇█████▇▇█▇██████
+wandb:         eval/f1 ▁▆█▇▇█▇▇█████▇▇█████▇▇█▇██████
+wandb:       eval/loss █▄▂▂▁▂▂▂▁▁▁▁▁▂▂▁▁▁▁▁▂▃▁▂▁▁▁▁▁▁
+wandb:  eval/precision ▁▅▇▇▇▇▇▇▇▇██▇▇▇█████▇▆█▇██████
+wandb:     eval/recall ▁▆█▇▇▇█▇█████▇██████▇▇█▇██████
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▆█▇██▇▇█████▇▇█████▇▇████████
+wandb:        train/f1 ▁▆█▇███▇█████▇██████▇▇████████
+wandb:      train/loss █▅▂▂▂▂▁▂▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▅▇▇▇▇▇▇█████▇▇█▇███▇▇█▇▇█████
+wandb:    train/recall ▁▆█▇█▇█▇█████▇██████▇▇█▇██████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.81154
+wandb:         eval/f1 0.80985
+wandb:       eval/loss 0.45073
+wandb:  eval/precision 0.80891
+wandb:     eval/recall 0.81176
+wandb:   test/accuracy 0.79985
+wandb:         test/f1 0.79715
+wandb:       test/loss 0.47
+wandb:  test/precision 0.796
+wandb:     test/recall 0.79915
+wandb:  train/accuracy 0.80258
+wandb:        train/f1 0.80136
+wandb:      train/loss 0.46625
+wandb: train/precision 0.8008
+wandb:    train/recall 0.80233
+wandb: 
+wandb: 🚀 View run bs=16_e=100_lr=0.000853927268082825 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/872uys4q
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250529_223831-872uys4q/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Sweep Agent: Exiting.
+wandb: Agent Starting Run: ju452kd5 with config:
+wandb: 	batch_size: 32
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 382
+wandb: 	hidden_dim: 64
+wandb: 	learning_rate: 0.00019589795770586136
+wandb: 	scheduler_patience: 5
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250529_224143-ju452kd5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fiery-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/g7l32a3s
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ju452kd5
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▂▂▂▃▅▆▆▇▇▇█▇███████████████████████████
+wandb:         eval/f1 ▁▁▁▁▁▃▅▅▅▆▇▇▇▇██████████████████████████
+wandb:       eval/loss ██▇▅▄▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▁▂▂▂▃▅▆▆▇▇█▇▇███▇███████████████████████
+wandb:     eval/recall ▁▁▁▁▁▂▅▅▅▅▇▇▇███████████████████████████
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▁▂▁▂▅▅▅▆▆▇▇▇▇▇█▇▇██████████████████████
+wandb:        train/f1 ▁▁▁▁▂▆▆▆▇▇▇▇▇▇████████▇█████████████████
+wandb:      train/loss ████▇▃▃▃▃▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▂▂▃▄▅▆▆▇▇▇▇▇▇▇█████████████████████████
+wandb:    train/recall ▁▂▆▆▆▇▇▇▇██▇█▇██████▇███████████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.80168
+wandb:         eval/f1 0.80008
+wandb:       eval/loss 0.4552
+wandb:  eval/precision 0.79919
+wandb:     eval/recall 0.80233
+wandb:   test/accuracy 0.79693
+wandb:         test/f1 0.79433
+wandb:       test/loss 0.46918
+wandb:  test/precision 0.79315
+wandb:     test/recall 0.79658
+wandb:  train/accuracy 0.79925
+wandb:        train/f1 0.79816
+wandb:      train/loss 0.47452
+wandb: train/precision 0.79759
+wandb:    train/recall 0.79945
+wandb: 
+wandb: 🚀 View run bs=32_e=382_lr=0.00019589795770586136 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ju452kd5
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250529_224143-ju452kd5/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Sweep Agent: Exiting.
+wandb: Agent Starting Run: dgbf57pc with config:
+wandb: 	batch_size: 16
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 261
+wandb: 	learning_rate: 0.000970370515038104
+wandb: 	n_elements: 3
+wandb: 	n_hidden_sets: 6
+wandb: 	scheduler_patience: 5
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250529_224706-dgbf57pc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run toasty-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/y67n6xaf
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/dgbf57pc
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▃▃▆▇▇▇▇█▇█▇██▇█████████▇▇▆▇▇███████████
+wandb:         eval/f1 ▁▃▃▆▇▇▇▇███▇█▇▇█████████▇▇▆▇████████████
+wandb:       eval/loss █▆▆▄▂▂▂▂▂▂▁▂▂▂▂▁▂▁▁▁▁▁▁▁▁▂▃▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▁▃▄▆▇▇▇▇███▇██▇█████████▇▇▆▇▇███████████
+wandb:     eval/recall ▁▄▃▇▇▇▇▇█████▇██████████▇▇▆█████████████
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▂▃▆▇▇▇▇▇▇█▇█▇██▇███████▇▇▆▇████████████
+wandb:        train/f1 ▁▃▃▆▇▇▇▇▇▇█▇█▇██████████▇▇▆▇████████████
+wandb:      train/loss █▆▆▄▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▂▃▆▇▇▇▇▇██▇█▇██████████▇▇▆█████████████
+wandb:    train/recall ▁▃▃▆▇▇▇▇▇█▇▇█▆█▇██▇█████▇▇▆█████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.80643
+wandb:         eval/f1 0.80467
+wandb:       eval/loss 0.44972
+wandb:  eval/precision 0.80375
+wandb:     eval/recall 0.80648
+wandb:   test/accuracy 0.80131
+wandb:         test/f1 0.79873
+wandb:       test/loss 0.46402
+wandb:  test/precision 0.79754
+wandb:     test/recall 0.80095
+wandb:  train/accuracy 0.80286
+wandb:        train/f1 0.80169
+wandb:      train/loss 0.45979
+wandb: train/precision 0.80112
+wandb:    train/recall 0.80277
+wandb: 
+wandb: 🚀 View run bs=16_e=261_lr=0.000970370515038104 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/dgbf57pc
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250529_224706-dgbf57pc/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Sweep Agent: Exiting.
