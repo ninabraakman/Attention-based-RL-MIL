@@ -9,6 +9,8 @@ from torch.distributions import Categorical
 
 from sklearn.metrics import precision_recall_fscore_support, confusion_matrix, f1_score, r2_score, roc_auc_score
 
+from attention_module import MultiHeadInstanceSelector
+
 def build_layers(sizes):
     layers = []
 
@@ -797,3 +799,108 @@ class PolicyNetwork(nn.Module):
             preds_pool.append(preds)
         preds_pool = torch.stack(preds_pool, dim=2).mean(dim=2)
         return preds_pool, labels
+
+class AttentionPolicyNetwork_pham(PolicyNetwork):
+    def __init__(self, task_model, state_dim, hdim, learning_rate, device, task_type,
+                 min_clip=None, max_clip=None, sample_algorithm=None, no_autoencoder=False):
+        super().__init__(
+            task_model=task_model,
+            state_dim=state_dim,
+            hdim=hdim,
+            learning_rate=learning_rate,
+            device=device,
+            task_type=task_type,
+            min_clip=min_clip,
+            max_clip=max_clip,
+            sample_algorithm=sample_algorithm,
+            no_autoencoder=no_autoencoder,
+        )
+        self.selector = MultiHeadInstanceSelector(instance_dim=state_dim)
+        
+    def forward(self, x):
+         attention_scores = self.selector(x, None)     
+         probs = torch.softmax(attention_scores, dim=1)      
+         return probs, None, None   
+    
+    def sample_action(self, attention_probs, bag_size):        
+        # Top-k selection, deterministic        
+        return attention_probs.topk(bag_size, dim=1).indices, torch.tensor(0.0, device=attention_probs.device)
+
+
+class AttentionPolicyNetwork_ilse(PolicyNetwork):
+    def __init__(
+        self,
+        *,
+        task_model,
+        state_dim,
+        hdim,
+        learning_rate,
+        device,
+        task_type,
+        min_clip,
+        max_clip,
+        sample_algorithm="with_replacement",
+        no_autoencoder=False,
+        k,  # bag_size (if you need it)
+        temperature=1.0,
+        is_linear_attention=False,
+        attention_size=64,
+        attention_dropout_p=0.5,
+    ):
+        # first initialize everything that PolicyNetwork needs
+        super().__init__(
+            task_model=task_model,
+            state_dim=state_dim,
+            hdim=hdim,
+            learning_rate=learning_rate,
+            device=device,
+            task_type=task_type,
+            min_clip=min_clip,
+            max_clip=max_clip,
+            sample_algorithm=sample_algorithm,
+            no_autoencoder=no_autoencoder,
+        )
+        self.k = k
+        self.temperature = temperature
+
+        # build a small attention scorer
+        if is_linear_attention:
+            self.attn_layer = nn.Linear(state_dim, 1)
+        else:
+            self.attn_layer = nn.Sequential(
+                nn.Linear(state_dim, attention_size),
+                nn.ReLU(),
+                nn.Dropout(attention_dropout_p),
+                nn.Linear(attention_size, 1),
+            )
+
+    def forward(self, batch_x):
+        """
+        batch_x: (B, N, F)  where B=batch, N=bag_size, F=feature_dim
+        Must return exactly the same triple as PolicyNetwork.forward:
+            action_probs: (B, N)
+            batch_rep:     (B, N, D)  or (B*N, D) if that’s what your actor/critic expect
+            exp_reward:   (B,)
+        """
+        # 1) compute instance embeddings exactly as PolicyNetwork does
+        if self.no_autoencoder:
+            batch_rep = batch_x           # (B, N, state_dim)
+        else:
+            # detach so gradient doesn’t flow into the MIL encoder
+            batch_rep = self.task_model.base_network(batch_x).detach()
+
+        B, N, D = batch_rep.shape
+        rep_flat = batch_rep.view(B * N, D)
+
+        # 2) compute critic‐predicted reward per instance, then average
+        exp_reward_inst = self.critic(rep_flat)            # (B*N, 1)
+        exp_reward_inst = exp_reward_inst.view(B, N, -1)   # (B, N, 1)
+        exp_reward = exp_reward_inst.mean(dim=1).squeeze(-1)  # (B,)
+
+        # 3) compute attention logits & normalize
+        attn_logits = self.attn_layer(batch_rep)           # (B, N, 1)
+        attn_logits = attn_logits.squeeze(-1)              # (B, N)
+        action_probs = F.softmax(attn_logits / self.temperature, dim=1)
+
+        # 4) return in the same format PolicyNetwork expects
+        return action_probs, batch_rep, exp_reward

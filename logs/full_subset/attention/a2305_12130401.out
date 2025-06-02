@@ -1,0 +1,22 @@
+Run 1/4: baseline=MeanMLP, bag_size=20, embed=tabular
+Create sweep with ID: 637crr59
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/637crr59
+Run 2/4: baseline=MaxMLP, bag_size=20, embed=tabular
+Create sweep with ID: 2a1c3beq
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/2a1c3beq
+Run 3/4: baseline=AttentionMLP, bag_size=20, embed=tabular
+Run 4/4: baseline=repset, bag_size=20, embed=tabular
+
+JOB STATISTICS
+==============
+Job ID: 12130401
+Cluster: snellius
+User/Group: nbraakman/nbraakman
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:27:43
+CPU Efficiency: 11.88% of 03:53:20 core-walltime
+Job Wall-clock time: 00:14:35
+Memory Utilized: 1.40 GB
+Memory Efficiency: 8.73% of 16.00 GB (16.00 GB/node)

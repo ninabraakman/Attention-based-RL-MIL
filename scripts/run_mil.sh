@@ -3,9 +3,9 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
-#SBATCH --time=4:00:00
-#SBATCH --output=../logs/full/mil/%j.out
-#SBATCH --error=../logs/full/mil/%j.err
+#SBATCH --time=20:00:00
+#SBATCH --output=../logs/configs/aggregated_subset/mil/%j.out
+#SBATCH --error=../logs/configs/aggregated_subset/mil/%j.err
 
 module purge
 module load 2023
@@ -18,10 +18,10 @@ gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
 wandb_project="MasterThesis"
 
-dataset="oulad_full"
+dataset="oulad_aggregated_subset"
 data_embedded_column_name="instances"
 task_type="classification"
-autoencoder_layer_sizes="20,16,20"
+autoencoder_layer_sizes="22,16,22"
 bag_sizes=(20)
 embedding_models=("tabular")
 
@@ -58,7 +58,7 @@ for target_label_index in "${!target_labels[@]}"; do
                                       --autoencoder_layer_sizes $autoencoder_layer_sizes \
                                       --data_embedded_column_name $data_embedded_column_name \
                                       --task_type $task_type \
-                                      --random_seed 10 ;
+                                      --random_seed 0 ;
         
         ((current_run++))
       done

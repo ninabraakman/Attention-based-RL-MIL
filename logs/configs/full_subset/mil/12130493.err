@@ -1,0 +1,1184 @@
+wandb: Agent Starting Run: jxdwf9ao with config:
+wandb: 	batch_size: 8
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 263
+wandb: 	hidden_dim: 512
+wandb: 	learning_rate: 0.0013348042189994878
+wandb: 	scheduler_patience: 5
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_040911-jxdwf9ao
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run good-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/jxdwf9ao
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▁▂▄▃▂▄▄▃▆▅▆▅▆▇▇▇▇▇████▇▇▇▇▇▇▇███▇██████
+wandb:         eval/f1 ▁▁▂▃▄▅▅▄▃▄▅▅▇▇▇█▇████▇▇▇▇▇▇▇▇████▇██████
+wandb:       eval/loss █▇▇▇▅▆▄▄▄▃▅▄▃▂▃▂▂▂▁▁▂▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▁▁▂▄▃▂▄▅▄▄▆▅█▅▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇██▇▇▇
+wandb:     eval/recall ▁▂▂▄▄▅▃▄▆█▇▅▇▇▇▇▇█▇██▇▇▇▇▇▇▇█▇███▇██████
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▁▂▃▄▅▄▅▅▆▆▆▇▇▇▇▇█▇▇██▇█████████████████
+wandb:        train/f1 ▁▃▃▄▄▅▅▅▅▅▆▅▆▇▇▇▇▇██████████████████████
+wandb:      train/loss █▇▇▆▅▅▅▅▄▄▃▃▃▂▂▂▂▂▂▂▂▁▂▂▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▂▂▃▃▅▄▅▅▅▆▅▆▆▆▇▇▇▇▇▇▇██▇███████████████
+wandb:    train/recall ▁▄▅▄▅▅▅▅▆▅▆▇▇▇▇▇▇▇▇█████████████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.77372
+wandb:         eval/f1 0.77225
+wandb:       eval/loss 0.50624
+wandb:  eval/precision 0.77225
+wandb:     eval/recall 0.77225
+wandb:   test/accuracy 0.79927
+wandb:         test/f1 0.79594
+wandb:       test/loss 0.48975
+wandb:  test/precision 0.79418
+wandb:     test/recall 0.80269
+wandb:  train/accuracy 0.80868
+wandb:        train/f1 0.80846
+wandb:      train/loss 0.44986
+wandb: train/precision 0.80835
+wandb:    train/recall 0.80904
+wandb: 
+wandb: 🚀 View run bs=8_e=263_lr=0.0013348042189994878 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/jxdwf9ao
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_040911-jxdwf9ao/logs
+wandb: Agent Starting Run: qqddjah3 with config:
+wandb: 	batch_size: 8
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 342
+wandb: 	hidden_dim: 256
+wandb: 	learning_rate: 0.003013484585047639
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041100-qqddjah3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run balmy-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/qqddjah3
+wandb: uploading history steps 44-51, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▂▁▃▃▅▃▄▄▄▂▄▃▅▆▆▆▆▅▆▆▆▇▇▆▅▆▇▆▇██▅█▆██▅▆▇▇
+wandb:         eval/f1 ▃▃▁▃▃▄▃▅▄▂▁▄▄▅▆▆▆▆▅▆▆▆▇█▇▇▇▇▆█▇█▆██▇▆▇▇▇
+wandb:       eval/loss ▇▆▆▄▅▅▇▄▆▅█▄▅▃▃▂▃▃▃▂▂▂▂▁▂▁▁▂▁▁▁▃▁▃▁▁▁▂▁▁
+wandb:  eval/precision ▂▁▂▃▅▃▅▃▂▃▂▃▃▄▅▆▆▆▅▅▆▆▇▆▅▆▆▅▇█▇▅██▇▇▅▆▆▆
+wandb:     eval/recall ▃▂▁▃▃▃▅▄▂▄▁▄▄▅▆▆▆▆▅▆▇▇▆▅▆▇▆▇█▇▅█▆█▇▇▅▆▇▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▂▂▁▃▄▅▄▄▅▅▅▅▆▆▇▇▇▇▇▇▇▇██▇██▇██▇█▇███▇███
+wandb:        train/f1 ▂▃▁▃▄▅▄▄▅▅▄▆▆▇▇▇▇▇▇▇▇███████▇███▇█▇██▇██
+wandb:      train/loss █▇▇▆▅▅▄▅▄▄▄▄▄▃▂▂▂▂▂▂▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▂▁▃▄▄▅▄▅▅▅▆▆▇▇▇▇▇▇▇▇▇██▇██▇███▇█▇██▇███
+wandb:    train/recall ▂▃▁▃▄▅▄▅▅▄▅▄▅▆▇▇▇▇▇▇▇▇█████▇███▇█▇██▇███
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.77372
+wandb:         eval/f1 0.77225
+wandb:       eval/loss 0.50629
+wandb:  eval/precision 0.77225
+wandb:     eval/recall 0.77225
+wandb:   test/accuracy 0.79927
+wandb:         test/f1 0.79467
+wandb:       test/loss 0.49735
+wandb:  test/precision 0.79261
+wandb:     test/recall 0.79856
+wandb:  train/accuracy 0.81324
+wandb:        train/f1 0.81293
+wandb:      train/loss 0.44696
+wandb: train/precision 0.81276
+wandb:    train/recall 0.81325
+wandb: 
+wandb: 🚀 View run bs=8_e=342_lr=0.003013484585047639 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/qqddjah3
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041100-qqddjah3/logs
+wandb: Agent Starting Run: hsy0pr7u with config:
+wandb: 	batch_size: 64
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 296
+wandb: 	hidden_dim: 64
+wandb: 	learning_rate: 0.00010432436682175708
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041213-hsy0pr7u
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run atomic-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/hsy0pr7u
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▂▁▂▁▄▄▅▅▅▄▆▆█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆▆▇
+wandb:         eval/f1 ▁▂▁▁▁▄▅▆▆▆▇▇█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:       eval/loss █▇▆▅▄▄▃▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision █▆▄▅▂▁▃▃▃▄▄▆▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:     eval/recall ▂▂▁▁▁▃▃▅▄▆▆█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▃▃▃▃▃▄▄▄▅▇▇███████████████████████████
+wandb:        train/f1 ▁▂▃▃▃▅▅▅▅▅▅▆▆███████████████████████████
+wandb:      train/loss █▇▆▆▅▄▅▄▄▃▃▂▃▃▂▂▂▂▂▁▁▁▁▂▂▂▁▂▁▂▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▇███▆▄▂▁▁▁▁▂▃▃▃▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:    train/recall ▁▂▃▃▃▅▅▄▄▅▄▅▅▅▆█████████████████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.71533
+wandb:         eval/f1 0.7138
+wandb:       eval/loss 0.55117
+wandb:  eval/precision 0.71361
+wandb:     eval/recall 0.71407
+wandb:   test/accuracy 0.73358
+wandb:         test/f1 0.73056
+wandb:       test/loss 0.53285
+wandb:  test/precision 0.73111
+wandb:     test/recall 0.73887
+wandb:  train/accuracy 0.72511
+wandb:        train/f1 0.72507
+wandb:      train/loss 0.55542
+wandb: train/precision 0.72587
+wandb:    train/recall 0.7263
+wandb: 
+wandb: 🚀 View run bs=64_e=296_lr=0.00010432436682175708 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/hsy0pr7u
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041213-hsy0pr7u/logs
+wandb: Agent Starting Run: zcmbtp2j with config:
+wandb: 	batch_size: 8
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 230
+wandb: 	hidden_dim: 512
+wandb: 	learning_rate: 0.00887508646868182
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041254-zcmbtp2j
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run young-sweep-4
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/zcmbtp2j
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▅▅▅▅▄▅▅▅▅▁▄▆▂▅█▅▅▅
+wandb:         eval/f1 ▁▅▅▅▅▅▅▅▅▅▁▄▆▂▅█▆▆▅
+wandb:       eval/loss ▆▆▄▃▃▄▃▃▁▁▅▃▃█▂▂▁▁▂
+wandb:  eval/precision ▁▅▃▃▃▂▃▃▃▄▁▃▅▁▄█▄▄▄
+wandb:     eval/recall ▁▆▅▅▅▅▅▅▅▅▁▄▆▂▅█▅▅▅
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▅▅▅▅▅▆▆▆▂▆▆▄▇▇███
+wandb:        train/f1 ▁▄▆▆▆▆▆▆▇▆▂▆▆▄▇▇███
+wandb:      train/loss █▆▆▆▅▄▄▅▄▅▄▄▄▄▃▂▂▁▁
+wandb: train/precision ▁▂▃▃▃▃▃▄▅▅▃▅▆▅▇▇███
+wandb:    train/recall ▁▄▆▅▅▆▅▆▇▆▂▆▇▄▇▇███
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.72993
+wandb:         eval/f1 0.72405
+wandb:       eval/loss 0.53703
+wandb:  eval/precision 0.73182
+wandb:     eval/recall 0.72287
+wandb:   test/accuracy 0.77372
+wandb:         test/f1 0.76975
+wandb:       test/loss 0.50427
+wandb:  test/precision 0.76813
+wandb:     test/recall 0.77557
+wandb:  train/accuracy 0.79224
+wandb:        train/f1 0.7904
+wandb:      train/loss 0.46846
+wandb: train/precision 0.79432
+wandb:    train/recall 0.78953
+wandb: 
+wandb: 🚀 View run bs=8_e=230_lr=0.00887508646868182 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/zcmbtp2j
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041254-zcmbtp2j/logs
+wandb: Agent Starting Run: toy3pimy with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 302
+wandb: 	hidden_dim: 512
+wandb: 	learning_rate: 0.0018638741322939563
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041326-toy3pimy
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run laced-sweep-5
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/toy3pimy
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▁▁▁▂▂▅▄▅▂▄▅▆▅▆▆▆▆▆▇▆▇▇▇▇▇▇▇▇▇▇▆▇█▇▇▇▅█▇
+wandb:         eval/f1 ▁▄▃▄▄▄▄▅▆▅▆▆▆▆▆▇▇▇▅▇▇▇▇▇▇▇▇█▇▇▇▆█▇▇█▇▆▇▇
+wandb:       eval/loss ██▆▅▇▆▅▄▅▃▂▃▃▂▃▃▂▂▂▂▂▂▂▂▂▂▁▂▂▂▁▁▁▂▂▁▁▁▁▁
+wandb:  eval/precision ▂▁▂▂▁▂▅▁▅▄▅▆▅▆▆▆▇▆▇▇▇▇▇▇▇▆▇▇▇▇▇██▇▇▆▅█▇▇
+wandb:     eval/recall ▃▃▂▁▄▄▄▄▄▆▇▆▆▆▇▇▇▇▇▅▇▇▇▇▇▇▇▇▆█▆▆██▇█▇█▆▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▃▄▄▄▄▄▅▅▅▆▇▇▇▇▇▇▇▇▇▇▇▇▇█▇▇████████████
+wandb:        train/f1 ▂▁▃▄▅▅▅▅▆▅▆▇▆▇▇▇▇▇▇▇████▇███████████████
+wandb:      train/loss ██▇▆▅▅▅▄▄▄▂▂▂▂▂▂▂▂▂▂▁▂▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▁▂▃▄▃▄▄▄▄▆▇▇▆▇▇▇▇▇▇▇▇▇▇████████████████
+wandb:    train/recall ▂▂▁▄▅▅▅▅▆▆▇▇▇▇▇███▇▇████▇███████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.78102
+wandb:         eval/f1 0.7796
+wandb:       eval/loss 0.50131
+wandb:  eval/precision 0.7796
+wandb:     eval/recall 0.7796
+wandb:   test/accuracy 0.78832
+wandb:         test/f1 0.78575
+wandb:       test/loss 0.5137
+wandb:  test/precision 0.78537
+wandb:     test/recall 0.79481
+wandb:  train/accuracy 0.81187
+wandb:        train/f1 0.81165
+wandb:      train/loss 0.44556
+wandb: train/precision 0.81151
+wandb:    train/recall 0.81218
+wandb: 
+wandb: 🚀 View run bs=16_e=302_lr=0.0018638741322939563 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/toy3pimy
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041326-toy3pimy/logs
+wandb: Agent Starting Run: u92r89f3 with config:
+wandb: 	batch_size: 32
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 373
+wandb: 	hidden_dim: 512
+wandb: 	learning_rate: 0.00210592726031617
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041508-u92r89f3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run cerulean-sweep-6
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/u92r89f3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▄▁▁▃▄▄▅▅▄▁▅▅█▅▅▅▆▅▅▇▅▅▅▆▅▆▅▆▆▆▅▆▅▆▆▆
+wandb:         eval/f1 ▅▂▂▄▄▄▆▅▅▁▆▄█▅▅▅▆▅▆▇▆▅▅▆▅▆▆▆▆▆▆▆▆▆▆▆
+wandb:       eval/loss ▅▄▅▄▄▄▅▄▄█▂▅▂▄▃▂▃▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁
+wandb:  eval/precision ▄▁▁▂▃▄▅▅▄▂▅▅█▆▆▅▇▄▅▆▅▄▄▆▅▆▅▆▆▆▅▆▅▆▆▆
+wandb:     eval/recall ▅▂▂▃▄▄▆▄▅▁▅▄█▅▅▅▆▅▅▇▅▅▅▆▅▆▅▆▆▆▅▆▅▆▆▆
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▃▁▃▄▅▅▅▅▅▄▇▆▆▆▆▇▇▇▇▇▇███▇▇██████████
+wandb:        train/f1 ▃▁▃▄▅▅▅▅▅▃▇▆▆▆▆▇▇▇▇▇▇███▇▇███▇██████
+wandb:      train/loss █▆▆▅▅▅▅▄▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: train/precision ▃▁▃▄▅▅▆▅▆▅▇▇▇▆▆▇▇▇▇▇▇███▇▇██████████
+wandb:    train/recall ▃▁▃▄▅▅▆▅▆▃▇▆▇▆▆▇▇▇▇▇▇███▇▇███▇██████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.72993
+wandb:         eval/f1 0.72708
+wandb:       eval/loss 0.53364
+wandb:  eval/precision 0.72846
+wandb:     eval/recall 0.7264
+wandb:   test/accuracy 0.77007
+wandb:         test/f1 0.76669
+wandb:       test/loss 0.51212
+wandb:  test/precision 0.76565
+wandb:     test/recall 0.77386
+wandb:  train/accuracy 0.77032
+wandb:        train/f1 0.76975
+wandb:      train/loss 0.48229
+wandb: train/precision 0.76974
+wandb:    train/recall 0.76976
+wandb: 
+wandb: 🚀 View run bs=32_e=373_lr=0.00210592726031617 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/u92r89f3
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041508-u92r89f3/logs
+wandb: Agent Starting Run: dtljqojb with config:
+wandb: 	batch_size: 32
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 265
+wandb: 	hidden_dim: 512
+wandb: 	learning_rate: 0.0017837446307539505
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041540-dtljqojb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run honest-sweep-7
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/dtljqojb
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▄▃▂▁▄▄▃▆▆█▇▆▆▆▇▆▆▆▆▅▆▆▆▆▅▅▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:         eval/f1 ▆▄▁▃▅▄▅▅▄▅▆▆▆▇▇█▇▇█▇▇▇▇▆▇▇▆▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:       eval/loss █▇▆▆▆▆▅▅▅▅▄▅▃▄▄▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▃▂▁▂▂▂▂▂▅▅▅██▆▆▆▅▅▆▇█▆▆▅▇▄▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:     eval/recall ▅▃▂▁▁▄▄▅▅▆▅█▅█▅▇▆▇▆▆▅▆█▆▅▇▇▇▄▇▇▇▇▇▇▇▇▇▇▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▁▂▄▄▄▅▅▅▅▆▆▇███▇▇▇▇▇▇█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:        train/f1 ▃▁▅▅▅▅▅▅▆▆█▆██▄▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:      train/loss █▄▄▄▃▃▃▃▃▃▃▂▂▂▂▂▂▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▂▁▃▄▄▅▅▇▇█▄▇▇▇▆▆▇▆▆▆▇▆▆▇▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:    train/recall ▁▁▄▁▅▄▅▅▅▅▅▅▆▇██▄█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.72628
+wandb:         eval/f1 0.72398
+wandb:       eval/loss 0.53537
+wandb:  eval/precision 0.72452
+wandb:     eval/recall 0.72362
+wandb:   test/accuracy 0.74453
+wandb:         test/f1 0.74143
+wandb:       test/loss 0.51386
+wandb:  test/precision 0.74152
+wandb:     test/recall 0.7495
+wandb:  train/accuracy 0.75479
+wandb:        train/f1 0.75451
+wandb:      train/loss 0.49381
+wandb: train/precision 0.75442
+wandb:    train/recall 0.75498
+wandb: 
+wandb: 🚀 View run bs=32_e=265_lr=0.0017837446307539505 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/dtljqojb
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041540-dtljqojb/logs
+wandb: Agent Starting Run: ef4cjj8x with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 311
+wandb: 	hidden_dim: 512
+wandb: 	learning_rate: 0.0014453514827006163
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041707-ef4cjj8x
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eternal-sweep-8
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ef4cjj8x
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▂▂▂▃▂▁▂▄▅▄▆▅▅▄█▆▄▄▆▅▆▅▆▆▅▄▅▅▅▅▅
+wandb:         eval/f1 ▂▂▂▄▂▁▂▅▅▅▆▆▅▅█▆▅▄▇▆▆▅▆▆▆▅▅▅▆▆▆
+wandb:       eval/loss ██▆▅▅▇▇▄▄▃▃▁▂▁▄▁▃▆▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▂▂▁▂▁▁▂▄▄▄▅▄▄▄█▅▄▄▆▄▅▄▅▅▄▄▄▄▄▄▄
+wandb:     eval/recall ▂▂▂▄▂▁▂▄▅▄▆▅▅▅█▆▄▄▆▅▆▅▆▆▅▄▅▅▅▅▅
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▂▂▄▄▂▂▅▆▅▇▇▇▇▆▇▇▆▇████████████
+wandb:        train/f1 ▁▂▃▄▄▂▂▅▆▅▇▇▇▇▆▇▆▆▇████████████
+wandb:      train/loss █▆▅▅▄▄▄▄▄▄▃▃▂▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▂▂▄▃▃▃▅▅▅▇▇▆▇▇▇▇▇▇████████████
+wandb:    train/recall ▁▂▂▄▄▂▂▅▆▅█▇▇▇▇▇▆▆▇████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.72263
+wandb:         eval/f1 0.7197
+wandb:       eval/loss 0.53399
+wandb:  eval/precision 0.72105
+wandb:     eval/recall 0.71906
+wandb:   test/accuracy 0.75912
+wandb:         test/f1 0.75579
+wandb:       test/loss 0.51004
+wandb:  test/precision 0.75513
+wandb:     test/recall 0.76323
+wandb:  train/accuracy 0.76712
+wandb:        train/f1 0.76667
+wandb:      train/loss 0.489
+wandb: train/precision 0.76656
+wandb:    train/recall 0.76686
+wandb: 
+wandb: 🚀 View run bs=16_e=311_lr=0.0014453514827006163 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ef4cjj8x
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041707-ef4cjj8x/logs
+wandb: Agent Starting Run: cnuyc33b with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 385
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.0007491341698408124
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041739-cnuyc33b
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run helpful-sweep-9
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/cnuyc33b
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy █▆▇▄▄▁▃▃▄▄▄▄
+wandb:         eval/f1 █▆▆▄▄▁▃▃▄▄▄▄
+wandb:       eval/loss █▁▂▂▃▄▂▃▂▂▂▂
+wandb:  eval/precision █▆▇▄▄▁▃▃▄▄▄▄
+wandb:     eval/recall █▆▆▄▄▁▃▃▄▄▄▄
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▁▃▂▄▄▅▆▆▆▆█
+wandb:        train/f1 ▁▁▂▂▃▅▅▆▆▆▆█
+wandb:      train/loss █▄▃▂▂▂▂▁▁▁▁▁
+wandb: train/precision ▁▂▁▁▃▆▄▆▆▅▆█
+wandb:    train/recall ▁▂▂▁▂▆▅▆▆▆▆█
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.70438
+wandb:         eval/f1 0.70148
+wandb:       eval/loss 0.55298
+wandb:  eval/precision 0.70245
+wandb:     eval/recall 0.70099
+wandb:   test/accuracy 0.72628
+wandb:         test/f1 0.72398
+wandb:       test/loss 0.5377
+wandb:  test/precision 0.72628
+wandb:     test/recall 0.73407
+wandb:  train/accuracy 0.7347
+wandb:        train/f1 0.73434
+wandb:      train/loss 0.53803
+wandb: train/precision 0.73424
+wandb:    train/recall 0.7347
+wandb: 
+wandb: 🚀 View run bs=16_e=385_lr=0.0007491341698408124 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/cnuyc33b
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041739-cnuyc33b/logs
+wandb: Agent Starting Run: ahm4aqi9 with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 175
+wandb: 	hidden_dim: 512
+wandb: 	learning_rate: 0.00840245955012218
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041755-ahm4aqi9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run super-sweep-10
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ahm4aqi9
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▂▂▅▅▅▆▅▅▄▅█▁▇▆▇▆
+wandb:         eval/f1 ▃▄▅▅▅▇▅▅▄▅█▁▇▆▇▆
+wandb:       eval/loss ▄▆▂▂▄▁▇▂▁▃▄█▂▂▂▂
+wandb:  eval/precision ▁▂▄▅▅▆▅▄▃▅█▂▆▆▆▆
+wandb:     eval/recall ▃▄▅▅▄▆▅▅▄▅█▁▇▆▆▆
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▂▄▄▃▅▄▆▄▆▆▅▇▇██
+wandb:        train/f1 ▁▂▅▄▃▅▃▆▄▆▆▄▇▇██
+wandb:      train/loss █▆▆▆▄▄▄▄▃▃▃▃▂▂▁▁
+wandb: train/precision ▁▃▅▄▄▆▄▆▄▆▆█▇▇██
+wandb:    train/recall ▁▃▅▄▃▆▃▆▄▆▆▄▇▇██
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.73358
+wandb:         eval/f1 0.72863
+wandb:       eval/loss 0.53572
+wandb:  eval/precision 0.7344
+wandb:     eval/recall 0.72742
+wandb:   test/accuracy 0.74453
+wandb:         test/f1 0.74316
+wandb:       test/loss 0.51958
+wandb:  test/precision 0.74819
+wandb:     test/recall 0.75639
+wandb:  train/accuracy 0.78174
+wandb:        train/f1 0.78044
+wandb:      train/loss 0.47677
+wandb: train/precision 0.78215
+wandb:    train/recall 0.77985
+wandb: 
+wandb: 🚀 View run bs=16_e=175_lr=0.00840245955012218 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ahm4aqi9
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041755-ahm4aqi9/logs
+wandb: Agent Starting Run: a91fty2n with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 300
+wandb: 	hidden_dim: 64
+wandb: 	learning_rate: 0.00019061800976743432
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041815-a91fty2n
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run expert-sweep-11
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/a91fty2n
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▅▅▅▅▅▆▆▆▆▅▄▄▄▃▄▄▄▄▅▅▆▆█▅▇██▇▇▇▆▇▆▆▇▇▆▆▆
+wandb:         eval/f1 ▁▃▆▆▆▇▇▇▇▇▇▆▆▆▆▆▆▅▅▄▅▄▄▆▆▇▇█▇▇▇███▇▇█▇█▇
+wandb:       eval/loss █▅▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▃▃▄▄▅▄▅▅▅▆▆▆▅▄▃▃▂▃▃▂▁▃▄▅▅▆▇█▇▇▆▆▆▇▆▆▆▇▆▆
+wandb:     eval/recall ▁▃▅▆▆▆▆▇▇▆▅▅▅▅▅▄▄▄▄▄▃▃▅▅▅▆▇█▇█▇▇▇██▇▇▇▇▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▂▃▃▃▃▃▄▄▄▄▄▄▄▄▅▄▅▅▅▅▅▆▆▆▇▇█▇███▇█▇▇▇▇▇▇
+wandb:        train/f1 ▁▃▃▃▃▄▄▄▄▄▄▄▄▄▄▅▅▅▅▅▅▅▆▇▇▇██▇██▇▇█▇▇▇▇▇▇
+wandb:      train/loss █▅▄▄▄▃▃▃▃▃▃▃▃▃▃▃▂▃▂▂▂▂▂▂▂▂▁▁▁▂▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▁▁▁▁▁▂▂▂▂▂▂▂▃▃▃▃▃▄▄▅▅▅▅▆▆▇██▇▇▆▆▇▇▆▆▇▇▆
+wandb:    train/recall ▁▄▄▄▄▅▄▅▅▅▅▅▅▅▅▅▅▆▅▅▆▆▆▇▇█▇████▇██▇▇▇▇▇▇
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.72263
+wandb:         eval/f1 0.72011
+wandb:       eval/loss 0.53144
+wandb:  eval/precision 0.72088
+wandb:     eval/recall 0.71965
+wandb:   test/accuracy 0.75182
+wandb:         test/f1 0.74881
+wandb:       test/loss 0.51509
+wandb:  test/precision 0.74883
+wandb:     test/recall 0.75705
+wandb:  train/accuracy 0.76119
+wandb:        train/f1 0.76092
+wandb:      train/loss 0.49724
+wandb: train/precision 0.76084
+wandb:    train/recall 0.76143
+wandb: 
+wandb: 🚀 View run bs=16_e=300_lr=0.00019061800976743432 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/a91fty2n
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041815-a91fty2n/logs
+wandb: Agent Starting Run: 7b4n64c6 with config:
+wandb: 	batch_size: 64
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 199
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.000172808371362775
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_041953-7b4n64c6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dutiful-sweep-12
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/7b4n64c6
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▂▂▁▄▄▆▅▆█▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:         eval/f1 ▁▁▁▄▄▆▆▇█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:       eval/loss █▆▅▄▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision █▅▂▃▁▄▂▃▆▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:     eval/recall ▁▁▁▃▄▆▅▆█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▃▅▅▅▅▅███▇███████████████
+wandb:        train/f1 ▁▃▃▅▅▆▆▆███████████████████
+wandb:      train/loss █▇▆▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▇█▆▄▂▁▁▁▃▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:    train/recall ▁▃▃▅▅▅▅▆▇██████████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.71168
+wandb:         eval/f1 0.71029
+wandb:       eval/loss 0.55076
+wandb:  eval/precision 0.71005
+wandb:     eval/recall 0.71069
+wandb:   test/accuracy 0.73723
+wandb:         test/f1 0.73404
+wandb:       test/loss 0.53402
+wandb:  test/precision 0.73421
+wandb:     test/recall 0.74195
+wandb:  train/accuracy 0.72511
+wandb:        train/f1 0.7251
+wandb:      train/loss 0.54991
+wandb: train/precision 0.72622
+wandb:    train/recall 0.72653
+wandb: 
+wandb: 🚀 View run bs=64_e=199_lr=0.000172808371362775 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/7b4n64c6
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_041953-7b4n64c6/logs
+wandb: Agent Starting Run: zscnxox8 with config:
+wandb: 	batch_size: 64
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 255
+wandb: 	hidden_dim: 512
+wandb: 	learning_rate: 0.000176666632348055
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042015-zscnxox8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run crimson-sweep-13
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/zscnxox8
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▃▅▆▅▇▇▇▇▇▇▇██████████████
+wandb:         eval/f1 ▁▃▅▆▆▇▇▇▇▇▇▇██████████████
+wandb:       eval/loss █▆▄▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▃▆▆▄▁▆▅▆▆▆▅▆██████████████
+wandb:     eval/recall ▁▃▅▆▅▇▇▇▇▇▇▇██████████████
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▅▄▄▇▇▇▇███▇▇██▇█████▇█▇█
+wandb:        train/f1 ▁▂▅▅▅█████████████████████
+wandb:      train/loss █▅▄▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▇█▄▂▁▃▃▃▃▄▄▄▃▃▄▃▃▃▃▃▃▃▃▃▃▃
+wandb:    train/recall ▁▂▅▄▄▇█▇▇███▇▇██▇█████▇█▇█
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.72263
+wandb:         eval/f1 0.72083
+wandb:       eval/loss 0.55165
+wandb:  eval/precision 0.72083
+wandb:     eval/recall 0.72083
+wandb:   test/accuracy 0.73723
+wandb:         test/f1 0.73312
+wandb:       test/loss 0.52467
+wandb:  test/precision 0.73223
+wandb:     test/recall 0.7392
+wandb:  train/accuracy 0.72329
+wandb:        train/f1 0.72297
+wandb:      train/loss 0.54376
+wandb: train/precision 0.72292
+wandb:    train/recall 0.72342
+wandb: 
+wandb: 🚀 View run bs=64_e=255_lr=0.000176666632348055 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/zscnxox8
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042015-zscnxox8/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: 1ate7xjv with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 205
+wandb: 	hidden_dim: 64
+wandb: 	learning_rate: 0.0006485643236269122
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042043-1ate7xjv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run mild-sweep-14
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/1ate7xjv
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▂▅▄▄▂▂▁▂▃▃▃▂▂▂▂▅▂▅▅█▅▇▆▆▅▅▄▆▇▅█▄▅▅▅▅▅▅
+wandb:         eval/f1 ▁▅▄▃▂▂▁▂▃▃▃▂▂▂▁▅▁▅▄█▅▇▆▆▅▄▄▆▇▅█▃▄▄▄▅▅▄
+wandb:       eval/loss █▆▅▆▅▅▅▅▅▅▅▅▅▄▄▅▃▃▃▂▂▂▁▂▁▃▁▁▁▁▁▁▃▃▁▁▁▁
+wandb:  eval/precision ▂▅▄▃▂▂▁▂▃▃▃▂▂▂▂▆▂▅▅█▆▇▆▆▅▅▄▆▇▅█▄▅▆▅▅▅▅
+wandb:     eval/recall ▁▅▄▃▃▂▂▂▃▃▃▂▂▂▁▅▁▅▄█▅▇▆▆▅▄▄▆▇▅█▃▄▄▄▅▅▄
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▃▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▅▇▇█▇▇▇▆▇█▇▇█▇▇▇████
+wandb:        train/f1 ▁▃▃▃▄▄▄▄▄▄▄▅▅▅▅▆▆▆▅▇▇█▇▇▇▅▇████▇▇▇████
+wandb:      train/loss █▅▅▅▄▄▄▄▄▄▄▃▄▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▃▃▃▃▃▄▄▄▄▄▄▄▅▅▆▅▆▅▇▇█▇▇▇▆▇██▇███▇████
+wandb:    train/recall ▁▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▆▆▅▇▇█▇▇▇▅▇████▇▇▇████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.71898
+wandb:         eval/f1 0.71484
+wandb:       eval/loss 0.52632
+wandb:  eval/precision 0.71816
+wandb:     eval/recall 0.71391
+wandb:   test/accuracy 0.75182
+wandb:         test/f1 0.74921
+wandb:       test/loss 0.51258
+wandb:  test/precision 0.74995
+wandb:     test/recall 0.75843
+wandb:  train/accuracy 0.76758
+wandb:        train/f1 0.76684
+wandb:      train/loss 0.4894
+wandb: train/precision 0.76705
+wandb:    train/recall 0.76669
+wandb: 
+wandb: 🚀 View run bs=16_e=205_lr=0.0006485643236269122 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/1ate7xjv
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042043-1ate7xjv/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: 522lgki4 with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 61
+wandb: 	hidden_dim: 64
+wandb: 	learning_rate: 0.0036621030738306446
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042130-522lgki4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ancient-sweep-15
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/522lgki4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▃▁▁▂▃▃▃▂▃▂▄▂▃▃▄▅▄▂▁▆▆▇▅▆▆▁▅▆██▄█▆▇▇▆▇▇
+wandb:         eval/f1 ▄▂▁▃▃▃▄▃▄▃▄▂▃▃▄▆▄▂▁▆▆▇▅▆▆▁▅▆██▄█▆▇▇▆▇▇
+wandb:       eval/loss ▅▅▆▄▄▄▄▄▄▅▄▅▅▄▄▅▃██▃▃▂▂▄▂▆▂▁▁▁▃▂▁▂▁▂▁▁
+wandb:  eval/precision ▂▁▁▂▂▃▂▂▂▂▃▂▂▂▄▅▄▂▂▅▆▇▅▆▆▂▅▆██▄▇▆▇▆▆▇▆
+wandb:     eval/recall ▃▂▁▃▃▃▃▃▃▂▄▂▃▃▄▆▄▂▁▆▆▇▅▆▆▁▅▆██▄▇▆▇▆▆▇▆
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▂▂▁▃▃▄▄▃▄▄▅▄▅▅▅▅▆▅▅▇▇▇▇▆█▅▇███▇██▇████
+wandb:        train/f1 ▂▂▁▄▃▄▄▃▅▄▅▄▅▆▆▅▆▄▄▇▇▇▇▆█▅▇███▇██▇████
+wandb:      train/loss █▇▆▆▅▅▅▅▄▄▄▄▄▃▃▃▃▃▃▃▃▂▂▂▂▂▃▂▂▂▂▂▂▂▁▁▁▁
+wandb: train/precision ▁▁▁▃▂▃▄▃▄▄▄▅▄▅▅▆▆▅▅▇▇▇▇▇▇▆▇███▇███████
+wandb:    train/recall ▂▂▁▄▃▄▄▃▅▄▅▄▅▅▅▆▆▄▄▇▇▇▇▆█▅▇███▇███████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.77372
+wandb:         eval/f1 0.77225
+wandb:       eval/loss 0.51063
+wandb:  eval/precision 0.77225
+wandb:     eval/recall 0.77225
+wandb:   test/accuracy 0.80657
+wandb:         test/f1 0.80121
+wandb:       test/loss 0.48196
+wandb:  test/precision 0.79964
+wandb:     test/recall 0.80335
+wandb:  train/accuracy 0.81279
+wandb:        train/f1 0.81245
+wandb:      train/loss 0.45142
+wandb: train/precision 0.81229
+wandb:    train/recall 0.81273
+wandb: 
+wandb: 🚀 View run bs=16_e=61_lr=0.0036621030738306446 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/522lgki4
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042130-522lgki4/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: ucp114r4 with config:
+wandb: 	batch_size: 8
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 131
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.003938712464411704
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042217-ucp114r4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run genial-sweep-16
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ucp114r4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▂▁▂▂▃▂▃▃▄▄▅▄▅▄▅▅▆▆▆▂▆▇▇▇▇▂▂█▇▆█▇▇▇█▇▇▇▇▇
+wandb:         eval/f1 ▂▁▃▃▃▂▄▃▄▄▅▅▅▄▅▅▆▆▆▂▆▇▇▇▇▂▂█▇▆██▇▇█▇▇▇▇▇
+wandb:       eval/loss ▅▅▄▆▄▆▃▆▃▄▃▃▃▃▂▃▂▂▁▄▂▂▂▂▁▇█▃▂▂▁▁▁▁▁▁▂▁▁▁
+wandb:  eval/precision ▁▁▂▃▂▃▃▄▃▃▄▄▄▄▄▅▆▆▆▂▆▇▇▇▇▂▂█▆▆█▇▇▇█▇▆▇▇▇
+wandb:     eval/recall ▂▁▃▃▃▂▃▄▄▄▅▅▅▄▅▅▆▆▆▂▆▇▇▇▇▂▂█▇▆█▇▇▇█▇▇▇▇▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▁▃▂▃▃▃▃▄▅▅▅▅▅▅▆▅▆▆▆▇▇▇██▆▅▇█▇██████████
+wandb:        train/f1 ▂▁▃▂▃▃▄▃▅▅▅▅▅▅▆▆▆▆▇▆▇▇▇██▅▅▇█▇██████████
+wandb:      train/loss █▇▇▇▆▅▅▅▅▅▄▄▄▄▃▄▄▃▃▃▂▃▃▂▃▃▂▃▃▂▁▂▁▁▁▂▁▁▁▁
+wandb: train/precision ▁▁▃▃▃▅▃▅▄▅▅▅▅▅▅▆▆▆▆▇▇▇███▆▆▇█▇██████████
+wandb:    train/recall ▂▁▃▃▃▃▃▃▅▅▅▅▅▅▆▆▆▆▇▆▇▇▇██▅▅▇▇▇██████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.77372
+wandb:         eval/f1 0.77225
+wandb:       eval/loss 0.51782
+wandb:  eval/precision 0.77225
+wandb:     eval/recall 0.77225
+wandb:   test/accuracy 0.78467
+wandb:         test/f1 0.78067
+wandb:       test/loss 0.49656
+wandb:  test/precision 0.77882
+wandb:     test/recall 0.78621
+wandb:  train/accuracy 0.81187
+wandb:        train/f1 0.81149
+wandb:      train/loss 0.44541
+wandb: train/precision 0.81137
+wandb:    train/recall 0.81167
+wandb: 
+wandb: 🚀 View run bs=8_e=131_lr=0.003938712464411704 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ucp114r4
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042217-ucp114r4/logs
+wandb: Agent Starting Run: leaz6xcr with config:
+wandb: 	batch_size: 8
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 133
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.0002756294568783721
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042318-leaz6xcr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run light-sweep-17
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/leaz6xcr
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▂▅▅▅▃▃▂▂▂▂▂▃▂▂▂▂▄▃▁▄▅▄▄▄▆▅▄█▆▆▅▅▅▇▅▅▅▅▅▅
+wandb:         eval/f1 ▁▆▆▇▅▇▄▃▃▃▃▃▃▄▃▃▃▅▃▃▃▆▅▄▅▆▄▇▇▇▆▇█▆▅▇▅▆▆▆
+wandb:       eval/loss █▇▆▆▆▆▆▆▆▆▆▆▅▆▅▄▄▄▄▄▃▃▃▂▂▃▂▁▁▁▄▂▁▂▂▂▂▁▁▁
+wandb:  eval/precision ▄▅▅▅▅▃▃▃▃▂▂▃▂▂▂▄▃▃▁▄▄▄▄▆▃▅█▆▆▆▅▅▇▅▆▅▅▅▅▅
+wandb:     eval/recall ▁▅▅▆▅▆▄▃▃▃▂▂▂▂▂▂▂▂▂▄▄▃▅▄▄▆▄▄█▆▄▄▅▆▆▆▅▆▅▆
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▃▃▂▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▅▅▅▅▇▅██▇▇▇▇▇▆▇▇▇▇▇▇
+wandb:        train/f1 ▁▃▄▂▄▄▄▄▄▅▅▄▄▅▅▅▅▅▅▅▅▆▆▇▇▆▆███▅▇▇▇▇▇▆▇▇▇
+wandb:      train/loss █▅▄▄▃▃▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▂▂▁▁▁▁▁▁
+wandb: train/precision ▁▃▃▁▃▃▃▃▃▄▄▄▄▅▄▄▅▅▄▄▅▅▅▆▆▇▆▆██▇▅▇▇▇▇▇▆▇▇
+wandb:    train/recall ▁▃▄▄▂▄▄▄▄▄▄▅▄▄▅▅▅▆▅▅▅▅▆▇▇▆▅███▅▇█▇▇▇▇▆▇▇
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.71898
+wandb:         eval/f1 0.71622
+wandb:       eval/loss 0.53896
+wandb:  eval/precision 0.71725
+wandb:     eval/recall 0.71568
+wandb:   test/accuracy 0.73723
+wandb:         test/f1 0.73552
+wandb:       test/loss 0.523
+wandb:  test/precision 0.73934
+wandb:     test/recall 0.74746
+wandb:  train/accuracy 0.75662
+wandb:        train/f1 0.7561
+wandb:      train/loss 0.50445
+wandb: train/precision 0.75602
+wandb:    train/recall 0.75621
+wandb: 
+wandb: 🚀 View run bs=8_e=133_lr=0.0002756294568783721 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/leaz6xcr
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042318-leaz6xcr/logs
+wandb: Agent Starting Run: xup53hbu with config:
+wandb: 	batch_size: 64
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 270
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.0001431866396534299
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042441-xup53hbu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run solar-sweep-18
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/xup53hbu
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▂▂▅▄▇█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:         eval/f1 ▁▂▃▆▅▇▇█▇▇██▇█▇█▇▇▇▇▇▇▇▇▇▇▇▇██▇▇▇▇▇▇▇▇▇▇
+wandb:       eval/loss █▇▆▅▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision █▃▃▂▁▂▃▅▂▂▃▃▃▂▂▂▂▃▂▂▂▃▃▃▃▃▃▃▄▄▃▃▂▂▂▂▂▂▂▂
+wandb:     eval/recall ▁▁▂▂▅▆▆▇▇▇██▇▇██▇▇▇█████████████▇▇▇▇▇▇▇▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▃▄▆▅▅▇██▇█████████████████████████████
+wandb:        train/f1 ▁▂▃▄▆▆▇█████████████████████████████████
+wandb:      train/loss █▇▆▅▅▄▃▃▂▂▂▂▂▂▂▁▂▁▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▆▇█▇▅▁▁▃▄▄▄▄▄▄▄▄▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:    train/recall ▁▂▃▃▅▅▅▇████████████████████████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.70803
+wandb:         eval/f1 0.70577
+wandb:       eval/loss 0.5491
+wandb:  eval/precision 0.70608
+wandb:     eval/recall 0.70554
+wandb:   test/accuracy 0.73358
+wandb:         test/f1 0.73012
+wandb:       test/loss 0.52728
+wandb:  test/precision 0.73002
+wandb:     test/recall 0.73749
+wandb:  train/accuracy 0.72603
+wandb:        train/f1 0.72591
+wandb:      train/loss 0.54634
+wandb: train/precision 0.72625
+wandb:    train/recall 0.72681
+wandb: 
+wandb: 🚀 View run bs=64_e=270_lr=0.0001431866396534299 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/xup53hbu
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042441-xup53hbu/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: 88u5l5lu with config:
+wandb: 	batch_size: 16
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 344
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.004663977828126983
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042523-88u5l5lu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fancy-sweep-19
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/88u5l5lu
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▂▂▂▄▃▄▃▃▃▄▅▄▃▅▄▅▄▄▇▄▆▇▅▇▁▂▇▇▇█▆▇▆▆▇▇▇▇▇
+wandb:         eval/f1 ▂▃▃▃▄▃▄▄▄▄▅▅▅▄▆▄▆▄▄▇▄▆▇▆▇▁▂▇▇▇█▇▇▇▆▇▇▇▇▇
+wandb:       eval/loss ▄▄▄▄▃▃▃▃▃▄▃▃▃▄▃▃▂▂▃▂▃▂▂▃▂█▅▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▁▂▂▂▄▃▃▃▃▄▄▄▄▄▅▄▅▄▄▇▄▆▇▆█▂▃▇▇▇█▆▇▆▆▇▇▇▇▇
+wandb:     eval/recall ▁▃▃▃▄▃▄▃▃▃▅▅▄▃▅▄▆▄▄▇▄▆▇▅█▁▂▇▇▇█▆▇▆▆▇▇▇▇▇
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▂▃▃▅▄▅▅▅▄▅▅▆▅▆▆▆▆▇▇▇▇▇▇▇▃▅█████████████
+wandb:        train/f1 ▁▂▃▃▅▄▅▅▅▄▅▅▆▅▆▅▆▆▇▇▇▇▇▇▇▂▅█████████████
+wandb:      train/loss █▇▇▆▆▅▅▄▄▄▄▄▄▃▄▃▃▃▃▃▃▂▂▂▂▂▃▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/precision ▁▂▃▃▅▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇█▅▆█████████████
+wandb:    train/recall ▁▃▃▃▅▄▅▅▅▄▅▅▆▅▆▅▆▆▆▇▇▇▇▇▇▃▅█████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.77372
+wandb:         eval/f1 0.77197
+wandb:       eval/loss 0.49919
+wandb:  eval/precision 0.77237
+wandb:     eval/recall 0.77166
+wandb:   test/accuracy 0.79197
+wandb:         test/f1 0.78767
+wandb:       test/loss 0.50155
+wandb:  test/precision 0.78563
+wandb:     test/recall 0.79238
+wandb:  train/accuracy 0.81142
+wandb:        train/f1 0.811
+wandb:      train/loss 0.44966
+wandb: train/precision 0.81091
+wandb:    train/recall 0.8111
+wandb: 
+wandb: 🚀 View run bs=16_e=344_lr=0.004663977828126983 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/88u5l5lu
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042523-88u5l5lu/logs
+wandb: Agent Starting Run: 9e9k7o6c with config:
+wandb: 	batch_size: 32
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 348
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.00011788431853075616
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042605-9e9k7o6c
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run astral-sweep-20
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/9e9k7o6c
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▁▂▅▃▅▅▆█▇▇▆▆▆▆▆▇▆▆▆▆▆▆▆▆▇█▇███████
+wandb:         eval/f1 ▁▂▂▅▄▆▆▇██▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇█████████
+wandb:       eval/loss █▇▆▅▄▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  eval/precision ▆▅▆▅▁▃▂▅█▇▆▅▅▅▅▅▆▅▅▅▅▅▅▅▅▆█▇███████
+wandb:     eval/recall ▁▁▂▄▄▅▅▇██▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇█████████
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▃▃▅▄▄▄▆▇█▇▇▇▇▇▇█▇█▇▇▇▇▇▇██████████
+wandb:        train/f1 ▁▃▃▅▅▅▅▆▇████▇█▇███████████████████
+wandb:      train/loss █▆▆▅▄▄▄▃▂▃▂▂▂▂▁▂▂▂▂▁▁▁▂▁▁▁▂▁▁▁▁▁▁▁▁
+wandb: train/precision ▇██▄▂▁▁▂▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▅▄▄▄▅▄▄
+wandb:    train/recall ▁▃▃▅▄▄▅▆▇███▇▇█▇███████████████████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.72263
+wandb:         eval/f1 0.72083
+wandb:       eval/loss 0.54945
+wandb:  eval/precision 0.72083
+wandb:     eval/recall 0.72083
+wandb:   test/accuracy 0.73358
+wandb:         test/f1 0.73056
+wandb:       test/loss 0.53129
+wandb:  test/precision 0.73111
+wandb:     test/recall 0.73887
+wandb:  train/accuracy 0.72922
+wandb:        train/f1 0.72915
+wandb:      train/loss 0.54771
+wandb: train/precision 0.7297
+wandb:    train/recall 0.73022
+wandb: 
+wandb: 🚀 View run bs=32_e=348_lr=0.00011788431853075616 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/9e9k7o6c
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042605-9e9k7o6c/logs
+wandb: Agent Starting Run: nvra1jqb with config:
+wandb: 	batch_size: 32
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 144
+wandb: 	hidden_dim: 128
+wandb: 	learning_rate: 0.004825816110681479
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042635-nvra1jqb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run misunderstood-sweep-21
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/nvra1jqb
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:   eval/accuracy ▁▃▁▂▁▂▂▃▄▃▂▃▃▄▃▄▃▅▅▆▂▆▃▇▃▆▆▁▇▆██▇▅▄▆▆▆▆▆
+wandb:         eval/f1 ▁▃▁▂▁▃▂▃▄▃▂▃▄▄▃▄▂▅▆▇▂▇▃▇▃▆▆▁▇▆██▇▄▄▆▆▆▆▆
+wandb:       eval/loss ▅▅▅▅▅▅▅▄▅▅▄▄▄▄▄▃▄▃▂▂▄▃▃▂▄▁▁█▂▂▂▁▁▄▄▃▂▂▂▂
+wandb:  eval/precision ▁▃▁▂▁▂▂▃▄▃▂▃▃▄▃▄▃▄▅▆▂▆▄▇▄▆▆▂▇▆██▇▅▄▆▆▆▆▆
+wandb:     eval/recall ▁▃▁▂▁▂▂▃▅▃▂▃▄▄▃▄▂▅▆▇▂▆▃▇▃▆▆▁▇▆██▇▄▃▆▆▆▆▆
+wandb:   test/accuracy ▁
+wandb:         test/f1 ▁
+wandb:       test/loss ▁
+wandb:  test/precision ▁
+wandb:     test/recall ▁
+wandb:  train/accuracy ▁▂▂▃▃▃▃▄▄▄▅▅▅▅▅▆▅▆▆▇▆▆▇▇▇██▆▇████▇▇█████
+wandb:        train/f1 ▁▂▂▃▃▃▃▄▄▄▅▅▅▅▆▆▅▆▆▇▆▆▇▇▇██▅▇████▇▇█████
+wandb:      train/loss █▇▆▆▆▅▅▅▄▄▄▄▃▄▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▃▁▁▁
+wandb: train/precision ▁▂▁▂▃▃▃▄▅▄▅▅▅▅▅▆▅▆▆▇▇▇▇█▇██▆▇████▇▇█████
+wandb:    train/recall ▁▃▂▃▃▃▃▄▅▄▅▅▅▅▆▆▅▆▆▇▆▇▇▇▇██▅▇████▇▇█████
+wandb: 
+wandb: Run summary:
+wandb:   eval/accuracy 0.77007
+wandb:         eval/f1 0.76782
+wandb:       eval/loss 0.51992
+wandb:  eval/precision 0.76905
+wandb:     eval/recall 0.76711
+wandb:   test/accuracy 0.78832
+wandb:         test/f1 0.7846
+wandb:       test/loss 0.49912
+wandb:  test/precision 0.78282
+wandb:     test/recall 0.79067
+wandb:  train/accuracy 0.81507
+wandb:        train/f1 0.81446
+wandb:      train/loss 0.44881
+wandb: train/precision 0.81475
+wandb:    train/recall 0.81426
+wandb: 
+wandb: 🚀 View run bs=32_e=144_lr=0.004825816110681479 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/nvra1jqb
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250602_042635-nvra1jqb/logs
+wandb: Agent Starting Run: 24a161mz with config:
+wandb: 	batch_size: 32
+wandb: 	dropout_p: 0.5
+wandb: 	early_stopping_patience: 10
+wandb: 	epochs: 236
+wandb: 	hidden_dim: 64
+wandb: 	learning_rate: 0.008020121631479478
+wandb: 	scheduler_patience: 5
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250602_042712-24a161mz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run rich-sweep-22
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/57r7d7w4
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/24a161mz

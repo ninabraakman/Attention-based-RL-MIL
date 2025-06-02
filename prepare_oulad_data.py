@@ -7,18 +7,18 @@ from utils import save_pickle, set_seed
 from logger import get_logger
 
 # === CONFIGURATION ===
-INPUT_PATH = "data/oulad/oulad_full.pkl"
-SEED = 9
-DATASET_NAME = "oulad_full"
+INPUT_PATH = "data/oulad/oulad_aggregated_subset.pkl"
+SEED = 0
+DATASET_NAME = "oulad_aggregated_subset"
 EMBEDDING_MODEL = "tabular"
 DATA_COLUMN = "instances"  # dummy value, for path compatibility
 SAVE_DIR = f"data/seed_{SEED}/{DATASET_NAME}/{DATA_COLUMN}/{EMBEDDING_MODEL}"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 # Max instances per bag (1302 for full dataset, 39 for aggregated dataset)
-FIXED_BAG_SIZE = 1302
+FIXED_BAG_SIZE = 39
 # Feature dimension per instance (20 for full dataset, 22 for aggregated dataset)
-FEATURE_DIM = 20
+FEATURE_DIM = 22
 
 # === LOGGER ===
 logger = get_logger(SAVE_DIR)

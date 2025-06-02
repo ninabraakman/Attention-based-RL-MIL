@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, WeightedRandomSampler
 from configs import parse_args
 from RLMIL_Datasets import RLMILDataset
 from logger import get_logger
-from models_2305 import AttentionPolicyNetwork2, sample_action, select_from_action, create_mil_model_with_dict
+from models import AttentionPolicyNetwork_ilse as AttentionPolicyNetwork, sample_action, select_from_action, create_mil_model_with_dict
 from utils import (
     get_data_directory,
     get_model_name,
@@ -71,8 +71,7 @@ def finish_episode_policy_only(
     policy_losses = []
     policy_network.train()
     for log_prob, reward in zip(policy_network.saved_actions, policy_network.rewards):
-        # policy_losses.append(-reward * log_prob.cuda())   ->change for gpu setup
-        policy_losses.append(-reward * log_prob.to(device))
+        policy_losses.append(-reward * log_prob.cuda())
 
     optimizer.zero_grad()
     policy_loss = torch.cat(policy_losses).mean()
@@ -152,8 +151,7 @@ def finish_episode(
         # logger.debug(-advantage * log_prob.cuda())
         # logger.debug("_"*40)
         # logger.debug(advantage.shape, log_prob.shape)
-        # policy_losses.append(-advantage * log_prob.cuda())    ->change for gpu setup
-        policy_losses.append(-advantage * log_prob.to(device))
+        policy_losses.append(-advantage * log_prob.cuda()) 
         # logger.debug(policy_losses[-1].shape)
         # calculate critic (exp_reward) loss using L1 smooth loss
         R_tensor = torch.tensor([reward] * len(exp_reward))
@@ -247,26 +245,31 @@ def prepare_data(args):
 
     return train_dataset, val_dataset, test_dataset, number_of_classes
 
-def create_rl_model(args, mil_best_model_dir, device):
-    # load task_model as before
+def create_rl_model(args, mil_best_model_dir):
     if args.rl_task_model == "ensemble":
-        # existing ensemble loading
-        ...
+        for ensemble_dir in os.listdir(os.path.join(mil_best_model_dir, "..")):
+            if "only_"+args.rl_task_model in ensemble_dir:
+                mil_best_model_dir = os.path.join(mil_best_model_dir, "..", ensemble_dir)
+                break
+        logger.info(f"Loading ensemble model from {mil_best_model_dir}")
+        ensemble_state_dict = torch.load(os.path.join(mil_best_model_dir, "sweep_best_model.pt"), map_location=torch.device("cpu"))
+        state_dict = {}
+        for k in ensemble_state_dict.keys():
+            if k.startswith("task_model."):
+                state_dict[k.split("task_model.")[1]] = ensemble_state_dict[k]
     else:
         state_dict = torch.load(os.path.join(mil_best_model_dir, "..", "best_model.pt"))
-    task_model = load_mil_model_from_config(
-        os.path.join(mil_best_model_dir, "..", "best_model_config.json"),
-        state_dict
-    )
-    # instantiate AttentionPolicyNetwork2 instead of PolicyNetwork
-    policy_network = AttentionPolicyNetwork2(
+    task_model = load_mil_model_from_config(os.path.join(mil_best_model_dir, "..", "best_model_config.json"),
+                                            state_dict)
+    # instantiate AttentionPolicyNetwork instead of PolicyNetwork
+    policy_network = AttentionPolicyNetwork(
         task_model=task_model,
         state_dim=args.state_dim,
         hdim=args.hdim,
         k=args.bag_size,
         temperature=args.temperature,
-        learning_rate=args.actor_learning_rate,
-        device=device,
+        learning_rate=args.learning_rate,
+        device=DEVICE,
         task_type=args.task_type,
         min_clip=args.min_clip,
         max_clip=args.max_clip,
@@ -284,12 +287,11 @@ def load_mil_model_from_config(mil_config_file, state_dict):
     
     return task_model
 
-def load_model_from_config(mil_config_file, rl_config_file, rl_model_file, device):
-    # TODO: make create_mil_model compatible with dictionary input
+def load_model_from_config(mil_config_file, rl_config_file, rl_model_file):
     mil_config = load_json(mil_config_file)
     rl_config = load_json(rl_config_file)
     task_model = create_mil_model(mil_config)
-    policy_network = AttentionPolicyNetwork2(
+    policy_network = AttentionPolicyNetwork(
     task_model=task_model,
     state_dim=rl_config['state_dim'],
     hdim=rl_config['hdim'],
@@ -319,19 +321,65 @@ def get_first_batch_info(policy_network, eval_dataloader, device, bag_size, samp
     log_dict = {}
     batch_x, batch_y, indices, instance_labels = next(iter(eval_dataloader))
     batch_x = batch_x.to(device)
-    action_probs = policy_network(batch_x)[0]
-    action, _ = sample_action(action_probs, bag_size, device, random=False, algorithm=sample_algorithm)
+
+    # Correctly unpack the tuple returned by the policy network
+    # The first element is the action probabilities tensor.
+    actual_action_probs_tensor, _, _ = policy_network(batch_x) 
+
+    # Use the tensor for sampling
+    action, _ = sample_action(actual_action_probs_tensor, bag_size, device, random=False, algorithm=sample_algorithm)
+    
     if len(instance_labels) != 0:
         instance_labels = instance_labels.to(device)
+        # Ensure 'action' has the expected shape for this indexing.
+        # If actual_action_probs_tensor was (B, N), action should be (B, bag_size)
         selected_intance_labels = instance_labels[torch.arange(action.shape[0]).unsqueeze(1), action]
         selected_intance_count = selected_intance_labels.sum(dim=1)
-    for i in range(action_probs.shape[0]):
-        log_dict.update({f"actor/probs_{i}": action_probs[i].cpu().detach().numpy(),
-                    f"actor/action_{i}": wandb.Histogram(action[i].cpu().numpy().tolist())})
+
+    # Also, the loop below should use the shape of the actual probabilities tensor
+    # and log its values, not the tuple.
+    for i in range(actual_action_probs_tensor.shape[0]): # Use shape of the tensor
+        log_dict.update({
+            f"actor/probs_{i}": actual_action_probs_tensor[i].cpu().detach().numpy(), # Log tensor values
+            f"actor/action_{i}": wandb.Histogram(action[i].cpu().numpy().tolist())
+        })
         if len(instance_labels) != 0:
-            if batch_y[i] == 1:
-                log_dict.update({f"actor/selected_instance_count_{i}": selected_intance_count[i]})
+            if batch_y[i] == 1: # Ensure batch_y[i] is valid; action_probs_tensor.shape[0] is batch size
+                # Ensure selected_intance_count[i] is valid based on batch size
+                if i < selected_intance_count.shape[0]: # Check bounds if selected_instance_count might be smaller
+                    log_dict.update({f"actor/selected_instance_count_{i}": selected_intance_count[i]})
     return log_dict
+# def get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm):
+#     log_dict = {}
+#     batch_x, batch_y, indices, instance_labels = next(iter(eval_dataloader))
+#     batch_x = batch_x.to(device)
+#     action_probs = policy_network(batch_x)
+#     action, _ = sample_action(action_probs, bag_size, device, random=False, algorithm=sample_algorithm)
+#     if len(instance_labels) != 0:
+#         instance_labels = instance_labels.to(device)
+#         selected_intance_labels = instance_labels[torch.arange(action.shape[0]).unsqueeze(1), action]
+#         selected_intance_count = selected_intance_labels.sum(dim=1)
+#     for i in range(action_probs.shape[0]):
+#         log_dict.update({f"actor/probs_{i}": action_probs[i].cpu().detach().numpy(),
+#                     f"actor/action_{i}": wandb.Histogram(action[i].cpu().numpy().tolist())})
+#         if len(instance_labels) != 0:
+#             if batch_y[i] == 1:
+#                 log_dict.update({f"actor/selected_instance_count_{i}": selected_intance_count[i]})
+#     return log_dict
+
+def get_dataloaders(args, train_dataset, eval_dataset, test_dataset):
+    if (args.balance_dataset) & (args.task_type == "classification"):
+        logger.info(f"Using weighted random sampler to balance the dataset for training")
+        sample_weights = get_balanced_weights(train_dataset.Y.tolist()) # Ensure get_balanced_weights is imported/defined
+        w_sampler = WeightedRandomSampler(sample_weights, len(train_dataset.Y.tolist()), replacement=True)
+        current_train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, num_workers=4, sampler=w_sampler)
+    else:
+        current_train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4)
+
+    current_eval_dataloader = DataLoader(eval_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
+    current_test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
+
+    return current_train_dataloader, current_eval_dataloader, current_test_dataloader
 
 def train(
         policy_network,
@@ -538,7 +586,8 @@ def main_sweep():
         ],
     )
     config = wandb.config
-
+    args.critic_learning_rate = config.critic_learning_rate
+    args.actor_learning_rate = config.actor_learning_rate
     args.learning_rate = config.learning_rate
     args.epochs = config.epochs
     args.hdim = config.hdim
@@ -546,9 +595,14 @@ def main_sweep():
     args.warmup_epochs = config.get("warmup_epochs", 0)
     args.epsilon = config.get("epsilon", 0)
     args.no_wandb = False
+    args.batch_size = config.batch_size
+    global train_dataset, eval_dataset, test_dataset 
+    current_train_dataloader, current_eval_dataloader, current_test_dataloader = \
+        get_dataloaders(args, train_dataset, eval_dataset, test_dataset)
+    logger.info(f"SWEEP DEBUG: Recreated dataloaders with batch_size = {args.batch_size}")
     
     # Model Optimizer Scheduler EarlyStopping
-    policy_network = create_rl_model(args, run_dir, DEVICE)
+    policy_network = create_rl_model(args, run_dir)
     # from IPython import embed; embed(); exit()
     policy_network = policy_network.to(DEVICE)
 
@@ -572,9 +626,9 @@ def main_sweep():
         optimizer=optimizer,
         scheduler=scheduler,
         early_stopping=early_stopping,
-        train_dataloader=train_dataloader,
-        eval_dataloader=eval_dataloader,
-        test_dataloader=test_dataloader,
+        train_dataloader=current_train_dataloader,
+        eval_dataloader=current_eval_dataloader,
+        test_dataloader=current_test_dataloader,
         device=DEVICE,
         bag_size=args.bag_size,
         epochs=args.epochs,
@@ -616,7 +670,7 @@ def main():
         )
         
     # Model Optimizer Scheduler EarlyStopping
-    policy_network = create_rl_model(args, run_dir, DEVICE)
+    policy_network = create_rl_model(args, run_dir)
     policy_network = policy_network.to(DEVICE)
 
     optimizer = optim.AdamW(
@@ -641,9 +695,9 @@ def main():
         optimizer=optimizer,
         scheduler=scheduler,
         early_stopping=early_stopping,
-        train_dataloader=train_dataloader,
-        eval_dataloader=eval_dataloader,
-        test_dataloader=test_dataloader,
+        train_dataloader=current_train_dataloader,
+        eval_dataloader=current_eval_dataloader,
+        test_dataloader=current_test_dataloader,
         device=DEVICE,
         bag_size=args.bag_size,
         epochs=args.epochs,

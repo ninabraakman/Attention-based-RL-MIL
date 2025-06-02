@@ -1,0 +1,17 @@
+Run 1/4: baseline=MeanMLP, bag_size=20, embed=tabular
+Create sweep with ID: xvfya48y
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/xvfya48y
+
+JOB STATISTICS
+==============
+Job ID: 12127615
+Cluster: snellius
+User/Group: nbraakman/nbraakman
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 07:03:12 core-walltime
+Job Wall-clock time: 00:26:27
+Memory Utilized: 1.05 GB
+Memory Efficiency: 6.53% of 16.00 GB (16.00 GB/node)

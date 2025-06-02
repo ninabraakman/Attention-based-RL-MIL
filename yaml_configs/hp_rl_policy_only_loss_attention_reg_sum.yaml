@@ -46,46 +46,67 @@ parameters:
     max: 0.5
 run_cap: 50
 
-# method: bayes
+# Attention-based RL-MIL aggregated_subset MeanMLP 
+# method: grid
 # metric:
-#   name: eval/avg_mil_loss
 #   goal: minimize
+#   name: eval/avg_mil_loss
 # parameters:
-#   hdim:
-#     distribution: constant
-#     value: 8
-#   epochs:
-#     distribution: constant
-#     value: 800
-#   actor_learning_rate:
-#     distribution: log_uniform_values
-#     min: 1.0e-05
-#     max: 1.0e-02
-#   critic_learning_rate:
-#     distribution: constant
-#     value: 0
-#   learning_rate:
-#     distribution: constant
-#     value: 1.0e-06
-#   temperature:
-#     distribution: uniform
-#     min: 0.1
-#     max: 5.0
-#   attention_size:
-#     distribution: categorical
-#     values: [ 32, 64, 128 ]
-#   attention_dropout_p:
-#     distribution: uniform
-#     min: 0.0
-#     max: 0.5
-#   reg_coef:
-#     distribution: uniform
-#     min: 0.0
-#     max: 1.0
-#   early_stopping_patience:
-#     distribution: constant
-#     value: 100
-#   batch_size:
-#     distribution: constant
-#     value: 128
-# run_cap: 50
+
+
+# Attention-based RL-MIL aggregated_subset MaxMLP 
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/avg_mil_loss
+# parameters:
+
+
+# Attention-based RL-MIL aggregated_subset Attention 
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/avg_mil_loss
+# parameters:
+
+
+
+# Attention-based RL-MIL aggregated_subset repset 
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/avg_mil_loss
+# parameters:
+
+
+# Attention-based RL-MIL full_subset MeanMLP 
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/avg_mil_loss
+# parameters:
+
+
+
+# Attention-based RL-MIL full_subset MaxMLP 
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/avg_mil_loss
+# parameters:
+
+
+# Attention-based RL-MIL full_subset Attention 
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/avg_mil_loss
+# parameters:
+
+
+# Attention-based RL-MIL full_subset repset 
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/avg_mil_loss
+# parameters:

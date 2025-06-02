@@ -384,6 +384,7 @@ external/
 runs/
 archive/
 !requirements.txt
+logs/
 
 .vscode/
 .pylintrc

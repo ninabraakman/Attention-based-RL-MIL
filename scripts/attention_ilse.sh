@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=24:00:00
-#SBATCH --output=../logs/aggregated_subset/attention/a2305_%j.out
-#SBATCH --error=../logs/aggregated_subset/attention/a2305_%j.err
+#SBATCH --output=../logs/configs/full_subset/attention/ilse_%j.out
+#SBATCH --error=../logs/configs/full_subset/attention/ilse_%j.err
 
 module purge
 module load 2023
@@ -17,25 +17,26 @@ cd /projects/prjs1491/Attention-based-RL-MIL
 # Which MIL encoders to try
 baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
 target_labels=("label")
+# gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
 wandb_project="MasterThesis"
 
-dataset="oulad_aggregated_subset"
+dataset="oulad_full_subset"
 data_embedded_column_name="instances"
-autoencoder_layer_sizes="22,16,22"   # for oulad_aggregated
+task_type="classification"
+autoencoder_layer_sizes="20,16,20"   # "22,16,22" for oulad_aggregated and "20,16,20" for oulad_full
 bag_sizes=(20)
 embedding_models=("tabular")
 
-# RL settings
-prefix="loss_attention"
-rl_model="policy_only"
 rl_task_model="vanilla"
 sample_algorithm="static"
+prefix="loss_attention"
+rl_model="policy_only"
 reg_alg="sum"
-task_type="classification"
+
 
 # Attention‐sampler hyperparameters
-is_linear_attention="--is_linear_attention"  # omit flag for non‐linear
+is_linear_attention="--is_linear_attention" 
 
 
 total_runs=$((${#baseline_types[@]} * ${#target_labels[@]} * ${#bag_sizes[@]} * ${#embedding_models[@]}))
@@ -48,7 +49,7 @@ for target_label in "${target_labels[@]}"; do
 
         echo "Run $current_run/$total_runs: baseline=$baseline_type, bag_size=$bag_size, embed=$embedding_model"
 
-        CUDA_VISIBLE_DEVICES=0 python attention2305.py \
+        CUDA_VISIBLE_DEVICES=0 python attention_ilse.py \
           --rl \
           --gpu 0 \
           --baseline               "$baseline_type" \
@@ -58,7 +59,6 @@ for target_label in "${target_labels[@]}"; do
           --prefix                 "loss_attention" \
           --dataset                "$dataset" \
           --bag_size               $bag_size \
-          --batch_size             32 \
           --run_sweep \
           --embedding_model        "$embedding_model" \
           --train_pool_size        1 \

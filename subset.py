@@ -8,7 +8,7 @@ AGG_INPUT       = "data/oulad/oulad_aggregated.pkl"
 FULL_SUBSET     = "data/oulad/oulad_full_subset.pkl"
 AGG_SUBSET      = "data/oulad/oulad_aggregated_subset.pkl"
 INDICES_PATH    = "data/oulad/subset_indices.pkl"
-SUBSET_SIZE     = 1000
+SUBSET_SIZE     = 2738
 RANDOM_SEED     = 42
 
 # set seed for reproducibility

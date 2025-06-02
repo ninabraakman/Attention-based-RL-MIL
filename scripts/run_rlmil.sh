@@ -3,9 +3,9 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
-#SBATCH --time=4:00:00
-#SBATCH --output=../logs/full_subset/rlmil/%j.out
-#SBATCH --error=../logs/full_subset/rlmil/%j.err
+#SBATCH --time=20:00:00
+#SBATCH --output=../logs/configs/full_subset/rlmil/%j.out
+#SBATCH --error=../logs/configs/full_subset/rlmil/%j.err
 
 
 module purge
@@ -23,13 +23,13 @@ wandb_project="MasterThesis"
 
 dataset="oulad_full_subset"
 data_embedded_column_name="instances"
-rl_task_model="vanilla"
-sample_algorithm="static"
 task_type="classification"
 autoencoder_layer_sizes="20,16,20"
 bag_sizes=(20)
 embedding_models=("tabular")
 
+rl_task_model="vanilla"
+sample_algorithm="static"
 prefix="loss"
 rl_model="policy_only"
 search_algorithm="epsilon_greedy"

@@ -1,0 +1,3 @@
+Run 1/4: baseline=MeanMLP, bag_size=20, embed=tabular
+Create sweep with ID: 7oyxzwid
+Sweep URL: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/7oyxzwid

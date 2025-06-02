@@ -1,0 +1,3025 @@
+wandb: Agent Starting Run: rkbph63l with config:
+wandb: 	actor_learning_rate: 2.9035036858471823e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.4916071686984166
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5841802450929376
+wandb: Currently logged in as: ninabraakman (ninabraakman-university-of-amsterdam) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_195047-rkbph63l
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run peachy-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/rkbph63l
+/gpfs/work5/0/prjs1491/Attention-based-RL-MIL/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+wandb: uploading history steps 102-106, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▇█
+wandb: best/eval_avg_mil_loss ▆▁█
+wandb:  best/eval_ensemble_f1 ▁▇█
+wandb:            eval/avg_f1 ▃███████▆▅▆▄▃▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▃▃▃▃▃▃▆▆▆▆▆
+wandb:      eval/avg_mil_loss ███▇▇▆▆▅▅▅▄▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▃███████▆▆▄▁▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▃▃▃▆▆▆▆▆▆▆▆▆
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▂▆▃▅▂▂▂▅▅▁▆▄▃▅▅▆▄▂▅▇█▆▅▆▄▃▄▇▄▆▄▄▆▂▄▄▃▁▄
+wandb:      train/ensemble_f1 ▁▅▂▃▅▃▆▃▃▄▂▆▆▂▁▇▅▆▆▃█▆▅▅▄▄█▆▄█▄▅▃▆▅▅▃▅▇▅
+wandb:         train/mil_loss ▄▆▄▆▄▅▆▆▅▆▄▇▆▆▆▇▇▆▄▅▃▅▅█▅▃▄▄▇▂▄▆▆▄▄▄▄▅▁▄
+wandb:      train/policy_loss ▁████████████▅████████▆█████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ███████████████▁████████████████████████
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.55776
+wandb: best/eval_avg_mil_loss 0.88692
+wandb:  best/eval_ensemble_f1 0.55776
+wandb:            eval/avg_f1 0.54527
+wandb:      eval/avg_mil_loss 0.79932
+wandb:       eval/ensemble_f1 0.54527
+wandb:            test/avg_f1 0.53989
+wandb:      test/avg_mil_loss 0.77605
+wandb:       test/ensemble_f1 0.53989
+wandb:           train/avg_f1 0.57191
+wandb:      train/ensemble_f1 0.57191
+wandb:         train/mil_loss 0.62577
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run peachy-sweep-1 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/rkbph63l
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_195047-rkbph63l/logs
+wandb: Agent Starting Run: tjq9yp64 with config:
+wandb: 	actor_learning_rate: 0.001272126738972876
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.5457727426875916
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.2075374543948292
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_195305-tjq9yp64
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dauntless-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/tjq9yp64
+wandb: uploading history steps 92-115, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▅█
+wandb: best/eval_avg_mil_loss █▃▁
+wandb:  best/eval_ensemble_f1 ▁▅█
+wandb:            eval/avg_f1 ▅▅█▅▅██████▄▄▄▄▁▁▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:      eval/avg_mil_loss █▂▁▁▁▅▆▆▆▆▆▆▅▅▅▅▅▅▅▅▅▅▅▅▅▄▄▄▄▄▄▄▄▄▄▄▄▃▃▃
+wandb:       eval/ensemble_f1 ▅▅▅▅▂██████▅▅▅▁▁▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▁▃▃▂▆█▄▃▅▄▁▃▃▅▃▁▇▃▅▅▇▃▆▆▄█▃▃▄▅▂▃▄▅▆▄▂▆▅
+wandb:      train/ensemble_f1 ▄▄▅▄▅▄▆▇▇▆▇█▁▄▅▅▅▆▄▅▅▂▅▆▇▅▆▅▄▇▆▅▆▅▆▄▅▆▇▇
+wandb:         train/mil_loss ▆▄▄▂▆▅▇▃▆▅▄█▇▆▃▅▂▃▇▅▁▃▃▂▇▅▁▃▄▄▂▁▄▂▂█▄▄▆▇
+wandb:      train/policy_loss ██▄▁▇▃▁▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▂▂▂▂█▂▂▂▂▂▂▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.60682
+wandb: best/eval_avg_mil_loss 0.67214
+wandb:  best/eval_ensemble_f1 0.60682
+wandb:            eval/avg_f1 0.58498
+wandb:      eval/avg_mil_loss 0.68673
+wandb:       eval/ensemble_f1 0.58498
+wandb:            test/avg_f1 0.5
+wandb:      test/avg_mil_loss 0.69516
+wandb:       test/ensemble_f1 0.5
+wandb:           train/avg_f1 0.52489
+wandb:      train/ensemble_f1 0.52489
+wandb:         train/mil_loss 0.65475
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run dauntless-sweep-2 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/tjq9yp64
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_195305-tjq9yp64/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: 3m9b577n with config:
+wandb: 	actor_learning_rate: 0.001621327723030684
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.5396418897230237
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.18381050149783415
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_195434-3m9b577n
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run comfy-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/3m9b577n
+wandb: uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss █████▇▇▇▇▇▇▆▆▆▆▅▅▅▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▃▄▁▄▇▅▄▄▅▄▅▅▂▂▆▅▆▃▄▆▆▂▆▇▅▃▂▇▄█▄▅▅▇▄▄▇▆▄
+wandb:      train/ensemble_f1 ▅▄▆▃▃▄▅▃▅▃▅▂▂▁▆▃▃▂▅▆▅▆▆▂▅▅▇▅▅▅▃▁▄█▄▄▇▄▇▆
+wandb:         train/mil_loss ▃▃▄█▆▅▃▅█▆▂▅█▅▄▃▃█▅▄▄▄▇▅▆▄▄▅▄▆▇▁▃▇▃▂▄▄▃▇
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 2.74312
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 2.65006
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 3.56006
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.3311
+wandb:      train/ensemble_f1 0.3311
+wandb:         train/mil_loss 1.43422
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run comfy-sweep-3 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/3m9b577n
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_195434-3m9b577n/logs
+wandb: Agent Starting Run: 55y5va6d with config:
+wandb: 	actor_learning_rate: 0.0022095286101456216
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.20987024776641505
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.9036595681690084
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_195546-55y5va6d
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vivid-sweep-4
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/55y5va6d
+wandb: uploading history steps 95-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ███▇▇▇▆▆▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▅▆▅▄▃▇▇▅▄▆▆▄█▅▃▄▅▅▄▆▅▂▇▆▁▅▆▆▄▆▅▅▅▃▄▆▇▅▆
+wandb:      train/ensemble_f1 ▃▄▂▆▃▂▆▄▄▄▁▄▄▄█▇▄▄▂▃▅▂▇▃▄▁▆▆▄▄▄▅▄▂▄▅▅▅▅▃
+wandb:         train/mil_loss █▅▇▇█▆▆▄▆▄▆█▆▅▆▅▅▇▆▆▅▄▅▆▄▆▅▇▆▅▄▁▃▄▅▃▄▄▃▄
+wandb:      train/policy_loss ▁▁▅▆▃█▁▃▁▅▃▅▃▃▃▃▅▁▃▁▆▃▃▅▁▁▅▃▃▃▃▇▅▃▄▃▃▃▁▅
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▆▃▃▇▃▁▁▅▅▃▃▃▃▃▃▄▅▁▁▅▇▁▁▂▃▅▁▁▁▃▃█▃▁▅▇▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.3454
+wandb: best/eval_avg_mil_loss 2.1343
+wandb:  best/eval_ensemble_f1 0.3454
+wandb:            eval/avg_f1 0.3454
+wandb:      eval/avg_mil_loss 1.78466
+wandb:       eval/ensemble_f1 0.3454
+wandb:            test/avg_f1 0.39268
+wandb:      test/avg_mil_loss 1.53188
+wandb:       test/ensemble_f1 0.39268
+wandb:           train/avg_f1 0.40498
+wandb:      train/ensemble_f1 0.40498
+wandb:         train/mil_loss 1.28091
+wandb:      train/policy_loss -0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss -0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run vivid-sweep-4 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/55y5va6d
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_195546-55y5va6d/logs
+wandb: Agent Starting Run: 71yybtv3 with config:
+wandb: 	actor_learning_rate: 5.2628421775603394e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.28824775336838737
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5510056546232681
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_195659-71yybtv3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run bright-sweep-5
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/71yybtv3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ████▅█████████████████▅▅▁▅▅▁██████▁▁▁▁▁█
+wandb:      eval/avg_mil_loss ███▇▇▆▆▆▆▆▆▆▆▆▆▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁
+wandb:       eval/ensemble_f1 ██████▁▅█████████████████▅▅▁▅▅▅▁▁▁███▁▁█
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▅▁█▂▆▆▄▂▂▄▅█▅█▅▅▄▂▆▅▃▂▆▆▅▁▄▇▄▁▅▅▄▅▅▄▅▅▃
+wandb:      train/ensemble_f1 █▆▆▇▄▄▁▅▄▇▃█▅▆▄▃▆▂▄▄▃▆▆▆▅▃▁▅▄▂▆█▂▄▅▅▃▅▅▆
+wandb:         train/mil_loss ▅▂▁▇▃▄▄▄▂▇▅▃▂▄▇▃▇▂█▇▅▄▃▄▇▅▂▇▆▃▅▃▅▃▅▆▅▄▆▅
+wandb:      train/policy_loss ▃▃▃▃▃▁▇▂▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▁█▆▃▂▃▃▃▃▂▃▃▃▃▃▃▃
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▃▃▃▃▃▃▃▁▂▃▃▃▃▃▃▃▃▃▃▃▃▃▇▃▃▃▃▁█▂▆▃▃▃▂▆▃▃▃▃
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.62364
+wandb: best/eval_avg_mil_loss 0.62994
+wandb:  best/eval_ensemble_f1 0.62364
+wandb:            eval/avg_f1 0.62364
+wandb:      eval/avg_mil_loss 0.62094
+wandb:       eval/ensemble_f1 0.62364
+wandb:            test/avg_f1 0.51648
+wandb:      test/avg_mil_loss 0.66798
+wandb:       test/ensemble_f1 0.51648
+wandb:           train/avg_f1 0.53778
+wandb:      train/ensemble_f1 0.53778
+wandb:         train/mil_loss 0.64877
+wandb:      train/policy_loss -0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss -0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run bright-sweep-5 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/71yybtv3
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_195659-71yybtv3/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: w3q5bp7k with config:
+wandb: 	actor_learning_rate: 5.6593178846235136e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.6090443551741083
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.6488259630182869
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_195822-w3q5bp7k
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sparkling-sweep-6
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/w3q5bp7k
+wandb: uploading history steps 94-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁█
+wandb: best/eval_avg_mil_loss ▁█
+wandb:  best/eval_ensemble_f1 ▁█
+wandb:            eval/avg_f1 █▆▃▃▁▁▂▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▂▂▂▂▂▂▁▂▂▁▁▁▁▂▂▂▂▂
+wandb:      eval/avg_mil_loss ▁▂▂▄▆████████████████████████▇▇▇▇▇▇▇▇▇▇▇
+wandb:       eval/ensemble_f1 ██▃▃▁▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▂▂▂▂▂▂▂▂▁▁▂▂▂
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 █▄▅▃▃▃▂▂▂▃▃▃▄▃▄▃▃▄▁▆▃▄▃▃▄▃▄▂▃▃▄▃▄▄▄▄▃▄▂▃
+wandb:      train/ensemble_f1 ▆█▆▅▂▄▂▃▃▄▅▇▅▃▄▃▇▁▆▄▄▆▄▄▅▇▆█▅▅▄▇▅▅▂▅▅▇▂▃
+wandb:         train/mil_loss ▃▇▄▅▅▂█▁▂▆▆▃▇▁▆▃▄▃▄▂▃▄▅▃▃▆▅▇▄▇▇▃▄▄▅▄▄▅▃▅
+wandb:      train/policy_loss ▆▅▅▅▅▅▅▅▅▅▅▅▇▃▅▅▇▅▆▅▅▅▆█▅▅▅▅▅▅▂▅▆▅▅▅▁▅▅▅
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▃▅▅▅▅▅▅▅▅▅▅▅▇▇▅▅▇▇▆█▄▅▃▅▅▅▅▆▄▅▃▅▃▁▅▅▇▅▅▅
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.48718
+wandb: best/eval_avg_mil_loss 0.83305
+wandb:  best/eval_ensemble_f1 0.48718
+wandb:            eval/avg_f1 0.38279
+wandb:      eval/avg_mil_loss 0.93228
+wandb:       eval/ensemble_f1 0.38279
+wandb:            test/avg_f1 0.4729
+wandb:      test/avg_mil_loss 0.78239
+wandb:       test/ensemble_f1 0.4729
+wandb:           train/avg_f1 0.40679
+wandb:      train/ensemble_f1 0.40679
+wandb:         train/mil_loss 0.62748
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run sparkling-sweep-6 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/w3q5bp7k
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_195822-w3q5bp7k/logs
+wandb: Agent Starting Run: qcjf38yy with config:
+wandb: 	actor_learning_rate: 2.3118000783152753e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.04683800697793383
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.19412825374451248
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_195935-qcjf38yy
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run golden-sweep-7
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/qcjf38yy
+wandb: uploading history steps 95-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss █████▇▇▇▇▇▇▆▆▆▆▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▄▆▇▃▄█▃▅▄▄▁▅▅▄▅▆▅▄▂▇▂▃▅▃▁▅▃▆▄▅▄▄▅▄▅▃▅▅▆
+wandb:      train/ensemble_f1 ▄▅▆▇▄▃▄█▄▄▅▃▅▅▄▄▇▃▆▅█▁▆▇▅▇▄▅▃▄▃▅▃▄▅▅▅▃▅▆
+wandb:         train/mil_loss ▇▇▄▃▆█▇█▅▇█▄▅▇▁▅▆▆▆▅▇▄▅▆▆▄▅▆▆▆█▄▄▅▆▆▅▇▃▂
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 1.80454
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 1.75181
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 2.20723
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.33884
+wandb:      train/ensemble_f1 0.33884
+wandb:         train/mil_loss 1.87696
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run golden-sweep-7 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/qcjf38yy
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_195935-qcjf38yy/logs
+wandb: Agent Starting Run: 5ly7eid0 with config:
+wandb: 	actor_learning_rate: 0.0039227719711577005
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.8176601984419123
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.23773537104907183
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_200126-5ly7eid0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eager-sweep-8
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/5ly7eid0
+wandb: uploading history steps 277-289, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▃▆█
+wandb: best/eval_avg_mil_loss █▅▂▁
+wandb:  best/eval_ensemble_f1 ▁▃▆█
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▆█▆▆▆▆▆▆▆▆▆▆▆
+wandb:      eval/avg_mil_loss ████▇▇▇▇▇▆▅▅▅▅▅▅▅▅▅▄▄▄▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▆▃▆▆▆█▆▆▆▆▆▆▆▆▆▆
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▅▅▆▂▄▄▃▃▅▄▆▃▁▄▅▄▅▂▇▅█▅▅▇▃▅▅▅▄▅▂▆▆▄▅▇▃▅▇
+wandb:      train/ensemble_f1 ▂▃▆▆▃▁▃▄▃▄▃▄▄▅▄▁▄▅▄▄▃▃▃▂▄▅▃▅▄▂▆▅▄▆█▇▂▅▃▄
+wandb:         train/mil_loss ▆▃▇▄▆▃▃▆▇▄▂▂▆▃▆▅▂▄▅█▇▄▆▃▅▄▄▂▄▅▅▁▆▇▅▃▄▄▃▄
+wandb:      train/policy_loss ███████████████████████████▁████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▆▄▄▄▄▄▄▁▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.45238
+wandb: best/eval_avg_mil_loss 0.88445
+wandb:  best/eval_ensemble_f1 0.45238
+wandb:            eval/avg_f1 0.45238
+wandb:      eval/avg_mil_loss 0.87902
+wandb:       eval/ensemble_f1 0.45238
+wandb:            test/avg_f1 0.52153
+wandb:      test/avg_mil_loss 0.77691
+wandb:       test/ensemble_f1 0.52153
+wandb:           train/avg_f1 0.5247
+wandb:      train/ensemble_f1 0.5247
+wandb:         train/mil_loss 0.56853
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run eager-sweep-8 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/5ly7eid0
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_200126-5ly7eid0/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: dv2i26ra with config:
+wandb: 	actor_learning_rate: 0.002927082155424449
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.6323247234499778
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.7501670651146405
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_200517-dv2i26ra
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sweepy-sweep-9
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/dv2i26ra
+wandb: uploading wandb-summary.json
+wandb: uploading history steps 94-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ▁▇▇████▇▇▇▇▇▇▇▇▆▆▆▆▆▆▅▅▅▅▅▅▅▄▄▃▃▃▃▃▃▃▃▂▂
+wandb:       eval/ensemble_f1 █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▇█▁▁▁▁▁▂▁▁▁▁▁▂▁▁▁▁▂▁▁▁▁▁▁▁▂▁▁▁▁▂▂▂▁▁▁▂▂▁
+wandb:      train/ensemble_f1 █▁▁▁▁▁▁▁▂▂▁▁▂▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▂▁▁▁▁▂▂▁▁▂▂
+wandb:         train/mil_loss ▁█▁▁▂▁▁▂▂▂▂▁▂▂▂▂▂▂▂▂▂▂▂▂▁▂▁▁▂▂▁▁▂▁▂▂▂▁▁▁
+wandb:      train/policy_loss ██▁█████████████████████████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.59596
+wandb: best/eval_avg_mil_loss 0.7369
+wandb:  best/eval_ensemble_f1 0.59596
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.93575
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.59742
+wandb:      test/avg_mil_loss 0.75263
+wandb:       test/ensemble_f1 0.59742
+wandb:           train/avg_f1 0.33054
+wandb:      train/ensemble_f1 0.33054
+wandb:         train/mil_loss 0.58054
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run sweepy-sweep-9 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/dv2i26ra
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_200517-dv2i26ra/logs
+wandb: Agent Starting Run: 4kjqdegu with config:
+wandb: 	actor_learning_rate: 0.008747736526033258
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.11775284884206304
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.3873539223353739
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_200628-4kjqdegu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fresh-sweep-10
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4kjqdegu
+wandb: uploading history steps 95-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 █████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ▁▁▁▁▁▁▁▁▄██▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:       eval/ensemble_f1 ███████▇▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ██▇███▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      train/ensemble_f1 ██████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/mil_loss ▄▂▂▂▆▃▁▇▇▇██▇▇▇▆▇▇▆█▇▇█▆▇▇▆▆▇▅▆█▇▇▇█▇▇▇▆
+wandb:      train/policy_loss ██████▁█████████████████████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss █▇███▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.70332
+wandb: best/eval_avg_mil_loss 0.7258
+wandb:  best/eval_ensemble_f1 0.70332
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.92922
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.67794
+wandb:      test/avg_mil_loss 0.84779
+wandb:       test/ensemble_f1 0.67794
+wandb:           train/avg_f1 0.3266
+wandb:      train/ensemble_f1 0.3266
+wandb:         train/mil_loss 0.86385
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run fresh-sweep-10 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4kjqdegu
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_200628-4kjqdegu/logs
+wandb: Agent Starting Run: 2s82hefu with config:
+wandb: 	actor_learning_rate: 0.000974250074746306
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.5093288407705132
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.7966382690022736
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_200741-2s82hefu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run astral-sweep-11
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/2s82hefu
+wandb: uploading history steps 95-111, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁██
+wandb: best/eval_avg_mil_loss █▂▁
+wandb:  best/eval_ensemble_f1 ▁██
+wandb:            eval/avg_f1 ▆▆█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ███▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▆▆▆▆█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▇▇▇██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      train/ensemble_f1 ▇▇▇█▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▂▁▂▂▁▁▁▁▂▁▁▁▁▁▁▁▁▁
+wandb:         train/mil_loss ▆▃▅▆█▆▅▄▅▇▆▂▆▇▄▅▅▄▃▆▅▅▆▄▅▆▅▁▁▄▃▂▅▆▆▃▄▅▄▂
+wandb:      train/policy_loss ████▁███████████████████████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.79968
+wandb: best/eval_avg_mil_loss 0.55776
+wandb:  best/eval_ensemble_f1 0.79968
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.90493
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.80435
+wandb:      test/avg_mil_loss 0.38587
+wandb:       test/ensemble_f1 0.80435
+wandb:           train/avg_f1 0.3283
+wandb:      train/ensemble_f1 0.3283
+wandb:         train/mil_loss 0.65256
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run astral-sweep-11 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/2s82hefu
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_200741-2s82hefu/logs
+wandb: Agent Starting Run: hg37h8ju with config:
+wandb: 	actor_learning_rate: 0.000523821932428867
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.31773370075673735
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.6994569959594941
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_200859-hg37h8ju
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run graceful-sweep-12
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/hg37h8ju
+wandb: uploading history steps 96-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ████▇▇▇▇▇▇▆▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▄▅▅▅▂▄▄▅▄▆▂▅▂▂▃▆▄▃▂▆▄▅▆▄▅▃▃▆█▅▄▄▁▃▄▃▆▄▃
+wandb:      train/ensemble_f1 ▅▃▄▅▄▆▃▅▃▄▅▄▅▂▅▃▄▄▄▄▂▆▄▃▂▁▆▅▃▃▆█▅▅▃▂▆▃▃▁
+wandb:         train/mil_loss ▆▅▄▁▇▆▄▇▇▇▅▂▇█▇▃▇▅▆▃▆▆▅▆▂▂▄▃▆▃▆▄▇▆▆▇▅▇▇▄
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 3.06626
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 2.97904
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 3.91563
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.31915
+wandb:      train/ensemble_f1 0.31915
+wandb:         train/mil_loss 2.1443
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run graceful-sweep-12 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/hg37h8ju
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_200859-hg37h8ju/logs
+wandb: Agent Starting Run: fhwx1v9f with config:
+wandb: 	actor_learning_rate: 1.203664418530601e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.7054786351049078
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.4646611538670069
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_201010-fhwx1v9f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run crisp-sweep-13
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/fhwx1v9f
+wandb: uploading history steps 319-342, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▂▂▃▃▄▄▅▅▆▇▇██
+wandb: best/eval_avg_mil_loss ███▇▇▆▅▅▄▄▃▂▂▁
+wandb:  best/eval_ensemble_f1 ▁▂▂▃▃▄▄▅▅▆▇▇██
+wandb:            eval/avg_f1 ▁▁▂▂▂▂▂▃▄▅▅▅▅▅▅▅▅▅▆▆▇▇▇▇▇▇▇▇▇▇▇▇█████▇▇▇
+wandb:      eval/avg_mil_loss ███▇▇▇▇▆▆▆▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▃▄▄▄▅▅▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇█████████████████
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▁▃▂▂▄▄▃▄▄▄▄▄▅▄▆▆▄▅▄▆▅▆▆▆▆▅▆▅▆▅▇▇▇█▇▇█▇█▇
+wandb:      train/ensemble_f1 ▁▂▁▂▃▃▂▃▃▃▃▃▄▃▂▄▄▄▃▅▄▅▅▄▆▆▆█▄▅▇▅█▆▇▇▇█▇▆
+wandb:         train/mil_loss ▅▅▂▇▅▇█▂▄▅▄▅▆▅▄▅█▇▂▄▂▃▂▅▅▂▂▆▄▄▂▅▂▂▂▃▄▁▃▄
+wandb:      train/policy_loss ███████▁██▅█████████████████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▄▄▄▅▇▄▁▄▄▅▄▅▄█▂▃▅▆▃▂▄▁▁▄▄▄▄▄▄▄▄▄█▅█▅▄▄▅█
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.76139
+wandb: best/eval_avg_mil_loss 0.63574
+wandb:  best/eval_ensemble_f1 0.76139
+wandb:            eval/avg_f1 0.75196
+wandb:      eval/avg_mil_loss 0.58046
+wandb:       eval/ensemble_f1 0.75196
+wandb:            test/avg_f1 0.72874
+wandb:      test/avg_mil_loss 0.56829
+wandb:       test/ensemble_f1 0.72874
+wandb:           train/avg_f1 0.74434
+wandb:      train/ensemble_f1 0.74434
+wandb:         train/mil_loss 0.57724
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run crisp-sweep-13 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/fhwx1v9f
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_201010-fhwx1v9f/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: tv8hi781 with config:
+wandb: 	actor_learning_rate: 0.00017595093124920128
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.3777434659576435
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.9551977794873798
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_201409-tv8hi781
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run polar-sweep-14
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/tv8hi781
+wandb: uploading history steps 190-210, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▃▅██
+wandb: best/eval_avg_mil_loss ▁▂▇▇█
+wandb:  best/eval_ensemble_f1 ▁▃▅██
+wandb:            eval/avg_f1 ▄▄▄▄▄▄▄▅▅▅▅▅▅▇▇▇▇▇▇▇▇▇▇▇▇██▆▃▃▃▂▂▂▂▂▂▂▂▁
+wandb:      eval/avg_mil_loss ▁▁▁▁▁▂▂▂▂▄▃▅▅▅▅▅▅▅▅▆▆▆▆▅▆▆▆▆▆▆▆▆▆▆▆█████
+wandb:       eval/ensemble_f1 ▄▄▄▄▄▄▅▅▅▅▅▇▇▇▇▇▇▇▇█▇▇███▃▃▃▃▃▃▃▃▃▂▂▂▂▂▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▇▇██▇▄▅▄▂▆▅▅▄▄▆▃▂▃▅▅▁▄▅▆▃▄▅▅▁▃▄▅▄▃▅▄▁▃▃▅
+wandb:      train/ensemble_f1 ▆▄▃▆▆▄▆▄█▄▅▆▄▃▄▁▂▄▂▃▃▄▂▄▅▄▅▂▃▄▂▂▁▂▄▃▄▂▂▄
+wandb:         train/mil_loss ▃▁▂▄▃▂▄▁▂▂▅█▂▇▅▁▃▃▃▆▆▃▃▄▅▄▃▅▃▇▃▄█▃▄▄▅▄▃▁
+wandb:      train/policy_loss ▇▇▇▇▇▅▇▇▇▇▇▇▇▇▇▇█▇▇▇▇▇▇▇▇▇▇▇▇▁▇▇▇▇▇▇▇▇▇▇
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▆▆▆▆▆▆▆▆▆▅▆▆▆▆▆▆▆▆█▁▆▆▆▆▆▄▆▆▆▅▃▆▆▁▁▁▁▁██
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.78743
+wandb: best/eval_avg_mil_loss 0.57227
+wandb:  best/eval_ensemble_f1 0.78743
+wandb:            eval/avg_f1 0.7278
+wandb:      eval/avg_mil_loss 0.60056
+wandb:       eval/ensemble_f1 0.7278
+wandb:            test/avg_f1 0.72997
+wandb:      test/avg_mil_loss 0.61048
+wandb:       test/ensemble_f1 0.72997
+wandb:           train/avg_f1 0.74397
+wandb:      train/ensemble_f1 0.74397
+wandb:         train/mil_loss 0.48875
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run polar-sweep-14 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/tv8hi781
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_201409-tv8hi781/logs
+wandb: Agent Starting Run: lfrn64hz with config:
+wandb: 	actor_learning_rate: 0.0004835763237129368
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.769048721960326
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.16150661718159465
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_201630-lfrn64hz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run young-sweep-15
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/lfrn64hz
+wandb: uploading history steps 185-208, summary; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▄█
+wandb: best/eval_avg_mil_loss ▁██
+wandb:  best/eval_ensemble_f1 ▁▄█
+wandb:            eval/avg_f1 ▅▂▂▂▁▁▁▂▅▃▃▄▆▆▇▇▇███▇▅▅▅▇▅▅▅▅▅▅▅▆▆▅▅▆▆▅▅
+wandb:      eval/avg_mil_loss ▁▄▄▂▄▅▅▆█████████████████▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:       eval/ensemble_f1 ▆▁▅▅▂▂▂▁▁▁▁▂▅▃▃▃▄▄▆▆▆▇████▇▅▅▇▅▅▅▅▅▅▅▆▆▅
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▅▆▄▄▅▁▂▄▂▂▃▅▆▄▃▄▄▃▃▄▅▃▃▃▆▅▇▄▅▆▅▆▄▅▅▅▆▅█
+wandb:      train/ensemble_f1 ▄▄▅▄▂▅▅▂▃▁▁▂▄▄▆▅█▃▃▇▄▃▇▅▅▇▆▄▆█▇▇█▇▂▆▇▇▃▇
+wandb:         train/mil_loss ▃▃▂▆▁▂▃▄▃▁▄▃▃▆▃▂▄▅▂▂▆▃▅▆▆▃▃█▂▁▄▂▅▄▃▅▄▄█▅
+wandb:      train/policy_loss ▁▇▁▁▁▁▁▁▁▁▁▃▁▁▁▁▁▁▁▁▁▁▁▅▁▁▁▄▁▁▁▁▁▁█▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁█▁▁▁▁▁▄▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.64194
+wandb: best/eval_avg_mil_loss 0.70272
+wandb:  best/eval_ensemble_f1 0.64194
+wandb:            eval/avg_f1 0.61899
+wandb:      eval/avg_mil_loss 0.68295
+wandb:       eval/ensemble_f1 0.61899
+wandb:            test/avg_f1 0.54427
+wandb:      test/avg_mil_loss 0.68242
+wandb:       test/ensemble_f1 0.54427
+wandb:           train/avg_f1 0.56652
+wandb:      train/ensemble_f1 0.56652
+wandb:         train/mil_loss 0.59364
+wandb:      train/policy_loss -0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss -0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run young-sweep-15 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/lfrn64hz
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_201630-lfrn64hz/logs
+wandb: Agent Starting Run: j2odw9pj with config:
+wandb: 	actor_learning_rate: 0.00027190761509276556
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.7531497407497842
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.03055212146556563
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_201849-j2odw9pj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eager-sweep-16
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/j2odw9pj
+wandb: uploading wandb-summary.json
+wandb: uploading history steps 211-228, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▃▄▆▆█
+wandb: best/eval_avg_mil_loss █▅▂▂▁▁
+wandb:  best/eval_ensemble_f1 ▁▃▄▆▆█
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▃▃▃▆███████████████████
+wandb:      eval/avg_mil_loss █████▇▇▇▇██▇▇▇▇▆▅▅▅▅▅▅▅▅▅▄▄▄▃▃▃▃▂▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▃▃▃▃▆███████████████
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▅▁▃▄▇▄▇▅▃▆▄▃▂▄▅▃▄▅▆▆▇▆▇▇▆▄▇▆▃▁▇▅▅██▇▇▆▇
+wandb:      train/ensemble_f1 ▃▁▄▂▆▂▃▂▆▃▂▃▅▂▇▄▃▄▃▄▃▆▆▅▂▁▃▄█▆▅▄▂▄▄▂▆▃▅▂
+wandb:         train/mil_loss ▅▄▁▄▃▄▃▄▅▅▃▂▃▆▄▄▆▆▃▅▇▄▅▄▆▃▂▃▆▅▃▃▄▁▂▂▃▂█▁
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▇▇▇▇▇▇▇▇▇▇▃▃▄▅▅▃▆▁█▃▃█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.63768
+wandb: best/eval_avg_mil_loss 0.75937
+wandb:  best/eval_ensemble_f1 0.63768
+wandb:            eval/avg_f1 0.62818
+wandb:      eval/avg_mil_loss 0.75569
+wandb:       eval/ensemble_f1 0.62818
+wandb:            test/avg_f1 0.64398
+wandb:      test/avg_mil_loss 0.55356
+wandb:       test/ensemble_f1 0.64398
+wandb:           train/avg_f1 0.67623
+wandb:      train/ensemble_f1 0.67623
+wandb:         train/mil_loss 0.5147
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run eager-sweep-16 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/j2odw9pj
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_201849-j2odw9pj/logs
+wandb: Agent Starting Run: 3qpjvgqi with config:
+wandb: 	actor_learning_rate: 1.1734172420991076e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.7447291275163085
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.09071163106204085
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_202124-3qpjvgqi
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dashing-sweep-17
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/3qpjvgqi
+wandb: uploading history steps 94-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ██▇▇████▇▇▇▇▇▇▇▆▆▆▆▅▅▅▅▅▄▄▄▄▄▃▃▃▂▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▅▅▄▆▃▁▃▃▃▇▆▅▅▆▅▆▄▄▃█▄▃▆▃▃▅▂▄▃▂▄█▅▂▂▁▆▅▄
+wandb:      train/ensemble_f1 ▅▃▄▆▅▁▃▄▅▆▅▇▅▄▄█▅▆▃▄▄▆▆▃█▅▅▁▄▆▃▅▄▄█▂▂▂▁▄
+wandb:         train/mil_loss ▃▆▂▄▄▂▂▄▃▂▄▄▂▂▆▃▂▄▂▄▁▂▃▃▇▄▃█▄▃▅▆▄▂▁▄▅▁▅▄
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 0.9708
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.95991
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.1378
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.33222
+wandb:      train/ensemble_f1 0.33222
+wandb:         train/mil_loss 0.66162
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run dashing-sweep-17 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/3qpjvgqi
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_202124-3qpjvgqi/logs
+wandb: Agent Starting Run: 86ijqdhi with config:
+wandb: 	actor_learning_rate: 0.000261455906088744
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.8487992012567257
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.6567468015421756
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_202236-86ijqdhi
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lilac-sweep-18
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/86ijqdhi
+wandb: uploading history steps 94-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ▁▁▁▁▁▂▃▃▃▄▅▅▅▅▅▄▄▄▄▅▆▆▆▆▆▆▆▆▆▆▇▇▇███████
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▂▃▅▅▂▄▁▅▂▄▄▇▅▃▄▅▄▄▄▄▆▃▂▄▆▃▄▂▇█▃▄█▆▃▃▅▃▂▅
+wandb:      train/ensemble_f1 ▂▃▅▅▂▃▃▆▅▄▅▅▃▂▄▁▄▃▄▂▂▃▃▂▃▄▄▄█▁▃▂▅▃▃▃▂▂▂▄
+wandb:         train/mil_loss ▂▅▅▁▃▆▇▁█▃▂▆▃▂▄▄▂▅▃▂▄▅▆▅▂▄▂▆▅▁▇▄▃▄▄▆▄▃▃▆
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.66838
+wandb: best/eval_avg_mil_loss 0.75142
+wandb:  best/eval_ensemble_f1 0.66838
+wandb:            eval/avg_f1 0.66838
+wandb:      eval/avg_mil_loss 0.75198
+wandb:       eval/ensemble_f1 0.66838
+wandb:            test/avg_f1 0.69892
+wandb:      test/avg_mil_loss 0.6033
+wandb:       test/ensemble_f1 0.69892
+wandb:           train/avg_f1 0.7261
+wandb:      train/ensemble_f1 0.7261
+wandb:         train/mil_loss 0.57433
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run lilac-sweep-18 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/86ijqdhi
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_202236-86ijqdhi/logs
+wandb: Agent Starting Run: 7jladhhv with config:
+wandb: 	actor_learning_rate: 0.001563103469259194
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.22944144897745067
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5413753401416449
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_202349-7jladhhv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run decent-sweep-19
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/7jladhhv
+wandb: uploading history steps 94-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ████▇▇▇▇▇▆▆▆▆▆▅▅▅▄▄▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▂▂▂▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▄▂▃▃▃▁▄▄▄▅▆▅▅█▇▃▆▅▂▇▃▆▆▆▇█▅▃▇▅▅▄▆▆▄▅▅▄▄
+wandb:      train/ensemble_f1 ▄▃▇▄▅▂▅▃▃▇▇▅▇▄█▇▂▁▆▆▅▁▄▅▆█▆▇█▄▂▇▄▆█▄▄▂▇▃
+wandb:         train/mil_loss ▃▃▃▂█▇▃▅▆▂▄▅▇▆▅▅▃▅▅▇▆▅▆▇▄▆▄▃▆▁▆▃▅▂▅▄▅▆▆▄
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 0.8708
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.85266
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.00751
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.32942
+wandb:      train/ensemble_f1 0.32942
+wandb:         train/mil_loss 0.7727
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run decent-sweep-19 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/7jladhhv
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_202349-7jladhhv/logs
+wandb: Agent Starting Run: ox7q3tb3 with config:
+wandb: 	actor_learning_rate: 5.544820670718387e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.9045690226128758
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.3845692480018049
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_202501-ox7q3tb3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run wild-sweep-20
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ox7q3tb3
+wandb: uploading history steps 93-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ███▇▇▇▇▇▆▆▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▆▂▆█▅▆▆▂▅▇▄▅▄█▄▁▃▆▆▃▆▄▇▅▄▆▅▇▂▆▃▄▅▂▆▃▇▄▅▅
+wandb:      train/ensemble_f1 ▆▇█▅▃▆▅▂▅▇▃▅▁▅▇▃▃▄▇▃▆▄▃▄▅▅▄▅▃▇▆▅▆▃▇▆▆▃▆▃
+wandb:         train/mil_loss ▃█▅▇▃▃▄▆▇█▄▃▆▅▂▅▇▂▇▇▃▂▄▄▅▃▄▂▂▅▂▆▅▂▆▁▅▆▃▄
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 0.9471
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.94112
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.10555
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.335
+wandb:      train/ensemble_f1 0.335
+wandb:         train/mil_loss 0.54848
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run wild-sweep-20 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/ox7q3tb3
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_202501-ox7q3tb3/logs
+wandb: Agent Starting Run: apjea5b0 with config:
+wandb: 	actor_learning_rate: 0.006704705501097134
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.9658895924400028
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.6858051739031136
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_202614-apjea5b0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run volcanic-sweep-21
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/apjea5b0
+wandb: uploading history steps 94-112, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▃▇█
+wandb: best/eval_avg_mil_loss ▂▁█▄
+wandb:  best/eval_ensemble_f1 ▁▃▇█
+wandb:            eval/avg_f1 ▂▄▃▃█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ▃███▄▅▅▅▃▃▃▃▃▃▃▃▃▃▃▃▃▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▂▃
+wandb:       eval/ensemble_f1 ▁▄▄█▇▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 █▄▂▆▇▄▆▆▇▄▄▄▃▅▅▃▃▅▄▅▄▄▄▁▃▅▆▄▂▆▆▇▂▃▅▆▄▇▄▅
+wandb:      train/ensemble_f1 █▄▄▆▇▆▅▄▆▅▄▅▃▄▅▇▃▅▅▅▄▄▁▃▄▄▂▆▄▇▂▃▆▃▃▆▄▄▄▅
+wandb:         train/mil_loss ▄▃▄▆▅▂▆█▅▄▂▃▄▃▅▄▄▄▅▆▅▃▃▂▂▅▄▆▃▁▆▃▄▃▃▃▂▃▂▃
+wandb:      train/policy_loss █▅▁▁████████▇███████████▇█▇█████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▄▄█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.58242
+wandb: best/eval_avg_mil_loss 0.95557
+wandb:  best/eval_ensemble_f1 0.58242
+wandb:            eval/avg_f1 0.53989
+wandb:      eval/avg_mil_loss 0.94258
+wandb:       eval/ensemble_f1 0.53989
+wandb:            test/avg_f1 0.57928
+wandb:      test/avg_mil_loss 0.78143
+wandb:       test/ensemble_f1 0.57928
+wandb:           train/avg_f1 0.54041
+wandb:      train/ensemble_f1 0.54041
+wandb:         train/mil_loss 0.55491
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run volcanic-sweep-21 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/apjea5b0
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_202614-apjea5b0/logs
+wandb: Agent Starting Run: 4kozpzth with config:
+wandb: 	actor_learning_rate: 8.871577358213579e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.3741130658200881
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.4922358752145968
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_202731-4kozpzth
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fancy-sweep-22
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4kozpzth
+wandb: uploading history steps 208-228, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▅█
+wandb: best/eval_avg_mil_loss █▅▁
+wandb:  best/eval_ensemble_f1 ▁▅█
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▅▅▅▅▁▁▁▁▁▁▁▁▁▁▅██▅▅▅▅▇▇▇▇▇▅▅▇
+wandb:      eval/avg_mil_loss ███▇▇▇▇▇▇▇▆▆▆▆▅▄▄▄▄▄▃▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▅▅▅▅▅▁▁▁▁▃▁▁▁▁▁██████▅▅▅▇▇▇▇▇▅▅▇
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▄▃▁▆▆▃▄▅▃▄▆▆▃▄▅▄▂▅▃▄▇▄▇▄▅▄▆█▅▄▄▅▄▃▇▆█▄▆
+wandb:      train/ensemble_f1 ▂▃▅▁█▃▇▅▄▆▅▆▂▅▇▅▅▆▆▅▆▆▅▆▇▆▅▅▆▃▅▅▅▇▅▃▆▅▅▇
+wandb:         train/mil_loss ▇▆▄▄▅▄▅▅▂█▅▇▆▃▂▃▅▄█▄▃▅▅██▆▅▄▅▄▆▃▆▃█▄▁▆▃▄
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.60938
+wandb: best/eval_avg_mil_loss 0.70655
+wandb:  best/eval_ensemble_f1 0.60938
+wandb:            eval/avg_f1 0.6044
+wandb:      eval/avg_mil_loss 0.69057
+wandb:       eval/ensemble_f1 0.6044
+wandb:            test/avg_f1 0.60317
+wandb:      test/avg_mil_loss 0.66719
+wandb:       test/ensemble_f1 0.60317
+wandb:           train/avg_f1 0.60884
+wandb:      train/ensemble_f1 0.60884
+wandb:         train/mil_loss 0.59795
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run fancy-sweep-22 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4kozpzth
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_202731-4kozpzth/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: 0yw7sxvm with config:
+wandb: 	actor_learning_rate: 0.0006200945233144942
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.11915085176429352
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5335010386901026
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_203027-0yw7sxvm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run rose-sweep-23
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/0yw7sxvm
+wandb: uploading history steps 94-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ██████████████████▁▁▁▁▆▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:      eval/avg_mil_loss ██▇▇▇▆▆▆▆▆▅▅▅▅▄▆▃▄▄▃▄▃▃▃▃▅▅▄▄▃▃▃▃▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ████████████████▁▁▁▁▆▆▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▆▃▅▃▁▂▄▂▄▄▃▄▅▄▅▃▆▆▆▆█▄▆▆▆▇▆▆█▆▆▅▆▆▅▆▅▅▅▅
+wandb:      train/ensemble_f1 ▃▃▄▃▂▄▄▄▃▃▃▃▃▂▁▂▁▄▄▃▅▃▆▇▆▆▆▇▅▆▆▆▇▆▆▅█▇█▅
+wandb:         train/mil_loss █▇▆▅▃▇▃▆▅▇▇▃▃▄▆▇▃▃█▇▃▆▃▆▇▃▅▆▄▄▅▄▁▆▅▅▃▅▄▂
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.51746
+wandb: best/eval_avg_mil_loss 0.7684
+wandb:  best/eval_ensemble_f1 0.51746
+wandb:            eval/avg_f1 0.50216
+wandb:      eval/avg_mil_loss 0.75593
+wandb:       eval/ensemble_f1 0.50216
+wandb:            test/avg_f1 0.3694
+wandb:      test/avg_mil_loss 0.89556
+wandb:       test/ensemble_f1 0.3694
+wandb:           train/avg_f1 0.48845
+wandb:      train/ensemble_f1 0.48845
+wandb:         train/mil_loss 0.64984
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run rose-sweep-23 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/0yw7sxvm
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_203027-0yw7sxvm/logs
+wandb: Agent Starting Run: dinsb6p6 with config:
+wandb: 	actor_learning_rate: 0.0003110186330806379
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.27566939008597635
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.36317250113733746
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_203140-dinsb6p6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run breezy-sweep-24
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/dinsb6p6
+wandb: uploading history steps 94-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ███▇▇▇▇▆▆▆▅▅▅▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▃▃▃▂▂▂▂▂▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▂▅▂▄▂▇▄█▅▅▂▅▂▃█▁▃▄▄▆▅▄▂▃▂▄▅▂▅▄▄▅▅▅▅▅▄▅▃
+wandb:      train/ensemble_f1 ▆▃▃▇█▃▄▇▄▄▅▄▅▅▅▆█▇▄▇▆▁▃▆▆▇▃▆▄▆▃▆▅▅▆▆▆▅▅▄
+wandb:         train/mil_loss ▄▁▄▇▄▄▄▃▄▃▆▇▅▅█▅▄▄▅▅▅▂▅▃▄▇▅▅▄▅▃▆▅▇▆▆▅▃▆▂
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 0.96245
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.942
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.10003
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.32773
+wandb:      train/ensemble_f1 0.32773
+wandb:         train/mil_loss 0.91582
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run breezy-sweep-24 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/dinsb6p6
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_203140-dinsb6p6/logs
+wandb: Agent Starting Run: q7olx6yn with config:
+wandb: 	actor_learning_rate: 0.0003329597827413938
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.7584002091045385
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.3777035368374937
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_203252-q7olx6yn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fluent-sweep-25
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/q7olx6yn
+wandb: uploading history steps 326-343, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▂▃▄▄▅▆▆▇▇█
+wandb: best/eval_avg_mil_loss █▆▆▄▄▄▃▂▁▁▁
+wandb:  best/eval_ensemble_f1 ▁▂▃▄▄▅▆▆▇▇█
+wandb:            eval/avg_f1 ▁▁▁▁▁▂▃▃▃▃▃▄▄▆▆▆▆▆▆▆▆▆▆▆▆▆▆▇▇▇▇▇██▇▇▇▇▇▇
+wandb:      eval/avg_mil_loss █▇▇▇▆▆▆▅▅▅▅▅▄▄▄▄▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▂▂▃▃▃▃▄▆▆▆▆▆▆▅▅▆▆▇▇▇█████▇▆▆▇▇▆▆▆
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▁▂▃▁▁▂▃▄▃▄▆▅▆▆▆▆▆▇▇▇█▆█▆█▇▇▇▆▇▇▅▆▆▆▆▆▆▆▇
+wandb:      train/ensemble_f1 ▂▂▁▃▃▃▃▄▄▆▆▅▆▆▅▇█▆▇█▆▆▇▇▇▆▇▇▆▆▆▆▆▆▅▆▇▅▆▅
+wandb:         train/mil_loss ▃▆▄█▂▃▇▅▄▁▄▄▆▇▂▃▄▅▅▃▅▃▃▂▃▂▃▃▄▃▄▅▄▆▂▅▄▄▃▂
+wandb:      train/policy_loss ████████████████████████▁███████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅█▅▁▅▅▅▅▅
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.51745
+wandb: best/eval_avg_mil_loss 1.17344
+wandb:  best/eval_ensemble_f1 0.51745
+wandb:            eval/avg_f1 0.46647
+wandb:      eval/avg_mil_loss 1.12556
+wandb:       eval/ensemble_f1 0.46647
+wandb:            test/avg_f1 0.57835
+wandb:      test/avg_mil_loss 0.85666
+wandb:       test/ensemble_f1 0.57835
+wandb:           train/avg_f1 0.54478
+wandb:      train/ensemble_f1 0.54478
+wandb:         train/mil_loss 0.61499
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run fluent-sweep-25 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/q7olx6yn
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_203252-q7olx6yn/logs
+wandb: Agent Starting Run: zrenpm4i with config:
+wandb: 	actor_learning_rate: 2.7414507013316865e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.6186549177996903
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.8792179637979038
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_203639-zrenpm4i
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run giddy-sweep-26
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/zrenpm4i
+wandb: uploading history steps 139-143, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁█
+wandb: best/eval_avg_mil_loss █▁
+wandb:  best/eval_ensemble_f1 ▁█
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁████████████████████████
+wandb:      eval/avg_mil_loss ████▇▇▇▇▆▆▆▆▅▅▅▅▅▄▄▄▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁█████████████████████████████
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▇▂▃▁▁▆▅▇▂▆▅▃▃▄▃▄▂▃▄▃▅▃▇▅▅▄▅▃▅▂▂▆▆▇▅▅▄▂▃█
+wandb:      train/ensemble_f1 ▁▃▂▄▄▅▄▇▃▃▃▅▂▃▃▄▄▂▅▃▅▁▇▅▆▅▄▄▄▅▂▅▄▇▄▄▆▃█▇
+wandb:         train/mil_loss ▃▃▃▄▁▂▄▅▅▄█▃▆▃▅▂▃▄▃▃▃▂▂▃▃▃▁▄▃▅▅▄▂▅▃▃▄▄▃▄
+wandb:      train/policy_loss ██████████████▁█████████████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▆▅▄▄▄▇▅▄▄▆▄▄█▅▁▇▅▄▅▃▅▅▄▅▅▄▄█▄▄▄▅▄▅▄▅▇▅▄▅
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.69067
+wandb: best/eval_avg_mil_loss 1.06535
+wandb:  best/eval_ensemble_f1 0.69067
+wandb:            eval/avg_f1 0.69067
+wandb:      eval/avg_mil_loss 0.98303
+wandb:       eval/ensemble_f1 0.69067
+wandb:            test/avg_f1 0.71429
+wandb:      test/avg_mil_loss 0.7335
+wandb:       test/ensemble_f1 0.71429
+wandb:           train/avg_f1 0.71447
+wandb:      train/ensemble_f1 0.71447
+wandb:         train/mil_loss 0.54529
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run giddy-sweep-26 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/zrenpm4i
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_203639-zrenpm4i/logs
+wandb: Agent Starting Run: 8211wojo with config:
+wandb: 	actor_learning_rate: 2.746062386013135e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.16478158188165914
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.004202090135669967
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_203817-8211wojo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run iconic-sweep-27
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/8211wojo
+wandb: uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▂▃▄▄▅▅▆▆▇▇█
+wandb: best/eval_avg_mil_loss █▇▂▂▂▁▁▁▁▁▁▁
+wandb:  best/eval_ensemble_f1 ▁▂▃▄▄▅▅▆▆▇▇█
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▂▂▂▂▁▃▃▅▄▅▆▆▆▇▇▇▇▇███▇▇▇▇▇▇▇▇▇
+wandb:      eval/avg_mil_loss ███▇▇▇▇▇▇▆▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▂▂▂▁▃▃▅▅▆▆▆▆▆▆▆▇▇▇███▇▇▇▇▇▇▇▇▇▇
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▃▄▁▃▄▅▅▅▄▅▄▆▄▅▆▆▆▆▆▅▆▇▆▅▇▇▇▆█████▇▆███▆
+wandb:      train/ensemble_f1 ▃▂▁▂▃▅▂▃▄▃▅▄▅▄▄▅▄▄▄▇▆▄▄▅▅▆▆▅▆▇▅▆█▇▆▆▇█▇▇
+wandb:         train/mil_loss ▆█▄▅▇▇▆▆▆▅▅▃▄▄▄▅▄▃▃▃▃▃▃▁▃▂▃▁▂▃▃▂▃▂▂▃▃▂▂▁
+wandb:      train/policy_loss ███████████▁████████████████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ██████████████▁█▆███████████████████████
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.80998
+wandb: best/eval_avg_mil_loss 0.54371
+wandb:  best/eval_ensemble_f1 0.80998
+wandb:            eval/avg_f1 0.79992
+wandb:      eval/avg_mil_loss 0.5441
+wandb:       eval/ensemble_f1 0.79992
+wandb:            test/avg_f1 0.75845
+wandb:      test/avg_mil_loss 0.51456
+wandb:       test/ensemble_f1 0.75845
+wandb:           train/avg_f1 0.78994
+wandb:      train/ensemble_f1 0.78994
+wandb:         train/mil_loss 0.48214
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run iconic-sweep-27 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/8211wojo
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_203817-8211wojo/logs
+wandb: Agent Starting Run: 7br3hjct with config:
+wandb: 	actor_learning_rate: 0.001064567678610956
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.012763104164489891
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.06253638707382969
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_204204-7br3hjct
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run winter-sweep-28
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/7br3hjct
+wandb: uploading history steps 557-560, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▁▂▂▃▃▃▄▄▅▅▅▆▆▆▇▇▇██
+wandb: best/eval_avg_mil_loss █▇▇▆▆▆▅▅▄▄▄▃▃▃▃▃▂▁▁▁
+wandb:  best/eval_ensemble_f1 ▁▁▂▂▃▃▃▄▄▅▅▅▆▆▆▇▇▇██
+wandb:            eval/avg_f1 ▁▁▁▂▂▂▂▂▃▃▃▄▄▅▅▅▅▆▆▆▇▇▇▇▇▇▇▇████████████
+wandb:      eval/avg_mil_loss ████▇▇▇▇▆▆▆▆▆▅▅▅▄▄▄▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▂▂▂▃▃▃▃▃▅▅▅▅▅▆▆▇▇▇▇▇▇▇▇██████████
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▁▁▁▁▂▁▂▃▂▄▂▂▃▃▄▄▃▄▅▄▄▅▄▆▆▆▆▆▆▇██▇▇▇█▇█▇█
+wandb:      train/ensemble_f1 ▁▂▁▃▂▃▃▂▄▂▃▂▃▃▃▃▄▄▅▄▅▆▆▆▆▆▆▇▇▆▇▇▇▇█▇█▇▆▇
+wandb:         train/mil_loss ██▇▅█▆▇▆▆▅▇▄▅▆▆▄▃▄▃▄▄▄▅▃▄▄▃▂▃▃▂▂▂▂▃▁▂▁▂▁
+wandb:      train/policy_loss ████████▆██▁██████████▆█████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ██████████████▁█████████████████████████
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.80563
+wandb: best/eval_avg_mil_loss 0.66915
+wandb:  best/eval_ensemble_f1 0.80563
+wandb:            eval/avg_f1 0.796
+wandb:      eval/avg_mil_loss 0.64296
+wandb:       eval/ensemble_f1 0.796
+wandb:            test/avg_f1 0.84
+wandb:      test/avg_mil_loss 0.39826
+wandb:       test/ensemble_f1 0.84
+wandb:           train/avg_f1 0.81486
+wandb:      train/ensemble_f1 0.81486
+wandb:         train/mil_loss 0.43466
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run winter-sweep-28 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/7br3hjct
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_204204-7br3hjct/logs
+wandb: Agent Starting Run: k3y3bdqe with config:
+wandb: 	actor_learning_rate: 0.0001845321538153652
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.1344817343535103
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.9581290688623618
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_204811-k3y3bdqe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run kind-sweep-29
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/k3y3bdqe
+wandb: uploading history steps 492-515, summary
+wandb: uploading data
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▂▃▃▃▃▄▄▅▆▇█
+wandb: best/eval_avg_mil_loss █▅▅▄▃▂▂▂▂▁▁▁
+wandb:  best/eval_ensemble_f1 ▁▂▃▃▃▃▄▄▅▆▇█
+wandb:            eval/avg_f1 ▁▂▂▂▂▂▂▂▃▃▃▄▄▃▃▃▃▄▄▄▃▅▅▅▄▆▆▇▇▇▇▇▇█▇▇▇▇▇▇
+wandb:      eval/avg_mil_loss ████▇▇▆▆▆▆▅▅▅▄▄▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▂▂▂▂▂▂▂▂▂▄▃▃▃▃▄▄▃▃▃▄▄▄▄▄▄▅▅▆▇▇████▇▇▇▇█
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▂▁▅▂▄▂▄▁▂▅▃▄▅▆▄▄▅▇▆▄▅▆▆▄▆▆▆▆▆▇▆▅▆▇█▇█▇▇▅
+wandb:      train/ensemble_f1 ▃▂▂▃▁▁▂▂▃▂▂▃▃▃▃▃▄▄▄▄▅▃▄▄▅▂▅▅▄▆▅▆▇▆██▇▇▇▆
+wandb:         train/mil_loss ▄▅▆▇▇▅█▇▅▆▃▅▃▃▃▅▄▄▄▃▃▄▂▃▂▂▂▂▃▂▃▁▂▁▂▁▂▃▁▁
+wandb:      train/policy_loss ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅█▅▅▅▅▅▁▅▅▅▅▅▅▅
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▂▂▂▂▂▂▂▂▂▂▂▂▂▁▂▂█▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.74796
+wandb: best/eval_avg_mil_loss 0.7212
+wandb:  best/eval_ensemble_f1 0.74796
+wandb:            eval/avg_f1 0.73906
+wandb:      eval/avg_mil_loss 0.70178
+wandb:       eval/ensemble_f1 0.73906
+wandb:            test/avg_f1 0.71989
+wandb:      test/avg_mil_loss 0.77676
+wandb:       test/ensemble_f1 0.71989
+wandb:           train/avg_f1 0.79876
+wandb:      train/ensemble_f1 0.79876
+wandb:         train/mil_loss 0.60774
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run kind-sweep-29 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/k3y3bdqe
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_204811-k3y3bdqe/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: 32rawm50 with config:
+wandb: 	actor_learning_rate: 0.0016005192552835737
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.6860973513360432
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5341781788572386
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_205415-32rawm50
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run jumping-sweep-30
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/32rawm50
+wandb: uploading history steps 93-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss █▇▇▇▆▆▆▅▅▆▆▆▆▆▆▅▅▄▄▄▄▄▄▄▄▃▃▃▂▂▁▁▁▁▂▂▂▂▂▂
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▂▄▅▄▂▅▃▄▃▆▅▃▇▃▄▂▆▅▅▇▅▆▆▆▄▂▅█▇▃▃█▅▁▄▅▁▅▅▅
+wandb:      train/ensemble_f1 ▆▆▃▅▃▆▅▄▇▅▇▆▃▅▆▃▆▇▆▁▃▇▆▇▇█▄▇▃▄█▇▅▅▆▇▇▆▆▅
+wandb:         train/mil_loss ▄▄▁▇▃▅▇▆█▆▆▄▅▄▆▄▆▃▄▃▄▂▆▃█▆▄▄▃▄▅▅▆▅▂▄▅▃▄▂
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.57386
+wandb: best/eval_avg_mil_loss 0.74959
+wandb:  best/eval_ensemble_f1 0.57386
+wandb:            eval/avg_f1 0.57386
+wandb:      eval/avg_mil_loss 0.745
+wandb:       eval/ensemble_f1 0.57386
+wandb:            test/avg_f1 0.46501
+wandb:      test/avg_mil_loss 0.70849
+wandb:       test/ensemble_f1 0.46501
+wandb:           train/avg_f1 0.48632
+wandb:      train/ensemble_f1 0.48632
+wandb:         train/mil_loss 0.57206
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run jumping-sweep-30 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/32rawm50
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_205415-32rawm50/logs
+wandb: Agent Starting Run: 23cr6n4o with config:
+wandb: 	actor_learning_rate: 0.005837549394294999
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.9694414624398128
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.43241800735318
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_205526-23cr6n4o
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run olive-sweep-31
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/23cr6n4o
+wandb: uploading history steps 115-133, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▆▆▆▇▇██
+wandb: best/eval_avg_mil_loss ▇▅▆█▆▅▃▁
+wandb:  best/eval_ensemble_f1 ▁▆▆▆▇▇██
+wandb:            eval/avg_f1 ▁▆▇█████████████████████▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:      eval/avg_mil_loss ▆██▅▅▂▂▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:       eval/ensemble_f1 ▁▁▆▆▆████▇█████████████▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▁▆▄▆▄▄▅▇▆▇█▇█▇▇▄▅██▇▅▆▇▇▇▆▅▇▅▆▆▇▇▄▆▇▅▅▇▅
+wandb:      train/ensemble_f1 ▁▃▆▅█▇▅▆▇▆█▆▆▄▅▇▆▄▆▆▇▆▇▇▆▅▇▄▇▇▇▆▄▆▇▆▄▇▅▆
+wandb:         train/mil_loss ▆▄▄▄█▂▃▆▃▅▄▅▃▂▅▄▆▁▇▆▅▆▄▆▅▆▅▃▅▃▅▅▆▃▄▃▃▅▄▃
+wandb:      train/policy_loss ▄▄▄█▄▄▄▄▄▄▆▄▄▄▄▄▄▄▄▂▁▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▅▁▅▅█▅▅▆▅▅▅▅▅▅▅▅▅▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.618
+wandb: best/eval_avg_mil_loss 0.77947
+wandb:  best/eval_ensemble_f1 0.618
+wandb:            eval/avg_f1 0.60091
+wandb:      eval/avg_mil_loss 0.79418
+wandb:       eval/ensemble_f1 0.60091
+wandb:            test/avg_f1 0.6108
+wandb:      test/avg_mil_loss 0.71734
+wandb:       test/ensemble_f1 0.6108
+wandb:           train/avg_f1 0.578
+wandb:      train/ensemble_f1 0.578
+wandb:         train/mil_loss 0.52916
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run olive-sweep-31 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/23cr6n4o
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_205526-23cr6n4o/logs
+wandb: Agent Starting Run: mjmzv3hs with config:
+wandb: 	actor_learning_rate: 0.0002541445472560618
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.7977144192643397
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.3738422336123174
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_205659-mjmzv3hs
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run valiant-sweep-32
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/mjmzv3hs
+wandb: uploading history steps 94-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss █████▇▇▇▇▇▆▅▅▅▅▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▃▇▅▆▄▅▄▄▃█▃▇▆▅▆▅▄▃▆▃▆▄▅▁▆▅█▃▅▅▂▆▃▄▄▂▂▆▇
+wandb:      train/ensemble_f1 ▄▁▃▄▅▂▄▄▄▅▆▅▃▅▄▄▅▆█▃▅▄▃▄▄▃▅▅▅▆▅▆▄▄▆▆█▃▂▆
+wandb:         train/mil_loss █▃▄▄▅▇▃▃▂▅▃▄▂▂▅▅▅▆▃▄▃▃▃▂▄▃▃▆▆▄▄▅▁▃▄▁▄▁▄▄
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 0.96427
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.95411
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.09512
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.34265
+wandb:      train/ensemble_f1 0.34265
+wandb:         train/mil_loss 0.60599
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run valiant-sweep-32 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/mjmzv3hs
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_205659-mjmzv3hs/logs
+wandb: Agent Starting Run: i7nt0wbo with config:
+wandb: 	actor_learning_rate: 1.0530891844017391e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.5772578004105882
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.2890473540513513
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_205812-i7nt0wbo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fancy-sweep-33
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/i7nt0wbo
+wandb: uploading history steps 164-185
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▂▃▅▆▇██
+wandb: best/eval_avg_mil_loss █▅▅▄▃▃▃▁
+wandb:  best/eval_ensemble_f1 ▁▂▃▅▆▇██
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▂▂▂▃▃▅▅▇▇▇▇▇▇█████▇▇▇▆▆▆▇▇▇▇▇▆▇▇▆
+wandb:      eval/avg_mil_loss █████▇▇▆▆▆▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▃▅▅▅▅▆███▇▇████▇▇▇▇▆▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▂▁▂▂▄▅▅▇▇▆▆▇██▇▇▇█▇█▇█▇▇▇▇█▇▇▇▅▆█▇▆▅▅▅▅▅
+wandb:      train/ensemble_f1 ▁▂▂▂▃▃▅▅▆▆▇▇▆▆▇▆▆▇▇█▇█▆▇▅▆▆▆▆▆▆▄▆▆▆▄▄▄▄▄
+wandb:         train/mil_loss ▄▂▄▆█▆▇▆▆▅█▆▇▂▄▅▅▇▄▆▃▄▅▃▄▇▅▁▄▃▄▅▅▆▆▅▄▅▄▇
+wandb:      train/policy_loss ▆▆▆▆▆▆▆▆▆▆▆▆█▁▆▆▆▁█▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▆▆▆▆▆▆▆▆▆▆█▃▆▁▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.47987
+wandb: best/eval_avg_mil_loss 1.28925
+wandb:  best/eval_ensemble_f1 0.47987
+wandb:            eval/avg_f1 0.4423
+wandb:      eval/avg_mil_loss 1.20649
+wandb:       eval/ensemble_f1 0.4423
+wandb:            test/avg_f1 0.60262
+wandb:      test/avg_mil_loss 0.98296
+wandb:       test/ensemble_f1 0.60262
+wandb:           train/avg_f1 0.52599
+wandb:      train/ensemble_f1 0.52599
+wandb:         train/mil_loss 0.77459
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run fancy-sweep-33 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/i7nt0wbo
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_205812-i7nt0wbo/logs
+wandb: Agent Starting Run: 4z8xhexc with config:
+wandb: 	actor_learning_rate: 0.0038408482573405018
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.9930298328657952
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.40600883276571054
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_210015-4z8xhexc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vocal-sweep-34
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4z8xhexc
+wandb: uploading history steps 92-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ███▆▄▄▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁
+wandb:      eval/avg_mil_loss ▁▂▃▄▄▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇██████████
+wandb:       eval/ensemble_f1 █▅▆▄▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 █▇▆▇▅▅▅▅▄▅▄▃▇▂▅▄▃▆▃▁▃▃▃▂▅▄▄▁▆▄▆▆▃▂█▁▁▄▄▂
+wandb:      train/ensemble_f1 █▆▅▇▃▆▆▆▆▆▄▅▄▅▃▇▂▁▇▅▄▇▆▄▄▅▅▄▇▂▁▇▅▅▂▂▄▄▅▅
+wandb:         train/mil_loss ▄▅▃▄▃▅▅▃█▄▅▃▄▅▃▄▄▃▅▃▆▆▃▃▃▄▁▃▂▄▃▆▄▂▄▅▂▄▂▃
+wandb:      train/policy_loss ██▆██████████▁██████████████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss █▂████████████████████▁█████████████████
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.63958
+wandb: best/eval_avg_mil_loss 0.66218
+wandb:  best/eval_ensemble_f1 0.63958
+wandb:            eval/avg_f1 0.50997
+wandb:      eval/avg_mil_loss 0.9077
+wandb:       eval/ensemble_f1 0.50997
+wandb:            test/avg_f1 0.54772
+wandb:      test/avg_mil_loss 0.65838
+wandb:       test/ensemble_f1 0.54772
+wandb:           train/avg_f1 0.52266
+wandb:      train/ensemble_f1 0.52266
+wandb:         train/mil_loss 0.5576
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run vocal-sweep-34 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/4z8xhexc
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_210015-4z8xhexc/logs
+wandb: Agent Starting Run: 6p0cclmp with config:
+wandb: 	actor_learning_rate: 0.0013029872301559577
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.3406428765213173
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.3935196636445448
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_210128-6p0cclmp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run rare-sweep-35
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/6p0cclmp
+wandb: uploading history steps 93-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ███████▅▄▁▃▄▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▁
+wandb:      eval/avg_mil_loss ▃▂▁▁▁▇████▆▆▆▆▆▇▇▆▆▆▅▅▅▅▅▄▄▄▄▄▄▄▄▄▄▃▃▃▃▃
+wandb:       eval/ensemble_f1 ████▇▃▂▃▃▃▅▅▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▄▁▄▄▆▅▅▅▄▃▄▃▆▅▆▅▄▅▅▅▄▅▆▅▆▆▅▆▄▅█▇▅▃▃▆▄▅▄
+wandb:      train/ensemble_f1 ▄▂▂▃▅▃▅▃▂▅▁▂█▄▅▄▄▄▃▄▄▂▂▆▆▅▃▄▆▆▄▃▄█▆▅▃▂▂▇
+wandb:         train/mil_loss █▇▁▂▃▅▅▇▄▃▂▅▇▄▅▇▄▅▁▆▄▅▅▄▄▆▄▅▄▅▅▄▅▅▅▃▃▅▅▃
+wandb:      train/policy_loss ▄▄▄▄▄▄▄▄▄▇▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▁▄▄▄▄▄▄▄
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▆▇▆▂█▁▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▅
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.56044
+wandb: best/eval_avg_mil_loss 0.83936
+wandb:  best/eval_ensemble_f1 0.56044
+wandb:            eval/avg_f1 0.50739
+wandb:      eval/avg_mil_loss 0.84014
+wandb:       eval/ensemble_f1 0.50739
+wandb:            test/avg_f1 0.55357
+wandb:      test/avg_mil_loss 0.7616
+wandb:       test/ensemble_f1 0.55357
+wandb:           train/avg_f1 0.53214
+wandb:      train/ensemble_f1 0.53214
+wandb:         train/mil_loss 0.66912
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run rare-sweep-35 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/6p0cclmp
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_210128-6p0cclmp/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: ERROR Error while calling W&B API: Post "http://anaconda2.default.svc.cluster.local/search": read tcp 10.53.197.5:36512->10.55.247.53:80: read: connection reset by peer (<Response [500]>)
+wandb: Job received.
+wandb: Agent Starting Run: wub5ef9t with config:
+wandb: 	actor_learning_rate: 0.0001932636767173343
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.6467690464615151
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.07852724118469101
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_210308-wub5ef9t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run iconic-sweep-36
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/wub5ef9t
+wandb: uploading history steps 92-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ███▇▆▆▆▆▅▅▅▅▄▄▄▄▄▄▄▄▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▂▁▄▃▄▁▇▄▄▆▆█▄▄▁▁▆▄▅▅▁▄▇▅▂▅▅▆▁█▂▅▇▄▇▄▆▂▂
+wandb:      train/ensemble_f1 ▁▄▅▃▄▆▃▆▄▄▃▅▅▄▃▃▆▆▄▄▅█▆▅▅▃▆▅▆▅▇▇▃▃▆▆▃▃▃▄
+wandb:         train/mil_loss ▄▄▄▇█▄▁▃▄▄▄▇▄▄▄▄▃▅▂▄▃▂▄▄▃▆▄▂▃▄▄▄▆▃▄▃▄▂▅▃
+wandb:      train/policy_loss ▄▄██▆█▁▆▅▄██▅▁▄█▃▆▄▃▃▃▆▅▃▆▁█▄▆▆▅▃▄▅▄█▁▄▅
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▄▅▅▂▄▄▄▁▄▃█▅▄▄▂▃▂▄▃▃▃▄▁▂▅▄▆▅▅▅▅▄▄▄▇▆▄▄▂▂
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.46944
+wandb: best/eval_avg_mil_loss 0.72409
+wandb:  best/eval_ensemble_f1 0.46944
+wandb:            eval/avg_f1 0.46944
+wandb:      eval/avg_mil_loss 0.71917
+wandb:       eval/ensemble_f1 0.46944
+wandb:            test/avg_f1 0.47457
+wandb:      test/avg_mil_loss 0.78463
+wandb:       test/ensemble_f1 0.47457
+wandb:           train/avg_f1 0.48524
+wandb:      train/ensemble_f1 0.48524
+wandb:         train/mil_loss 0.68587
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run iconic-sweep-36 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/wub5ef9t
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_210308-wub5ef9t/logs
+wandb: Agent Starting Run: bu13awwr with config:
+wandb: 	actor_learning_rate: 0.0059603532496205
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.113202500191262
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.6888593760327597
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_210419-bu13awwr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run rosy-sweep-37
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/bu13awwr
+wandb: uploading history steps 93-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ████▇▇▇▇▇▇▇▇▆▆▆▅▅▅▅▅▅▄▄▄▄▄▃▃▃▃▂▂▂▂▂▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▇▅▅▅▃▃▂▃▇▃█▅▅▅▄▆▆▅▆▃▄▃▆▃▁▂▂▄▂▄▇▆▃▅▄▄▃▄▆▄
+wandb:      train/ensemble_f1 █▅▅▅▄▃▃▇▆▆▆▅▆▂▆▅▅▄▄▆▄█▆▃▁▇▁▄▄▁▅▅▃▅▂▄▅▆█▄
+wandb:         train/mil_loss ▇▆▆▄▃█▆▅▅▄▇▅▄▅▃▁█▇▅▃▆▆█▆█▄▃█▇█▄▇▄▄▅▅▄▇▅▆
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 0.94689
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.92735
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.10528
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.33054
+wandb:      train/ensemble_f1 0.33054
+wandb:         train/mil_loss 0.88379
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run rosy-sweep-37 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/bu13awwr
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_210419-bu13awwr/logs
+wandb: Agent Starting Run: 7yjtxilv with config:
+wandb: 	actor_learning_rate: 0.00015544681516562226
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.2501576087616112
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.9445012094422396
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_210531-7yjtxilv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run glowing-sweep-38
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/7yjtxilv
+wandb: uploading output.log
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss █████▇▇▇▇▇▆▆▆▆▆▅▅▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▆▁▃▂▅▅▆▄▃▂▄▂▃▃▃█▁▄▃▅▃▃▅▆▆▆▄▂▆▁▇▅▃▄▅▆▅▄▃
+wandb:      train/ensemble_f1 ▁▃▅▆▃▇▃▄▃▄▄▃▄▃▃▅▃▂▆▃▄▆▇█▂▁▂▄▅▄▆▅▃▄▅▄▄▅▄▃
+wandb:         train/mil_loss ▇▅▄▃▃▄▅▅▆█▅▃▆▁▅▅▆▆▁▄▃▄▆▅▅▇▅▃▆▃▇▁▆▄▆▅▆▆▅▅
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 4.61437
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 4.47225
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 5.87614
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.34534
+wandb:      train/ensemble_f1 0.34534
+wandb:         train/mil_loss 3.93536
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run glowing-sweep-38 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/7yjtxilv
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_210531-7yjtxilv/logs
+wandb: Agent Starting Run: 335p0gr3 with config:
+wandb: 	actor_learning_rate: 6.623265965256753e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.24520210692808264
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.17197895568223376
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_210644-335p0gr3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run scarlet-sweep-39
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/335p0gr3
+wandb: uploading history steps 187-190, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▂▃▄▄▅▆▆▆▆▇▇█
+wandb: best/eval_avg_mil_loss █▇▇▇▆▆▅▅▄▄▄▁▁
+wandb:  best/eval_ensemble_f1 ▁▂▃▄▄▅▆▆▆▆▇▇█
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▃▄▄▅▆▆▅▇▇▇▇▇▇▇▆▆▇█▇▇▇▇▇█▇▇▆▆▆▆▆▆▆▆
+wandb:      eval/avg_mil_loss ▇▇█▇▇▆▆▅▅▅▄▄▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▂▂▂▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▄▄▄▅▆▅▅▆▆▆▇▆▆▆▇▇█▇▇▇▇▇▇▇▇▆▆▆▆▆▆▆▆▆▆
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▁▂▂▃▄▆▆▇▆▇▆▆█▇▇███▇▇██▇█▆▇▇▇▇█▇▆▇▇▆▇▆▇▅▇
+wandb:      train/ensemble_f1 ▁▁▅▅▅▆▆▆▇█▇▇▇▇███▇█▇▇▆▇▆▆▆▇▆▇▇▇█▇▅▆▆▇▆▇▇
+wandb:         train/mil_loss ▇▃▄▇█▅▆▅▃▇▄▇▆▆▇▄▇█▆▇▂▆▅▅▅▆▄▆▆▇▅▆▃▄▁▄▆▂▁▆
+wandb:      train/policy_loss ▅▅▅▅█▅▅▅▅▁▅▅▅▅▅▅▅▇▅▅▅▅▅▅▅▄▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▅▅▅▄▅▅▅▁▅▅▅▅█▅▁▅▅▅▅▇▆▅▃▅▅▅▅▄▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.50665
+wandb: best/eval_avg_mil_loss 1.25247
+wandb:  best/eval_ensemble_f1 0.50665
+wandb:            eval/avg_f1 0.4578
+wandb:      eval/avg_mil_loss 1.216
+wandb:       eval/ensemble_f1 0.4578
+wandb:            test/avg_f1 0.56044
+wandb:      test/avg_mil_loss 0.99178
+wandb:       test/ensemble_f1 0.56044
+wandb:           train/avg_f1 0.5485
+wandb:      train/ensemble_f1 0.5485
+wandb:         train/mil_loss 0.66491
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run scarlet-sweep-39 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/335p0gr3
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_210644-335p0gr3/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: mtmnn088 with config:
+wandb: 	actor_learning_rate: 3.590515319459391e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.8443810426455253
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.906779727116577
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_210859-mtmnn088
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run splendid-sweep-40
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/mtmnn088
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ███▇▇▇▇▇▆▆▆▆▆▆▆▅▅▅▅▅▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 █▆▄▅█▃▄▄▆▆▅▁▇▂▆▃▅█▄▄▅▅▆▅▂▃▅▃▇▆▆▄▇█▂▄▂▄▄▇
+wandb:      train/ensemble_f1 ▄▇▃▅▇▃▄▄▅▄▁▃▅▅▆▆█▅▃▄▅▅▅▇▄▅▅▆▄▄▄▆▆▃▂▃▂▃▄▅
+wandb:         train/mil_loss ▇▅▇▆▄▆▄▂▄▂▃▅▃▄▂▇▂▄█▄▂▅▅▁▄▄▆▄▆▂▇▄▂▃▂▇▃▁▂▃
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 0.93291
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.92415
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.08754
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.33884
+wandb:      train/ensemble_f1 0.33884
+wandb:         train/mil_loss 0.58491
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run splendid-sweep-40 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/mtmnn088
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_210859-mtmnn088/logs
+wandb: Agent Starting Run: 02wwfgct with config:
+wandb: 	actor_learning_rate: 0.0001369253303435842
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.8424542210987701
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.5468867061976539
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_211011-02wwfgct
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run skilled-sweep-41
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/02wwfgct
+wandb: uploading history steps 92-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ████▇▇▇▇▇▇▆▅▅▅▄▄▄▄▄▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▃▇▃▄▅▃▇▅▇▅▃▄▇▇█▆▅▄▄▅▄▄▁▄▄▂▄▆▆▇█▆▄▅▅▆▅▅█▄
+wandb:      train/ensemble_f1 ▃▆▁▅▄▄▅▃▄▆▄▃█▇▂▇▅▆▅▇▃▅▄▄▁▄▅▄▃▅▄▅▄▂▅▅▄▅▅▄
+wandb:         train/mil_loss ▅▃▄▃▁▄▄▅▅▆▅▆▆▃▄▄▄▅▄▅▅▅▄▄▅▃▄▄▄▃▃▄▃▃▃▃▃█▅▄
+wandb:      train/policy_loss ▆▆▁▆▃▅██▆██▃█▁█▅▆▃▃▆▆▅█▆▆▆█▃▃▅██▃▆██▃██▃
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▃▇██▆▃██▃▃▁▁▅█▆▅▆▃▃▃▆▆▃█▆████▁▅▆███▆█▆█▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.8164
+wandb: best/eval_avg_mil_loss 0.63014
+wandb:  best/eval_ensemble_f1 0.8164
+wandb:            eval/avg_f1 0.8164
+wandb:      eval/avg_mil_loss 0.62681
+wandb:       eval/ensemble_f1 0.8164
+wandb:            test/avg_f1 0.84
+wandb:      test/avg_mil_loss 0.38259
+wandb:       test/ensemble_f1 0.84
+wandb:           train/avg_f1 0.82539
+wandb:      train/ensemble_f1 0.82539
+wandb:         train/mil_loss 0.51695
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run skilled-sweep-41 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/02wwfgct
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_211011-02wwfgct/logs
+wandb: Agent Starting Run: 26qjnqp2 with config:
+wandb: 	actor_learning_rate: 0.00022017924710884183
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.5714643460671504
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.7728293517695157
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_211123-26qjnqp2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sage-sweep-42
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/26qjnqp2
+wandb: uploading history steps 93-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ██▇▇▇▇▇▆▆▆▆▆▆▅▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▃▃▃▂▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▂▅█▄▃▂█▃▃▄▇▅▁▃▆▅▂▆▆▃▇▆█▄▃▁█▃▂▅▂▆▂▇▅█▅▃▆▅
+wandb:      train/ensemble_f1 ▂▇▅▄▃▂▃▁▂▂▆▃▄▆▃█▅▂▄▄▂▂▃▄▇▃▅▄▂▃▄▄▂▆▅▂▃▅▃▃
+wandb:         train/mil_loss ▆▆▆▆▅▂▄▆▇▅▅█▅▃▅▃▃▁▂▄▃▃▄▆▆▂▃▄▂▃▅▂▄█▄▅▃▃▄▃
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 1.10923
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 1.09079
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.27595
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.34319
+wandb:      train/ensemble_f1 0.34319
+wandb:         train/mil_loss 0.70825
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run sage-sweep-42 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/26qjnqp2
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_211123-26qjnqp2/logs
+wandb: Agent Starting Run: fobuuvnb with config:
+wandb: 	actor_learning_rate: 1.57244759643938e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.17676356692540007
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.6197181684082864
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_211236-fobuuvnb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lucky-sweep-43
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/fobuuvnb
+wandb: uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▂▂▃▃▄▄▅▆▆▆▆▇▇▇██
+wandb: best/eval_avg_mil_loss █▇▆▅▅▅▃▃▃▃▃▂▂▂▁▁▁
+wandb:  best/eval_ensemble_f1 ▁▂▂▃▃▄▄▅▆▆▆▆▇▇▇██
+wandb:            eval/avg_f1 ▁▂▂▃▄▅▅▅▆▆▆▆▆▆▆▆▆▇▇▇▆▆▇▇█▇▇█████████████
+wandb:      eval/avg_mil_loss ██▇▆▆▄▄▄▄▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▂▂▂▄▄▄▄▄▅▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇██▇▇██████
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▁▁▃▃▄▃▅▅▄▆▆▅▅▆▆▆▆▇█▇▆█▇▇▇▇█▇▇▇▇█▇█▇█▇█▇█
+wandb:      train/ensemble_f1 ▁▂▁▂▂▂▂▃▂▄▄▅▅▅▅▇▇▇█▇█▇▇▇██▇▇▇▇▇▇▇█▇█▇█▇█
+wandb:         train/mil_loss ▆▄▇▄▇▂▅▃▄█▅▅▇▃▄▃▄▄▃▄▃▄▄▅▂▃▅▄▂▃▅▅▁▅▄▂▂▂▃▂
+wandb:      train/policy_loss ▆▆▆▆▆▆▆▆▄▃▆▆▆▆▆▆▁▆▆▆▇▆▆▆▆▆▅▆▆▆▆▆▆▆▆▆▆▆█▆
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▃▃▃▃▃▃▃▃▂▂▃▃▃▃▃▃▃▃▃▁▃▃▃▃▃▃▄▃▃▃▄▃▃▃▃█▃▃▃▃
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.58822
+wandb: best/eval_avg_mil_loss 0.79659
+wandb:  best/eval_ensemble_f1 0.58822
+wandb:            eval/avg_f1 0.57555
+wandb:      eval/avg_mil_loss 0.78134
+wandb:       eval/ensemble_f1 0.57555
+wandb:            test/avg_f1 0.63439
+wandb:      test/avg_mil_loss 0.68961
+wandb:       test/ensemble_f1 0.63439
+wandb:           train/avg_f1 0.64486
+wandb:      train/ensemble_f1 0.64486
+wandb:         train/mil_loss 0.66918
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run lucky-sweep-43 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/fobuuvnb
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_211236-fobuuvnb/logs
+wandb: Agent Starting Run: p7c97088 with config:
+wandb: 	actor_learning_rate: 0.008432550161430746
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.006694950347566286
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.1264303994442747
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_211628-p7c97088
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fallen-sweep-44
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/p7c97088
+wandb: uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ██████▇▇▇▇▇▇▇▇▆▆▆▆▆▅▅▅▅▅▄▄▃▃▃▃▃▃▃▂▂▂▂▂▁▁
+wandb:       eval/ensemble_f1 ██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▆▅▅▆▃▅▆▃▄▁█▃▄▅▅▇▅▅▄▆▄▆▂▅▆▆▅▆▅▆▇█▄▅▆▄▅▃▃
+wandb:      train/ensemble_f1 ▆▆▇▆█▄▅▃▆▇▇▁▄▅▄▇▅▆▅▄▄▆▂▅▇▆▃▆▇▃▄▅▃▅▅▄▅▄▆▅
+wandb:         train/mil_loss ▁▁▂▅▇▇▆▆█▅▇▇▆▄▇▇▅▅▄▇▆▇▆▆▇▆▆▅▆▆▇▅▅▄▆▇▆▇▅▆
+wandb:      train/policy_loss ▁███████████████████████████████████████
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁███████████████████████████████████████
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.3605
+wandb: best/eval_avg_mil_loss 0.89588
+wandb:  best/eval_ensemble_f1 0.3605
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.92735
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.4729
+wandb:      test/avg_mil_loss 0.79336
+wandb:       test/ensemble_f1 0.4729
+wandb:           train/avg_f1 0.32489
+wandb:      train/ensemble_f1 0.32489
+wandb:         train/mil_loss 1.00538
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run fallen-sweep-44 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/p7c97088
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_211628-p7c97088/logs
+wandb: Agent Starting Run: volhkmj9 with config:
+wandb: 	actor_learning_rate: 0.0041630472718402365
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.9360461133914024
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.020496482533696847
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_211741-volhkmj9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run absurd-sweep-45
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/volhkmj9
+wandb: uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▁▂▆▆▆▆▇▇▇███
+wandb: best/eval_avg_mil_loss ▃▃█▄▃▃▃▂▁▁▁▁▁
+wandb:  best/eval_ensemble_f1 ▁▁▂▆▆▆▆▇▇▇███
+wandb:            eval/avg_f1 ▂▂▂▂▂▂▁▁▁▆▇▇████████████████████████████
+wandb:      eval/avg_mil_loss ▃▃▃▃▃▃▃▃█▇▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▂▆▇▇███████████████████████████████
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▂▁▂▂▁▂▁▂▁▂▁▂▆▆▆▇▇▇█▇█▇▇▇██▇█▇▇███▇▇▇▇█▇█
+wandb:      train/ensemble_f1 ▁▂▁▂▁▂▁▁▅▆▆▆▆█▇▇▇▇█▇▇███▇██▇▇███▇▇▇██▇▇▇
+wandb:         train/mil_loss ▃▅▂▂▅▂▃▂▃▂█▂▃▇▄▄▄▄▃▂▃▄▅▃▅▄▃▁▂▄▁▃▂▁▁▁▁▃▂▂
+wandb:      train/policy_loss ▆▆▆▆▆▆▆▅██▇▁▁▁▂▃▁▂▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▄▂▁▂▂
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.78375
+wandb: best/eval_avg_mil_loss 0.89476
+wandb:  best/eval_ensemble_f1 0.78375
+wandb:            eval/avg_f1 0.78375
+wandb:      eval/avg_mil_loss 0.88988
+wandb:       eval/ensemble_f1 0.78375
+wandb:            test/avg_f1 0.76068
+wandb:      test/avg_mil_loss 0.62027
+wandb:       test/ensemble_f1 0.76068
+wandb:           train/avg_f1 0.69631
+wandb:      train/ensemble_f1 0.69631
+wandb:         train/mil_loss 0.53443
+wandb:      train/policy_loss -0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss -0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run absurd-sweep-45 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/volhkmj9
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_211741-volhkmj9/logs
+wandb: Agent Starting Run: v8q5jckm with config:
+wandb: 	actor_learning_rate: 0.00020381557834069991
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.780024451542607
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.8658005102743691
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_211924-v8q5jckm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sparkling-sweep-46
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/v8q5jckm
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▂▃▄▅▆▆▇██
+wandb: best/eval_avg_mil_loss █▇▆▄▄▃▂▂▂▁
+wandb:  best/eval_ensemble_f1 ▁▂▃▄▅▆▆▇██
+wandb:            eval/avg_f1 ▁▂▂▃▃▃▃▃▃▄▄▄▅▅▅▅▅▆▆▆▇▇▇▇▇▇▇▇▇▇██████████
+wandb:      eval/avg_mil_loss █▇▇▆▆▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▂▂▂▂▂▃▃▃▃▄▄▅▅▅█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇███▇▇███
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▂▁▂▂▂▂▂▃▃▃▄▄▄▃▅▄▄▅▆▆▆▅▆▅▆▆▅▆▆▅▆▇▆▇▇▇▇▆▆█
+wandb:      train/ensemble_f1 ▁▁▂▂▁▂▃▅▄▂▄▄▆▆▅▅▆▇▆▆▆█▇▆▆▇▆▆▇▇█▇██▇▇▇▇▇▇
+wandb:         train/mil_loss ▅▄▅▇▄▄▄▅▅▃▃▃▆█▅▅▁▃▂▄▂▅▄▂▄▃▃▄▄▅▇▇▄▅▄▃▅▄▄▅
+wandb:      train/policy_loss ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂█▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.58242
+wandb: best/eval_avg_mil_loss 0.83553
+wandb:  best/eval_ensemble_f1 0.58242
+wandb:            eval/avg_f1 0.58242
+wandb:      eval/avg_mil_loss 0.82596
+wandb:       eval/ensemble_f1 0.58242
+wandb:            test/avg_f1 0.67544
+wandb:      test/avg_mil_loss 0.74005
+wandb:       test/ensemble_f1 0.67544
+wandb:           train/avg_f1 0.65161
+wandb:      train/ensemble_f1 0.65161
+wandb:         train/mil_loss 0.63024
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run sparkling-sweep-46 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/v8q5jckm
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_211924-v8q5jckm/logs
+wandb: Agent Starting Run: un4iktuo with config:
+wandb: 	actor_learning_rate: 2.50576518896565e-05
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.5631344034640466
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.22098196209542909
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_212216-un4iktuo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lucky-sweep-47
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/un4iktuo
+wandb: uploading history steps 93-114, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁█
+wandb: best/eval_avg_mil_loss ▁█
+wandb:  best/eval_ensemble_f1 ▁█
+wandb:            eval/avg_f1 ▃▃▃▃▂▂████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇
+wandb:      eval/avg_mil_loss ▂▁▆███▆▅▅▅▅▅▅▅▄▄▄▄▄▄▄▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂
+wandb:       eval/ensemble_f1 ▃▃▃▂▂▂███████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▄▆▆▁▆▄▅▆▇▆▃▃▇▅▅▇█▆▅▆▆▆▆▆▇▆▄▄██▅█▆▇▃▆█▄▄▆
+wandb:      train/ensemble_f1 ▃▅▅▆▄▄▂▄▄▂▅▅▄▄▁▆▃▄▃▅▃▄▅▃▃▆▃▆█▆▄▅▄▃▆▃▃▄▆▅
+wandb:         train/mil_loss ▇▅▅▃█▂▄▅▄▃▆▃▂▃▅▄▄▄▄▄▄▅▂▆▃▅▂▄▄▆▄▂▄▃▄▂▁▃▄▃
+wandb:      train/policy_loss ▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ██████████████████▁█████████████████████
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.55556
+wandb: best/eval_avg_mil_loss 0.70761
+wandb:  best/eval_ensemble_f1 0.55556
+wandb:            eval/avg_f1 0.55357
+wandb:      eval/avg_mil_loss 0.70074
+wandb:       eval/ensemble_f1 0.55357
+wandb:            test/avg_f1 0.42463
+wandb:      test/avg_mil_loss 0.73351
+wandb:       test/ensemble_f1 0.42463
+wandb:           train/avg_f1 0.50124
+wandb:      train/ensemble_f1 0.50124
+wandb:         train/mil_loss 0.53488
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run lucky-sweep-47 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/un4iktuo
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_212216-un4iktuo/logs
+wandb: Agent Starting Run: 0myc4g1z with config:
+wandb: 	actor_learning_rate: 0.0027834580754076584
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.8483404829052215
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.18551052744499577
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_212338-0myc4g1z
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sage-sweep-48
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/0myc4g1z
+wandb: uploading history steps 92-110, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁▆██
+wandb: best/eval_avg_mil_loss █▂▁▅
+wandb:  best/eval_ensemble_f1 ▁▆██
+wandb:            eval/avg_f1 █▁▅▅▇▃▁▁▁▃▅▁▁▁▁▁▄▄▇▇▇▇▇▇▇▇▇▇▇▇▇▅▅▅▅▅▅▅▅▅
+wandb:      eval/avg_mil_loss ▁▇▇▇▇██████▇▇▇▇▇▇▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:       eval/ensemble_f1 ▅▆██▃▃▁▁▁▃▁▁▁▁▃█████████▆█▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▂▇▇▅▇▄▂▄▁▃▅▅▃▄▅▄▆▄▆▅▄▄█▇█▅▄▅▅▅▄▅▆▄▃▇▄▆▇▇
+wandb:      train/ensemble_f1 ▁▄▇▆▅▃▂▂▃▃▇▄▆▆▆▅▅▄▅▄▃▄▅▅▆▁▆▅▅▄▅▄▅█▅▄▅▇▄▅
+wandb:         train/mil_loss ▃▃▂▃▄▆▆▄▅▁▄▂▄▅▆▅▃▁▂▃▄▁▄▃▅▃█▂▅▂▃▅▇▃▂▆▄▂▃▁
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▅▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▃▃▃▃▃▃▃▃▃▃▃▆▁▃▃▃▆▃▃▃▃▃▃▃▃▃▃▃█▃▃▃▃▃▃▃▃▃▃▃
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.584
+wandb: best/eval_avg_mil_loss 0.96126
+wandb:  best/eval_ensemble_f1 0.584
+wandb:            eval/avg_f1 0.57108
+wandb:      eval/avg_mil_loss 0.9442
+wandb:       eval/ensemble_f1 0.57108
+wandb:            test/avg_f1 0.57131
+wandb:      test/avg_mil_loss 0.7823
+wandb:       test/ensemble_f1 0.57131
+wandb:           train/avg_f1 0.58192
+wandb:      train/ensemble_f1 0.58192
+wandb:         train/mil_loss 0.63465
+wandb:      train/policy_loss 0.0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0.0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run sage-sweep-48 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/0myc4g1z
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_212338-0myc4g1z/logs
+wandb: Agent Starting Run: qstwxmfm with config:
+wandb: 	actor_learning_rate: 0.0012106605702417491
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.9955276042908772
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.7675140520289458
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_212456-qstwxmfm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sparkling-sweep-49
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/qstwxmfm
+wandb: uploading history steps 92-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ███▇▇▆▆▆▆▆▅▅▅▄▅▃▃▃▃▂▂▂▂▁▁▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▅▆██▄▃▆▅▆▆█▄▂▇▄▄▄▂▃▅▅▄▂▄▆▃▅▃▇▄▄█▇▄▂▇▆▅▄▁
+wandb:      train/ensemble_f1 ▆▆██▄▃▆▅▇▆▄▆▂▇▄▁▅▁▄▃▆▃▆▄▅▇▂▂▅▃▄▄▅▅▄▅▇▆▄▁
+wandb:         train/mil_loss ▂▃▃▅▅▄▄▅▄▂▂▂▄▁▅▂▅▃▁█▄▂▅▆▃▃▄▁▂▅▂▄▄▂▂▄▅▁▂▃
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 0.85651
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 0.85449
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 0.98165
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.33555
+wandb:      train/ensemble_f1 0.33555
+wandb:         train/mil_loss 0.54052
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run sparkling-sweep-49 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/qstwxmfm
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_212456-qstwxmfm/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: utfm70mg with config:
+wandb: 	actor_learning_rate: 0.0031144741493185505
+wandb: 	batch_size: 128
+wandb: 	critic_learning_rate: 0
+wandb: 	early_stopping_patience: 100
+wandb: 	epochs: 800
+wandb: 	epsilon: 0.22176699715080683
+wandb: 	hdim: 8
+wandb: 	learning_rate: 1e-06
+wandb: 	reg_coef: 0.4367654066264288
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/work5/0/prjs1491/Attention-based-RL-MIL/wandb/run-20250601_212630-utfm70mg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sage-sweep-50
+wandb: ⭐️ View project at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: 🧹 View sweep at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/sweeps/h6hkrui6
+wandb: 🚀 View run at https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/utfm70mg
+wandb: uploading history steps 93-103, summary
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:       best/eval_avg_f1 ▁
+wandb: best/eval_avg_mil_loss ▁
+wandb:  best/eval_ensemble_f1 ▁
+wandb:            eval/avg_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      eval/avg_mil_loss ▃▆▆▅▅▅▃▃▂▁▃▂▂▁▃▃▃▄▃▆▅▄▄▇▇▇▆▆▅▅█▇▇▇▆▆▅▅▅▄
+wandb:       eval/ensemble_f1 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test/avg_f1 ▁
+wandb:      test/avg_mil_loss ▁
+wandb:       test/ensemble_f1 ▁
+wandb:           train/avg_f1 ▆▇▆█▆▇▁▅▃▆▅▆▅▆▅▄▆▄▆▄▆▅▇▇▇▆▅▇▄▅▂▅▁▆▇▇▆▅▆▆
+wandb:      train/ensemble_f1 ▅▆▆▅█▇▃▆█▆▅▁▄▅▅▆▄▃▃▅▄▇▃▇▅▅▄▅▇▆▆▃▇█▆▄▅▅▄▆
+wandb:         train/mil_loss ▆▆▅▅▇▇▃▃▅▆▅▇▅▃█▃▇▂▁█▆▅▂▆▄██▆▆█▅▆▆▄▄▅▄▅▆▇
+wandb:      train/policy_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         train/reg_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/total_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       train/value_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:       best/eval_avg_f1 0.34211
+wandb: best/eval_avg_mil_loss 1.30108
+wandb:  best/eval_ensemble_f1 0.34211
+wandb:            eval/avg_f1 0.34211
+wandb:      eval/avg_mil_loss 1.30245
+wandb:       eval/ensemble_f1 0.34211
+wandb:            test/avg_f1 0.29577
+wandb:      test/avg_mil_loss 1.5736
+wandb:       test/ensemble_f1 0.29577
+wandb:           train/avg_f1 0.33775
+wandb:      train/ensemble_f1 0.33775
+wandb:         train/mil_loss 0.97868
+wandb:      train/policy_loss 0
+wandb:         train/reg_loss 0
+wandb:       train/total_loss 0
+wandb:       train/value_loss 0
+wandb: 
+wandb: 🚀 View run sage-sweep-50 at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis/runs/utfm70mg
+wandb: ⭐️ View project at: https://wandb.ai/ninabraakman-university-of-amsterdam/MasterThesis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250601_212630-utfm70mg/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Sweep Agent: Exiting.

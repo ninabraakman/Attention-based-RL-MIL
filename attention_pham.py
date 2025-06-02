@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader, WeightedRandomSampler
 from configs import parse_args
 from RLMIL_Datasets import RLMILDataset
 from logger import get_logger
-from models_0505 import AttentionPolicyNetwork, sample_action, select_from_action, create_mil_model_with_dict
+from models import AttentionPolicyNetwork_pham as AttentionPolicyNetwork, sample_action, select_from_action, create_mil_model_with_dict
 from utils import (
     get_data_directory,
     get_model_name,
@@ -72,8 +72,7 @@ def finish_episode_policy_only(
     policy_losses = []
     policy_network.train()
     for log_prob, reward in zip(policy_network.saved_actions, policy_network.rewards):
-        # policy_losses.append(-reward * log_prob.cuda())   ->change for gpu setup
-        policy_losses.append(-reward * log_prob.to(device))
+        policy_losses.append(-reward * log_prob.cuda())
 
     optimizer.zero_grad()
     policy_loss = torch.cat(policy_losses).mean()
@@ -153,8 +152,7 @@ def finish_episode(
         # logger.debug(-advantage * log_prob.cuda())
         # logger.debug("_"*40)
         # logger.debug(advantage.shape, log_prob.shape)
-        # policy_losses.append(-advantage * log_prob.cuda())    ->change for gpu setup
-        policy_losses.append(-advantage * log_prob.to(device))
+        policy_losses.append(-advantage * log_prob.cuda())
         # logger.debug(policy_losses[-1].shape)
         # calculate critic (exp_reward) loss using L1 smooth loss
         R_tensor = torch.tensor([reward] * len(exp_reward))
@@ -248,7 +246,7 @@ def prepare_data(args):
 
     return train_dataset, val_dataset, test_dataset, number_of_classes
 
-def create_rl_model(args, mil_best_model_dir, device):
+def create_rl_model(args, mil_best_model_dir):
     if args.rl_task_model == "ensemble":
         for ensemble_dir in os.listdir(os.path.join(mil_best_model_dir, "..")):
             if "only_"+args.rl_task_model in ensemble_dir:
@@ -268,7 +266,7 @@ def create_rl_model(args, mil_best_model_dir, device):
                                    state_dim=args.state_dim,
                                    hdim=args.hdim,
                                    learning_rate=args.learning_rate,
-                                   device=device,
+                                   device=DEVICE,
                                    task_type=args.task_type,
                                    min_clip=args.min_clip,
                                    max_clip=args.max_clip,
@@ -283,7 +281,7 @@ def load_mil_model_from_config(mil_config_file, state_dict):
     
     return task_model
 
-def load_model_from_config(mil_config_file, rl_config_file, rl_model_file, device):
+def load_model_from_config(mil_config_file, rl_config_file, rl_model_file):
     # TODO: make create_mil_model compatible with dictionary input
     mil_config = load_json(mil_config_file)
     rl_config = load_json(rl_config_file)
@@ -292,7 +290,7 @@ def load_model_from_config(mil_config_file, rl_config_file, rl_model_file, devic
                                    state_dim=rl_config['state_dim'],
                                    hdim=rl_config['hdim'],
                                    learning_rate=0,
-                                   device=device)
+                                   device="cuda:0" if torch.cuda.is_available() else "cpu")
     policy_network.load_state_dict(torch.load(rl_model_file))
     
     return policy_network
@@ -320,6 +318,22 @@ def get_first_batch_info(policy_network, eval_dataloader, device, bag_size, samp
             if batch_y[i] == 1:
                 log_dict.update({f"actor/selected_instance_count_{i}": selected_intance_count[i]})
     return log_dict
+
+
+def get_dataloaders(args, train_dataset, eval_dataset, test_dataset):
+    if (args.balance_dataset) & (args.task_type == "classification"):
+        logger.info(f"Using weighted random sampler to balance the dataset for training")
+        sample_weights = get_balanced_weights(train_dataset.Y.tolist()) # Ensure get_balanced_weights is imported/defined
+        w_sampler = WeightedRandomSampler(sample_weights, len(train_dataset.Y.tolist()), replacement=True)
+        current_train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, num_workers=4, sampler=w_sampler)
+    else:
+        current_train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4)
+
+    current_eval_dataloader = DataLoader(eval_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
+    current_test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
+
+    return current_train_dataloader, current_eval_dataloader, current_test_dataloader
+
 
 def train(
         policy_network,
@@ -528,8 +542,7 @@ def main_sweep():
     config = wandb.config
 
     # args.critic_learning_rate = config.critic_learning_rate
-    # args.actor_learning_rate = config.actor_learning_rate
-    args.actor_learning_rate = config.get("actor_learning_rate", args.learning_rate)
+    args.actor_learning_rate = config.actor_learning_rate
     args.learning_rate = config.learning_rate
     args.epochs = config.epochs
     args.hdim = config.hdim
@@ -537,8 +550,15 @@ def main_sweep():
     args.warmup_epochs = config.get("warmup_epochs", 0)
     args.epsilon = config.get("epsilon", 0)
     args.no_wandb = False
+    args.batch_size = config.batch_size
+
+    global train_dataset, eval_dataset, test_dataset 
+    current_train_dataloader, current_eval_dataloader, current_test_dataloader = \
+        get_dataloaders(args, train_dataset, eval_dataset, test_dataset)
+    logger.info(f"SWEEP DEBUG: Recreated dataloaders with batch_size = {args.batch_size}")
+    
     # Model Optimizer Scheduler EarlyStopping
-    policy_network = create_rl_model(args, run_dir, DEVICE)
+    policy_network = create_rl_model(args, run_dir)
     # from IPython import embed; embed(); exit()
     policy_network = policy_network.to(DEVICE)
 
@@ -564,9 +584,9 @@ def main_sweep():
         optimizer=optimizer,
         scheduler=scheduler,
         early_stopping=early_stopping,
-        train_dataloader=train_dataloader,
-        eval_dataloader=eval_dataloader,
-        test_dataloader=test_dataloader,
+        train_dataloader=current_train_dataloader,
+        eval_dataloader=current_eval_dataloader,
+        test_dataloader=current_test_dataloader,
         device=DEVICE,
         bag_size=args.bag_size,
         epochs=args.epochs,
@@ -608,7 +628,7 @@ def main():
         )
         
     # Model Optimizer Scheduler EarlyStopping
-    policy_network = create_rl_model(args, run_dir, DEVICE)
+    policy_network = create_rl_model(args, run_dir)
     policy_network = policy_network.to(DEVICE)
 
     # optimizer = optim.AdamW([{"params": policy_network.actor.parameters(),
@@ -633,9 +653,9 @@ def main():
         optimizer=optimizer,
         scheduler=scheduler,
         early_stopping=early_stopping,
-        train_dataloader=train_dataloader,
-        eval_dataloader=eval_dataloader,
-        test_dataloader=test_dataloader,
+        train_dataloader=current_train_dataloader,
+        eval_dataloader=current_eval_dataloader,
+        test_dataloader=current_test_dataloader,
         device=DEVICE,
         bag_size=args.bag_size,
         epochs=args.epochs,
