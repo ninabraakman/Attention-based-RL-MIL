@@ -1,58 +1,37 @@
-method: bayes
-metric:
-  goal: minimize
-  name: eval/loss
-parameters:
-  batch_size:
-    values:
-      - 8
-      - 16
-  epochs:
-    distribution: int_uniform
-    max: 1000
-    min: 100
-  n_elements:
-    distribution: int_uniform
-    max: 20
-    min: 3
-  n_hidden_sets:
-    distribution: int_uniform
-    max: 20
-    min: 3
-  learning_rate:
-    distribution: log_uniform_values
-    max: 1.0e-02
-    min: 1.0e-04
-  scheduler_patience:
-    distribution: constant
-    value: 5
-  early_stopping_patience:
-    distribution: constant
-    value: 10
-run_cap: 50
-
-# # Best configs oulad_aggregated_subset 2052168
-# method: grid
+# method: bayes
 # metric:
 #   goal: minimize
 #   name: eval/loss
 # parameters:
 #   batch_size:
-#       value: 8
-#   early_stopping_patience:
-#       value: 10
+#     values:
+#       - 8
+#       - 16
 #   epochs:
-#       value: 462
-#   learning_rate:
-#       value: 0.003432370589314665
+#     distribution: int_uniform
+#     max: 1000
+#     min: 100
 #   n_elements:
-#       value: 4
+#     distribution: int_uniform
+#     max: 20
+#     min: 3
 #   n_hidden_sets:
-#       value: 18
+#     distribution: int_uniform
+#     max: 20
+#     min: 3
+#   learning_rate:
+#     distribution: log_uniform_values
+#     max: 1.0e-02
+#     min: 1.0e-04
 #   scheduler_patience:
-#       value: 5
+#     distribution: constant
+#     value: 5
+#   early_stopping_patience:
+#     distribution: constant
+#     value: 10
+# run_cap: 50
 
-# # Best configs oulad_full_subset 12052171
+# # Best configs oulad_aggregated_subset 12130494
 # method: grid
 # metric:
 #   goal: minimize
@@ -63,12 +42,34 @@ run_cap: 50
 #   early_stopping_patience:
 #       value: 10
 #   epochs:
-#       value: 261
+#       value: 173
 #   learning_rate:
-#       value: 0.000970370515038104
+#       value: 0.0015887601594183043
 #   n_elements:
-#       value: 3
+#       value: 7
 #   n_hidden_sets:
-#       value: 6
+#       value: 4
 #   scheduler_patience:
-#       value: 
+#       value: 5
+
+
+# Best configs oulad_full_subset 12130493
+method: grid
+metric:
+  goal: minimize
+  name: eval/loss
+parameters:
+  batch_size:
+      value: 16
+  early_stopping_patience:
+      value: 10
+  epochs:
+      value: 318
+  learning_rate:
+      value: 0.00895915707356074
+  n_elements:
+      value: 10
+  n_hidden_sets:
+      value: 20
+  scheduler_patience:
+      value: 5

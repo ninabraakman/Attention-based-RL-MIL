@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
 #SBATCH --time=20:00:00
-#SBATCH --output=../logs/configs/full_subset/rlmil/%j.out
-#SBATCH --error=../logs/configs/full_subset/rlmil/%j.err
+#SBATCH --output=../logs/full/rlmil/Repset/7_%j.out
+#SBATCH --error=../logs/full/rlmil/Repset/7_%j.err
 
 
 module purge
@@ -15,13 +15,13 @@ source ../venv/bin/activate
 # Navigate to project root
 cd /projects/prjs1491/Attention-based-RL-MIL
 
-baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")             # "MeanMLP" "MaxMLP" "AttentionMLP" "repset"
+baseline_types=("repset")             # "MeanMLP" "MaxMLP" "AttentionMLP" "repset"
 target_labels=("label")
 gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
 wandb_project="MasterThesis"
 
-dataset="oulad_full_subset"
+dataset="oulad_full"
 data_embedded_column_name="instances"
 task_type="classification"
 autoencoder_layer_sizes="20,16,20"
@@ -58,7 +58,7 @@ for target_label in "${target_labels[@]}"; do
                                             --balance_dataset \
                                             --wandb_entity $wandb_entity \
                                             --wandb_project $wandb_project \
-                                            --random_seed 0 \
+                                            --random_seed 7 \
                                             --task_type $task_type \
                                             --rl_model $rl_model \
                                             --search_algorithm $search_algorithm \

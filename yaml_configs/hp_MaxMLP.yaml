@@ -1,81 +1,81 @@
-method: bayes
+# method: bayes
+# metric:
+#   goal: minimize
+#   name: eval/loss
+# parameters:
+#   batch_size:
+#     distribution: categorical
+#     values:
+#     - 8
+#     - 16
+#     - 32
+#     - 64
+#   dropout_p:
+#     distribution: constant
+#     value: 0.5
+#   epochs:
+#     distribution: int_uniform
+#     max: 400
+#     min: 50
+#   hidden_dim:
+#     distribution: categorical
+#     values:
+#     - 32
+#     - 64
+#     - 128
+#     - 256
+#     - 512
+#   learning_rate:
+#     distribution: log_uniform_values
+#     max: 0.01
+#     min: 0.0001
+#   scheduler_patience:
+#     distribution: constant
+#     value: 5
+#   early_stopping_patience:
+#     distribution: constant
+#     value: 10
+# run_cap: 50
+
+# Best configs oulad_aggregated_subset 12130494
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/loss
+# parameters:
+#   batch_size:
+#       value: 32
+#   dropout_p:
+#       value: 0.5
+#   early_stopping_patience:
+#       value: 10
+#   epochs:
+#       value: 293
+#   hidden_dim:
+#       value: 128
+#   learning_rate:
+#       value: 0.0029953275317869768
+#   scheduler_patience:
+#       value: 5
+
+
+# Best configs oulad_full_subset 12130493
+method: grid
 metric:
   goal: minimize
   name: eval/loss
 parameters:
   batch_size:
-    distribution: categorical
-    values:
-    - 8
-    - 16
-    - 32
-    - 64
+      value: 8
   dropout_p:
-    distribution: constant
-    value: 0.5
-  epochs:
-    distribution: int_uniform
-    max: 400
-    min: 50
-  hidden_dim:
-    distribution: categorical
-    values:
-    - 32
-    - 64
-    - 128
-    - 256
-    - 512
-  learning_rate:
-    distribution: log_uniform_values
-    max: 0.01
-    min: 0.0001
-  scheduler_patience:
-    distribution: constant
-    value: 5
+      value: 0.5
   early_stopping_patience:
-    distribution: constant
-    value: 10
-run_cap: 50
-
-# # Best configs oulad_aggregated_subset 2052168
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/loss
-# parameters:
-#   batch_size:
-#       value: 16
-#   dropout_p:
-#       value: 0.5
-#   early_stopping_patience:
-#       value: 10
-#   epochs:
-#       value: 67
-#   hidden_dim:
-#       value: 64
-#   learning_rate:
-#       value: 0.004982403432470933
-#   scheduler_patience:
-#       value: 5
-
-
-# # Best configs oulad_full_subset 12052171
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/loss
-# parameters:
-#   batch_size:
-#       value: 16
-#   dropout_p:
-#       value: 0.5
-#   early_stopping_patience:
-#       value: 10
-#   epochs:
-#       value: 100
-#   hidden_dim:
-#       value: 64
-#   learning_rate:
-#       value: 0.000853927268082825
-#   scheduler_patience:
-#       value: 5
+      value: 10
+  epochs:
+      value: 122
+  hidden_dim:
+      value: 128
+  learning_rate:
+      value: 0.009869012423392153
+  scheduler_patience:
+      value: 5

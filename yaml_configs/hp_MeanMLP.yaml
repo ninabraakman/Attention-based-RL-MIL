@@ -1,82 +1,81 @@
-method: bayes
-metric:
-  goal: minimize
-  name: eval/loss
-parameters:
-  batch_size:
-    distribution: categorical
-    values:
-    - 8
-    - 16
-    - 32
-    - 64
-  dropout_p:
-    distribution: constant
-    value: 0.5
-  epochs:
-    distribution: int_uniform
-    max: 400
-    min: 50
-  hidden_dim:
-    distribution: categorical
-    values:
-    - 32
-    - 64
-    - 128
-    - 256
-    - 512
-  learning_rate:
-    distribution: log_uniform_values
-    max: 0.01
-    min: 0.0001
-  scheduler_patience:
-    distribution: constant
-    value: 5
-  early_stopping_patience:
-    distribution: constant
-    value: 10
-run_cap: 50
-
-
-# # Best configs oulad_aggregated_subset 12052168
-# method: grid # Since all parameters are constant, grid with 1 combination is simplest
-# method: grid
+# method: bayes
 # metric:
 #   goal: minimize
 #   name: eval/loss
 # parameters:
 #   batch_size:
-#     value: 16
+#     distribution: categorical
+#     values:
+#     - 8
+#     - 16
+#     - 32
+#     - 64
 #   dropout_p:
+#     distribution: constant
 #     value: 0.5
 #   epochs:
-#     value: 119
+#     distribution: int_uniform
+#     max: 400
+#     min: 50
 #   hidden_dim:
-#     value: 512
+#     distribution: categorical
+#     values:
+#     - 32
+#     - 64
+#     - 128
+#     - 256
+#     - 512
 #   learning_rate:
-#     value: 0.002843629336814679
+#     distribution: log_uniform_values
+#     max: 0.01
+#     min: 0.0001
 #   scheduler_patience:
+#     distribution: constant
 #     value: 5
 #   early_stopping_patience:
+#     distribution: constant
 #     value: 10
+# run_cap: 50
 
-# # Best configs oulad_full_subset 12052171
-# method: grid
+
+# # Best configs oulad_aggregated_subset 12130494
+# method: grid 
 # metric:
 #   goal: minimize
 #   name: eval/loss
 # parameters:
 #   batch_size:
-#       value: 32
+#       value: 64
 #   dropout_p:
 #       value: 0.5
 #   early_stopping_patience:
 #       value: 10
 #   epochs:
-#       value: 291
+#       value: 311
 #   hidden_dim:
-#       value: 128
+#       value: 256
 #   learning_rate:
-#       value: 0.00030378337836443593
+#       value: 0.0046066113617707774
 #   scheduler_patience:
 #       value: 5
+
+# Best configs oulad_full_subset 12130493
+method: grid
+metric:
+  goal: minimize
+  name: eval/loss
+parameters:
+  batch_size:
+      value: 16
+  dropout_p:
+      value: 0.5
+  early_stopping_patience:
+      value: 10
+  epochs:
+      value: 344
+  hidden_dim:
+      value: 128
+  learning_rate:
+      value: 0.004663977828126983
+  scheduler_patience:
+      value: 5

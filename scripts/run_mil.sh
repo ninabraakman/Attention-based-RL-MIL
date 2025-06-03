@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=20:00:00
-#SBATCH --output=../logs/configs/aggregated_subset/mil/%j.out
-#SBATCH --error=../logs/configs/aggregated_subset/mil/%j.err
+#SBATCH --output=../logs/full/mil/10_%j.out
+#SBATCH --error=../logs/full/mil/10_%j.err
 
 module purge
 module load 2023
@@ -18,10 +18,10 @@ gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
 wandb_project="MasterThesis"
 
-dataset="oulad_aggregated_subset"
+dataset="oulad_full"
 data_embedded_column_name="instances"
 task_type="classification"
-autoencoder_layer_sizes="22,16,22"
+autoencoder_layer_sizes="20,16,20"
 bag_sizes=(20)
 embedding_models=("tabular")
 
@@ -58,7 +58,7 @@ for target_label_index in "${!target_labels[@]}"; do
                                       --autoencoder_layer_sizes $autoencoder_layer_sizes \
                                       --data_embedded_column_name $data_embedded_column_name \
                                       --task_type $task_type \
-                                      --random_seed 0 ;
+                                      --random_seed 10 ;
         
         ((current_run++))
       done
