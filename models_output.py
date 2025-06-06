@@ -817,24 +817,16 @@ class AttentionPolicyNetwork_pham(PolicyNetwork):
             no_autoencoder=no_autoencoder,
         )
         self.selector = MultiHeadInstanceSelector(instance_dim=state_dim)
-        self._last_pre_softmax_attention_scores = None # Initialize new attribute
         
     def forward(self, x):
-        attention_scores_pre_softmax = self.selector(x, None)
-        self._last_pre_softmax_attention_scores = attention_scores_pre_softmax
-        probs = torch.softmax(attention_scores_pre_softmax, dim=1) 
-        return probs, None, None
+         attention_scores = self.selector(x, None)     
+         probs = torch.softmax(attention_scores, dim=1)      
+         return probs, None, None   
     
     def sample_action(self, attention_probs, bag_size):        
         # Top-k selection, deterministic        
         return attention_probs.topk(bag_size, dim=1).indices, torch.tensor(0.0, device=attention_probs.device)
 
-    def get_last_pre_softmax_scores(self): # New getter method
-        """
-        Returns the attention scores from the selector, before the final softmax
-        in this network's forward pass.
-        """
-        return self._last_pre_softmax_attention_scores
 
 class AttentionPolicyNetwork_ilse(PolicyNetwork):
     def __init__(
@@ -893,7 +885,7 @@ class AttentionPolicyNetwork_ilse(PolicyNetwork):
             exp_reward (torch.Tensor): Critic's expected reward for the bags. Shape (B, 1)
         """
         # 0) Ensure batch_x is 3D
-        if batch_x.dim() == 2:
+        if batch_x.dim() == 2:  # Handles case where B=1 might have been squeezed
             batch_x = batch_x.unsqueeze(0)
 
         # 1) Compute instance embeddings (batch_rep)

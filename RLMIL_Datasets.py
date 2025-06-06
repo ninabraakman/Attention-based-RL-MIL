@@ -61,6 +61,13 @@ class RLMILDataset(Dataset):
         ys = np.array(self.instance_labels[index]) if self.instance_labels is not None else []
         return x, y, index, ys
 
+
+class RLMILDataset_attention(RLMILDataset):
+    def __init__(self, df: pd.DataFrame, bag_masks: torch.Tensor, subset: bool = True, 
+                 task_type: str = "classification", instance_labels_column=None):
+        super().__init__(df, bag_masks, subset, task_type, instance_labels_column)
+        self.original_dataframe = df # Store the original DataFrame
+
 class SimpleDataset(Dataset):
     def __init__(
             self,

@@ -1,5 +1,6 @@
 import os
 import numpy as np
+import pandas as pd
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
@@ -7,7 +8,7 @@ import wandb
 from torch.utils.data import DataLoader, WeightedRandomSampler
 
 from configs import parse_args
-from RLMIL_Datasets import RLMILDataset
+from RLMIL_Datasets import RLMILDataset, RLMILDataset_attention
 from logger import get_logger
 from models import AttentionPolicyNetwork_ilse as AttentionPolicyNetwork, sample_action, select_from_action, create_mil_model_with_dict
 from utils import (
@@ -194,10 +195,10 @@ def prepare_data(args):
     train_dataframe_mean, train_dataframe_median, train_dataframe_std = get_df_mean_median_std(
         train_dataframe, args.label
     )
+    extra_columns = ['bag_id']
     if args.instance_labels_column is not None:
-        extra_columns = [args.instance_labels_column]
-    else:
-        extra_columns = []
+        if args.instance_labels_column not in extra_columns: 
+            extra_columns.append(args.instance_labels_column)
     train_dataframe, label2id, id2label = preprocess_dataframe(df=train_dataframe, dataframe_set="train", label=args.label,
                                            train_dataframe_mean=train_dataframe_mean,
                                            train_dataframe_median=train_dataframe_median,
@@ -233,7 +234,7 @@ def prepare_data(args):
         task_type=args.task_type,
         instance_labels_column=args.instance_labels_column,
     )
-    test_dataset = RLMILDataset(
+    test_dataset = RLMILDataset_attention(
         df=test_dataframe,
         bag_masks=None,
         subset=False,
@@ -349,23 +350,109 @@ def get_first_batch_info(policy_network, eval_dataloader, device, bag_size, samp
                 if i < selected_intance_count.shape[0]: # Check bounds if selected_instance_count might be smaller
                     log_dict.update({f"actor/selected_instance_count_{i}": selected_intance_count[i]})
     return log_dict
-# def get_first_batch_info(policy_network, eval_dataloader, device, bag_size, sample_algorithm):
-#     log_dict = {}
-#     batch_x, batch_y, indices, instance_labels = next(iter(eval_dataloader))
-#     batch_x = batch_x.to(device)
-#     action_probs = policy_network(batch_x)
-#     action, _ = sample_action(action_probs, bag_size, device, random=False, algorithm=sample_algorithm)
-#     if len(instance_labels) != 0:
-#         instance_labels = instance_labels.to(device)
-#         selected_intance_labels = instance_labels[torch.arange(action.shape[0]).unsqueeze(1), action]
-#         selected_intance_count = selected_intance_labels.sum(dim=1)
-#     for i in range(action_probs.shape[0]):
-#         log_dict.update({f"actor/probs_{i}": action_probs[i].cpu().detach().numpy(),
-#                     f"actor/action_{i}": wandb.Histogram(action[i].cpu().numpy().tolist())})
-#         if len(instance_labels) != 0:
-#             if batch_y[i] == 1:
-#                 log_dict.update({f"actor/selected_instance_count_{i}": selected_intance_count[i]})
-#     return log_dict
+
+def generate_interpretability_outputs(policy_network, dataloader, device, args, output_csv_path):
+    logger.info(f"Generating interpretability outputs (attention scores) to {output_csv_path}...")
+    policy_network.eval()
+    all_instance_details = []
+
+    dataset_df = dataloader.dataset.original_dataframe # Access the underlying DataFrame
+
+    with torch.no_grad():
+        for batch_idx, (batch_x_embeddings, batch_y_bag_labels, batch_original_indices, _) in enumerate(dataloader):
+            batch_x_embeddings = batch_x_embeddings.to(device)
+            batch_y_bag_labels = batch_y_bag_labels.to(device)
+
+            # Perform a forward pass to get attention scores for the ILSE model.
+            # The policy_network.get_last_attention_scores() is the preferred way.
+            _ = policy_network(batch_x_embeddings) # Run forward pass to ensure attention scores are computed and stored
+            attention_scores_tensor = policy_network.get_last_attention_scores()
+            
+            if attention_scores_tensor is None:
+                logger.warning(f"Batch {batch_idx}: policy_network.get_last_attention_scores() returned None. "
+                               "Falling back to re-running forward pass for attention. This is inefficient. "
+                               "Consider ensuring get_last_attention_scores is reliable.")
+                # Fallback: assumes the first output of the forward pass is the attention scores.
+                attention_values_from_forward, _, _ = policy_network(batch_x_embeddings)
+                attention_scores_tensor = attention_values_from_forward
+            
+            attention_scores_tensor_cpu = attention_scores_tensor.detach().cpu()
+
+            # Get bag-level predictions
+            # Step 1: Select top-k instances based on attention_scores_tensor for prediction
+            selected_actions, _ = sample_action(attention_scores_tensor_cpu.to(device), # Pass tensor on correct device to sample_action
+                                                args.bag_size, 
+                                                device, 
+                                                random=False, 
+                                                algorithm=args.sample_algorithm)
+            sel_x_embeddings = select_from_action(selected_actions, batch_x_embeddings)
+            
+            # Step 2: Get bag predictions from the task_model using these selected instance embeddings
+            batch_out_logits, _ = policy_network.eval_minibatch(sel_x_embeddings, batch_y_bag_labels)
+            
+            if args.task_type == 'classification':
+                bag_predicted_labels = torch.argmax(batch_out_logits, dim=1)
+            else: # Default or other types (e.g., regression)
+                bag_predicted_labels = batch_out_logits
+
+            # Move batch-level tensors to CPU for NumPy conversion
+            attention_scores_batch_cpu_np = attention_scores_tensor_cpu.numpy()
+            bag_predicted_labels_cpu_np = bag_predicted_labels.detach().cpu().numpy()
+            batch_y_bag_labels_cpu_np = batch_y_bag_labels.detach().cpu().numpy()
+            batch_original_indices_cpu_np = batch_original_indices.cpu().numpy() # Assuming batch_original_indices is CPU tensor or list
+
+            for i in range(batch_x_embeddings.shape[0]): # Iterate through bags in the batch
+                original_df_idx = batch_original_indices_cpu_np[i]
+                
+                try:
+                    bag_series = dataset_df.iloc[original_df_idx]
+                except IndexError:
+                    logger.error(f"Error: original_df_idx {original_df_idx} is out of bounds for dataset_df with shape {dataset_df.shape}. Skipping this bag.")
+                    continue 
+
+                try:
+                    bag_id_val = bag_series["bag_id"]
+                except KeyError:
+                    logger.error(f"KeyError: 'bag_id' not found in bag_series index for original_df_idx {original_df_idx}. "
+                                 f"Available keys: {list(bag_series.index) if hasattr(bag_series, 'index') else 'N/A'}. Using placeholder.")
+                    bag_id_val = f"error_idx_{original_df_idx}" 
+                
+                true_bag_label_val = batch_y_bag_labels_cpu_np[i]
+                pred_bag_label_val = bag_predicted_labels_cpu_np[i]
+                
+                # Safely access 'bag' and 'bag_mask', providing defaults if bag_series is problematic
+                original_instances_in_bag = bag_series.get("bag", []) if isinstance(bag_series, pd.Series) else []
+                true_mask_for_bag = bag_series.get("bag_mask", []) if isinstance(bag_series, pd.Series) else []
+
+                num_padded_instances = attention_scores_batch_cpu_np.shape[1]
+
+                for j in range(num_padded_instances): 
+                    is_padding = not true_mask_for_bag[j] if j < len(true_mask_for_bag) else True
+                    
+                    instance_content = None
+                    if not is_padding and j < len(original_instances_in_bag):
+                        instance_content = original_instances_in_bag[j]
+
+                    instance_data = {
+                        "run_id": args.run_name if hasattr(args, 'run_name') else (wandb.run.id if hasattr(args, 'wandb_entity') and args.wandb_entity and wandb.run else "unknown_run"),
+                        "bag_id": bag_id_val,
+                        "instance_index_in_bag": j,
+                        "attention_score": attention_scores_batch_cpu_np[i, j],
+                        "is_padding_instance": is_padding,
+                        "original_instance_content": instance_content,
+                        "true_bag_label": true_bag_label_val,
+                        "predicted_bag_label_ilse": pred_bag_label_val,
+                        "was_selected_among_top_k": j in selected_actions[i].cpu().numpy() if not is_padding else False
+                    }
+                    all_instance_details.append(instance_data)
+    
+    df_details = pd.DataFrame(all_instance_details)
+    output_dir = os.path.dirname(output_csv_path)
+    if output_dir and not os.path.exists(output_dir): 
+        os.makedirs(output_dir)
+    df_details.to_csv(output_csv_path, index=False)
+    logger.info(f"Successfully saved attention details to {output_csv_path}")
+
 
 def get_dataloaders(args, train_dataset, eval_dataset, test_dataset):
     if (args.balance_dataset) & (args.task_type == "classification"):
@@ -572,6 +659,8 @@ def train(
         wandb.log(dictionary)
     logger.info(dictionary)
     
+    output_file = os.path.join(run_dir, "attention_ilse_outputs.csv")
+    generate_interpretability_outputs(policy_network, test_dataloader, DEVICE, args, output_file)
     return policy_network
 
 

@@ -273,6 +273,20 @@ def parse_args():
         default=0.5,
         help="Dropout probability in the attention MLP",
     )
+    # analyze arguments
+    parser.add_argument(
+        '--analysis_split', 
+        type=str, 
+        default='val', 
+        choices=['train', 'val', 'test'],
+        help='Data split to use for analysis (train, val, or test)'
+    )
+    parser.add_argument(
+        '--batch_size_analysis', 
+        type=int, 
+        default=32, # Or match your training batch_size as a default
+        help='Batch size for DataLoader during analysis script execution'
+    )
     args = parser.parse_args()
 
     if args.run_sweep and args.no_wandb:

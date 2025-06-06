@@ -30,7 +30,7 @@ embedding_models=("tabular")
 
 rl_task_model="vanilla"
 sample_algorithm="static"
-prefix="loss_attention"
+prefix="loss_attention_ilse"
 rl_model="policy_only"
 reg_alg="sum"
 
@@ -56,7 +56,7 @@ for target_label in "${target_labels[@]}"; do
           --autoencoder_layer_sizes "$autoencoder_layer_sizes" \
           --label                  "$target_label" \
           --data_embedded_column_name "$data_embedded_column_name" \
-          --prefix                 "loss_attention" \
+          --prefix                 "$prefix" \
           --dataset                "$dataset" \
           --bag_size               $bag_size \
           --run_sweep \

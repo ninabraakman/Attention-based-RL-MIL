@@ -29,7 +29,7 @@ embedding_models=("tabular")
 
 rl_task_model="vanilla"
 sample_algorithm="static"
-prefix="loss_attention"
+prefix="loss_attention_pham"
 rl_model="policy_only"
 reg_alg="sum"
 

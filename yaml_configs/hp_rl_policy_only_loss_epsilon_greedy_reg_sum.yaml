@@ -213,28 +213,28 @@
 #   reg_coef:
 #       value: 0.9447370888904056
 
-# RL-MIL full_subset repset 12130496
-method: grid
-metric:
-  goal: minimize
-  name: eval/avg_mil_loss
-parameters:
-  actor_learning_rate:
-      value: 0.0009681384671007808
-  batch_size:
-      value: 128
-  critic_learning_rate:
-      value: 0
-  early_stopping_patience:
-      value: 100
-  epochs:
-      value: 800
-  epsilon:
-      value: 0.5845616504758026
-  hdim:
-      value: 8
-  learning_rate:
-      value: 1e-06
-  reg_coef:
-      value: 0.469285921550163
+# # RL-MIL full_subset repset 12130496
+# method: grid
+# metric:
+#   goal: minimize
+#   name: eval/avg_mil_loss
+# parameters:
+#   actor_learning_rate:
+#       value: 0.0009681384671007808
+#   batch_size:
+#       value: 128
+#   critic_learning_rate:
+#       value: 0
+#   early_stopping_patience:
+#       value: 100
+#   epochs:
+#       value: 800
+#   epsilon:
+#       value: 0.5845616504758026
+#   hdim:
+#       value: 8
+#   learning_rate:
+#       value: 1e-06
+#   reg_coef:
+#       value: 0.469285921550163
 
