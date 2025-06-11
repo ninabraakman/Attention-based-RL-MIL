@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --partition=gpu_h100
+#SBATCH --partition=gpu_a100
 #SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=32G
-#SBATCH --time=20:00:00
-#SBATCH --output=../logs/full/rlmil/Repset/7_%j.out
-#SBATCH --error=../logs/full/rlmil/Repset/7_%j.err
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=8G
+#SBATCH --time=2:30:00
+#SBATCH --output=../logs/full/rlmil/MaxMLP/4_%j.out
+#SBATCH --error=../logs/full/rlmil/MaxMLP/4_%j.err
 
 
 module purge
@@ -15,7 +15,7 @@ source ../venv/bin/activate
 # Navigate to project root
 cd /projects/prjs1491/Attention-based-RL-MIL
 
-baseline_types=("repset")             # "MeanMLP" "MaxMLP" "AttentionMLP" "repset"
+baseline_types=("MaxMLP")             # "MeanMLP" "MaxMLP" "AttentionMLP" "repset"
 target_labels=("label")
 gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
@@ -27,6 +27,7 @@ task_type="classification"
 autoencoder_layer_sizes="20,16,20"
 bag_sizes=(20)
 embedding_models=("tabular")
+random_seed=4
 
 rl_task_model="vanilla"
 sample_algorithm="static"
@@ -58,7 +59,7 @@ for target_label in "${target_labels[@]}"; do
                                             --balance_dataset \
                                             --wandb_entity $wandb_entity \
                                             --wandb_project $wandb_project \
-                                            --random_seed 7 \
+                                            --random_seed $random_seed \
                                             --task_type $task_type \
                                             --rl_model $rl_model \
                                             --search_algorithm $search_algorithm \

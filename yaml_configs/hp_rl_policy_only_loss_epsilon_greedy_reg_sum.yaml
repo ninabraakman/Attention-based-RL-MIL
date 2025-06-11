@@ -1,3 +1,4 @@
+#These are the full sweep configurations for RL-MIL with epsilon_greedy with different subsets and architectures.
 # method: bayes
 # metric:
 #   goal: minimize
@@ -35,206 +36,120 @@
 #     value: 128
 # run_cap: 50
 
+# These are the grid search configurations for the specific models with their respective architectures.
+method: grid
+metric:
+  goal: minimize
+  name: eval/avg_mil_loss
+parameters:
 
-
-# # RL-MIL aggregated_subset MeanMLP 12130495
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-#   actor_learning_rate:
-#       value: 1.0967546482720011e-05
-#   batch_size:
-#       value: 128
-#   critic_learning_rate:
-#       value: 0
-#   early_stopping_patience:
-#       value: 100
-#   epochs:
-#       value: 800
+  # --- The architecture specific best values, uncomment the architecture you are running ---
+# # Aggregated_subset MeanMLP 12130495
 #   epsilon:
-#       value: 0.22156747185289127
-#   hdim:
-#       value: 8
-#   learning_rate:
-#       value: 1e-06
+#     distribution: constant
+#     value: 0.1097129561180472
 #   reg_coef:
-#       value: 0.7535308522815813
-
-# # RL-MIL aggregated_subset MaxMLP 12130495
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
+#     distribution: constant
+#     value: 0.9422992449546423
 #   actor_learning_rate:
-#       value: 5.943724572075136e-05
-#   batch_size:
-#       value: 128
-#   critic_learning_rate:
-#       value: 0
-#   early_stopping_patience:
-#       value: 100
-#   epochs:
-#       value: 800
-#   epsilon:
-#       value: 0.18007396300446377
-#   hdim:
-#       value: 8
-#   learning_rate:
-#       value: 1e-06
-#   reg_coef:
-#       value: 0.4972258993974683
+#     distribution: constant
+#     value: 2.683316075023677e-05
 
-# # RL-MIL aggregated_subset AttentionMLP 12130495
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
+# Aggregated_subset MaxMLP 12130495
+  epsilon:
+    distribution: constant
+    value: 0.1423043215274837
+  reg_coef:
+    distribution: constant
+    value: 0.6367160566938129
+  actor_learning_rate:
+    distribution: constant
+    value: 6.793257598913032e-05
+
+# # Aggregated_subset AttentionMLP 12130495
+#   epsilon:
+#     distribution: constant
+#     value: 0.0913481111902542
+#   reg_coef:
+#     distribution: constant
+#     value: 0.9848957271462644
 #   actor_learning_rate:
-#       value: 0.00017608697372121753
-#   batch_size:
-#       value: 128
-#   critic_learning_rate:
-#       value: 0
-#   early_stopping_patience:
-#       value: 100
-#   epochs:
-#       value: 800
-#   epsilon:
-#       value: 0.19796550106703792
-#   hdim:
-#       value: 8
-#   learning_rate:
-#       value: 1e-06
-#   reg_coef:
-#       value: 0.8651233528420084
+#     distribution: constant
+#     value: 1.13853612419319e-05
 
-# RL-MIL aggregated_subset repset 12130495
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
+# # Aggregated_subset repset 12130495
+#   epsilon:
+#     distribution: constant
+#     value: 0.17764861739637572
+#   reg_coef:
+#     distribution: constant
+#     value: 0.7789415655262469
 #   actor_learning_rate:
-#       value: 3.207694650449864e-05
-#   batch_size:
-#       value: 128
-#   critic_learning_rate:
-#       value: 0
-#   early_stopping_patience:
-#       value: 100
-#   epochs:
-#       value: 800
+#     distribution: constant
+#     value: 0.00012357892696988963
+
+# # Full_subset MeanMLP 12130496
 #   epsilon:
-#       value: 0.11054685160529808
-#   hdim:
-#       value: 8
-#   learning_rate:
-#       value: 1e-06
+#     distribution: constant
+#     value: 0.18101283473359076
 #   reg_coef:
-#       value: 0.650064379023176
-
-
-# # RL-MIL full_subset MeanMLP 12130496
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
+#     distribution: constant
+#     value: 0.5364011221627326
 #   actor_learning_rate:
-#       value: 0.000210157866700771
-#   batch_size:
-#       value: 128
-#   critic_learning_rate:
-#       value: 0
-#   early_stopping_patience:
-#       value: 100
-#   epochs:
-#       value: 800
-#   epsilon:
-#       value: 0.007960047011455584
-#   hdim:
-#       value: 8
-#   learning_rate:
-#       value: 1e-06
-#   reg_coef:
-#       value: 0.5053271502122855
+#     distribution: constant
+#     value: 0.007339768559418281
 
-# # RL-MIL full_subset MaxMLP 12130496
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-#   actor_learning_rate:
-#       value: 2.110793400847929e-05
-#   batch_size:
-#       value: 128
-#   critic_learning_rate:
-#       value: 0
-#   early_stopping_patience:
-#       value: 100
-#   epochs:
-#       value: 800
+# # Full_subset MaxMLP 12130496
 #   epsilon:
-#       value: 0.22771947603550757
-#   hdim:
-#       value: 8
-#   learning_rate:
-#       value: 1e-06
+#     distribution: constant
+#     value: 0.22771947603550757
 #   reg_coef:
-#       value: 0.6770859535445086
+#     distribution: constant
+#     value: 0.6770859535445086
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 2.110793400847929e-05
 
-# # RL-MIL full_subset Attention 12130496
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-#   actor_learning_rate:
-#       value: 0.0002498852791815719
-#   batch_size:
-#       value: 128
-#   critic_learning_rate:
-#       value: 0
-#   early_stopping_patience:
-#       value: 100
-#   epochs:
-#       value: 800
+# # Full_subset Attention 12130496
 #   epsilon:
-#       value: 0.5506983718945508
-#   hdim:
-#       value: 8
-#   learning_rate:
-#       value: 1e-06
+#     distribution: constant
+#     value: 0.19620616025369195
 #   reg_coef:
-#       value: 0.9447370888904056
+#     distribution: constant
+#     value: 0.8034759721421159
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 0.00022776211413451416
 
-# # RL-MIL full_subset repset 12130496
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-#   actor_learning_rate:
-#       value: 0.0009681384671007808
-#   batch_size:
-#       value: 128
-#   critic_learning_rate:
-#       value: 0
-#   early_stopping_patience:
-#       value: 100
-#   epochs:
-#       value: 800
+# # Full_subset repset 12147097
 #   epsilon:
-#       value: 0.5845616504758026
-#   hdim:
-#       value: 8
-#   learning_rate:
-#       value: 1e-06
+#     distribution: constant
+#     value: 0.6682492990231877
 #   reg_coef:
-#       value: 0.469285921550163
+#     distribution: constant
+#     value: 0.4384299653369902
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 3.780298806860153e-05
+
+  # -- Fixed parameters for all models --
+  hdim:
+    distribution: constant
+    value: 8
+  epochs:
+    distribution: constant
+    value: 800
+  critic_learning_rate:
+    distribution: constant
+    value: 0
+  learning_rate:
+    distribution: constant
+    value: 1.0e-06
+  early_stopping_patience:
+    distribution: constant
+    value: 100
+  batch_size:
+    distribution: constant
+    value: 128
+
 

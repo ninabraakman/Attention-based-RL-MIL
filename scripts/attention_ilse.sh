@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --partition=gpu_h100
+#SBATCH --partition=gpu_a100
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
-#SBATCH --time=24:00:00
-#SBATCH --output=../logs/configs/full_subset/attention/ilse_%j.out
-#SBATCH --error=../logs/configs/full_subset/attention/ilse_%j.err
+#SBATCH --time=4:00:00
+#SBATCH --output=../logs/configs/full_subset/attention_ilse/MeanMLP/%j.out
+#SBATCH --error=../logs/configs/full_subset/attention_ilse/MeanMLP/%j.err
 
 module purge
 module load 2023
@@ -15,9 +15,9 @@ source ../venv/bin/activate
 cd /projects/prjs1491/Attention-based-RL-MIL
 
 # Which MIL encoders to try
-baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
+baseline_types=("MeanMLP")       # "MeanMLP" "MaxMLP" "AttentionMLP" "repset"
 target_labels=("label")
-# gpus=(0)
+gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
 wandb_project="MasterThesis"
 
@@ -27,6 +27,7 @@ task_type="classification"
 autoencoder_layer_sizes="20,16,20"   # "22,16,22" for oulad_aggregated and "20,16,20" for oulad_full
 bag_sizes=(20)
 embedding_models=("tabular")
+random_seed=0
 
 rl_task_model="vanilla"
 sample_algorithm="static"
@@ -67,7 +68,7 @@ for target_label in "${target_labels[@]}"; do
           --balance_dataset \
           --wandb_entity           "$wandb_entity" \
           --wandb_project          "$wandb_project" \
-          --random_seed            0 \
+          --random_seed            "$random_seed" \
           --task_type              "$task_type" \
           --rl_model               "$rl_model" \
           --rl_task_model          "$rl_task_model" \

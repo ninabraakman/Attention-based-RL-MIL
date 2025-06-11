@@ -1,22 +1,19 @@
+# These are the full sweep configurations for the Attention-based RL-MIL models with different subsets and architectures.
 method: bayes
 metric:
   name: eval/avg_mil_loss
   goal: minimize
 parameters:
-  dropout_p:
-    distribution: constant
-    value: 0.5
-  epochs:
-    distribution: int_uniform
-    max: 200
-    min: 50
   hdim:
     distribution: constant
     value: 8
+  epochs:
+    distribution: constant
+    value: 800
   actor_learning_rate:
     distribution: log_uniform_values
     min: 1.0e-6
-    max: 1.0e-3
+    max: 1.0e-2
   critic_learning_rate:
     distribution: constant
     value: 0
@@ -27,12 +24,12 @@ parameters:
     distribution: uniform
     min: 0.0
     max: 1.0
-  batch_size:
-    distribution: categorical
-    values: [64, 128, 256]
   early_stopping_patience:
     distribution: constant
     value: 100
+  batch_size:
+    distribution: constant
+    value: 128
   temperature:
     distribution: uniform
     min: 0.0
@@ -46,67 +43,148 @@ parameters:
     max: 0.5
 run_cap: 50
 
-# Attention-based RL-MIL aggregated_subset MeanMLP 
+
+# # These are the grid search configurations for the specific models with their respective architectures.
 # method: grid
 # metric:
-#   goal: minimize
 #   name: eval/avg_mil_loss
-# parameters:
-
-
-# Attention-based RL-MIL aggregated_subset MaxMLP 
-# method: grid
-# metric:
 #   goal: minimize
-#   name: eval/avg_mil_loss
+
 # parameters:
+#   # --- The Unified Set of Learning Rates to Test ---
+#   actor_learning_rate:
+#     values: [3.0e-3, 2.0e-4, 3.0e-5]
+#   # -- The model architecture specific parameters, uncomment the specific architecture --
+
+# # Aggregated_subset MeanMLP 12254216
+#   reg_coef:
+#     distribution: constant
+#     value: 0.8841990638893219
+#   temperature:
+#     distribution: constant
+#     value: 4.349162757260236
+#   attention_size:
+#     distribution: constant
+#     value: 128
+#   attention_dropout_p:
+#     distribution: constant
+#     value: 0.4099833618985077
+
+# # Aggregated_subset MaxMLP 12254218
+#   reg_coef:
+#     distribution: constant
+#     value: 0.19476561091044453
+#   temperature:
+#     distribution: constant
+#     value: 7.971503659094057
+#   attention_size:
+#     distribution: constant
+#     value: 16
+#   attention_dropout_p:
+#     distribution: constant
+#     value: 0.26067131612021316
+
+# Aggregated_subset AttentionMLP 12254220
+  # reg_coef:
+  #   distribution: constant
+  #   value: 0.5583684642170331
+  # temperature:
+  #   distribution: constant
+  #   value: 3.596025630292768
+  # attention_size:
+  #   distribution: constant
+  #   value: 128
+  # attention_dropout_p:
+  #   distribution: constant
+  #   value: 0.08362933986591642
+
+# # Aggregated_subset repset 12254230
+#   reg_coef:
+#     distribution: constant
+#     value: 0.740250219246514
+#   temperature:
+#     distribution: constant
+#     value: 6.750853824905889
+#   attention_size:
+#     distribution: constant
+#     value: 128
+#   attention_dropout_p:
+#     distribution: constant
+#     value: 0.3037927275486151
+
+# # Full_subset MeanMLP 12254237
+#   reg_coef:
+#     distribution: constant
+#     value: 0.934042847253811
+#   temperature:
+#     distribution: constant
+#     value: 9.810614349786162
+#   attention_size:
+#     distribution: constant
+#     value: 16
+#   attention_dropout_p:
+#     distribution: constant
+#     value: 0.4682837401678925
 
 
-# Attention-based RL-MIL aggregated_subset Attention 
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
+# # Full_subset MaxMLP 12254236
+#   reg_coef:
+#     distribution: constant
+#     value: 0.3744442037757778
+#   temperature:
+#     distribution: constant
+#     value: 3.7248927044832705
+#   attention_size:
+#     distribution: constant
+#     value: 64
+#   attention_dropout_p:
+#     distribution: constant
+#     value: 0.045092878536511394
 
+# # Full_subset Attention 12254234
+#   reg_coef:
+#     distribution: constant
+#     value: 0.5752681896835271
+#   temperature:
+#     distribution: constant
+#     value: .629108450335737
+#   attention_size:
+#     distribution: constant
+#     value: 16
+#   attention_dropout_p:
+#     distribution: constant
+#     value: 0.3695032234882177
 
+# # Full_subset repset 12254233
+#   reg_coef:
+#     distribution: constant
+#     value: 0.7085859233120168
+#   temperature:
+#     distribution: constant
+#     value: 6.057557530759538
+#   attention_size:
+#     distribution: constant
+#     value: 32
+#   attention_dropout_p:
+#     distribution: constant
+#     value: 0.4965467650309036
 
-# Attention-based RL-MIL aggregated_subset repset 
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-
-
-# Attention-based RL-MIL full_subset MeanMLP 
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-
-
-
-# Attention-based RL-MIL full_subset MaxMLP 
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-
-
-# Attention-based RL-MIL full_subset Attention 
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-
-
-# Attention-based RL-MIL full_subset repset 
-# method: grid
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
+  # # --- Other fixed parameters ---
+  # dropout_p:
+  #   distribution: constant
+  #   value: 0.5
+  # hdim:
+  #   distribution: constant
+  #   value: 8
+  # critic_learning_rate:
+  #   distribution: constant
+  #   value: 0
+  # learning_rate:
+  #   distribution: constant
+  #   value: 1.0e-6
+  # early_stopping_patience:
+  #   distribution: constant
+  #   value: 100
+  # batch_size:
+  #   distribution: constant
+  #   value: 128
