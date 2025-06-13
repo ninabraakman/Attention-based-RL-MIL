@@ -801,9 +801,53 @@ class PolicyNetwork(nn.Module):
         preds_pool = torch.stack(preds_pool, dim=2).mean(dim=2)
         return preds_pool, labels
 
+# class AttentionPolicyNetwork_pham(PolicyNetwork):
+#     def __init__(self, task_model, state_dim, hdim, learning_rate, device, task_type,
+#                  min_clip=None, max_clip=None, sample_algorithm=None, no_autoencoder=False):
+#         super().__init__(
+#             task_model=task_model,
+#             state_dim=state_dim,
+#             hdim=hdim,
+#             learning_rate=learning_rate,
+#             device=device,
+#             task_type=task_type,
+#             min_clip=min_clip,
+#             max_clip=max_clip,
+#             sample_algorithm=sample_algorithm,
+#             no_autoencoder=no_autoencoder,
+#         )
+#         self.selector = MultiHeadInstanceSelector(instance_dim=state_dim)
+#         self._last_pre_softmax_attention_scores = None # Initialize new attribute
+        
+#     def forward(self, x):
+#         attention_scores_pre_softmax = self.selector(x, None)
+#         self._last_pre_softmax_attention_scores = attention_scores_pre_softmax
+#         probs = torch.softmax(attention_scores_pre_softmax, dim=1) 
+#         return probs, None, None
+
+#     def get_last_pre_softmax_scores(self): 
+#         """
+#         Returns the attention scores from the selector, before the final softmax
+#         in this network's forward pass.
+#         """
+#         return self._last_pre_softmax_attention_scores
+
 class AttentionPolicyNetwork_pham(PolicyNetwork):
-    def __init__(self, task_model, state_dim, hdim, learning_rate, device, task_type,
-                 min_clip=None, max_clip=None, sample_algorithm=None, no_autoencoder=False):
+    def __init__(
+        self,
+        *,
+        task_model,
+        state_dim,
+        hdim,
+        learning_rate,
+        device,
+        task_type,
+        min_clip,
+        max_clip,
+        sample_algorithm, 
+        no_autoencoder=False,
+
+    ):
         super().__init__(
             task_model=task_model,
             state_dim=state_dim,
@@ -816,20 +860,34 @@ class AttentionPolicyNetwork_pham(PolicyNetwork):
             sample_algorithm=sample_algorithm,
             no_autoencoder=no_autoencoder,
         )
-        self.selector = MultiHeadInstanceSelector(instance_dim=state_dim)
-        self._last_pre_softmax_attention_scores = None # Initialize new attribute
         
-    def forward(self, x):
-        attention_scores_pre_softmax = self.selector(x, None)
-        self._last_pre_softmax_attention_scores = attention_scores_pre_softmax
-        probs = torch.softmax(attention_scores_pre_softmax, dim=1) 
-        return probs, None, None
-    
-    def sample_action(self, attention_probs, bag_size):        
-        # Top-k selection, deterministic        
-        return attention_probs.topk(bag_size, dim=1).indices, torch.tensor(0.0, device=attention_probs.device)
+        self.critic = CriticNetwork(state_dim=state_dim, hdim=hdim)
+        self.selector = MultiHeadInstanceSelector(instance_dim=state_dim)
+        self._last_pre_softmax_attention_scores = None
 
-    def get_last_pre_softmax_scores(self): # New getter method
+    def forward(self, batch_x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+        if self.no_autoencoder:
+            batch_rep = batch_x
+        else:
+            batch_rep = self.task_model.base_network(batch_x).detach()
+
+        # Get the raw scores from the selector
+        attention_logits = self.selector(batch_rep, None).squeeze(-1)
+
+        # --- THIS IS THE FIX ---
+        # Store the raw logits before they go into the softmax function
+        self._last_pre_softmax_attention_scores = attention_logits
+        
+        # Normalize with softmax toPoli get final probabilities for sampling
+        action_probs = torch.softmax(attention_logits, dim=1)
+        
+        # Use the critic to get the expected reward
+        exp_reward_per_instance = self.critic(batch_rep)
+        exp_reward = exp_reward_per_instance.mean(dim=1)
+
+        return action_probs, batch_rep, exp_reward
+    
+    def get_last_pre_softmax_scores(self): 
         """
         Returns the attention scores from the selector, before the final softmax
         in this network's forward pass.
@@ -848,13 +906,13 @@ class AttentionPolicyNetwork_ilse(PolicyNetwork):
         task_type,
         min_clip,
         max_clip,
-        sample_algorithm="with_replacement",
+        sample_algorithm,
         no_autoencoder=False,
-        k,  # bag_size (if you need it)
-        temperature=1.0,
+        k,
+        temperature,
         is_linear_attention=False,
-        attention_size=64,
-        attention_dropout_p=0.5,
+        attention_size,
+        attention_dropout_p,
     ):
         # first initialize everything that PolicyNetwork needs
         super().__init__(

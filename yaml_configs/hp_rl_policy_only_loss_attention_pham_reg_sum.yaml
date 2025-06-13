@@ -1,103 +1,124 @@
-#These are the full sweep configurations for the Attention-based RL-MIL models with different subsets and architectures.
-method: bayes
+# #These are the full sweep configurations for the Attention-based RL-MIL models with different subsets and architectures.
+# method: bayes
+# metric:
+#   name: eval/avg_mil_loss
+#   goal: minimize
+# parameters:
+#   hdim:
+#     distribution: constant
+#     value: 8
+#   epochs:
+#     distribution: constant
+#     value: 200
+#   actor_learning_rate:
+#     distribution: log_uniform_values
+#     min: 1.0e-6
+#     max: 1.0e-2
+#   critic_learning_rate:
+#     distribution: constant
+#     value: 0
+#   learning_rate:
+#     distribution: constant
+#     value: 1.0e-6
+#   reg_coef:
+#     distribution: uniform
+#     min: 0.0
+#     max: 1.0
+#   early_stopping_patience:
+#     distribution: constant
+#     value: 25
+#   batch_size:
+#     distribution: constant
+#     value: 128
+# run_cap: 50
+
+# These are the grid search configurations for the specific models with their respective architectures.
+method: grid
 metric:
   name: eval/avg_mil_loss
   goal: minimize
+
 parameters:
-  hdim:
+# # Aggregated_subset MeanMLP 12294158
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 2.305655160169995e-06
+#   reg_coef:
+#     distribution: constant
+#     value: 0.6914029143419389
+
+# # Aggregated_subset MaxMLP 12294373
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 1.6728547945951365e-05
+#   reg_coef:
+#     distribution: constant
+#     value: 0.1849706245635051
+
+# # Aggregated_subset AttentionMLP 12294379
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 1.1240486330233576e-05
+#   reg_coef:
+#     distribution: constant
+#     value: 0.9589083132130984
+
+# # Aggregated_subset repset 12294380
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 1.3338670751875858e-06
+#   reg_coef:
+#     distribution: constant
+#     value: 0.5979545426708248
+
+# # Full_subset MeanMLP 12295158
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 0.0009258018828541072
+#   reg_coef:
+#     distribution: constant
+#     value: 0.5549211503182233
+
+# # Full_subset MaxMLP 12298567
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 5.482106061933199e-06
+#   reg_coef:
+#     distribution: constant
+#     value: 0.46576475377668025
+
+# # Full_subset Attention 12298569
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 2.4697198395654355e-06
+#   reg_coef:
+#     distribution: constant
+#     value: 0.23950951490511463
+
+# Full_subset repset 12298570
+  actor_learning_rate:
     distribution: constant
-    value: 8
+    value: 1.3450412722286496e-05
+  reg_coef:
+    distribution: constant
+    value: 0.43999379855907306
+
+  # --- Other fixed parameters ---
   epochs:
     distribution: constant
     value: 800
-  actor_learning_rate:
-    distribution: log_uniform_values
-    min: 1.0e-6
-    max: 1.0e-2
+  hdim:
+    distribution: constant
+    value: 8
   critic_learning_rate:
     distribution: constant
     value: 0
   learning_rate:
     distribution: constant
     value: 1.0e-6
-  reg_coef:
-    distribution: uniform
-    min: 0.0
-    max: 1.0
   early_stopping_patience:
     distribution: constant
     value: 100
   batch_size:
     distribution: constant
     value: 128
-run_cap: 50
-
-# # These are the grid search configurations for the specific models with their respective architectures.
-# method: grid
-# metric:
-#   name: eval/avg_mil_loss
-#   goal: minimize
-
-# parameters:
-#   # --- The Unified Set of Learning Rates to Test ---
-#   actor_learning_rate:
-#       values: [3.0e-3, 2.0e-4, 3.0e-5]
-#   # -- The model architecture specific parameters, uncomment the specific architecture --
-# # Aggregated_subset MeanMLP 12254260
-#   reg_coef:
-#       distribution: constant
-#       value: 0.917418344265202
-
-# # Aggregated_subset MaxMLP 12254261
-#   reg_coef:
-#       distribution: constant
-#       value: 0.38495739782843486
-
-# # Aggregated_subset AttentionMLP 12254264
-#   reg_coef:
-#       distribution: constant
-#       value: 0.7797626150083393
-
-# # Aggregated_subset repset 12254394
-#   reg_coef:
-#       value: 0.5147792692002824
-
-# # Full_subset MeanMLP 12254257
-#   reg_coef:
-#       distribution: constant
-#       value: 0.6823272671432371
-
-# # Full_subset MaxMLP 12254611
-#   reg_coef:
-#       distribution: constant
-#       value: 0.8186168874262059
-
-# # Full_subset Attention 12254599
-#   reg_coef:
-#       distribution: constant
-#       value: 0.5071883538649627
-
-# # Full_subset repset 12254598
-#   reg_coef:
-#       distribution: constant
-#       value: 0.29329879667290115
-
-  # # --- Other fixed parameters ---
-  # dropout_p:
-  #   distribution: constant
-  #   value: 0.5
-  # hdim:
-  #   distribution: constant
-  #   value: 8
-  # critic_learning_rate:
-  #   distribution: constant
-  #   value: 0
-  # learning_rate:
-  #   distribution: constant
-  #   value: 1.0e-6
-  # early_stopping_patience:
-  #   distribution: constant
-  #   value: 100
-  #   batch_size:
-  #     distribution: constant
-  #     value: 128

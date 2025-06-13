@@ -278,6 +278,7 @@ def create_rl_model(args, mil_best_model_dir):
         is_linear_attention=args.is_linear_attention,
         attention_size=args.attention_size,
         attention_dropout_p=args.attention_dropout_p,
+        sample_algorithm=args.sample_algorithm
     )
     return policy_network
 
@@ -297,7 +298,7 @@ def load_model_from_config(mil_config_file, rl_config_file, rl_model_file):
     state_dim=rl_config['state_dim'],
     hdim=rl_config['hdim'],
     k=rl_config['bag_size'],
-    temperature=rl_config.get('temperature', 1.0),
+    temperature=rl_config.get('temperature'),
     learning_rate= 0,
     device=device,
     task_type=rl_config.get('task_type', 'classification'),
@@ -305,8 +306,8 @@ def load_model_from_config(mil_config_file, rl_config_file, rl_model_file):
     max_clip=rl_config.get('max_clip', None),
     no_autoencoder=rl_config.get('no_autoencoder_for_rl', False),
     is_linear_attention=rl_config.get('is_linear_attention', False),
-    attention_size=rl_config.get('attention_size', 64),
-    attention_dropout_p=rl_config.get('attention_dropout_p', 0.5),
+    attention_size=rl_config.get('attention_size'),
+    attention_dropout_p=rl_config.get('attention_dropout_p'),
 )
     policy_network.load_state_dict(torch.load(rl_model_file))
     

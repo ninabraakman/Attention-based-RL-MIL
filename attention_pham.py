@@ -363,9 +363,14 @@ def generate_interpretability_outputs(policy_network, dataloader, device, args, 
                 logger.warning(f"Batch {batch_idx}: Raw attention scores were None. Filling with NaNs.")
                 raw_attention_scores_cpu_np = np.full_like(final_attention_scores_cpu_np, np.nan)
 
-            # ... (rest of your existing code for getting bag_predicted_labels, selected_actions, etc.)
-            # Example for bag_predicted_labels (ensure this uses final_attention_scores_tensor if needed for selection)
-            selected_actions, _ = policy_network.sample_action(final_attention_scores_tensor.to(device), args.bag_size) # Use final scores for selection
+    
+            selected_actions, _ = sample_action(
+                final_attention_scores_tensor,
+                args.bag_size,
+                device,
+                random=False,
+                algorithm=args.sample_algorithm
+            )            
             sel_x_embeddings = select_from_action(selected_actions, batch_x_embeddings)
             batch_out_logits, _ = policy_network.eval_minibatch(sel_x_embeddings, batch_y_bag_labels)
             if args.task_type == 'classification':
@@ -723,7 +728,9 @@ def main():
             project=args.wandb_project,
             name=f"RL_{args.model_name}_{args.label}_{args.bag_size}_2sided_ExponentialLR",
         )
-        
+    global train_dataset, eval_dataset, test_dataset 
+    current_train_dataloader, current_eval_dataloader, current_test_dataloader = \
+        get_dataloaders(args, train_dataset, eval_dataset, test_dataset)    
     # Model Optimizer Scheduler EarlyStopping
     policy_network = create_rl_model(args, run_dir)
     policy_network = policy_network.to(DEVICE)

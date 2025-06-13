@@ -1,4 +1,4 @@
-#These are the full sweep configurations for RL-MIL with epsilon_greedy with different subsets and architectures.
+# # These are the full sweep configurations for RL-MIL with epsilon_greedy with different subsets and architectures.
 # method: bayes
 # metric:
 #   goal: minimize
@@ -9,7 +9,7 @@
 #     value: 8
 #   epochs:
 #     distribution: constant
-#     value: 800
+#     value: 200
 #   actor_learning_rate:
 #     distribution: log_uniform_values
 #     max: 1.0e-02
@@ -30,7 +30,7 @@
 #     min: 0.0
 #   early_stopping_patience:
 #     distribution: constant
-#     value: 100
+#     value: 25
 #   batch_size:
 #     distribution: constant
 #     value: 128
@@ -43,96 +43,96 @@ metric:
   name: eval/avg_mil_loss
 parameters:
 
-  # --- The architecture specific best values, uncomment the architecture you are running ---
-# # Aggregated_subset MeanMLP 12130495
+# --- The architecture specific best values, uncomment the architecture you are running ---
+# # Aggregated_subset MeanMLP 12291849
 #   epsilon:
 #     distribution: constant
-#     value: 0.1097129561180472
+#     value: 0.05642676243294653
 #   reg_coef:
 #     distribution: constant
-#     value: 0.9422992449546423
+#     value: 0.9923288335797648
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 2.683316075023677e-05
+#     value: 0.0009873281177408043
 
-# Aggregated_subset MaxMLP 12130495
+# # Aggregated_subset MaxMLP 12294355
+#   epsilon:
+#     distribution: constant
+#     value: 0.2368755026699959
+#   reg_coef:
+#     distribution: constant
+#     value: 0.5423615819105667
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 0.002541811616972038
+
+# # Aggregated_subset AttentionMLP 12294358
+#   epsilon:
+#     distribution: constant
+#     value: 0.5044035887885062
+#   reg_coef:
+#     distribution: constant
+#     value: 0.9594618039453464
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 0.001746085198598313
+
+# # Aggregated_subset repset 12294368
+#   epsilon:
+#     distribution: constant
+#     value: 0.9544865928393907
+#   reg_coef:
+#     distribution: constant
+#     value: 0.06751021418210101
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 6.875797943680295e-05
+
+# # Full_subset MeanMLP 12295147
+#   epsilon:
+#     distribution: constant
+#     value: 0.5293919228108971
+#   reg_coef:
+#     distribution: constant
+#     value: 0.6637030651066476
+#   actor_learning_rate:
+#     distribution: constant
+#     value: 0.007743225506366703
+
+# Full_subset MaxMLP 12295146
   epsilon:
     distribution: constant
-    value: 0.1423043215274837
+    value: 0.996879617354887
   reg_coef:
     distribution: constant
-    value: 0.6367160566938129
+    value: 0.6551953149066362
   actor_learning_rate:
     distribution: constant
-    value: 6.793257598913032e-05
+    value: 1.7498714221805342e-05
 
-# # Aggregated_subset AttentionMLP 12130495
+# # Full_subset Attention 12295144
 #   epsilon:
 #     distribution: constant
-#     value: 0.0913481111902542
+#     value: 0.4478229200821477
 #   reg_coef:
 #     distribution: constant
-#     value: 0.9848957271462644
+#     value: 0.5335116973135403
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 1.13853612419319e-05
+#     value: 0.002019984615124819
 
-# # Aggregated_subset repset 12130495
+# # Full_subset repset 12295143
 #   epsilon:
 #     distribution: constant
-#     value: 0.17764861739637572
+#     value: 0.7703315763348163
 #   reg_coef:
 #     distribution: constant
-#     value: 0.7789415655262469
+#     value: 0.8373970366673084
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 0.00012357892696988963
+#     value: 0.0030771138939505024
 
-# # Full_subset MeanMLP 12130496
-#   epsilon:
-#     distribution: constant
-#     value: 0.18101283473359076
-#   reg_coef:
-#     distribution: constant
-#     value: 0.5364011221627326
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.007339768559418281
-
-# # Full_subset MaxMLP 12130496
-#   epsilon:
-#     distribution: constant
-#     value: 0.22771947603550757
-#   reg_coef:
-#     distribution: constant
-#     value: 0.6770859535445086
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 2.110793400847929e-05
-
-# # Full_subset Attention 12130496
-#   epsilon:
-#     distribution: constant
-#     value: 0.19620616025369195
-#   reg_coef:
-#     distribution: constant
-#     value: 0.8034759721421159
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.00022776211413451416
-
-# # Full_subset repset 12147097
-#   epsilon:
-#     distribution: constant
-#     value: 0.6682492990231877
-#   reg_coef:
-#     distribution: constant
-#     value: 0.4384299653369902
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 3.780298806860153e-05
-
-  # -- Fixed parameters for all models --
+# -- Fixed parameters for all models --
   hdim:
     distribution: constant
     value: 8

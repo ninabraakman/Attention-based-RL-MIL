@@ -7,9 +7,9 @@ from utils import save_pickle, set_seed
 from logger import get_logger
 
 # === CONFIGURATION ===
-INPUT_PATH = "data/oulad/oulad_aggregated_subset.pkl"
+INPUT_PATH = "data/oulad/oulad_aggregated_debiased.pkl"
 SEED = 0
-DATASET_NAME = "oulad_aggregated_subset"
+DATASET_NAME = "oulad_aggregated_debiased"
 EMBEDDING_MODEL = "tabular"
 DATA_COLUMN = "instances"  # dummy value, for path compatibility
 SAVE_DIR = f"data/seed_{SEED}/{DATASET_NAME}/{DATA_COLUMN}/{EMBEDDING_MODEL}"
