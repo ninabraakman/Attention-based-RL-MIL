@@ -1,22 +1,22 @@
 #!/bin/bash
-#SBATCH --partition=gpu_h100
+#SBATCH --partition= #YOUR PARTITION
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=20:00:00
-#SBATCH --output=../logs/full/mil/10_%j.out
-#SBATCH --error=../logs/full/mil/10_%j.err
+#SBATCH --output=../logs/oulad_full/mil/10_%j.out
+#SBATCH --error=../logs/ouald_full/mil/10_%j.err
 
 module purge
 module load 2023
 source ../venv/bin/activate
-cd /projects/prjs1491/Attention-based-RL-MIL
+cd #ROOT OF YOUR PROJECT
 
 baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
 target_labels=("label")
 gpus=(0)
-wandb_entity="ninabraakman-university-of-amsterdam"
-wandb_project="MasterThesis"
+wandb_entity="YOUR_WANDB_ENTITY"
+wandb_project="YOUR_WANDB_PROJECT"
 
 dataset="oulad_full"
 data_embedded_column_name="instances"

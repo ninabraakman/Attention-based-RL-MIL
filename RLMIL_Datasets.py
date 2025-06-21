@@ -68,30 +68,31 @@ class RLMILDataset_attention(RLMILDataset):
         super().__init__(df, bag_masks, subset, task_type, instance_labels_column)
         self.original_dataframe = df # Store the original DataFrame
 
-class SimpleDataset(Dataset):
-    def __init__(
-            self,
-            df: pd.DataFrame,
-            task_type: str = "classification",
-    ) -> None:
-        self.X = np.stack(df["bag_embeddings"].tolist()).mean(axis=1)
-        self.Y = df["labels"]
-        self.bag = df["bag"]
-        self.task_type = task_type
+# Not used in Attention-Based RL-MIL framework
+# class SimpleDataset(Dataset):
+#     def __init__(
+#             self,
+#             df: pd.DataFrame,
+#             task_type: str = "classification",
+#     ) -> None:
+#         self.X = np.stack(df["bag_embeddings"].tolist()).mean(axis=1)
+#         self.Y = df["labels"]
+#         self.bag = df["bag"]
+#         self.task_type = task_type
 
-    def get_y(self, index: int):
-        if self.task_type == "regression":
-            return torch.tensor(self.Y[index]).float()
-        elif self.task_type == "classification":
-            return torch.tensor(self.Y[index]).long()
+#     def get_y(self, index: int):
+#         if self.task_type == "regression":
+#             return torch.tensor(self.Y[index]).float()
+#         elif self.task_type == "classification":
+#             return torch.tensor(self.Y[index]).long()
 
-    def get_x(self, index: int):
-        return  torch.tensor(self.X[index]).float()
+#     def get_x(self, index: int):
+#         return  torch.tensor(self.X[index]).float()
 
-    def __len__(self) -> int:
-        return len(self.X)
+#     def __len__(self) -> int:
+#         return len(self.X)
 
-    def __getitem__(self, index: int) -> tuple:
-        x = self.get_x(index)
-        y = self.get_y(index)
-        return x, y
+#     def __getitem__(self, index: int) -> tuple:
+#         x = self.get_x(index)
+#         y = self.get_y(index)
+#         return x, y

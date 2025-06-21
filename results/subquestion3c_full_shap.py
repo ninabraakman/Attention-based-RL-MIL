@@ -23,37 +23,46 @@ except (NameError, ImportError) as e:
         def forward(self, x): return None, None, torch.rand(len(x), 1)
     def create_mil_model_with_dict(d): return torch.nn.Identity()
 
-# --- ======================================================= ---
-# --- CONFIGURATION for OULAD_FULL SHAP Analysis ---
-# --- ======================================================= ---
 SEED_TO_ANALYZE = 8
 OUTPUT_DIR = 'final_report_oulad_full/'
 TOP_K_FOR_COUNTS = 20
-SAMPLE_SIZE = 200 
+SAMPLE_SIZE = None
 REPRODUCIBILITY_SEED = 42 
-# !!! IMPORTANT: VERIFY THESE PATHS for your oulad_full dataset !!!
+
 BASE_PATH = f'/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_{SEED_TO_ANALYZE}/oulad_full/instances/tabular/label/bag_size_20/repset_20_16_20' 
 RAW_DATA_PKL_PATH = '/projects/prjs1491/Attention-based-RL-MIL/data/oulad/oulad_full_raw.pkl'
 
 # We need the ILSE file to get the instance data, and the Greedy dir to get the model
 ILSE_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement/') 
 GREEDY_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_epsilon_greedy_reg_sum_sample_without_replacement/') 
-# --- ======================================================= ---
-# --- HELPER & METRIC FUNCTIONS ---
-# --- ======================================================= ---
+
 def load_rl_model(run_dir_path):
+    """Correctly loads a trained RL policy network from specified file paths."""
+    print("Attempting to load RL model...")
     device = torch.device("cpu")
-    model_weights_path, rl_config_path = os.path.join(run_dir_path, 'sweep_best_model.pt'), os.path.join(run_dir_path, 'sweep_best_model_config.json')
-    mil_config_path, mil_weights_path = os.path.join(run_dir_path, '..', 'best_model_config.json'), os.path.join(run_dir_path, '..', 'best_model.pt')
+    model_weights_path = os.path.join(run_dir_path, 'sweep_best_model.pt')
+    rl_config_path = os.path.join(run_dir_path, 'sweep_best_model_config.json')
+    mil_config_path = os.path.join(run_dir_path, '..', 'best_model_config.json')
+    mil_weights_path = os.path.join(run_dir_path, '..', 'best_model.pt')
+    
     try:
         with open(mil_config_path) as f: mil_config = json.load(f)
         with open(rl_config_path) as f: rl_config = json.load(f)
-    except FileNotFoundError as e: print(f"FATAL: Config file not found: {e}"); return None
+    except FileNotFoundError as e:
+        print(f"FATAL: A config file was not found: {e}"); return None
+
     task_model = create_mil_model_with_dict(mil_config)
     task_model.load_state_dict(torch.load(mil_weights_path, map_location=device))
-    policy_network = PolicyNetwork(task_model=task_model, state_dim=rl_config['state_dim'], hdim=rl_config['hdim'], learning_rate=rl_config['learning_rate'], device=device, task_type=rl_config['task_type'])
+    
+    policy_network = PolicyNetwork(
+        task_model=task_model, state_dim=rl_config['state_dim'], hdim=rl_config['hdim'],
+        learning_rate=rl_config['learning_rate'], device=device, task_type=rl_config['task_type'],
+        min_clip=rl_config.get('min_clip'), max_clip=rl_config.get('max_clip'),
+        sample_algorithm=rl_config.get('sample_algorithm'), no_autoencoder=rl_config.get('no_autoencoder_for_rl', False)
+    )
     policy_network.load_state_dict(torch.load(model_weights_path, map_location=device))
     policy_network.eval()
+    print("RL model loaded successfully.")
     return policy_network
 
 def generate_general_labels(raw_bag_data):
@@ -112,10 +121,6 @@ def get_counts_for_split(bags_list, df_source, score_column, bag_to_labels_map):
         for idx in bag_df.nlargest(TOP_K_FOR_COUNTS, score_column).index:
             counts[bag_labels[bag_df.index.get_loc(idx)]] += 1
     return counts
-
-# --- ======================================================= ---
-# --- MAIN SCRIPT LOGIC ---
-# --- ======================================================= ---
 
 if __name__ == '__main__':
     os.makedirs(OUTPUT_DIR, exist_ok=True)

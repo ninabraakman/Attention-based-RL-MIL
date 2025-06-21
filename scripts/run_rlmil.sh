@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --partition=gpu_a100
+#SBATCH --partition= #YOUR PARTITION
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G
 #SBATCH --time=2:00:00
-#SBATCH --output=../logs/full_final/rlmil/MaxMLP/10_%j.out
-#SBATCH --error=../logs/full_final/rlmil/MaxMLP/10_%j.err
+#SBATCH --output=../logs/oulad_full/rlmil_EG/seed10/%j.out
+#SBATCH --error=../logs/oulad_full/rlmil_EG/seed10/%j.err
 
 
 module purge
@@ -15,16 +15,16 @@ source ../venv/bin/activate
 # Navigate to project root
 cd /projects/prjs1491/Attention-based-RL-MIL
 
-baseline_types=("MaxMLP")             # "MeanMLP" "MaxMLP" "AttentionMLP" "repset"
+baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
 target_labels=("label")
 gpus=(0)
-wandb_entity="ninabraakman-university-of-amsterdam"
-wandb_project="MasterThesis"
+wandb_entity="YOUR_WANDB_ENTITY"
+wandb_project="YOUR_WANDB_PROJECT"
 
 dataset="oulad_full"
 data_embedded_column_name="instances"
 task_type="classification"
-autoencoder_layer_sizes="20,16,20"
+autoencoder_layer_sizes="20,16,20"  	  # "22,16,22" for oulad_aggregated and "20,16,20" for oulad_full
 bag_sizes=(20)
 embedding_models=("tabular")
 random_seed=10
@@ -71,76 +71,3 @@ for target_label in "${target_labels[@]}"; do
     done
   done
 done
-
-# #!/bin/bash
-# # --- CORE JOB ARRAY DIRECTIVES ---
-# #SBATCH --partition=gpu_a100
-# #SBATCH --gres=gpu:1
-# #SBATCH --array=1-10  # <<< Creates 10 jobs (tasks), numbered 1 through 10
-
-# # --- RESOURCE REQUESTS (per job task) ---
-# #SBATCH --cpus-per-task=4
-# #SBATCH --mem=8G
-# #SBATCH --time=2:30:00
-
-# # --- DYNAMIC LOG FILES ---
-# #SBATCH --output=../logs/full_final/rlmil/Repset/%j_%a.out
-# #SBATCH --error=../logs/full_final/rlmil/Repset/%j_%a.err
-
-
-# module purge
-# module load 2023
-# source /projects/prjs1491/Attention-based-RL-MIL/venv/bin/activate
-
-# # Navigate to project root
-# cd /projects/prjs1491/Attention-based-RL-MIL
-
-
-# baseline_type="repset"
-# random_seed=$SLURM_ARRAY_TASK_ID
-
-# # Other parameters remain the same
-# target_label="label"
-# wandb_entity="ninabraakman-university-of-amsterdam"
-# wandb_project="MasterThesis"
-# dataset="oulad_full"
-# data_embedded_column_name="instances"
-# task_type="classification"
-# autoencoder_layer_sizes="20,16,20"
-# bag_size=20
-# embedding_model="tabular"
-# rl_task_model="vanilla"
-# sample_algorithm="without_replacement"
-# prefix="loss"
-# rl_model="policy_only"
-# search_algorithm="epsilon_greedy"
-# reg_alg="sum"
-
-
-# echo "Starting Run for $baseline_type, Seed: $random_seed"
-
-# # The Python call now uses the dynamic random_seed variable
-# CUDA_VISIBLE_DEVICES=0 python run_rlmil.py \
-#   --rl \
-#   --baseline $baseline_type \
-#   --autoencoder_layer_sizes $autoencoder_layer_sizes \
-#   --label $target_label \
-#   --data_embedded_column_name $data_embedded_column_name \
-#   --prefix $prefix \
-#   --dataset $dataset \
-#   --bag_size $bag_size \
-#   --run_sweep \
-#   --embedding_model $embedding_model \
-#   --train_pool_size 1 --eval_pool_size 10 --test_pool_size 10 \
-#   --balance_dataset \
-#   --wandb_entity $wandb_entity \
-#   --wandb_project $wandb_project \
-#   --random_seed $random_seed \
-#   --task_type $task_type \
-#   --rl_model $rl_model \
-#   --search_algorithm $search_algorithm \
-#   --rl_task_model $rl_task_model \
-#   --sample_algorithm $sample_algorithm \
-#   --reg_alg $reg_alg
-
-# echo "Finished Run for $baseline_type, Seed: $random_seed"

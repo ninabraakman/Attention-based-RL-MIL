@@ -22,10 +22,7 @@ except (NameError, ImportError) as e:
         def forward(self, x): return None, None, torch.rand(len(x), 1)
     def create_mil_model_with_dict(d): return torch.nn.Identity()
 
-# --- ======================================================= ---
-# --- CONFIGURATION ---
-# --- ======================================================= ---
-# Use a single, representative seed for all analysis
+
 SEED_TO_ANALYZE = 8
 OUTPUT_DIR = 'final_report_oulad_aggregated/'
 TOP_K = 20
@@ -38,9 +35,6 @@ ILSE_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_attention_ilse_reg_
 PHAM_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_attention_pham_reg_sum_sample_without_replacement/')
 GREEDY_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_epsilon_greedy_reg_sum_sample_without_replacement/')
 
-# --- ======================================================= ---
-# --- HELPER FUNCTIONS ---
-# --- ======================================================= ---
 
 def load_rl_model(run_dir_path):
     """Correctly loads a trained RL policy network from specified file paths."""

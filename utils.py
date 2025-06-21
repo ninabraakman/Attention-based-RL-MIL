@@ -302,51 +302,6 @@ def create_bag_masks_randomized(df: pd.DataFrame,
         final_selection_masks[i, selected_indices] = True
             
     return final_selection_masks
-# def create_bag_masks_randomized(df: pd.DataFrame, bag_size: int, bag_embedded_column_name: str, true_mask_column_name: str = "bag_mask"):
-#     """
-#     Creates boolean masks for selecting instances.
-#     For each bag, it randomly selects up to 'bag_size' actual instances.
-
-#     Args:
-#         df (pd.DataFrame): DataFrame containing the data. Must have 'bag_mask' (the original padding mask)
-#                            and 'bag_embeddings' (or bag_embedded_column_name).
-#         bag_size (int): The number of instances to select.
-#         bag_embedded_column_name (str): Name of the column with padded bag embeddings.
-#         true_mask_column_name (str): Name of the column with the original float padding mask (1.0 for real, 0.0 for pad).
-
-#     Returns:
-#         torch.Tensor: A boolean tensor of shape (num_samples, PADDED_DIM) indicating selected instances.
-#     """
-#     num_samples = df.shape[0]
-#     # PADDED_DIM is the total length of the padded bags (e.g., from bag_embeddings.shape[1] or bag_mask.shape[0])
-#     # Assuming all bags in df[bag_embedded_column_name] have the same padded dimension
-#     padded_dim = df[bag_embedded_column_name].iloc[0].shape[0]
-    
-#     final_selection_masks = torch.zeros((num_samples, padded_dim), dtype=torch.bool)
-
-#     for i in range(num_samples):
-#         # Get the original padding mask (float: 1.0 for real, 0.0 for pad)
-#         original_padding_mask = df[true_mask_column_name].iloc[i] # This is a NumPy array
-        
-#         # Find indices of actual (non-padded) instances within the PADDED_DIM
-#         real_instance_indices_in_padded_dim = np.where(original_padding_mask == 1.0)[0]
-        
-#         num_real_instances = len(real_instance_indices_in_padded_dim)
-        
-#         num_to_select = min(num_real_instances, bag_size)
-        
-#         if num_to_select > 0:
-#             # Randomly choose 'num_to_select' from the real_instance_indices_in_padded_dim
-#             selected_real_indices = np.random.choice(
-#                 real_instance_indices_in_padded_dim, 
-#                 size=num_to_select, 
-#                 replace=False # Ensure unique instances are chosen
-#             )
-#             # Mark these selected instances as True in our final mask for this sample
-#             final_selection_masks[i, selected_real_indices] = True
-            
-#     return final_selection_masks
-
 
 def preprocess_dataframe(
         df: pd.DataFrame,

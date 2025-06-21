@@ -648,7 +648,6 @@ class PolicyNetwork(nn.Module):
     def reset_reward_action(self):
         self.saved_actions, self.rewards = [], []
 
-    # TODO: make it vectorize
     def normalize_rewards(self, eps=1e-5):
         R_mean = np.mean(self.rewards)
         R_std = np.std(self.rewards)

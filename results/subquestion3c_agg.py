@@ -27,7 +27,7 @@ except (NameError, ImportError) as e:
 # --- CONFIGURATION ---
 # --- ======================================================= ---
 SEED_TO_ANALYZE = 8
-OUTPUT_DIR = 'final_report/'
+OUTPUT_DIR = 'final_report_oulad_aggregated/'
 TOP_K_FOR_COUNTS = 20
 BASE_PATH = f'/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_{SEED_TO_ANALYZE}/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/'
 RAW_DATA_PKL_PATH = '/projects/prjs1491/Attention-based-RL-MIL/data/oulad/oulad_aggregated_raw.pkl'
@@ -42,18 +42,32 @@ REPRODUCIBILITY_SEED = 42
 # --- ======================================================= ---
 
 def load_rl_model(run_dir_path):
+    """Correctly loads a trained RL policy network from specified file paths."""
+    print("Attempting to load RL model...")
     device = torch.device("cpu")
-    model_weights_path, rl_config_path = os.path.join(run_dir_path, 'sweep_best_model.pt'), os.path.join(run_dir_path, 'sweep_best_model_config.json')
-    mil_config_path, mil_weights_path = os.path.join(run_dir_path, '..', 'best_model_config.json'), os.path.join(run_dir_path, '..', 'best_model.pt')
+    model_weights_path = os.path.join(run_dir_path, 'sweep_best_model.pt')
+    rl_config_path = os.path.join(run_dir_path, 'sweep_best_model_config.json')
+    mil_config_path = os.path.join(run_dir_path, '..', 'best_model_config.json')
+    mil_weights_path = os.path.join(run_dir_path, '..', 'best_model.pt')
+    
     try:
         with open(mil_config_path) as f: mil_config = json.load(f)
         with open(rl_config_path) as f: rl_config = json.load(f)
-    except FileNotFoundError as e: print(f"FATAL: Config file not found: {e}"); return None
+    except FileNotFoundError as e:
+        print(f"FATAL: A config file was not found: {e}"); return None
+
     task_model = create_mil_model_with_dict(mil_config)
     task_model.load_state_dict(torch.load(mil_weights_path, map_location=device))
-    policy_network = PolicyNetwork(task_model=task_model, state_dim=rl_config['state_dim'], hdim=rl_config['hdim'], learning_rate=rl_config['learning_rate'], device=device, task_type=rl_config['task_type'])
+    
+    policy_network = PolicyNetwork(
+        task_model=task_model, state_dim=rl_config['state_dim'], hdim=rl_config['hdim'],
+        learning_rate=rl_config['learning_rate'], device=device, task_type=rl_config['task_type'],
+        min_clip=rl_config.get('min_clip'), max_clip=rl_config.get('max_clip'),
+        sample_algorithm=rl_config.get('sample_algorithm'), no_autoencoder=rl_config.get('no_autoencoder_for_rl', False)
+    )
     policy_network.load_state_dict(torch.load(model_weights_path, map_location=device))
     policy_network.eval()
+    print("RL model loaded successfully.")
     return policy_network
 
 def generate_general_labels(raw_bag_data):
@@ -75,9 +89,6 @@ def parse_feature_string(s):
     if not isinstance(s, str): return np.array([])
     return np.fromstring(s.replace('[','').replace(']','').replace('\n',' '), sep=' ')
 
-# --- ======================================================= ---
-# --- METRIC CALCULATION FUNCTIONS ---
-# --- ======================================================= ---
 
 def calculate_hhi(counts_dict, total_bags):
     """Calculates the Herfindahl-Hirschman Index for explanation concentration."""
@@ -113,9 +124,6 @@ def get_counts_for_split(bags_list, df_source, score_column, bag_to_labels_map):
                 counts[bag_labels[label_index]] += 1
     return counts
 
-# --- ======================================================= ---
-# --- MAIN SCRIPT LOGIC ---
-# --- ======================================================= ---
 
 if __name__ == '__main__':
     os.makedirs(OUTPUT_DIR, exist_ok=True)

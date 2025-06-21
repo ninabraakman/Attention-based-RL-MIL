@@ -323,32 +323,20 @@ def get_first_batch_info(policy_network, eval_dataloader, device, bag_size, samp
     log_dict = {}
     batch_x, batch_y, indices, instance_labels = next(iter(eval_dataloader))
     batch_x = batch_x.to(device)
-
-    # Correctly unpack the tuple returned by the policy network
-    # The first element is the action probabilities tensor.
     actual_action_probs_tensor, _, _ = policy_network(batch_x) 
-
-    # Use the tensor for sampling
     action, _ = sample_action(actual_action_probs_tensor, bag_size, device, random=False, algorithm=sample_algorithm)
-    
     if len(instance_labels) != 0:
         instance_labels = instance_labels.to(device)
-        # Ensure 'action' has the expected shape for this indexing.
-        # If actual_action_probs_tensor was (B, N), action should be (B, bag_size)
         selected_intance_labels = instance_labels[torch.arange(action.shape[0]).unsqueeze(1), action]
         selected_intance_count = selected_intance_labels.sum(dim=1)
-
-    # Also, the loop below should use the shape of the actual probabilities tensor
-    # and log its values, not the tuple.
-    for i in range(actual_action_probs_tensor.shape[0]): # Use shape of the tensor
+    for i in range(actual_action_probs_tensor.shape[0]):
         log_dict.update({
-            f"actor/probs_{i}": actual_action_probs_tensor[i].cpu().detach().numpy(), # Log tensor values
+            f"actor/probs_{i}": actual_action_probs_tensor[i].cpu().detach().numpy(), 
             f"actor/action_{i}": wandb.Histogram(action[i].cpu().numpy().tolist())
         })
         if len(instance_labels) != 0:
-            if batch_y[i] == 1: # Ensure batch_y[i] is valid; action_probs_tensor.shape[0] is batch size
-                # Ensure selected_intance_count[i] is valid based on batch size
-                if i < selected_intance_count.shape[0]: # Check bounds if selected_instance_count might be smaller
+            if batch_y[i] == 1:
+                if i < selected_intance_count.shape[0]: 
                     log_dict.update({f"actor/selected_instance_count_{i}": selected_intance_count[i]})
     return log_dict
 

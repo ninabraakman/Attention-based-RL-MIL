@@ -371,20 +371,22 @@ $RECYCLE.BIN/
 # local files
 data/
 wandb/
-TwitterDeveloperAccounts.csv
-twitter_handles/
-user_timelines/
 *.pt
 *.txt
 *.jsonl
 *.zip
 *.tex
+*.png
 external/
 *.csv
 runs/
 archive/
-!requirements.txt
+# !requirements.txt
+final_report_oulad_aggregated/
+final_report_oulad_full/
 logs/
+
+
 
 .vscode/
 .pylintrc

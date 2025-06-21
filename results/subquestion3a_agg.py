@@ -132,7 +132,6 @@ if __name__ == '__main__':
     # --- Plot 1: ILSE ---
     plt.figure(figsize=(8, 10))
     plt.barh(instance_labels, ilse_attention_weights, color='darkcyan')
-    plt.title(f'ILSE: Attention Scores\n(Student {CASE_STUDY_BAG_ID})', fontsize=16)
     plt.xlabel('Attention Score', fontsize=12)
     plt.ylabel('Instance', fontsize=12)
     plt.gca().invert_yaxis()
@@ -146,7 +145,6 @@ if __name__ == '__main__':
     # --- Plot 2: PHAM ---
     plt.figure(figsize=(8, 10))
     plt.barh(instance_labels, pham_attention_weights, color='slateblue')
-    plt.title(f'PHAM: Attention Scores\n(Student {CASE_STUDY_BAG_ID})', fontsize=16)
     plt.xlabel('Attention Score', fontsize=12)
     plt.ylabel('Instance', fontsize=12)
     plt.gca().invert_yaxis()
@@ -160,7 +158,6 @@ if __name__ == '__main__':
     # --- Plot 3: SHAP ---
     plt.figure(figsize=(8, 10))
     plt.barh(instance_labels, shap_importance, color='coral')
-    plt.title(f'Epsilon Greedy: SHAP Importance\n(Student {CASE_STUDY_BAG_ID})', fontsize=16)
     plt.xlabel('SHAP Importance Value', fontsize=12)
     plt.ylabel('Instance', fontsize=12)
     plt.gca().invert_yaxis()

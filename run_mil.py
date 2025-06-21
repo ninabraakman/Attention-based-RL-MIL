@@ -534,10 +534,7 @@ if __name__ == "__main__":
     logger.info(f"{args.label} label distribution in test set after label encoding:")
     logger.info(f"{test_dataframe['labels'].value_counts()}")
 
-    logger.info("Using randomized (from padded) bag mask creation for standard MIL.") # Optional
-    # train_bag_masks = create_bag_masks(train_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
-    # val_bag_masks = create_bag_masks(val_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
-    # test_bag_masks = create_bag_masks(test_dataframe, args.bag_size, BAG_EMBEDDED_COLUMN_NAME)
+    logger.info("Using randomized (from padded) bag mask creation for standard MIL.")
     train_bag_masks = create_bag_masks_randomized(
         df=train_dataframe,
         bag_size=args.bag_size,
