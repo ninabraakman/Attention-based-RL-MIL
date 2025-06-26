@@ -1,3 +1,4 @@
+# This file prints out the top-20 most counted instance types and calculates the quantitative metrics for the oulad full dataset for both attention models. 
 import pandas as pd
 import numpy as np
 import os
@@ -9,7 +10,7 @@ import time
 import json
 from scipy.stats import spearmanr
 
-# --- Add project root to path to find your 'models.py' file ---
+# Add project root to path to find models.py
 try:
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     if project_root not in sys.path:
@@ -28,13 +29,12 @@ TOP_K_FOR_COUNTS = 20
 BASE_PATH = f'/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_{SEED_TO_ANALYZE}/oulad_full/instances/tabular/label/bag_size_20/repset_20_16_20'
 RAW_DATA_PKL_PATH = '/projects/prjs1491/Attention-based-RL-MIL/data/oulad/oulad_full_raw.pkl' 
 
-# --- Model Specific Sub-directories ---
 ILSE_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement/')
 PHAM_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_attention_pham_reg_sum_sample_without_replacement/') 
 # Set a seed for the random split to ensure reproducibility of consistency scores
 REPRODUCIBILITY_SEED = 42
 
-
+# Helper functions
 def generate_general_labels(raw_bag_data):
     """Generates GENERALIZED labels for feature aggregation."""
     labels = []
@@ -105,8 +105,7 @@ def get_counts_for_split(bags_list, df_source, score_column, bag_to_labels_map):
 if __name__ == '__main__':
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # --- STEP 1: LOAD DATA AND FIND COMMON BAGS ---
-    print("--- STEP 1: LOADING DATA AND FINDING COMMON BAGS ---")
+    # -Step 1: Load data and find common bags
     try:
         ilse_df = pd.read_csv(os.path.join(ILSE_RUN_DIR, 'attention_ilse_outputs.csv'))
         pham_df = pd.read_csv(os.path.join(PHAM_RUN_DIR, 'attention_pham_outputs.csv'))
@@ -122,8 +121,7 @@ if __name__ == '__main__':
     if not common_bags:
         print("No common bags found between ILSE and PHAM files. Aborting."); sys.exit(1)
 
-    # --- STEP 2: GENERATE TOP-20 COUNTS FOR FULL DATASET ---
-    print("\n--- STEP 2: COUNTING TOP-20 INSTANCE TYPES (FULL DATASET) ---")
+    # Step 2: Generate top-20 counts
     bag_to_labels_map = build_bag_to_labels_map(RAW_DATA_PKL_PATH)
     ilse_counts, pham_counts = defaultdict(int), defaultdict(int)
     ilse_bag_presence, pham_bag_presence = defaultdict(int), defaultdict(int)
@@ -132,7 +130,7 @@ if __name__ == '__main__':
         if bag_id not in bag_to_labels_map: continue
         bag_labels = bag_to_labels_map[bag_id]
         
-        # Process ILSE
+        # Process ILSE/ Gated Attention
         bag_ilse_df = ilse_df_common[ilse_df_common['bag_id'] == bag_id]
         if len(bag_labels) == len(bag_ilse_df):
             unique_labels_in_top20 = set()
@@ -142,7 +140,7 @@ if __name__ == '__main__':
                 unique_labels_in_top20.add(label)
             for label in unique_labels_in_top20: ilse_bag_presence[label] += 1
 
-        # Process PHAM
+        # Process PHAM/ Multi-Head Attention
         bag_pham_df = pham_df_common[pham_df_common['bag_id'] == bag_id]
         if len(bag_labels) == len(bag_pham_df):
             unique_labels_in_top20 = set()
@@ -152,14 +150,11 @@ if __name__ == '__main__':
                 unique_labels_in_top20.add(label)
             for label in unique_labels_in_top20: pham_bag_presence[label] += 1
 
-    # --- STEP 3: PRINT DESCRIPTIVE STATISTICS ---
-    print("\n\n--- STEP 3: DESCRIPTIVE STATISTICS FOR OULAD_FULL ---")
+    # Step 3: Print descriptive statistics
     print_counts_table("ILSE", ilse_counts, ilse_bag_presence, len(common_bags))
     print_counts_table("PHAM", pham_counts, pham_bag_presence, len(common_bags))
 
-    # --- STEP 4: CALCULATE AND DISPLAY INTERPRETABILITY METRICS ---
-    print("\n\n--- STEP 4: FINAL INTERPRETABILITY METRICS FOR OULAD_FULL ---")
-    
+    # Step 4: Calculate and display interpretability metrics 
     # 4.1: Explanation Sparsity (Gini & HHI)
     sparsity_scores = {
         "Model": ["ILSE", "PHAM"],
@@ -167,11 +162,9 @@ if __name__ == '__main__':
         "HHI Score": [calculate_hhi(ilse_counts, len(common_bags)), calculate_hhi(pham_counts, len(common_bags))],
     }
     sparsity_df = pd.DataFrame(sparsity_scores)
-    print("\n--- METRIC 1: EXPLANATION SPARSITY (Higher is more focused) ---")
     print(sparsity_df.to_string(index=False))
 
     # 4.2: Explanation Consistency (Split-Half Method)
-    print("\n\n--- METRIC 2: EXPLANATION CONSISTENCY (Higher is more stable) ---")
     np.random.seed(REPRODUCIBILITY_SEED)
     shuffled_bags = np.array(common_bags); np.random.shuffle(shuffled_bags)
     split_point = len(shuffled_bags) // 2
@@ -187,6 +180,12 @@ if __name__ == '__main__':
         policy_df = pd.DataFrame({'split_A': counts_a, 'split_B': counts_b}).fillna(0)
         spearman_corr, _ = spearmanr(policy_df['split_A'], policy_df['split_B'])
         
+        # Show top 5 most counted instance types
+        top5_a = set(policy_df.nlargest(5, 'split_A').index)
+        top5_b = set(policy_df.nlargest(5, 'split_B').index)
+        print(f"    - Top 5 Features (Split A): {sorted(list(top5_a))}")
+        print(f"    - Top 5 Features (Split B): {sorted(list(top5_b))}")
+        # Also calculate for other k's
         k_values = [3, 5, 10, 15, 20]
         jaccard_scores = {}
         for k in k_values:
@@ -200,4 +199,3 @@ if __name__ == '__main__':
     consistency_df = pd.DataFrame(consistency_results)
     print(consistency_df.to_string(index=False))
 
-    print("\n✅ All analyses complete!")

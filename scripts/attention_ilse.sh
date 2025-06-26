@@ -18,11 +18,11 @@ gpus=(0)
 wandb_entity="YOUR_WANDB_ENTITY"
 wandb_project="YOUR_WANDB_PROJECT"
 
-dataset="oulad_full"
+dataset="oulad_full"                           # "oulad_full" or "oulad_aggregated"
 data_embedded_column_name="instances"
 task_type="classification"
-autoencoder_layer_sizes="20,16,20"   # "22,16,22" for oulad_aggregated and "20,16,20" for oulad_full
-bag_sizes=(20)
+autoencoder_layer_sizes="20,16,20"            # "22,16,22" for oulad_aggregated and "20,16,20" for oulad_full
+bag_sizes=(20)                                 # for all experiments in this project bag_size 20 is used
 embedding_models=("tabular")
 random_seed=3
 

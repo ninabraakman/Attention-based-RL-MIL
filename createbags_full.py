@@ -5,13 +5,13 @@ import pickle
 from tqdm import tqdm
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
-# === CONFIGURATION ===
+
 CLEAN_DATA_PATH = "data/clean/"
 RAW_OUTPUT_PATH = "data/oulad/oulad_full_raw.pkl"
 ENCODED_OUTPUT_PATH = "data/oulad/oulad_full.pkl"
 os.makedirs(os.path.dirname(RAW_OUTPUT_PATH), exist_ok=True)
 
-# === LOAD DATA ===
+# Load data
 courses_df            = pd.read_csv(os.path.join(CLEAN_DATA_PATH, "courses.csv"))
 assessments_df        = pd.read_csv(os.path.join(CLEAN_DATA_PATH, "assessments.csv"))
 studentInfo_df        = pd.read_csv(os.path.join(CLEAN_DATA_PATH, "studentInfo.csv"))
@@ -20,7 +20,7 @@ studentAssessment_df  = pd.read_csv(os.path.join(CLEAN_DATA_PATH, "studentAssess
 vle_df                = pd.read_csv(os.path.join(CLEAN_DATA_PATH, "vle.csv"))
 studentVle_df         = pd.read_csv(os.path.join(CLEAN_DATA_PATH, "studentVle.csv"))
 
-# === MERGE OTHER DATA ===
+# Merge data
 studentInfo_merged = (
     studentInfo_df
       .merge(studentRegistration_df, on=["id_student","code_module","code_presentation"], how="left")
@@ -31,14 +31,13 @@ stuAssess = studentAssessment_df.merge(assessments_df, on="id_assessment", how="
 stuAssess.set_index(["code_module","code_presentation","id_student"], inplace=True)
 assess_groups = {k:g for k,g in stuAssess.groupby(level=[0,1,2])}
 
-# prepare VLE groups for raw-bag building (studentVle_df already has activity_type & date & sum_click)
 studentVle_df.set_index(["code_module","code_presentation","id_student"], inplace=True)
 vle_groups = {k:g for k,g in studentVle_df.groupby(level=[0,1,2])}
 
 main_groups = studentInfo_merged.groupby(["code_module","code_presentation","id_student"])
 label_map = {"Pass":1, "At-Risk":0}
 
-# === PHASE 1: BUILD FULL RAW BAGS ===
+# Step 1: Build raw bags
 bags_raw, labels, bag_ids = [], [], []
 for (mod,pres,sid), group in tqdm(main_groups, desc="Building full raw bags"):
     label = group.iloc[0]["final_result"]
@@ -69,7 +68,7 @@ for (mod,pres,sid), group in tqdm(main_groups, desc="Building full raw bags"):
         if feats:
             instances.append(feats)
 
-    # VLE clicks: include activity_type, date, and sum_click
+    # VLE clicks
     for _, row in vle_groups.get((mod, pres, sid), pd.DataFrame()).iterrows():
         feats = []
         for feat in ["activity_type", "date", "sum_click"]:
@@ -87,9 +86,8 @@ for (mod,pres,sid), group in tqdm(main_groups, desc="Building full raw bags"):
 # Save raw full bags
 with open(RAW_OUTPUT_PATH, "wb") as f:
     pickle.dump({"raw_bags": bags_raw, "labels": labels, "bag_ids": bag_ids}, f)
-print(f"✅ Saved full raw to {RAW_OUTPUT_PATH}")
 
-# === PHASE 2: FIT ENCODERS & SCALERS ===
+# Step 2: Fit encoders and scalers
 cat_feats  = ["code_module","code_presentation","gender","region","imd_band","age_band","disability","highest_education","assessment_type","activity_type"]
 num_feats  = ["module_presentation_length","num_of_prev_attempts","studied_credits","score","weight","is_banked","sum_click"]
 date_feats = ["date_registration","date_submitted","date"]
@@ -98,7 +96,6 @@ cat_encoders = {f: LabelEncoder() for f in cat_feats}
 num_scalers  = {f: MinMaxScaler() for f in num_feats}
 date_scaler  = MinMaxScaler()
 
-# Fit encoders/scalers
 merged = studentInfo_merged.copy()
 for f in cat_feats:
     vals = []
@@ -119,7 +116,7 @@ for f in date_feats:
         if f in df: vals += df[f].dropna().tolist()
 date_scaler.fit(np.array(vals).reshape(-1,1))
 
-# === PHASE 3: ENCODE BAGS ===
+# Step 3: encode bags
 def encode_inst(inst):
     vec = np.zeros(len(cat_feats) + len(num_feats) + len(date_feats))
     for feat, val in inst:
@@ -154,4 +151,3 @@ with open(ENCODED_OUTPUT_PATH, "wb") as f:
         "num_scalers": num_scalers,
         "date_scaler": date_scaler
     }, f)
-print(f"✅ Saved full encoded to {ENCODED_OUTPUT_PATH}")

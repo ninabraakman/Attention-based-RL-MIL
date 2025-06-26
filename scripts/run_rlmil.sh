@@ -3,17 +3,15 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G
-#SBATCH --time=2:00:00
-#SBATCH --output=../logs/oulad_full/rlmil_EG/seed10/%j.out
-#SBATCH --error=../logs/oulad_full/rlmil_EG/seed10/%j.err
+#SBATCH --time=20:00:00
+#SBATCH --output=../logs/oulad_full/rlmil/seed0_%j.out
+#SBATCH --error=../logs/oulad_full/rlmil/seed0_%j.err
 
 
 module purge
 module load 2023
 source ../venv/bin/activate
-
-# Navigate to project root
-cd /projects/prjs1491/Attention-based-RL-MIL
+cd # ROOT OF YOUR PROJECT
 
 baseline_types=("MeanMLP" "MaxMLP" "AttentionMLP" "repset")
 target_labels=("label")
@@ -21,13 +19,13 @@ gpus=(0)
 wandb_entity="YOUR_WANDB_ENTITY"
 wandb_project="YOUR_WANDB_PROJECT"
 
-dataset="oulad_full"
+dataset="oulad_full"                          # "oulad_full" or "oulad_aggregated"
 data_embedded_column_name="instances"
 task_type="classification"
-autoencoder_layer_sizes="20,16,20"  	  # "22,16,22" for oulad_aggregated and "20,16,20" for oulad_full
-bag_sizes=(20)
+autoencoder_layer_sizes="20,16,20"  	        # "22,16,22" for oulad_aggregated and "20,16,20" for oulad_full
+bag_sizes=(20)                                # for all experiments in this project bag_size 20 is used
 embedding_models=("tabular")
-random_seed=10
+random_seed=0
 
 rl_task_model="vanilla"
 sample_algorithm="without_replacement"

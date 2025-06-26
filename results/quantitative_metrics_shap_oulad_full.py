@@ -1,3 +1,4 @@
+# This file prints out the top-20 most counted instance types and calculates the quantitative metrics for the oulad full dataset for Epsilon-greedy (SHAP). 
 import pandas as pd
 import numpy as np
 import os
@@ -10,7 +11,7 @@ import shap
 import json
 from scipy.stats import spearmanr
 
-# --- Add project root to path to find your 'models.py' file ---
+# Add project root to path to find models.py
 try:
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     if project_root not in sys.path:
@@ -32,10 +33,10 @@ REPRODUCIBILITY_SEED = 42
 BASE_PATH = f'/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_{SEED_TO_ANALYZE}/oulad_full/instances/tabular/label/bag_size_20/repset_20_16_20' 
 RAW_DATA_PKL_PATH = '/projects/prjs1491/Attention-based-RL-MIL/data/oulad/oulad_full_raw.pkl'
 
-# We need the ILSE file to get the instance data, and the Greedy dir to get the model
 ILSE_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement/') 
 GREEDY_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_epsilon_greedy_reg_sum_sample_without_replacement/') 
 
+# Helper functions
 def load_rl_model(run_dir_path):
     """Correctly loads a trained RL policy network from specified file paths."""
     print("Attempting to load RL model...")
@@ -125,12 +126,11 @@ def get_counts_for_split(bags_list, df_source, score_column, bag_to_labels_map):
 if __name__ == '__main__':
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # --- STEP 1: LOAD INSTANCE DATA AND SAMPLE BAGS (if applicable) ---
-    print("--- STEP 1: LOADING INSTANCE DATA ---")
+    # Step 1: Load instance data and sample bags
     try:
         source_data_df = pd.read_csv(os.path.join(ILSE_RUN_DIR, 'attention_ilse_outputs.csv'))
     except FileNotFoundError as e:
-        print(f"FATAL: Could not find the ILSE source data file: {e}\nPlease update the ILSE_RUN_DIR path.")
+        print(f"FATAL: Could not find the ILSE source data file.")
         sys.exit(1)
         
     source_data_df = source_data_df[source_data_df['is_padding_instance'] == False]
@@ -146,19 +146,20 @@ if __name__ == '__main__':
     
     df_for_shap = source_data_df[source_data_df['bag_id'].isin(bags_to_process)].copy()
 
-    # --- STEP 2: CALCULATE OR LOAD SHAP VALUES ---
+    # Step 2: Calculate or load SHAP values
     print(f"\n--- STEP 2: CALCULATING/LOADING SHAP VALUES FOR {len(bags_to_process)} BAGS ---")
     shap_output_file = os.path.join(OUTPUT_DIR, f'shap_scores_full_sampled_seed_{SEED_TO_ANALYZE}.csv')
 
-    if os.path.exists(shap_output_file) and SAMPLE_SIZE is not None:
+    if os.path.exists(shap_output_file):
         print(f"Found pre-computed SHAP file. Loading from: {shap_output_file}")
-        shap_df_loaded = pd.read_csv(shap_output_file)
-        df_for_shap = df_for_shap.reset_index().merge(shap_df_loaded, on='index', how='left').set_index('index')
+        shap_df_loaded = pd.read_csv(shap_output_file, index_col=0) # Use the original index
+        # Join the loaded shap values back to the main dataframe
+        df_for_shap = df_for_shap.join(shap_df_loaded)
+        print("SHAP values loaded successfully.")
     else:
-        if SAMPLE_SIZE is None:
-            print("Running on full dataset. A new SHAP file will be created.")
-        else:
-            print("No pre-computed SHAP file found. Starting new calculation (this may take a while)...")
+        print(f"No pre-computed SHAP file found at {shap_output_file}.")
+        print("Starting new calculation (this may take a while)...")
+        
         
         greedy_model = load_rl_model(GREEDY_RUN_DIR)
         if not greedy_model: sys.exit(1)
@@ -175,8 +176,7 @@ if __name__ == '__main__':
         print(f"Saving SHAP values to: {shap_output_file}")
         df_for_shap[['shap_value']].to_csv(shap_output_file, index_label='index')
 
-    # --- STEP 3: DESCRIPTIVE STATISTICS ---
-    print("\n--- STEP 3: DESCRIPTIVE STATISTICS (Top-20 Feature Counts) ---")
+    # Step 3: Descriptive statistics
     bag_to_labels_map = build_bag_to_labels_map(RAW_DATA_PKL_PATH)
     shap_counts = defaultdict(int)
     shap_bag_presence = defaultdict(int)
@@ -196,16 +196,12 @@ if __name__ == '__main__':
     
     print_counts_table("Epsilon-Greedy (SHAP)", shap_counts, shap_bag_presence, len(bags_to_process))
     
-    # --- STEP 4: CALCULATE AND DISPLAY INTERPRETABILITY METRICS ---
-    print("\n\n--- STEP 4: FINAL INTERPRETABILITY METRICS FOR Epsilon-Greedy (SHAP) on OULAD_FULL ---")
-    
+    # Step 4: Calculate and display interpretability metrics
     # 4.1: Explanation Sparsity (Gini & HHI)
     sparsity_scores = {"Model": ["Epsilon-Greedy (SHAP)"], "Gini Coefficient": [calculate_gini(shap_counts)], "HHI Score": [calculate_hhi(shap_counts, len(bags_to_process))]}
-    print("\n--- METRIC 1: EXPLANATION SPARSITY (Higher is more focused) ---")
     print(pd.DataFrame(sparsity_scores).to_string(index=False))
 
     # 4.2: Explanation Consistency (Split-Half Method)
-    print("\n\n--- METRIC 2: EXPLANATION CONSISTENCY (Higher is more stable) ---")
     shuffled_bags = np.array(bags_to_process); np.random.shuffle(shuffled_bags)
     split_point = len(shuffled_bags) // 2
     bags_a, bags_b = shuffled_bags[:split_point], shuffled_bags[split_point:]
@@ -217,6 +213,12 @@ if __name__ == '__main__':
     policy_df = pd.DataFrame({'split_A': counts_a, 'split_B': counts_b}).fillna(0)
     spearman_corr, _ = spearmanr(policy_df['split_A'], policy_df['split_B'])
     
+    # Show top 5 most counted instance types
+    top5_a = set(policy_df.nlargest(5, 'split_A').index)
+    top5_b = set(policy_df.nlargest(5, 'split_B').index)
+    print(f"    - Top 5 Features (Split A): {sorted(list(top5_a))}")
+    print(f"    - Top 5 Features (Split B): {sorted(list(top5_b))}")
+    # Also calculate for other k's
     k_values, jaccard_scores = [3, 5, 10, 15, 20], {}
     for k in k_values:
         top_k_a, top_k_b = set(policy_df.nlargest(k, 'split_A').index), set(policy_df.nlargest(k, 'split_B').index)
@@ -225,5 +227,3 @@ if __name__ == '__main__':
     result_row = {"Model": "Epsilon-Greedy (SHAP)", "Spearman's Rank (Stability)": spearman_corr}
     result_row.update(jaccard_scores)
     print(pd.DataFrame([result_row]).to_string(index=False))
-
-    print("\n✅ All analyses complete!")

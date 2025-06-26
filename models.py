@@ -800,37 +800,6 @@ class PolicyNetwork(nn.Module):
         preds_pool = torch.stack(preds_pool, dim=2).mean(dim=2)
         return preds_pool, labels
 
-# class AttentionPolicyNetwork_pham(PolicyNetwork):
-#     def __init__(self, task_model, state_dim, hdim, learning_rate, device, task_type,
-#                  min_clip=None, max_clip=None, sample_algorithm=None, no_autoencoder=False):
-#         super().__init__(
-#             task_model=task_model,
-#             state_dim=state_dim,
-#             hdim=hdim,
-#             learning_rate=learning_rate,
-#             device=device,
-#             task_type=task_type,
-#             min_clip=min_clip,
-#             max_clip=max_clip,
-#             sample_algorithm=sample_algorithm,
-#             no_autoencoder=no_autoencoder,
-#         )
-#         self.selector = MultiHeadInstanceSelector(instance_dim=state_dim)
-#         self._last_pre_softmax_attention_scores = None # Initialize new attribute
-        
-#     def forward(self, x):
-#         attention_scores_pre_softmax = self.selector(x, None)
-#         self._last_pre_softmax_attention_scores = attention_scores_pre_softmax
-#         probs = torch.softmax(attention_scores_pre_softmax, dim=1) 
-#         return probs, None, None
-
-#     def get_last_pre_softmax_scores(self): 
-#         """
-#         Returns the attention scores from the selector, before the final softmax
-#         in this network's forward pass.
-#         """
-#         return self._last_pre_softmax_attention_scores
-
 class AttentionPolicyNetwork_pham(PolicyNetwork):
     def __init__(
         self,
@@ -870,27 +839,15 @@ class AttentionPolicyNetwork_pham(PolicyNetwork):
         else:
             batch_rep = self.task_model.base_network(batch_x).detach()
 
-        # Get the raw scores from the selector
         attention_logits = self.selector(batch_rep, None).squeeze(-1)
-
-        # --- THIS IS THE FIX ---
-        # Store the raw logits before they go into the softmax function
-        self._last_pre_softmax_attention_scores = attention_logits
-        
-        # Normalize with softmax toPoli get final probabilities for sampling
+        self._last_pre_softmax_attention_scores = attention_logits                      # Store the raw logits before they go into the softmax function
         action_probs = torch.softmax(attention_logits, dim=1)
-        
-        # Use the critic to get the expected reward
         exp_reward_per_instance = self.critic(batch_rep)
         exp_reward = exp_reward_per_instance.mean(dim=1)
 
         return action_probs, batch_rep, exp_reward
     
     def get_last_pre_softmax_scores(self): 
-        """
-        Returns the attention scores from the selector, before the final softmax
-        in this network's forward pass.
-        """
         return self._last_pre_softmax_attention_scores
 
 class AttentionPolicyNetwork_ilse(PolicyNetwork):
@@ -913,7 +870,6 @@ class AttentionPolicyNetwork_ilse(PolicyNetwork):
         attention_size,
         attention_dropout_p,
     ):
-        # first initialize everything that PolicyNetwork needs
         super().__init__(
             task_model=task_model,
             state_dim=state_dim,
@@ -929,7 +885,6 @@ class AttentionPolicyNetwork_ilse(PolicyNetwork):
         self.k = k
         self.temperature = temperature
         self._current_attention_weights = None
-        # build a small attention scorer
         if is_linear_attention:
             self.attn_layer = nn.Linear(state_dim, 1)
         else:
@@ -942,48 +897,25 @@ class AttentionPolicyNetwork_ilse(PolicyNetwork):
 
     
     def forward(self, batch_x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
-        """
-        batch_x: (B, N, F)  where B=batch_size, N=num_instances_in_bag, F=feature_dim
-        Returns:
-            action_probs (torch.Tensor): Attention scores/probabilities for each instance. Shape (B, N)
-            batch_rep (torch.Tensor): Instance representations after base_network. Shape (B, N, D_embedding)
-            exp_reward (torch.Tensor): Critic's expected reward for the bags. Shape (B, 1)
-        """
-        # 0) Ensure batch_x is 3D
         if batch_x.dim() == 2:
             batch_x = batch_x.unsqueeze(0)
 
-        # 1) Compute instance embeddings (batch_rep)
         if self.no_autoencoder:
-            batch_rep = batch_x  # Shape: (B, N, F)
+            batch_rep = batch_x 
         else:
-            # Detach so gradient doesn’t flow into the MIL encoder from RL components
-            batch_rep = self.task_model.base_network(batch_x).detach()  # Shape: (B, N, D_embedding)
+            batch_rep = self.task_model.base_network(batch_x).detach() 
 
-        # 2) Compute attention logits & normalize to get action_probs (attention scores)
-        # self.attn_layer expects (B, N, D_embedding) and outputs (B, N, 1)
         attn_logits = self.attn_layer(batch_rep)
-        attn_logits = attn_logits.squeeze(-1)  # Shape: (B, N)
+        attn_logits = attn_logits.squeeze(-1)  
         
-        # Normalized attention scores, also used as action probabilities for sampling
-        action_probs = F.softmax(attn_logits / self.temperature, dim=1)  # Shape: (B, N)
-
-        # Store these attention scores for potential retrieval by a getter method
+        action_probs = F.softmax(attn_logits / self.temperature, dim=1) 
         self._current_attention_weights = action_probs
-
-        # 3) Compute critic-predicted expected reward for the bags
-        # self.critic expects (B, N, D_embedding) and outputs (B, N, 1)
         exp_reward_per_instance = self.critic(batch_rep)
-        # Aggregate instance-level expected rewards to bag-level expected reward
-        exp_reward = exp_reward_per_instance.mean(dim=1)  # Shape: (B, 1)
+        exp_reward = exp_reward_per_instance.mean(dim=1) 
 
         return action_probs, batch_rep, exp_reward
 
     def get_last_attention_scores(self) -> Union[torch.Tensor, None]:
-        """
-        Returns the attention scores from the most recent forward pass.
-        It's recommended to call .detach().cpu() on the result if using outside the computation graph.
-        """
         if hasattr(self, '_current_attention_weights') and self._current_attention_weights is not None:
             return self._current_attention_weights
         return None

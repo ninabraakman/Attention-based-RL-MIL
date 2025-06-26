@@ -1,3 +1,4 @@
+# This file build on the logic of top20_oulad_aggregated.py and calculates the quantitative metrics for sparsity and consistency for the oulad aggregated dataset.
 import pandas as pd
 import numpy as np
 import os
@@ -10,7 +11,7 @@ import shap
 import json
 from scipy.stats import spearmanr
 
-# --- Add project root to path to find your 'models.py' file ---
+# Add project root to path to find models.py
 try:
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     if project_root not in sys.path:
@@ -23,9 +24,7 @@ except (NameError, ImportError) as e:
         def forward(self, x): return None, None, torch.rand(len(x), 1)
     def create_mil_model_with_dict(d): return torch.nn.Identity()
 
-# --- ======================================================= ---
-# --- CONFIGURATION ---
-# --- ======================================================= ---
+
 SEED_TO_ANALYZE = 8
 OUTPUT_DIR = 'final_report_oulad_aggregated/'
 TOP_K_FOR_COUNTS = 20
@@ -37,10 +36,7 @@ GREEDY_RUN_DIR = os.path.join(BASE_PATH, 'neg_policy_only_loss_epsilon_greedy_re
 # Set a seed for the random split to ensure reproducibility of consistency scores
 REPRODUCIBILITY_SEED = 42
 
-# --- ======================================================= ---
-# --- HELPER FUNCTIONS ---
-# --- ======================================================= ---
-
+# Helper functions
 def load_rl_model(run_dir_path):
     """Correctly loads a trained RL policy network from specified file paths."""
     print("Attempting to load RL model...")
@@ -128,8 +124,7 @@ def get_counts_for_split(bags_list, df_source, score_column, bag_to_labels_map):
 if __name__ == '__main__':
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # --- STEP 1: LOAD DATA AND FIND COMMON BAGS ---
-    print("--- STEP 1: LOADING DATA AND FINDING COMMON BAGS ---")
+    # Step 1: Load data and find common bags
     ilse_df = pd.read_csv(os.path.join(ILSE_RUN_DIR, 'attention_ilse_outputs.csv'))
     pham_df = pd.read_csv(os.path.join(PHAM_RUN_DIR, 'attention_pham_outputs.csv'))
     ilse_df, pham_df = ilse_df[ilse_df['is_padding_instance'] == False], pham_df[pham_df['is_padding_instance'] == False]
@@ -138,8 +133,7 @@ if __name__ == '__main__':
     ilse_df_common = ilse_df[ilse_df['bag_id'].isin(common_bags)].copy()
     pham_df_common = pham_df[pham_df['bag_id'].isin(common_bags)].copy()
 
-    # --- STEP 2: CALCULATE OR LOAD SHAP VALUES ---
-    print("\n--- STEP 2: CALCULATING/LOADING SHAP VALUES ---")
+    # Step 2: Calculate or load SHAP values
     shap_output_file = os.path.join(OUTPUT_DIR, f'shap_scores_seed_{SEED_TO_ANALYZE}.csv')
     if os.path.exists(shap_output_file):
         print("Loading pre-computed SHAP file...")
@@ -158,8 +152,7 @@ if __name__ == '__main__':
         ilse_df_common[['shap_value']].to_csv(shap_output_file)
         print("SHAP values calculated and saved.")
     
-    # --- STEP 3: GENERATE TOP-20 COUNTS FOR FULL DATASET ---
-    print("\n--- STEP 3: COUNTING TOP-20 INSTANCE TYPES (FULL DATASET) ---")
+    # Step 3: Generate top-20 counts
     bag_to_labels_map = build_bag_to_labels_map(RAW_DATA_PKL_PATH)
     ilse_counts, pham_counts, shap_counts = defaultdict(int), defaultdict(int), defaultdict(int)
     for bag_id in common_bags:
@@ -172,9 +165,7 @@ if __name__ == '__main__':
         for idx in bag_pham_df.nlargest(TOP_K_FOR_COUNTS, 'attention_score').index: pham_counts[bag_labels[bag_pham_df.index.get_loc(idx)]] += 1
         for idx in bag_ilse_df.nlargest(TOP_K_FOR_COUNTS, 'shap_value').index: shap_counts[bag_labels[bag_ilse_df.index.get_loc(idx)]] += 1
     
-    # --- STEP 4: CALCULATE AND DISPLAY INTERPRETABILITY METRICS ---
-    print("\n\n--- STEP 4: FINAL INTERPRETABILITY METRICS ---")
-    
+    # Step 4: Calculate and display interpretability metrics
     # 4.1: Explanation Sparsity (Gini & HHI)
     sparsity_scores = {
         "Model": ["ILSE", "PHAM", "Epsilon-Greedy (SHAP)"],
@@ -211,13 +202,17 @@ if __name__ == '__main__':
         
         spearman_corr, _ = spearmanr(policy_df['split_A'], policy_df['split_B'])
         
-        # --- NEW: Calculate Jaccard for multiple K values ---
+        # Show top 5 most counted instance types
+        top5_a = set(policy_df.nlargest(5, 'split_A').index)
+        top5_b = set(policy_df.nlargest(5, 'split_B').index)
+        print(f"    - Top 5 Features (Split A): {sorted(list(top5_a))}")
+        print(f"    - Top 5 Features (Split B): {sorted(list(top5_b))}")
+        # Also calculate for other k's
         k_values = [3, 5, 10, 15, 20]
         jaccard_scores = {}
         for k in k_values:
             top_k_a = set(policy_df.nlargest(k, 'split_A').index)
             top_k_b = set(policy_df.nlargest(k, 'split_B').index)
-            # Handle case where one split might have fewer than K features with non-zero counts
             if not top_k_a or not top_k_b:
                 jaccard_sim = 0.0
             else:
@@ -231,4 +226,3 @@ if __name__ == '__main__':
     consistency_df = pd.DataFrame(consistency_results)
     print(consistency_df.to_string(index=False))
 
-    print("\n✅ All analyses complete!")
