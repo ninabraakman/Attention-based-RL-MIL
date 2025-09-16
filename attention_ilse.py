@@ -345,7 +345,7 @@ def generate_interpretability_outputs(policy_network, dataloader, device, args, 
     policy_network.eval()
     all_instance_details = []
 
-    dataset_df = dataloader.dataset.original_dataframe # Access the underlying DataFrame
+    dataset_df = dataloader.dataset.original_dataframe
 
     with torch.no_grad():
         for batch_idx, (batch_x_embeddings, batch_y_bag_labels, batch_original_indices, _) in enumerate(dataloader):
@@ -648,7 +648,7 @@ def train(
         wandb.log(dictionary)
     logger.info(dictionary)
     
-    output_file = os.path.join(run_dir, "attention_ilse_outputs.csv")
+    output_file = os.path.join(run_dir, "attention_gated_outputs.csv")
     generate_interpretability_outputs(policy_network, test_dataloader, DEVICE, args, output_file)
     return policy_network
 

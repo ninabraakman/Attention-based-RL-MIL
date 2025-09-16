@@ -4,31 +4,31 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=2:30:00
-#SBATCH --output=../logs/update/full/attention_pham/repset/1_%j.out
-#SBATCH --error=../logs/update/full/attention_pham/repset/1_%j.err
+#SBATCH --output=../logs/update/full/attention_gated/repset/1_%j.out
+#SBATCH --error=../logs/update/full/attention_gated/repset/1_%j.err
 
 module purge
 module load 2023
 source ../venv/bin/activate
 cd /projects/prjs1491/Attention-based-RL-MIL
 
-baseline_types=("repset")     # "MeanMLP" "MaxMLP" "AttentionMLP" "repset"
+baseline_types=("repset")         # "MeanMLP" "MaxMLP" "AttentionMLP" "repset"
 target_labels=("label")
 gpus=(0)
 wandb_entity="ninabraakman-university-of-amsterdam"
 wandb_project="MasterThesis"
 
-dataset="oulad_full"                          # "oulad_full" or "oulad_aggregated"
+dataset="oulad_full"                           # "oulad_full" or "oulad_aggregated"
 data_embedded_column_name="instances"
 task_type="classification"
 autoencoder_layer_sizes="20,16,20"            # "22,16,22" for oulad_aggregated and "20,16,20" for oulad_full
-bag_sizes=(20)                                # for all experiments in this project bag_size 20 is used
+bag_sizes=(20)                                 # for all experiments in this project bag_size 20 is used
 embedding_models=("tabular")
 random_seed=1
 
 rl_task_model="vanilla"
 sample_algorithm="without_replacement"
-prefix="loss_attention_pham"
+prefix="loss_attention_gated"
 rl_model="policy_only"
 reg_alg="sum"
 
@@ -42,7 +42,7 @@ for target_label in "${target_labels[@]}"; do
         
         echo "Run $current_run/$total_runs: baseline=$baseline_type, bag_size=$bag_size, embed=$embedding_model"
         
-        CUDA_VISIBLE_DEVICES=0 python attention_pham.py \
+        CUDA_VISIBLE_DEVICES=0 python attention_ilse.py \
           --rl \
           --gpu 0 \
           --baseline $baseline_type \

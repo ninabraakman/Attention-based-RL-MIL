@@ -37,8 +37,9 @@ RAW_DATA_PKL_PATH = '/projects/prjs1491/Attention-based-RL-MIL/data/oulad/oulad_
 ILSE_RUN_DIR = '/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement/'
 GREEDY_RUN_DIR = '/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_epsilon_greedy_reg_sum_sample_without_replacement/'
 PHAM_RUN_DIR = '/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_pham_reg_sum_sample_without_replacement/'
+NON_LINEAR_GATED_RUN_DIR = '/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_gated_reg_sum_sample_without_replacement/'
 
-CASE_STUDY_BAG_ID = "('CCC', '2014B', 623347)"
+CASE_STUDY_BAG_ID = "('CCC', '2014J', 637691)"
 
 # Helper Functions
 def load_rl_model(run_dir_path):
@@ -94,6 +95,12 @@ if __name__ == '__main__':
     case_study_ilse = ilse_df_full[ilse_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
     case_study_ilse = case_study_ilse[case_study_ilse['is_padding_instance'] == False]
     ilse_attention_weights = case_study_ilse['attention_score'].values
+
+    non_linear_gated_df_full = pd.read_csv(os.path.join(NON_LINEAR_GATED_RUN_DIR, 'attention_gated_outputs.csv'))
+    case_study_non_linear_gated = non_linear_gated_df_full[non_linear_gated_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
+    case_study_non_linear_gated = case_study_non_linear_gated[case_study_non_linear_gated['is_padding_instance'] == False]
+    non_linear_gated_attention_weights = case_study_non_linear_gated['attention_score'].values
+    
     
     pham_df_full = pd.read_csv(os.path.join(PHAM_RUN_DIR, 'attention_pham_outputs.csv'))
     case_study_pham = pham_df_full[pham_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
@@ -136,12 +143,26 @@ if __name__ == '__main__':
     plt.gca().invert_yaxis()
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     plt.tight_layout()
-    output_path_ilse = os.path.join(OUTPUT_DIR, f'case_study_agg_ilse.png')
+    output_path_ilse = os.path.join(OUTPUT_DIR, f'case_study_agg_linear.png')
     plt.savefig(output_path_ilse)
     print(f"ILSE plot saved to '{output_path_ilse}'")
     plt.close()
 
-    # Plot 2: Pham/ Multi-Head Attention
+    # Plot 2: Non-linear Gated Attention
+    plt.figure(figsize=(8, 10))
+    plt.barh(instance_labels, non_linear_gated_attention_weights, color='green')
+    plt.xlabel('Attention Score', fontsize=12)
+    plt.ylabel('Instance', fontsize=12)
+    plt.title('RL-MIL (Gated Attention)', fontsize=14)
+    plt.gca().invert_yaxis()
+    plt.grid(axis='x', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    output_path_non_linear_gated = os.path.join(OUTPUT_DIR, f'case_study_agg_gated.png')
+    plt.savefig(output_path_non_linear_gated)
+    print(f"Non-linear Gated plot saved to '{output_path_non_linear_gated}'")
+    plt.close()
+
+    # Plot 3: Pham/ Multi-Head Attention
     plt.figure(figsize=(8, 10))
     plt.barh(instance_labels, pham_attention_weights, color='slateblue')
     plt.xlabel('Attention Score', fontsize=12)
@@ -149,12 +170,12 @@ if __name__ == '__main__':
     plt.gca().invert_yaxis()
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     plt.tight_layout()
-    output_path_pham = os.path.join(OUTPUT_DIR, f'case_study_agg_pham.png')
+    output_path_pham = os.path.join(OUTPUT_DIR, f'case_study_agg_multihead.png')
     plt.savefig(output_path_pham)
     print(f"PHAM plot saved to '{output_path_pham}'")
     plt.close()
 
-    # Plot 3: Epsilon-Greedy (SHAP)
+    # Plot 4: Epsilon-Greedy (SHAP)
     plt.figure(figsize=(8, 10))
     plt.barh(instance_labels, shap_importance, color='coral')
     plt.xlabel('SHAP Importance Value', fontsize=12)

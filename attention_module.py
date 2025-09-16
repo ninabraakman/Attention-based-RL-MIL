@@ -48,4 +48,4 @@ class MultiHeadInstanceSelector(nn.Module):
         # Average the scores across all heads to get final instance scores.
         instance_scores = attention_concat.mean(dim=1) 
 
-        return instance_scores  # can be interpreted as selection probabilities
+        return instance_scores

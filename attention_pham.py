@@ -335,7 +335,107 @@ def get_dataloaders(args, train_dataset, eval_dataset, test_dataset):
     return current_train_dataloader, current_eval_dataloader, current_test_dataloader
 
 
+# def generate_interpretability_outputs(policy_network, dataloader, device, args, output_csv_path):
+#     logger.info(f"Generating interpretability outputs (attention scores) to {output_csv_path}...")
+#     policy_network.eval()
+#     all_instance_details = []
+
+#     dataset_df = dataloader.dataset.original_dataframe
+
+#     with torch.no_grad():
+#         for batch_idx, (batch_x_embeddings, batch_y_bag_labels, batch_original_indices, _) in enumerate(dataloader):
+#             batch_x_embeddings = batch_x_embeddings.to(device)
+#             batch_y_bag_labels = batch_y_bag_labels.to(device)
+
+#             # Get final (softmaxed) attention scores from PHAM's forward pass
+#             final_attention_scores_tensor, _, _ = policy_network(batch_x_embeddings)
+            
+#             # Get the raw (pre-final-softmax) attention scores using the new getter
+#             raw_attention_scores_tensor = policy_network.get_last_pre_softmax_scores()
+
+#             # --- Convert tensors to CPU/NumPy for saving ---
+#             final_attention_scores_cpu_np = final_attention_scores_tensor.detach().cpu().numpy()
+            
+#             if raw_attention_scores_tensor is not None:
+#                 raw_attention_scores_cpu_np = raw_attention_scores_tensor.detach().cpu().numpy()
+#             else:
+#                 # Fallback if raw scores weren't captured (shouldn't happen if forward was just called)
+#                 logger.warning(f"Batch {batch_idx}: Raw attention scores were None. Filling with NaNs.")
+#                 raw_attention_scores_cpu_np = np.full_like(final_attention_scores_cpu_np, np.nan)
+
+    
+#             selected_actions, _ = sample_action(
+#                 final_attention_scores_tensor,
+#                 args.bag_size,
+#                 device,
+#                 random=False,
+#                 algorithm=args.sample_algorithm
+#             )            
+#             sel_x_embeddings = select_from_action(selected_actions, batch_x_embeddings)
+#             batch_out_logits, _ = policy_network.eval_minibatch(sel_x_embeddings, batch_y_bag_labels)
+#             if args.task_type == 'classification':
+#                 bag_predicted_labels = torch.argmax(batch_out_logits, dim=1)
+#             else:
+#                 bag_predicted_labels = batch_out_logits
+            
+#             bag_predicted_labels_cpu_np = bag_predicted_labels.detach().cpu().numpy()
+#             batch_y_bag_labels_cpu_np = batch_y_bag_labels.detach().cpu().numpy()
+#             batch_original_indices_cpu_np = batch_original_indices.cpu().numpy()
+
+
+#             for i in range(batch_x_embeddings.shape[0]): # Iterate through bags in the batch
+#                 original_df_idx = batch_original_indices_cpu_np[i]
+#                 # ... (your existing try-except block for bag_series and bag_id_val) ...
+#                 try:
+#                     bag_series = dataset_df.iloc[original_df_idx]
+#                     bag_id_val = bag_series["bag_id"]
+#                 except Exception as e: # Catch generic exception for safety during debug
+#                     logger.error(f"Error processing bag with original_df_idx {original_df_idx}: {e}")
+#                     bag_id_val = f"error_idx_{original_df_idx}"
+#                     # Create dummy bag_series if needed for other fields or skip
+#                     original_instances_in_bag = []
+#                     true_mask_for_bag = []
+
+#                 true_bag_label_val = batch_y_bag_labels_cpu_np[i]
+#                 pred_bag_label_val = bag_predicted_labels_cpu_np[i]
+                
+#                 # Ensure these exist if bag_series failed
+#                 original_instances_in_bag = bag_series.get("bag", []) if 'bag_series' in locals() and isinstance(bag_series, pd.Series) else []
+#                 true_mask_for_bag = bag_series.get("bag_mask", []) if 'bag_series' in locals() and isinstance(bag_series, pd.Series) else []
+
+#                 num_padded_instances = final_attention_scores_cpu_np.shape[1]
+
+#                 for j in range(num_padded_instances): 
+#                     is_padding = not true_mask_for_bag[j] if j < len(true_mask_for_bag) else True
+#                     instance_content = None
+#                     if not is_padding and j < len(original_instances_in_bag):
+#                         instance_content = original_instances_in_bag[j]
+
+#                     instance_data = {
+#                         "run_id": args.run_name if hasattr(args, 'run_name') else (wandb.run.id if args.wandb_entity and wandb.run else "unknown_run"),
+#                         "bag_id": bag_id_val,
+#                         "instance_index_in_bag": j,
+#                         "attention_score": final_attention_scores_cpu_np[i, j], # This is the final softmaxed score
+#                         "raw_attention_score": raw_attention_scores_cpu_np[i, j], # NEW: The pre-final-softmax scores
+#                         "is_padding_instance": is_padding,
+#                         "original_instance_content": instance_content,
+#                         "true_bag_label": true_bag_label_val,
+#                         "predicted_bag_label_pham": pred_bag_label_val,
+#                         "was_selected_among_top_k": j in selected_actions[i].cpu().numpy() if not is_padding else False
+#                     }
+#                     all_instance_details.append(instance_data)
+    
+#     df_details = pd.DataFrame(all_instance_details)
+#     output_dir = os.path.dirname(output_csv_path)
+#     if output_dir and not os.path.exists(output_dir):
+#         os.makedirs(output_dir)
+#     df_details.to_csv(output_csv_path, index=False)
+#     logger.info(f"Successfully saved attention details (including raw scores) to {output_csv_path}")
 def generate_interpretability_outputs(policy_network, dataloader, device, args, output_csv_path):
+    """
+    Generates and saves interpretability outputs (attention scores) for a given policy network.
+    This version is corrected for the multi-head attention model.
+    """
     logger.info(f"Generating interpretability outputs (attention scores) to {output_csv_path}...")
     policy_network.eval()
     all_instance_details = []
@@ -347,32 +447,28 @@ def generate_interpretability_outputs(policy_network, dataloader, device, args, 
             batch_x_embeddings = batch_x_embeddings.to(device)
             batch_y_bag_labels = batch_y_bag_labels.to(device)
 
-            # Get final (softmaxed) attention scores from PHAM's forward pass
+            # Get the final attention scores directly from the forward pass.
+            # These are now the correct, single-softmaxed outputs.
             final_attention_scores_tensor, _, _ = policy_network(batch_x_embeddings)
             
-            # Get the raw (pre-final-softmax) attention scores using the new getter
-            raw_attention_scores_tensor = policy_network.get_last_pre_softmax_scores()
-
             # --- Convert tensors to CPU/NumPy for saving ---
             final_attention_scores_cpu_np = final_attention_scores_tensor.detach().cpu().numpy()
             
-            if raw_attention_scores_tensor is not None:
-                raw_attention_scores_cpu_np = raw_attention_scores_tensor.detach().cpu().numpy()
-            else:
-                # Fallback if raw scores weren't captured (shouldn't happen if forward was just called)
-                logger.warning(f"Batch {batch_idx}: Raw attention scores were None. Filling with NaNs.")
-                raw_attention_scores_cpu_np = np.full_like(final_attention_scores_cpu_np, np.nan)
-
-    
+            # Since the raw scores were removed, this part of the code is also removed.
+            # The 'final' scores now hold the meaningful attention weights.
+            
             selected_actions, _ = sample_action(
                 final_attention_scores_tensor,
                 args.bag_size,
                 device,
                 random=False,
                 algorithm=args.sample_algorithm
-            )            
+            )
+            
+            # This part of the code remains the same, as it relies on the final scores.
             sel_x_embeddings = select_from_action(selected_actions, batch_x_embeddings)
             batch_out_logits, _ = policy_network.eval_minibatch(sel_x_embeddings, batch_y_bag_labels)
+            
             if args.task_type == 'classification':
                 bag_predicted_labels = torch.argmax(batch_out_logits, dim=1)
             else:
@@ -385,21 +481,19 @@ def generate_interpretability_outputs(policy_network, dataloader, device, args, 
 
             for i in range(batch_x_embeddings.shape[0]): # Iterate through bags in the batch
                 original_df_idx = batch_original_indices_cpu_np[i]
-                # ... (your existing try-except block for bag_series and bag_id_val) ...
+                
                 try:
                     bag_series = dataset_df.iloc[original_df_idx]
                     bag_id_val = bag_series["bag_id"]
-                except Exception as e: # Catch generic exception for safety during debug
+                except Exception as e:
                     logger.error(f"Error processing bag with original_df_idx {original_df_idx}: {e}")
                     bag_id_val = f"error_idx_{original_df_idx}"
-                    # Create dummy bag_series if needed for other fields or skip
                     original_instances_in_bag = []
                     true_mask_for_bag = []
 
                 true_bag_label_val = batch_y_bag_labels_cpu_np[i]
                 pred_bag_label_val = bag_predicted_labels_cpu_np[i]
                 
-                # Ensure these exist if bag_series failed
                 original_instances_in_bag = bag_series.get("bag", []) if 'bag_series' in locals() and isinstance(bag_series, pd.Series) else []
                 true_mask_for_bag = bag_series.get("bag_mask", []) if 'bag_series' in locals() and isinstance(bag_series, pd.Series) else []
 
@@ -416,7 +510,6 @@ def generate_interpretability_outputs(policy_network, dataloader, device, args, 
                         "bag_id": bag_id_val,
                         "instance_index_in_bag": j,
                         "attention_score": final_attention_scores_cpu_np[i, j], # This is the final softmaxed score
-                        "raw_attention_score": raw_attention_scores_cpu_np[i, j], # NEW: The pre-final-softmax scores
                         "is_padding_instance": is_padding,
                         "original_instance_content": instance_content,
                         "true_bag_label": true_bag_label_val,
@@ -430,7 +523,7 @@ def generate_interpretability_outputs(policy_network, dataloader, device, args, 
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
     df_details.to_csv(output_csv_path, index=False)
-    logger.info(f"Successfully saved attention details (including raw scores) to {output_csv_path}")
+    logger.info(f"Successfully saved attention details to {output_csv_path}")
 
 
 

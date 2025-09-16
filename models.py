@@ -812,7 +812,7 @@ class AttentionPolicyNetwork_pham(PolicyNetwork):
         task_type,
         min_clip,
         max_clip,
-        sample_algorithm, 
+        sample_algorithm,
         no_autoencoder=False,
 
     ):
@@ -831,7 +831,8 @@ class AttentionPolicyNetwork_pham(PolicyNetwork):
         
         self.critic = CriticNetwork(state_dim=state_dim, hdim=hdim)
         self.selector = MultiHeadInstanceSelector(instance_dim=state_dim)
-        self._last_pre_softmax_attention_scores = None
+        # self._last_pre_softmax_attention_scores = None
+        self._current_attention_weights = None
 
     def forward(self, batch_x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         if self.no_autoencoder:
@@ -839,16 +840,24 @@ class AttentionPolicyNetwork_pham(PolicyNetwork):
         else:
             batch_rep = self.task_model.base_network(batch_x).detach()
 
-        attention_logits = self.selector(batch_rep, None).squeeze(-1)
-        self._last_pre_softmax_attention_scores = attention_logits                      # Store the raw logits before they go into the softmax function
-        action_probs = torch.softmax(attention_logits, dim=1)
+        # attention_logits = self.selector(batch_rep, None).squeeze(-1)
+        # self._last_pre_softmax_attention_scores = attention_logits                      # Store the raw logits before they go into the softmax function
+        # action_probs = torch.softmax(attention_logits, dim=1)
+        # exp_reward_per_instance = self.critic(batch_rep)
+        # exp_reward = exp_reward_per_instance.mean(dim=1)
+        action_probs = self.selector(batch_rep, None).squeeze(-1)
+        self._current_attention_weights = action_probs
         exp_reward_per_instance = self.critic(batch_rep)
         exp_reward = exp_reward_per_instance.mean(dim=1)
 
         return action_probs, batch_rep, exp_reward
     
-    def get_last_pre_softmax_scores(self): 
-        return self._last_pre_softmax_attention_scores
+    # def get_last_pre_softmax_scores(self): 
+    #     return self._last_pre_softmax_attention_scores
+    def get_last_attention_scores(self) -> Union[torch.Tensor, None]:
+        if hasattr(self, '_current_attention_weights') and self._current_attention_weights is not None:
+            return self._current_attention_weights
+        return None
 
 class AttentionPolicyNetwork_ilse(PolicyNetwork):
     def __init__(

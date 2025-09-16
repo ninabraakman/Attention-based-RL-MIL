@@ -39,69 +39,69 @@ metric:
   goal: minimize
 
 parameters:
-# # Aggregated_subset MeanMLP 12294158
+# # Aggregated_subset MeanMLP 14241213 -> sweep 28
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 2.305655160169995e-06
+#     value: 4.020522934016102e-05
 #   reg_coef:
 #     distribution: constant
-#     value: 0.6914029143419389
+#     value: 0.814721052369964
 
-# # Aggregated_subset MaxMLP 12294373
+# # Aggregated_subset MaxMLP 14241213 -> sweep 48
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 1.6728547945951365e-05
+#     value: 0.004610574261828104
 #   reg_coef:
 #     distribution: constant
-#     value: 0.1849706245635051
+#     value: 0.18161028780438293
 
-# # Aggregated_subset AttentionMLP 12294379
+# # Aggregated_subset AttentionMLP 14241213 -> sweep 12
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 1.1240486330233576e-05
+#     value: 6.605335482193932e-06
 #   reg_coef:
 #     distribution: constant
-#     value: 0.9589083132130984
+#     value: 0.529909983594146
 
-# # Aggregated_subset repset 12294380
+# # Aggregated_subset repset 14241213 -> sweep 32
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 1.3338670751875858e-06
+#     value: 1.7576682487077957e-06
 #   reg_coef:
 #     distribution: constant
-#     value: 0.5979545426708248
+#     value: 0.41886693552129783
 
-# # Full_subset MeanMLP 12295158
+# # Full_subset MeanMLP 14241412 -> sweep 27
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 0.0009258018828541072
+#     value: 1.455908456386706e-05
 #   reg_coef:
 #     distribution: constant
-#     value: 0.5549211503182233
+#     value: 0.28524034746465465
 
-# # Full_subset MaxMLP 12298567
+# # Full_subset MaxMLP 14241412 -> sweep 50
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 5.482106061933199e-06
+#     value: 0.0004683843671211818
 #   reg_coef:
 #     distribution: constant
-#     value: 0.46576475377668025
+#     value: 0.628463202019113
 
-# # Full_subset Attention 12298569
+# # Full_subset Attention 14241412 -> sweep 26
 #   actor_learning_rate:
 #     distribution: constant
-#     value: 2.4697198395654355e-06
+#     value: 2.8117292341582388e-05
 #   reg_coef:
 #     distribution: constant
-#     value: 0.23950951490511463
+#     value: 0.6838401605984853
 
-# Full_subset repset 12298570
+# Full_subset repset 14241412 -> sweep 26
   actor_learning_rate:
     distribution: constant
-    value: 1.3450412722286496e-05
+    value: 1.6384243275716662e-06
   reg_coef:
     distribution: constant
-    value: 0.43999379855907306
+    value: 0.5288505160100029
 
   # --- Other fixed parameters ---
   epochs:

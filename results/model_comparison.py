@@ -10,7 +10,12 @@ def run_statistical_tests(df):
     """
     Performs t-tests and organizes the p-values into clean summary tables.
     """
-    rl_frameworks = ['RL-MIL (Epsilon-Greedy)', 'RL-MIL (Gated Attention)', 'RL-MIL (Multi-Head Attention)']
+    rl_frameworks = [
+        'RL-MIL (Epsilon-Greedy)',
+        'RL-MIL (Gated Attention - linear)',
+        'RL-MIL (Gated Attention - non-linear)',
+        'RL-MIL (Multi-Head Attention)'
+    ]
     datasets = df['Dataset'].unique()
     pooling_methods = df['Pooling'].unique()
 
@@ -42,6 +47,9 @@ def run_statistical_tests(df):
     print("\n P-Values for RL Framework Comparisons:")
     print(srq2_summary_df)
 
+    # Save the results to a CSV file
+    srq2_summary_df.to_csv('results/p_values_rl_comparison.csv')
+    print("\n P-Values for RL framework comparisons saved to 'results/p_values_rl_comparison.csv'")
 
     # Test 2: Compare Simple MIL vs. a representative RL model on OULAD Full
     print("\n\nStatistical Test 2: Comparing Simple MIL vs. RL-MIL on OULAD Full (SQ1)")
@@ -78,6 +86,11 @@ def run_statistical_tests(df):
     srq1_summary_df = pd.DataFrame(results_srq1).set_index('Pooling Method')
     print("\n P-Values for Simple MIL vs. RL-MIL on OULAD Full:")
     print(srq1_summary_df)
+
+    # Save the results to a CSV file
+    srq1_summary_df.to_csv('results/p_values_mil_vs_rl.csv', index=False)
+    print("\n P-Values for MIL vs. RL comparison saved to 'results/p_values_mil_vs_rl.csv'")
+
 
 
 def create_summary_table(df):
