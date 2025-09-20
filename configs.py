@@ -249,29 +249,29 @@ def parse_args():
         required=False,
     )
 
-    # Attention flags
+    # Attention flags for attention based instance selection
     parser.add_argument(
-        "--temperature",
+        "--gated_temperature",
         type=float,
         default=1.0,
-        help="Softmax temperature for attention sampler",
+        help="Softmax temperature for Gated Attention mechanism",
     )
     parser.add_argument(
-        "--is_linear_attention",
+        "--linear_attention_only",
         action="store_true",
-        help="Use a single linear layer for attention (else a 2‐layer MLP)",
+        help="Use a single linear layer for attention (else Gated attention)",
     )
     parser.add_argument(
-        "--attention_size",
+        "--gated_attention_size",
         type=int,
         default=64,
         help="Hidden dimensionality for the non-linear attention network",
     )
     parser.add_argument(
-        "--attention_dropout_p",
+        "--gated_attention_dropout_p",
         type=float,
         default=0.5,
-        help="Dropout probability in the attention MLP",
+        help="Dropout probability in the Gated Attention",
     )
     args = parser.parse_args()
 

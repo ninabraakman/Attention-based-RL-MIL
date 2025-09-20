@@ -1,210 +1,44 @@
-# # These are the full sweep configurations for the Attention-based RL-MIL models with different subsets and architectures.
-# method: bayes
-# metric:
-#   name: eval/avg_mil_loss
-#   goal: minimize
-# parameters:
-#   hdim:
-#     distribution: constant
-#     value: 8
-#   epochs:
-#     distribution: constant
-#     value: 200
-#   actor_learning_rate:
-#     distribution: log_uniform_values
-#     min: 1.0e-6
-#     max: 1.0e-2
-#   critic_learning_rate:
-#     distribution: constant
-#     value: 0
-#   learning_rate:
-#     distribution: constant
-#     value: 1.0e-6
-#   reg_coef:
-#     distribution: uniform
-#     min: 0.0
-#     max: 1.0
-#   early_stopping_patience:
-#     distribution: constant
-#     value: 25
-#   batch_size:
-#     distribution: constant
-#     value: 128
-#   temperature:
-#     distribution: uniform
-#     min: 0.0
-#     max: 10
-#   attention_size:
-#     distribution: categorical
-#     values: [16, 32, 64, 128]
-#   attention_dropout_p:
-#     distribution: uniform
-#     min: 0.0
-#     max: 0.5
-# run_cap: 50
-
-
-# These are the grid search configurations for the specific models with their respective architectures.
-method: grid
+method: bayes
 metric:
   name: eval/avg_mil_loss
   goal: minimize
-
 parameters:
-# # Aggregated_subset 14273206 MeanMLP -> sweep 10
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 6.924131285151817e-06
-#   reg_coef:
-#     distribution: constant
-#     value: 0.5365751388849911
-#   temperature:
-#     distribution: constant
-#     value: 2.044820699704432
-#   attention_size:
-#     distribution: constant
-#     value: 128
-#   attention_dropout_p:
-#     distribution: constant
-#     value: 0.1465707696679654
-
-# # Aggregated_subset 14273206 MaxMLP -> sweep 33
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 6.530133353231677e-06
-#   reg_coef:
-#     distribution: constant
-#     value: 0.1737537383706259
-#   temperature:
-#     distribution: constant
-#     value: 7.956858335037013
-#   attention_size:
-#     distribution: constant
-#     value: 32
-#   attention_dropout_p:
-#     distribution: constant
-#     value: 0.05198431882952875
-
-# # Aggregated_subset 14273206 AttentionMLP -> sweep 23
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 5.029083262609892e-06
-#   reg_coef:
-#     distribution: constant
-#     value: 0.2416163480921677
-#   temperature:
-#     distribution: constant
-#     value: 6.9623965587399645
-#   attention_size:
-#     distribution: constant
-#     value: 64
-#   attention_dropout_p:
-#     distribution: constant
-#     value: 0.34766440174332836
-
-# # Aggregated_subset 14273206 repset -> sweep 36
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.0031704620183114836
-#   reg_coef:
-#     distribution: constant
-#     value: 0.9839766659694712
-#   temperature:
-#     distribution: constant
-#     value: 0.5494750237769941
-#   attention_size:
-#     distribution: constant
-#     value: 16
-#   attention_dropout_p:
-#     distribution: constant
-#     value: 0.1408187373203715
-
-# # Full_subset 14273209 MeanMLP -> sweep 30
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.008893233906367898
-#   reg_coef:
-#     distribution: constant
-#     value: 0.4384801221553613
-#   temperature:
-#     distribution: constant
-#     value: 7.935796047110703
-#   attention_size:
-#     distribution: constant
-#     value: 64
-#   attention_dropout_p:
-#     distribution: constant
-#     value: 0.1448043691664489
-
-
-# # Full_subset 14273209 MaxMLP -> sweep 1
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.001052642611873644
-#   reg_coef:
-#     distribution: constant
-#     value: 0.24069208998413372
-#   temperature:
-#     distribution: constant
-#     value: 1.643142060676751
-#   attention_size:
-#     distribution: constant
-#     value: 64
-#   attention_dropout_p:
-#     distribution: constant
-#     value: 0.40287075886613344
-
-# # Full_subset 14273209 AttentionMLP -> sweep 42
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 1.969618028544079e-06
-#   reg_coef:
-#     distribution: constant
-#     value: 0.7005846863026588
-#   temperature:
-#     distribution: constant
-#     value: 5.23000253431495
-#   attention_size:
-#     distribution: constant
-#     value: 128
-#   attention_dropout_p:
-#     distribution: constant
-#     value: 0.4113073994862978
-
-# Full_subset 14273209 repset -> sweep 20
-  actor_learning_rate:
-    distribution: constant
-    value: 2.423504389161309e-05
-  reg_coef:
-    distribution: constant
-    value: 0.633690127332383
-  temperature:
-    distribution: constant
-    value: 0.6137526896913603
-  attention_size:
-    distribution: constant
-    value: 128
-  attention_dropout_p:
-    distribution: constant
-    value: 0.11188416781414728
-
-
-  # --- Other fixed parameters ---
-  epochs:
-    distribution: constant
-    value: 800
   hdim:
     distribution: constant
     value: 8
+  epochs:
+    distribution: constant
+    value: 200
+  actor_learning_rate:
+    distribution: log_uniform_values
+    min: 1.0e-6
+    max: 1.0e-2
   critic_learning_rate:
     distribution: constant
     value: 0
   learning_rate:
     distribution: constant
     value: 1.0e-6
+  reg_coef:
+    distribution: uniform
+    min: 0.0
+    max: 1.0
   early_stopping_patience:
     distribution: constant
-    value: 100
+    value: 25
   batch_size:
     distribution: constant
     value: 128
+  gated_temperature:
+    distribution: uniform
+    min: 0.0
+    max: 10
+  gated_attention_size:
+    distribution: categorical
+    values: [16, 32, 64, 128]
+  gated_attention_dropout_p:
+    distribution: uniform
+    min: 0.0
+    max: 0.5
+run_cap: 50
+

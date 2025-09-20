@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=20:00:00
-#SBATCH --output=../logs/oulad_full/mil/seed0_%j.out
-#SBATCH --error=../logs/ouald_full/mil/seed0_%j.err
+#SBATCH --output=../logs/DATASET_NAME/mil/seed_0/%j.out
+#SBATCH --error=../logs/DATASET_NAME/mil/seed_0/%j.err
 
 module purge
 module load 2023

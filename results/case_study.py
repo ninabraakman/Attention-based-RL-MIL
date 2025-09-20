@@ -30,14 +30,14 @@ except (NameError, ImportError) as e:
     def create_mil_model_with_dict(d): return torch.nn.Identity()
 
 
-OUTPUT_DIR = 'final_report_oulad_aggregated/'
-RAW_DATA_PKL_PATH = '/projects/prjs1491/Attention-based-RL-MIL/data/oulad/oulad_aggregated_raw.pkl'
+OUTPUT_DIR = 'results/'
+RAW_DATA_PKL_PATH = '/Attention-based-RL-MIL/data/oulad/oulad_aggregated_raw.pkl'
 
 # Using 'repset' on seed 8 for all models as an example
-ILSE_RUN_DIR = '/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement/'
-GREEDY_RUN_DIR = '/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_epsilon_greedy_reg_sum_sample_without_replacement/'
-PHAM_RUN_DIR = '/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_pham_reg_sum_sample_without_replacement/'
-NON_LINEAR_GATED_RUN_DIR = '/projects/prjs1491/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_gated_reg_sum_sample_without_replacement/'
+LINEAR_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement/'
+GREEDY_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_epsilon_greedy_reg_sum_sample_without_replacement/'
+MULTI_HEAD_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_pham_reg_sum_sample_without_replacement/'
+GATED_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_gated_reg_sum_sample_without_replacement/'
 
 CASE_STUDY_BAG_ID = "('CCC', '2014J', 637691)"
 
@@ -91,23 +91,23 @@ if __name__ == '__main__':
     print("Loading all necessary data files...")
     with open(RAW_DATA_PKL_PATH, 'rb') as f: data_from_pickle = pickle.load(f)
 
-    ilse_df_full = pd.read_csv(os.path.join(ILSE_RUN_DIR, 'attention_ilse_outputs.csv'))
-    case_study_ilse = ilse_df_full[ilse_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
-    case_study_ilse = case_study_ilse[case_study_ilse['is_padding_instance'] == False]
-    ilse_attention_weights = case_study_ilse['attention_score'].values
+    linear_df_full = pd.read_csv(os.path.join(LINEAR_RUN_DIR, 'attention_ilse_outputs.csv'))
+    case_study_linear = linear_df_full[linear_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
+    case_study_linear = case_study_linear[case_study_linear['is_padding_instance'] == False]
+    linear_attention_weights = case_study_linear['attention_score'].values
 
-    non_linear_gated_df_full = pd.read_csv(os.path.join(NON_LINEAR_GATED_RUN_DIR, 'attention_gated_outputs.csv'))
-    case_study_non_linear_gated = non_linear_gated_df_full[non_linear_gated_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
-    case_study_non_linear_gated = case_study_non_linear_gated[case_study_non_linear_gated['is_padding_instance'] == False]
-    non_linear_gated_attention_weights = case_study_non_linear_gated['attention_score'].values
+    gated_df_full = pd.read_csv(os.path.join(GATED_RUN_DIR, 'attention_gated_outputs.csv'))
+    case_study_gated = gated_df_full[gated_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
+    case_study_gated = case_study_gated[case_study_gated['is_padding_instance'] == False]
+    gated_attention_weights = case_study_gated['attention_score'].values
     
     
-    pham_df_full = pd.read_csv(os.path.join(PHAM_RUN_DIR, 'attention_pham_outputs.csv'))
-    case_study_pham = pham_df_full[pham_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
-    case_study_pham = case_study_pham[case_study_pham['is_padding_instance'] == False]
-    pham_attention_weights = case_study_pham['attention_score'].values
+    multi_head_df_full = pd.read_csv(os.path.join(MULTI_HEAD_RUN_DIR, 'attention_pham_outputs.csv'))
+    case_study_multi_head = multi_head_df_full[multi_head_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
+    case_study_multi_head = case_study_multi_head[case_study_multi_head['is_padding_instance'] == False]
+    multi_head_attention_weights = case_study_multi_head['attention_score'].values
 
-    instance_features = np.vstack(case_study_ilse['original_instance_content'].apply(parse_feature_string))
+    instance_features = np.vstack(case_study_linear['original_instance_content'].apply(parse_feature_string))
     print(f"Found {len(instance_features)} instances for Bag ID {CASE_STUDY_BAG_ID}.")
 
     # 2. Load Epsilon-Greedy model and calculate SHAP
@@ -117,8 +117,8 @@ if __name__ == '__main__':
     def shap_prediction_wrapper(numpy_data):
         with torch.no_grad():
             tensor_data = torch.from_numpy(numpy_data).float().to(torch.device("cpu"))
-            _, _, exp_reward = greedy_model(tensor_data)
-            return exp_reward.cpu().numpy()
+            action_probs, _, _ = greedy_model(tensor_data)
+        return action_probs.cpu().numpy()
 
     explainer = shap.KernelExplainer(shap_prediction_wrapper, shap.sample(instance_features, 50))
     shap_values = explainer.shap_values(instance_features)
@@ -135,44 +135,43 @@ if __name__ == '__main__':
     # 4. Create and save separate plots
     print("Creating and saving plots...")
 
-    # Plot 1: Ilse/Gated Attention
+    # Plot 1: Linear Attention
     plt.figure(figsize=(8, 10))
-    plt.barh(instance_labels, ilse_attention_weights, color='darkcyan')
+    plt.barh(instance_labels, linear_attention_weights, color='darkcyan')
     plt.xlabel('Attention Score', fontsize=12)
     plt.ylabel('Instance', fontsize=12)
     plt.gca().invert_yaxis()
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     plt.tight_layout()
-    output_path_ilse = os.path.join(OUTPUT_DIR, f'case_study_agg_linear.png')
-    plt.savefig(output_path_ilse)
-    print(f"ILSE plot saved to '{output_path_ilse}'")
+    output_path_linear = os.path.join(OUTPUT_DIR, f'case_study_agg_linear.png')
+    plt.savefig(output_path_linear)
+    print(f"Linear plot saved to '{output_path_linear}'")
     plt.close()
 
-    # Plot 2: Non-linear Gated Attention
+    # Plot 2: Gated Attention
     plt.figure(figsize=(8, 10))
-    plt.barh(instance_labels, non_linear_gated_attention_weights, color='green')
+    plt.barh(instance_labels, gated_attention_weights, color='green')
     plt.xlabel('Attention Score', fontsize=12)
     plt.ylabel('Instance', fontsize=12)
-    plt.title('RL-MIL (Gated Attention)', fontsize=14)
     plt.gca().invert_yaxis()
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     plt.tight_layout()
-    output_path_non_linear_gated = os.path.join(OUTPUT_DIR, f'case_study_agg_gated.png')
-    plt.savefig(output_path_non_linear_gated)
-    print(f"Non-linear Gated plot saved to '{output_path_non_linear_gated}'")
+    output_path_gated = os.path.join(OUTPUT_DIR, f'case_study_agg_gated.png')
+    plt.savefig(output_path_gated)
+    print(f"Gated plot saved to '{output_path_gated}'")
     plt.close()
 
-    # Plot 3: Pham/ Multi-Head Attention
+    # Plot 3: Multi-Head Attention
     plt.figure(figsize=(8, 10))
-    plt.barh(instance_labels, pham_attention_weights, color='slateblue')
+    plt.barh(instance_labels, multi_head_attention_weights, color='slateblue')
     plt.xlabel('Attention Score', fontsize=12)
     plt.ylabel('Instance', fontsize=12)
     plt.gca().invert_yaxis()
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     plt.tight_layout()
-    output_path_pham = os.path.join(OUTPUT_DIR, f'case_study_agg_multihead.png')
-    plt.savefig(output_path_pham)
-    print(f"PHAM plot saved to '{output_path_pham}'")
+    output_path_multi_head = os.path.join(OUTPUT_DIR, f'case_study_agg_multihead.png')
+    plt.savefig(output_path_multi_head)
+    print(f"Multi-Head plot saved to '{output_path_multi_head}'")
     plt.close()
 
     # Plot 4: Epsilon-Greedy (SHAP)

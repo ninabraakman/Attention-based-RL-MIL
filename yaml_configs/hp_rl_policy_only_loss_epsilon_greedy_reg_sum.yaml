@@ -1,155 +1,36 @@
-# # These are the full sweep configurations for RL-MIL with epsilon_greedy with different subsets and architectures.
-# method: bayes
-# metric:
-#   goal: minimize
-#   name: eval/avg_mil_loss
-# parameters:
-#   hdim:
-#     distribution: constant
-#     value: 8
-#   epochs:
-#     distribution: constant
-#     value: 200
-#   actor_learning_rate:
-#     distribution: log_uniform_values
-#     max: 1.0e-02
-#     min: 1.0e-05
-#   critic_learning_rate:
-#     distribution: constant
-#     value: 0
-#   learning_rate:
-#     distribution: constant
-#     value: 1.0e-06
-#   epsilon:
-#     distribution: uniform
-#     max: 1.0
-#     min: 0.0
-#   reg_coef:
-#     distribution: uniform
-#     max: 1.0
-#     min: 0.0
-#   early_stopping_patience:
-#     distribution: constant
-#     value: 25
-#   batch_size:
-#     distribution: constant
-#     value: 128
-# run_cap: 50
-
-# These are the grid search configurations for the specific models with their respective architectures.
-method: grid
+method: bayes
 metric:
   goal: minimize
   name: eval/avg_mil_loss
 parameters:
-
-# --- The architecture specific best values, uncomment the architecture you are running ---
-# # Aggregated_subset MeanMLP 12291849
-#   epsilon:
-#     distribution: constant
-#     value: 0.05642676243294653
-#   reg_coef:
-#     distribution: constant
-#     value: 0.9923288335797648
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.0009873281177408043
-
-# # Aggregated_subset MaxMLP 12294355
-#   epsilon:
-#     distribution: constant
-#     value: 0.2368755026699959
-#   reg_coef:
-#     distribution: constant
-#     value: 0.5423615819105667
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.002541811616972038
-
-# # Aggregated_subset AttentionMLP 12294358
-#   epsilon:
-#     distribution: constant
-#     value: 0.5044035887885062
-#   reg_coef:
-#     distribution: constant
-#     value: 0.9594618039453464
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.001746085198598313
-
-# # Aggregated_subset repset 12294368
-#   epsilon:
-#     distribution: constant
-#     value: 0.9544865928393907
-#   reg_coef:
-#     distribution: constant
-#     value: 0.06751021418210101
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 6.875797943680295e-05
-
-# # Full_subset MeanMLP 12295147
-#   epsilon:
-#     distribution: constant
-#     value: 0.5293919228108971
-#   reg_coef:
-#     distribution: constant
-#     value: 0.6637030651066476
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.007743225506366703
-
-# Full_subset MaxMLP 12295146
-  epsilon:
-    distribution: constant
-    value: 0.996879617354887
-  reg_coef:
-    distribution: constant
-    value: 0.6551953149066362
-  actor_learning_rate:
-    distribution: constant
-    value: 1.7498714221805342e-05
-
-# # Full_subset Attention 12295144
-#   epsilon:
-#     distribution: constant
-#     value: 0.4478229200821477
-#   reg_coef:
-#     distribution: constant
-#     value: 0.5335116973135403
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.002019984615124819
-
-# # Full_subset repset 12295143
-#   epsilon:
-#     distribution: constant
-#     value: 0.7703315763348163
-#   reg_coef:
-#     distribution: constant
-#     value: 0.8373970366673084
-#   actor_learning_rate:
-#     distribution: constant
-#     value: 0.0030771138939505024
-
-# -- Fixed parameters for all models --
   hdim:
     distribution: constant
     value: 8
   epochs:
     distribution: constant
-    value: 800
+    value: 200
+  actor_learning_rate:
+    distribution: log_uniform_values
+    max: 1.0e-02
+    min: 1.0e-06
   critic_learning_rate:
     distribution: constant
     value: 0
   learning_rate:
     distribution: constant
     value: 1.0e-06
+  epsilon:
+    distribution: uniform
+    max: 1.0
+    min: 0.0
+  reg_coef:
+    distribution: uniform
+    max: 1.0
+    min: 0.0
   early_stopping_patience:
     distribution: constant
-    value: 100
+    value: 25
   batch_size:
     distribution: constant
     value: 128
-
-
+run_cap: 50

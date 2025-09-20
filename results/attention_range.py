@@ -1,3 +1,4 @@
+# This file gives insight about the attentionscore ranges and compares them over the different models 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,15 +10,16 @@ LAYERS = {
     'oulad_aggregated': '22_16_22',
     'oulad_full': '20_16_20',
 }
+# Put your own experiments here
 RL_MODEL_CONFIGS = [
     {
-        "model_type": "RL-MIL (Gated Attention - linear)",
+        "model_type": "RL-MIL (Linear Attention)",
         "folder_name": "neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement",
         "output_file": "attention_ilse_outputs.csv",
         "score_column": "attention_score"
     },
     {
-        "model_type": "RL-MIL (Gated Attention - non-linear)",
+        "model_type": "RL-MIL (Gated Attention)",
         "folder_name": "neg_policy_only_loss_attention_gated_reg_sum_sample_without_replacement",
         "output_file": "attention_gated_outputs.csv",
         "score_column": "attention_score"
@@ -31,11 +33,11 @@ RL_MODEL_CONFIGS = [
 ]
 
 OUTPUT_DIR = '.' 
-SUMMARY_CSV_FILE = 'attention_score_summary_per_model_and_dataset.csv'
+SUMMARY_CSV_FILE = 'attention_score_summary.csv'
 CHART_PNG_FILE = 'attention_score_comparison.png'
 
 
-# --- Part 1: Analysis Function ---
+# Part 1: Analysis Function 
 def analyze_attention_scores():
     """
     Analyzes the range of attention scores for each model across all seeds, datasets, and pooling methods.
@@ -106,7 +108,7 @@ def analyze_attention_scores():
     return summary_df
 
 
-# --- Part 2: Charting Function ---
+# Part 2: Charting Function
 def create_attention_range_chart(data, output_path):
     """
     Creates a grouped bar chart visualizing the min, max, and mean attention scores
@@ -119,7 +121,7 @@ def create_attention_range_chart(data, output_path):
     width = 0.2
 
     fig, axes = plt.subplots(1, 2, figsize=(18, 8), sharey=True)
-    colors = ['#1f77b4', '#ff7f0e', '#2ca02c'] # Blue for Min, Orange for Mean, Green for Max
+    colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
 
     for i, dataset in enumerate(datasets):
         ax = axes[i]
@@ -141,16 +143,16 @@ def create_attention_range_chart(data, output_path):
     fig.tight_layout()
     plt.savefig(output_path)
     print(f"\nChart saved to '{output_path}'")
-    plt.close(fig) # Close the plot to free up memory
+    plt.close(fig)
 
 
 if __name__ == '__main__':
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # --- Step 1: Run the analysis ---
+    # Step 1: Run the analysis
     summary_df = analyze_attention_scores()
     
-    # --- Step 2: Check for results and proceed ---
+    # Step 2: Check for results and proceed
     if not summary_df.empty:
         csv_output_path = os.path.join(OUTPUT_DIR, SUMMARY_CSV_FILE)
         summary_df.to_csv(csv_output_path, index=False)
@@ -158,7 +160,7 @@ if __name__ == '__main__':
         print("\nFinal Aggregated Summary:")
         print(summary_df.to_string())
 
-        # --- Step 3: Create the chart from the analysis results ---
+        # Step 3: Create the chart from the analysis results
         chart_output_path = os.path.join(OUTPUT_DIR, CHART_PNG_FILE)
         create_attention_range_chart(summary_df, chart_output_path)
     else:

@@ -800,7 +800,7 @@ class PolicyNetwork(nn.Module):
         preds_pool = torch.stack(preds_pool, dim=2).mean(dim=2)
         return preds_pool, labels
 
-class AttentionPolicyNetwork_pham(PolicyNetwork):
+class AttentionPolicyNetwork_multi_head(PolicyNetwork):
     def __init__(
         self,
         *,
@@ -840,11 +840,6 @@ class AttentionPolicyNetwork_pham(PolicyNetwork):
         else:
             batch_rep = self.task_model.base_network(batch_x).detach()
 
-        # attention_logits = self.selector(batch_rep, None).squeeze(-1)
-        # self._last_pre_softmax_attention_scores = attention_logits                      # Store the raw logits before they go into the softmax function
-        # action_probs = torch.softmax(attention_logits, dim=1)
-        # exp_reward_per_instance = self.critic(batch_rep)
-        # exp_reward = exp_reward_per_instance.mean(dim=1)
         action_probs = self.selector(batch_rep, None).squeeze(-1)
         self._current_attention_weights = action_probs
         exp_reward_per_instance = self.critic(batch_rep)
@@ -852,14 +847,12 @@ class AttentionPolicyNetwork_pham(PolicyNetwork):
 
         return action_probs, batch_rep, exp_reward
     
-    # def get_last_pre_softmax_scores(self): 
-    #     return self._last_pre_softmax_attention_scores
     def get_last_attention_scores(self) -> Union[torch.Tensor, None]:
         if hasattr(self, '_current_attention_weights') and self._current_attention_weights is not None:
             return self._current_attention_weights
         return None
 
-class AttentionPolicyNetwork_ilse(PolicyNetwork):
+class AttentionPolicyNetwork_gated(PolicyNetwork):
     def __init__(
         self,
         *,
@@ -874,10 +867,10 @@ class AttentionPolicyNetwork_ilse(PolicyNetwork):
         sample_algorithm,
         no_autoencoder=False,
         k,
-        temperature,
-        is_linear_attention=False,
-        attention_size,
-        attention_dropout_p,
+        gated_temperature,
+        linear_attention_only=False,
+        gated_attention_size,
+        gated_attention_dropout_p,
     ):
         super().__init__(
             task_model=task_model,
@@ -892,16 +885,19 @@ class AttentionPolicyNetwork_ilse(PolicyNetwork):
             no_autoencoder=no_autoencoder,
         )
         self.k = k
-        self.temperature = temperature
+        self.gated_temperature = gated_temperature
+        self.gated_attention_size = gated_attention_size
+        self.linear_attention_only = linear_attention_only
+        self.gated_attention_dropout_p = gated_attention_dropout_p
         self._current_attention_weights = None
-        if is_linear_attention:
+        if linear_attention_only:                         # If there is a "--linear_attention_only" in the shellscript linear attention will run
             self.attn_layer = nn.Linear(state_dim, 1)
         else:
             self.attn_layer = nn.Sequential(
-                nn.Linear(state_dim, attention_size),
+                nn.Linear(state_dim, gated_attention_size),
                 nn.ReLU(),
-                nn.Dropout(attention_dropout_p),
-                nn.Linear(attention_size, 1),
+                nn.Dropout(gated_attention_dropout_p),
+                nn.Linear(gated_attention_size, 1),
             )
 
     
@@ -917,7 +913,7 @@ class AttentionPolicyNetwork_ilse(PolicyNetwork):
         attn_logits = self.attn_layer(batch_rep)
         attn_logits = attn_logits.squeeze(-1)  
         
-        action_probs = F.softmax(attn_logits / self.temperature, dim=1) 
+        action_probs = F.softmax(attn_logits / self.gated_temperature, dim=1) 
         self._current_attention_weights = action_probs
         exp_reward_per_instance = self.critic(batch_rep)
         exp_reward = exp_reward_per_instance.mean(dim=1) 
