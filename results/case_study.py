@@ -34,9 +34,9 @@ OUTPUT_DIR = 'results/'
 RAW_DATA_PKL_PATH = '/Attention-based-RL-MIL/data/oulad/oulad_aggregated_raw.pkl'
 
 # Using 'repset' on seed 8 for all models as an example
-LINEAR_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement/'
+LINEAR_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_linear_reg_sum_sample_without_replacement/'
 GREEDY_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_epsilon_greedy_reg_sum_sample_without_replacement/'
-MULTI_HEAD_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_pham_reg_sum_sample_without_replacement/'
+MULTI_HEAD_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_multi_head_reg_sum_sample_without_replacement/'
 GATED_RUN_DIR = '/Attention-based-RL-MIL/runs/classification/seed_8/oulad_aggregated/instances/tabular/label/bag_size_20/repset_22_16_22/neg_policy_only_loss_attention_gated_reg_sum_sample_without_replacement/'
 
 CASE_STUDY_BAG_ID = "('CCC', '2014J', 637691)"
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     print("Loading all necessary data files...")
     with open(RAW_DATA_PKL_PATH, 'rb') as f: data_from_pickle = pickle.load(f)
 
-    linear_df_full = pd.read_csv(os.path.join(LINEAR_RUN_DIR, 'attention_ilse_outputs.csv'))
+    linear_df_full = pd.read_csv(os.path.join(LINEAR_RUN_DIR, 'attention_linear_outputs.csv'))
     case_study_linear = linear_df_full[linear_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
     case_study_linear = case_study_linear[case_study_linear['is_padding_instance'] == False]
     linear_attention_weights = case_study_linear['attention_score'].values
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     gated_attention_weights = case_study_gated['attention_score'].values
     
     
-    multi_head_df_full = pd.read_csv(os.path.join(MULTI_HEAD_RUN_DIR, 'attention_pham_outputs.csv'))
+    multi_head_df_full = pd.read_csv(os.path.join(MULTI_HEAD_RUN_DIR, 'attention_multi_head_outputs.csv'))
     case_study_multi_head = multi_head_df_full[multi_head_df_full['bag_id'] == CASE_STUDY_BAG_ID].copy()
     case_study_multi_head = case_study_multi_head[case_study_multi_head['is_padding_instance'] == False]
     multi_head_attention_weights = case_study_multi_head['attention_score'].values

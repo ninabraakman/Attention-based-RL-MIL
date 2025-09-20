@@ -14,8 +14,8 @@ LAYERS = {
 RL_MODEL_CONFIGS = [
     {
         "model_type": "RL-MIL (Linear Attention)",
-        "folder_name": "neg_policy_only_loss_attention_ilse_reg_sum_sample_without_replacement",
-        "output_file": "attention_ilse_outputs.csv",
+        "folder_name": "neg_policy_only_loss_attention_gated_reg_sum_sample_without_replacement",
+        "output_file": "attention_gated_outputs.csv",
         "score_column": "attention_score"
     },
     {
@@ -26,8 +26,8 @@ RL_MODEL_CONFIGS = [
     },
     {
         "model_type": "RL-MIL (Multi-Head Attention)",
-        "folder_name": "neg_policy_only_loss_attention_pham_reg_sum_sample_without_replacement",
-        "output_file": "attention_pham_outputs.csv",
+        "folder_name": "neg_policy_only_loss_attention_multi_head_reg_sum_sample_without_replacement",
+        "output_file": "attention_multi_head_outputs.csv",
         "score_column": "attention_score"
     }
 ]

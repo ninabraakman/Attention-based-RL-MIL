@@ -34,7 +34,7 @@ def gather_all_results_data():
         },
         {
             "model_type": "RL-MIL (Multi-Head Attention)",
-            "folder_name": "neg_policy_only_loss_attention_pham_reg_sum_sample_without_replacement"
+            "folder_name": "neg_policy_only_loss_attention_multi_head_reg_sum_sample_without_replacement"
         }
     ]
 
